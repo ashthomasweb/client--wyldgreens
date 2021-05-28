@@ -1,0 +1,621 @@
+/* || Theme CSS file for "LumberJack" */
+
+:root {
+    /* primary theme colors  */
+    --primary-color: #239d78;
+    --primary-light: #82ceb8;
+    --primary-pale: #d4eae3;
+    --primary-very-light: #f5fffd;
+
+    /* secondary theme colors  */
+    --secondary-color: #98887f; 
+    --secondary-light: #c7b5ab; 
+    --secondary-pale: #d4c9c3;
+    --secondary-very-light: #fffbf5;
+
+    /* highlight color  */
+    --highlight: #f0e2d0;
+    --borders: #3a3b48;
+    
+    /* greyscale theme colors  */
+    --border-light: #e6e6e6;
+    --primary-background: #ffffff;
+    --secondary-background: #f9f9f9;
+    --copy-light: #b4b4b4;
+    --copy-mid: #6a6a6a;
+    --copy-dark: #3a3b48;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --darken: rgba(0, 0, 0, 0.1);
+    --clear: rgba(0, 0, 0, 0);
+    --haze: rgba(255, 255, 255, 0.8);
+    --divider-top: #f0f0f0;
+    --divider-bottom: #f5f5f5;
+
+   /* fonts */
+   --headers: Crete round, serif;
+   --copy: nunito, sans-serif;
+}
+
+body {
+    background-image: url(/images/patterns/purty-wood.png);
+    background-attachment: fixed;
+    background-color: #212125;
+    color: var(--copy-mid);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--copy-dark);
+}
+
+/* || Link Styling */
+
+a {
+    padding-bottom: 1px;
+    border-bottom: 4px solid var(--clear);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+p a {
+    font-weight: 700;
+    border-bottom: 4px solid var(--clear);
+    transition: border-bottom .6s;
+}
+
+p a:hover {
+    border-bottom: 4px solid var(--primary-color);
+}
+
+footer a {
+    border-bottom: none;
+    color: var(--borders);
+}
+
+footer a:hover {
+    border-bottom: none;
+}
+
+.link-impact {
+    padding-bottom: 3px;
+    border-top: 4px solid var(--secondary-pale);
+    border-bottom: 4px solid var(--secondary-pale);
+    font-family: var(--headers);
+    font-style: normal;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--borders);
+    transition: border-bottom .6s, border-top .6s, color .6s;
+    -webkit-transition: border-bottom .6s, border-top .6s, color .6s;
+}
+
+.link-impact:hover {
+    border-top: 4px solid var(--borders);
+    border-bottom: 4px solid var(--borders);
+}
+
+.start-impact { /* On contact page, this element takes place of "Contact Me" link. This is styled the same without a pointer event or link */
+    padding-bottom: 3px;
+    border-top: 4px solid var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
+    font-family: var(--headers);
+    font-style: normal;
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.no-style {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* || ShareThis menu styles  */
+
+.share-wrapper {
+    border-color: var(--darken);
+    background-color: var(--secondary-pale);
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+/* || Curator overlay links */
+
+.crt-popup-text-body a {
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--clear);
+    color: var(--secondary-color) !important;
+    transition: border-bottom-color;
+}
+
+.crt-popup-text-body a:hover {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.crt-post-text a {
+    padding-bottom: 1px;
+    border-bottom: 1px solid var(--clear);
+    color: var(--secondary-color) !important;
+    transition: border-bottom-color;
+}
+
+.crt-post-text a:hover {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* || Main Layout Elements */
+
+.l-header {
+    border-bottom-color: var(--darken);
+    background-color: var(--primary-color);
+}
+
+.l-body-wrapper {
+    background-color: var(--clear);
+}
+
+.l-content-wrapper {
+    box-shadow: 0px 0px 8px var(--shadow);
+    background-color: var(--primary-background);
+    overflow: hidden;
+}
+
+.l-body-wrapper--contact {
+    background: url(/images/mountain-scene-contact.png);
+    background-size: cover;
+    background-position-x: center;
+}
+
+.l-content-wrapper--contact {
+    box-shadow: 0px 0px 8px var(--shadow);
+    background-color: var(--clear);
+}
+
+.l-footer {
+    border-top-color: var(--darken);
+    background-color: var(--secondary-pale);
+}
+
+.divider-top {
+    border-top-color: var(--border-light);
+    background: -moz-linear-gradient(var(--divider-top), white);
+    background: -webkit-linear-gradient(var(--divider-top), white);
+    background: -o-linear-gradient(var(--divider-top), white);
+    background: -ms-linear-gradient(var(--divider-top), white);
+    background: linear-gradient(var(--divider-top), white);
+}
+
+.divider-bottom {
+    border-bottom-color: var(--border-light);
+    background: -moz-linear-gradient(white, var(--divider-bottom));
+    background: -webkit-linear-gradient(white, var(--divider-bottom));
+    background: -o-linear-gradient(white, var(--divider-bottom));
+    background: -ms-linear-gradient(white, var(--divider-bottom));
+    background: linear-gradient(white, var(--divider-bottom));
+}
+
+/* || Card Elements */
+
+.card {
+    box-shadow: 4px 2px 12px var(--shadow);
+    background-color: var(--primary-pale);
+    color: var(--copy-dark);
+}
+
+.card-hr {
+    background-color: var(--primary-light);
+}
+
+.card-hr-secondary {
+    background-color: var(--secondary-light);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* || Navbar and Hamburger Menu */
+
+.navbar-pane li {
+    padding-bottom: 3px;
+    border-radius: 4px; /* side curve of underbar */
+    color: var(--copy-dark);
+}
+
+.navbar-pane li:hover {
+    border-bottom: 5px solid var(--highlight);
+}
+
+.h-menu-drop {
+    border-color: var(--darken);
+    border-bottom-left-radius: 8px;
+    background-color: var(--primary-color);
+}
+
+.h-menu-bar {
+    border-radius: 1.5px;
+    background-color: var(--primary-light);
+}
+
+.h-menu-box {
+    border-radius: 8px;
+    border-color: var(--primary-light);
+    background-color: var(--primary-pale);
+    transition: background-color .3s;
+}
+
+.h-menu-drop li {
+    border-radius: 4px;  /* side curve of underbar */
+    color: var(--copy-dark);
+}
+
+.h-menu-drop li:hover {
+    border-bottom: 5px solid var(--highlight);
+}
+
+.current { /* this class is assigned via ejs in views/partials/header, cannot be found in any other .css file */
+    border-bottom-color: var(--highlight) !important;
+    color: var(--highlight) !important;
+}
+
+/* || Pages - Home  */
+
+.card--home {
+    background-color: var(--primary-light);
+    transition: background-color .1s linear;
+}
+
+.card--home:hover {
+    background-color: var(--primary-color);
+}
+
+.home-card-inner-wrap {
+    border-radius: 10px;
+    background-color: var(--primary-very-light);
+    background: -moz-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: -webkit-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: -o-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: -ms-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+}
+
+.home-card-top-section {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-color: var(--primary-light);
+    background-color: var(--primary-pale);
+}
+
+.card--home p {
+    color: var(--copy-mid);
+}
+
+.card--home h2 {
+    border-bottom-color: var(--primary-light);
+}
+
+/* || Pages - Services */
+
+.card--tech-left {
+    background-color: var(--secondary-light);
+}
+
+.card--tech-right {
+    background-color: var(--secondary-light);
+}
+
+.tech-card-inner-wrap {
+    border-radius: 8px;
+    background-color: var(--secondary-very-light);
+    background: -moz-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: -webkit-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: -o-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: -ms-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+}
+
+.tech-card-top-section {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-color: var(--secondary-light);
+    background-color: var(--secondary-pale);
+}
+
+/* || Pages - Blog Main */
+
+.card--blog-main {
+    background-color: var(--secondary-light);
+}
+
+.blog-card-inner-wrap {
+    border-radius: 8px;
+    background-color: var(--secondary-very-light);
+    background: -moz-linear-gradient(to right, var(--secondary-light), transparent 5%), linear-gradient(to left top, var(--secondary-light), var(--secondary-very-light) 3%);
+    background: -webkit-linear-gradient(to right, var(--secondary-light), transparent 5%), linear-gradient(to left top, var(--secondary-light), var(--secondary-very-light) 3%);
+    background: -o-linear-gradient(to right, var(--secondary-light), transparent 5%), linear-gradient(to left top, var(--secondary-light), var(--secondary-very-light) 3%);
+    background: -ms-linear-gradient(to right, var(--secondary-light), transparent 5%), linear-gradient(to left top, var(--secondary-light), var(--secondary-very-light) 3%);
+    background: linear-gradient(to right, var(--secondary-light), transparent 5%), linear-gradient(to left top, var(--secondary-light), var(--secondary-very-light) 3%);
+}
+
+.blog-card-left-section {
+    border-top-left-radius: 8px;
+    border-right-color: var(--secondary-light);
+    border-bottom-left-radius: 8px;
+    background-color: var(--secondary-pale);
+}
+
+.intro-img img {
+    border-color: var(--secondary-color);
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+}
+
+.intro-text-box p:nth-child(3) {  /* description */
+    color: var(--copy-mid);
+}
+
+.intro-read-more { /* button */
+    border-color: var(--secondary-light);
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-bottom: 2px;
+    color: var(--copy-dark);
+    background-color: var(--secondary-pale);
+    transition: background-color .2s ease-out, color .2s ease-out;
+}
+
+/* This class is for firefox and Edge/IE backup. Chrome uses event.path to change color when hovering over the parent element. */
+.intro-read-more:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+}
+
+/* || Blog Post */
+
+.slice-link p {
+    border-left-color: var(--primary-color);
+}
+
+.slice-link a {
+    font-weight: 300;
+}
+
+.slice-quote {
+    border-left-color: var(--primary-color);
+}
+
+.post-meta p {
+    color: var(--copy-light);
+}
+
+.slice-quote p:nth-child(1) {
+    color: var(--primary-color);
+}
+
+.slice-quote p:nth-child(2) {
+    opacity: 0.8;
+    color: var(--primary-color);
+}
+
+.slice-gallery {
+    border-top-color: var(--primary-light);
+    border-bottom-color: var(--primary-light);
+    background-color: var(--primary-pale);
+}
+
+.post-gallery-img {
+    border-color: var(--primary-light);
+    border-radius: 12px;
+    background-color: var(--primary-light);
+}
+
+.post-gallery-caption {
+    color: var(--copy-mid);
+}
+
+.post-return {
+    border-color: var(--primary-pale);
+    border-radius: 12px;
+    background-color: var(--primary-pale);
+    transition: background-color .3s;
+}
+
+.post-return:hover {
+    background-color: var(--primary-light);
+}
+
+/* || Curator Carosel */
+
+.carousel--curator {
+    background-color: var(--primary-color);
+    border-top: 4px solid var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.left-button-center {
+    background-color: var(--primary-color);
+}
+
+.left-button-center button {
+    background-color: var(--primary-light);
+    border-left: 4px solid var(--primary-color);
+    border-right: 4px solid var(--primary-color);
+    cursor: pointer;
+    opacity: 0.2;
+    transition: opacity .3s;
+}
+
+.crt-post-footer {
+    border-top-color: var(--primary-color) !important;
+}
+
+.crt-popup-text-body {
+    color: var(--copy-mid);
+}
+
+.right-button-center {
+    background-color: var(--primary-color);
+}
+
+.right-button-center button {
+    background-color: var(--primary-light);
+    border-left: 4px solid var(--primary-color);
+    border-right: 4px solid var(--primary-color);
+    cursor: pointer;
+    opacity: 0.2;
+    transition: opacity .3s;
+}
+
+.viewport {
+    border-color: var(--primary-color);
+}
+
+.left-button-wrap {
+    background-color: var(--primary-color);
+}
+
+.right-button-wrap {
+    background-color: var(--primary-color);
+}
+
+.card-pane--media p {
+    color: var(--copy-light);
+}
+
+.card--media img {
+    border-color: var(--primary-color);
+    border-radius: 12px;
+    background-color: var(--primary-color);
+}
+
+.card--media-left {
+    background-color: var(--primary-light);
+}
+
+.card--media-right {
+    background-color: var(--primary-light);
+}
+
+.media-card-inner-wrap {
+    border-radius: 8px;
+    background-color: var(--primary-very-light);
+    background: -moz-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: -webkit-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: -o-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: -ms-linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+    background: linear-gradient(to bottom, var(--primary-pale), var(--primary-very-light) 4%);
+}
+
+.media-card-top-section {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-color: var(--primary-light);
+    background-color: var(--primary-pale);
+}
+
+/* || Pages - Contact */
+
+.hidden-response {
+    border-radius: 8px;
+    background-color: var(--primary-very-light);
+}
+
+.hidden-button {
+    border-color: var(--primary-light);
+    border-radius: 12px;
+    color: var(--copy-dark);
+    background-color: var(--secondary-light);
+    transition: background-color .1s ease-out;
+}
+
+.hidden-button:hover {
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* || Contact Form  */
+
+.card--contact-form {
+    background-color: var(--primary-light);
+}
+
+.contact-card-inner-wrap {
+    border-radius: 8px;
+    background-color: var(--primary-very-light);
+    background: -moz-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
+    background: -webkit-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
+    background: -o-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
+    background: -ms-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
+}
+
+.contact-card-top-section {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-color: var(--primary-light);
+    background-color: var(--primary-pale);
+}
+
+input:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+textarea:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+.form-title {
+    color: var(--copy-mid);
+}
+
+.form-entry {
+    border-color: var(--primary-light);
+    color: var(--copy-mid);
+}
+
+.form-textarea {
+    border-color: var(--primary-light);
+}
+
+.contact-submit {
+    border-color: var(--primary-light);
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    color: var(--copy-dark);
+    background-color: var(--primary-light);
+    transition: background-color .2s ease-out, color .2s ease-out;
+}
+
+.contact-submit:hover {
+    cursor: pointer;
+}
+
+/* || Footer */
+
+.share-menu-pane {
+    transition: margin-top 1s;
+}
+
+.footer-social button {
+    cursor: pointer;
+    border-radius: 17px;
+    border: 5px solid var(--borders);
+    background: url(/images/icons/share.png);
+    background-color: var(--secondary-light);
+    background-size: contain;
+    transition: background-color .3s;
+}
+
+.footer-attributions {
+    color: var(--copy-dark);
+}
+
+.footer-goodbye {
+    color: var(--copy-mid);
+}
+
+/* || ShareThis */
+
+.st-label {
+    font-weight: 700 !important;
+}
+
+/* || END of document  */

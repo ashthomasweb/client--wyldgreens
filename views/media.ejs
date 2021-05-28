@@ -1,0 +1,102 @@
+<!-- Media page for "LumberJack" -->
+<!-- ** LumberJack-Setup - If you change the name of your Curator feed from the default, you will need to update the 
+    markup in the viewport element. -->
+
+<%- include("../views/partials/header.ejs") -%>
+
+<div class="l-divider divider-top"></div>
+
+<div class="greeting-pane--media">
+    <h1>Media Feeds</h1>
+    <p>Curator is a scaleable, enterprise-level aggregator for all your social accounts. The free-tier allows for 3
+        separate media feeds. Link your Instagram into the slider below, or create a feed from any social media site.
+        Update your website content directly from your device in the woods.
+    </p>
+</div>
+
+<div class="l-divider divider-bottom"></div>
+
+<div id="curator-hover" class="carousel--curator">
+
+    <div class="left-button-wrap">
+        <div class="left-button-center">
+            <button id="left-button" type="button" onclick="curatorLeft()"></button>
+        </div>
+    </div>
+
+    <div id="curator-slider" class="viewport">
+        <div class="inner-frame">
+            <div id="curator-feed-default-feed-layout">
+                <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-button-wrap">
+        <div class="right-button-center">
+            <button id="right-button" type="button" onclick="curatorRight()"></button>
+        </div>
+    </div>
+
+</div>
+
+<div class="l-divider divider-top"></div>
+
+<div class="text-pane--media">
+    <p>This is only one feed. Imagine all of your networks and a blog in one place. You can create other pages for other
+        media sites or add them below. Share on your favorite network with the buttons in the footer. Curator is a 
+        multi-network aggregator that is fully scalable to for enterprise. Below is just a sample of the available 
+        networks. Check out <a href="https://curator.io" target="blank">Curator.io</a> for more details.</a>
+    </p>
+</div>
+
+<div class="l-divider divider-top margin-t-85"></div>
+
+<div class="card-pane--media">
+
+    <div class="card card--media-left">
+        <div class="media-card-inner-wrap">
+
+            <div class="media-card-top-section">
+                <h3><a class="no-style" href="https://www.curator.io" target="_blank">Curator.io</a></h3>
+                <hr class="card-hr">
+            </div>
+
+            <div class="media-card-bottom-section">
+                <div class="card-box-center">
+                    <img class="card-art" src="/images/icons/curator2.png"">
+                    <h4 class="card-lower-heading">Multi-Network Aggregator</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card card--media-right">
+        <div class="media-card-inner-wrap">
+
+            <div class="media-card-top-section">
+                <h3>Take Your Pick</h3>
+                <hr class="card-hr">
+            </div>
+
+            <div class="media-card-bottom-section">
+                <div class="card-box-center">
+                    <img class="card-art" style="height: 120px; top: 9px; right: 12px;"
+                        src="/images/icons/social-media-bubbles.png"">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class=" l-divider divider-bottom margin-b-85"></div>
+
+<div class="whitespace-10"></div>
+
+<%- include("../views/partials/footer.ejs") -%>
+
+
+<!-- END of document -->
