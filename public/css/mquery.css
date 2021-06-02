@@ -640,14 +640,14 @@
 
 }
 
-@media screen and (min-height: 954px) {
+/* @media screen and (min-height: 954px) {
 
     .l-content-wrapper--contact {
         top: 0;
         height: calc(100vh - 186px);
     }
 
-}
+} */
 
 /* || Footer  */
 

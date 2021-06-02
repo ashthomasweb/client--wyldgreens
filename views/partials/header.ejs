@@ -8,15 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title><%=pageTitle%></title>
 
-    <meta name="descirption" content="A lightweight, scalable theme and blog for your local or social media driven business. Includes a headless CMS and social media aggregator." >
-    <meta name="keywords" content="website template, full-stack template, headless cms, web template, prismic, curator, sharethis, nodemailer, node.js, javascript, web development, front-end ready template, ejs, blog, social media aggregator, ash thomas, ashthomasweb" >
-    <meta name="author" content="Ashley Thomas" >
-    <meta name="copyright" content="2020" >
-    <meta name="robots" content="index, follow" >
-    
+    <meta name="descirption"
+        content="A lightweight, scalable theme and blog for your local or social media driven business. Includes a headless CMS and social media aggregator.">
+    <meta name="keywords"
+        content="website template, full-stack template, headless cms, web template, prismic, curator, sharethis, nodemailer, node.js, javascript, web development, front-end ready template, ejs, blog, social media aggregator, ash thomas, ashthomasweb">
+    <meta name="author" content="Ashley Thomas">
+    <meta name="copyright" content="2020">
+    <meta name="robots" content="index, follow">
+
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/base.css">
@@ -28,15 +30,17 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Nunito:wght@300;600&display=swap"
+        rel="stylesheet">
+
     <!-- Social share meto -->
     <meta property="og:image" content="/images/lumberjack-share.jpg">
     <meta property="og:title" content="LumberJack - All your content in one place.">
-    <meta property="og:description" content="A lightweight, scalable theme and blog for your local or social media driven business. Includes a headless CMS and social media aggregator.">
+    <meta property="og:description"
+        content="A lightweight, scalable theme and blog for your local or social media driven business. Includes a headless CMS and social media aggregator.">
     <meta property="og:url" content="https://www.lumberjack.ashthomasweb.com">
     <meta name="twitter:card" content="summary_large_image">
-    
+
     <!-- ShareThis JS-->
     <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=5fdcf5e7808aed0011dfaa1c&product=inline-share-buttons"
@@ -61,21 +65,22 @@
 
     <% if ( pageTitle === "Home" ) { %>
 
-        <!-- <div class="l-header l-home-header">
+    <!-- <div class="l-header l-home-header">
             <div class="l-header-wrapper l-home-header">
                 <div class="logo-pane">
                     <img class="logo-main" src="/images/logo/Asset 2.png">
                 </div>
             </div>
         </div> -->
-        <div class="l-body-wrapper--home ">
-            <div class="l-content-wrapper">
+    <div class="l-body-wrapper--home ">
+        <div class="l-content-wrapper">
 
-    <% } else { %> <!-- ** LumberJack-Setup - Main menu links -->
-                   <!-- You will need to change the pageTitle variable in your /app.js, as well as the text content of the <li>, and the href.
+            <% } else { %>
+            <!-- ** LumberJack-Setup - Main menu links -->
+            <!-- You will need to change the pageTitle variable in your /app.js, as well as the text content of the <li>, and the href.
                         Make sure to change the hamburger, the navbar, and the menu boxes in /views/home.ejs. -->
-                           
-        <!-- <div id="h-menu" class="h-menu-drop">
+            <!--                            
+        <div id="h-menu" class="h-menu-drop">
             <ul>
                 <a href="/technology">
                     <li <% if (pageTitle === "Technology") { %> class="current" <% } %>>Tech</li>
@@ -129,32 +134,28 @@
 
             </div>
         </div> -->
-
-        <% if ( pageTitle === "Contact" ) { %>
-            
             <div class="greeting-pane--home">
                 <!-- <h1>Welcome!</h1> -->
-                <div class="fullwidth-centering-container">
+                <div class="fullwidth-wrapper">
 
-                    <img src="/images/logo/Asset 2.png">
-                    <div class="fullwidth-right-container">
-                        
-                        <img src="/images/greens/circle-home.png">
-                        
+                    <div class="fullwidth-left-cont">
+                        <img src="/images/greens/top-down-transparent.png">
+                    </div>
+                    <div class="fullwidth-right-cont">
+                        <img src="/images/logo/Asset 2.png">
                         <h2>Delicious Microgreens<br>Delivered to Your Door.</h2>
                     </div>
-                    
                 </div>
             </div>
-            
+            <% if ( pageTitle === "Contact" ) { %>
             <div class="l-body-wrapper--contact">
-            <div class="l-content-wrapper--contact">
-        <%} else { %>
-            <div class="l-body-wrapper">
-            <div class="l-content-wrapper">
-        <% } %>
+                <div class="l-content-wrapper--contact">
+                    <%} else { %>
+                    <div class="l-body-wrapper">
+                        <div class="l-content-wrapper">
+                            <% } %>
 
-    <% } %>
+                            <% } %>
 
 
-<!-- END of document -->
+                            <!-- END of document -->
