@@ -165,9 +165,11 @@ footer a:hover {
 }
 
 .l-body-wrapper--contact {
-    background: url(/images/mountain-scene-contact.png);
-    background-size: cover;
-    background-position-x: center;
+    background-color: white;
+
+    /* background: url(/images/mountain-scene-contact.png); */
+    /* background-size: cover; */
+    /* background-position-x: center; */
 }
 
 .l-content-wrapper--contact {
@@ -196,6 +198,10 @@ footer a:hover {
     background: -o-linear-gradient(white, var(--divider-bottom));
     background: -ms-linear-gradient(white, var(--divider-bottom));
     background: linear-gradient(white, var(--divider-bottom));
+}
+  
+.greeting-pane--home {
+    background-color: #222222;
 }
 
 /* || Card Elements */
