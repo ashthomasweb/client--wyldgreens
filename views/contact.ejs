@@ -1,12 +1,29 @@
 <!-- Contact page for "LumberJack" -->
 
+
+
+
 <%- include("../views/partials/header.ejs") -%>
 
-<div class="greeting-pane--contact">
-    <h1>Contact Me</h1>
-    <p>This is how your people can contact you. Behind the scenes is a secure email responder that you can 
-        customize to say anything you want. If you're interested in contacting the developer of this theme 
-        you can use the form below. Thanks&nbsp;for&nbsp;stopping&nbsp;by!
+
+<div class="l-divider divider-bottom"></div>
+
+<div class="avatar-pane--home">
+    <h2>Pick a Mix.</h2>
+    <img class="avatar-img" src="/images/Asset-3.png">
+    <!-- <h2>Pick a Plan.</h2>
+    <img class="avatar-img" src="/images/Asset-3.png"> -->
+</div>
+
+<div class="l-divider divider-top"></div>
+
+<div class="text-pane--home">
+    <p> All third-party services offer free tiered accounts, and are also fully scalable to enterprise level. Take your
+        business to the global market with this scalable and modular dynamically rendered theme. No need for a large
+        overhead of code bloat you need to update. This is not a drag and drop template, you will need basic front-end
+        development skills. However all of the backend API routing is done for you, all you need to do is set up your
+        accounts with Prismic and Curator, and build your templates with Prismic and NodeMailer using the instructions
+        laid out on the blog and within code files. 
     </p>
 </div>
 
@@ -45,7 +62,7 @@
 
                 <div class="contact-card-bottom-section">
                     <label class="form-title">Message:</label>
-                    <textarea class="form-textarea" name="message" oninput="formFieldCheck()" autofocus></textarea>
+                    <textarea class="form-textarea" name="message" oninput="formFieldCheck()"></textarea>
                 </div>
 
             </form>
@@ -54,7 +71,6 @@
 
     </div>
 </div>
-
 <%- include("../views/partials/footer.ejs") -%>
 
 
