@@ -142,11 +142,27 @@
 .l-box-third {
     position: relative;
     display: inline-block;
-    vertical-align: middle;
-    width: 300px;
-    margin: 0px auto;
+    /* vertical-align: top; */
+    width: 33%;
+    margin: 20px auto;
     font-size: 18px;
+
 }
+
+.l-box-third h3 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.l-box-third img {
+    width: 150px;
+    position: relative;
+    margin-bottom: 25px;
+    /* margin: 0 auto; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 .l-box-half {
     display: inline-block;
@@ -154,6 +170,7 @@
     font-size: 0;
     line-height: 0;
 }
+
 
 /* || Card Global */
 
@@ -175,19 +192,30 @@
 }
 
 .card-art {
-    height: 80px;
+    height: 230px;
     position: relative;
-    margin: -5px 0 10px;
+    top: -15px;
+    left: -9px;
+    /* margin: -5px 0 10px; */
 }
 
 .card-box-center {
-    width: 80%;
+    /* width: 80%;
     margin: 9px auto 10px auto;
-    padding: 8px 8px 25px;
+    padding: 8px 8px 25px; */
 }
 
 .card-lower-heading {
     font-size: 22px;
+}
+
+.mix-lower-heading {
+    margin-top: 7px;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.7;
+    line-height: 1.2;
+    /* font-style: italic; */
 }
 
 /* || Section Dividers */
