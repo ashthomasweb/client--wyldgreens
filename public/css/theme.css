@@ -60,7 +60,7 @@ beige: #f9eccc
 }
 
 body {
-    background-image: url(/images/patterns/cutting-board-touchup.jpg);
+    background-image: url(/images/patterns/soil.jpg);
     background-attachment: fixed;
     /* background-color: #e9e9e1; */
     color: var(--copy-mid);
@@ -100,8 +100,8 @@ footer a:hover {
 
 .link-impact {
     padding-bottom: 3px;
-    border-top: 4px solid var(--secondary-pale);
-    border-bottom: 4px solid var(--secondary-pale);
+    border-top: 4px solid #ccc;
+    border-bottom: 4px solid #ccc;
     font-family: var(--headers);
     font-style: normal;
     font-size: 34px;
@@ -197,7 +197,7 @@ footer a:hover {
 
 .l-footer {
     border-top-color: var(--darken);
-    background-color: var(--secondary-pale);
+    background-color: var(--primary-color);
 }
 
 .divider-top {
