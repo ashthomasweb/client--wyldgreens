@@ -27,8 +27,8 @@
 <div class="why-pane--home">
     <!-- <h2>Why Buy Wyld?</h2> -->
     <!-- <img class="avatar-img" src="/images/Asset-3.png"> -->
-    <h2>Why Choose Wyld?</h2>
-    <!-- <img class="avatar-img" src="/images/Asset-3.png"> -->
+    <h2>Why Wyld?</h2>
+    <!-- <img class="avatar-img" style="bottom: 10px;" src="/images/greens/top-down-transparent.png"> -->
 </div>
 
 <div class="l-divider divider-top"></div>
@@ -128,7 +128,7 @@
 
             <div class="tech-card-bottom-section">
                 <div class="card-box-center">
-                    <img class="card-art" src="/images/greens/green2.jpg"">
+                    <img class="card-art" src="/images/greens/green2.jpg">
                 </div>
             </div>
 
@@ -147,13 +147,58 @@
     <img class="avatar-img" src="/images/Asset-3.png"> -->
 </div>
 
-<div class="text-pane--home" style="max-width: 550px; padding-top: 40px;">
-    <p>Choose. Your. Greens.</p>
+<div class="text-pane--home" style="max-width: 550px; padding-top: 0px;">
     <p>Get it once just like you want it. Schedule your order once a week, setup a monthly payment and save!</p>
     <p>Order greens for someone you care about, or enact revenge on your meat-only friends. Expand your nutrition!</p>
 </div>
 
 <div style="height: 120px;"></div>
+
+<div class="card-pane--tech">
+    <div class="card card--tech-left">
+        <div class="tech-card-inner-wrap">
+
+            <div class="tech-card-top-section">
+                <h3><a class="no-style" href="https://www.ejs.co" target="_blank">One-time Only</a></h3>
+            </div>
+            
+            <div class="tech-card-bottom-section">
+                <div class="card-box-center">
+                    <h4 class="mix-lower-heading">- Perfect for parties</h4>
+                    <h4 class="mix-lower-heading">- Get as a gift</h4>
+                    <h4 class="mix-lower-heading">- Treat yourself</h4>
+
+                    <!-- <img class="card-art" src="/images/greens/green1.jpg"> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card card--tech-right">
+        <div class="tech-card-inner-wrap">
+
+            <div class="tech-card-top-section">
+                <h3><a class="no-style" href="https://nodemailer.com/about/" target="_blank">Order Weekly</a></h3>
+            </div>
+            
+            <div class="tech-card-bottom-section">
+                <div class="card-box-center"">
+                    <h4 class="mix-lower-heading">- Set it and forget it!</h4>
+                    <h4 class="mix-lower-heading">- Option for reusable container</h4>
+                    <h4 class="mix-lower-heading">- Discount rate</h4>
+
+                    <!-- <img class="card-art" src="/images/greens/green2.jpg"> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div style="height: 240px;"></div>
+
 
 <div class="l-divider divider-bottom"></div>
 
@@ -164,7 +209,12 @@
     <img class="avatar-img" src="/images/Asset-3.png"> -->
 </div>
 
-<div style="height: 120px;"></div>
+<div class="text-pane--home" style="max-width: 550px; padding-top: 60px;">
+    <p>Use the form below to fill in any remaining choices. Make sure to check all required boxes!</p>
+    <p>We will be in contact shortly to confirm your order and send a payment link. Thanks!</p>
+</div>
+
+<div style="height: 60px;"></div>
 
 
 <div class="card card--contact-form">
@@ -199,9 +249,18 @@
                 <input class="form-entry" type="text" name="user_name" oninput="formFieldCheck()">
                 <label class="form-title">Email:</label>
                 <input class="form-entry" type="email" name="user_email" oninput="formFieldCheck()">
+                <label class="form-title">Address</label>
+                <input class="form-entry" type="email" name="user_email" oninput="formFieldCheck()">
+                <label class="form-title">Phone Number</label>
+                <input class="form-entry" type="email" name="user_email" oninput="formFieldCheck()">
                 <button id="contact-button" class="contact-submit" type="submit" onclick="sendingText()">Send</button>
-            </div>
+                <label style="display: inline-block;" class="form-title">One-time</label>
+                <input style="display: inline-block;" type="checkbox">
+                <label style="display: inline-block;" class="form-title">Monthly</label>
+                <input style="display: inline-block;" type="checkbox">
 
+            </div>
+            
             <div class="contact-card-bottom-section">
                 <label class="form-title">Message:</label>
                 <textarea class="form-textarea" name="message" oninput="formFieldCheck()"></textarea>

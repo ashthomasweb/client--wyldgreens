@@ -22,7 +22,7 @@ wyld: #70c051
 
     /* f9eccc */
     /* secondary theme colors  */
-    --secondary-color: #39b54a; 
+    --secondary-color: #39b55a; 
     --secondary-light: #41985d5c; 
     --secondary-pale: #d7f1b5;
     --secondary-very-light: #fffbf5;
@@ -565,24 +565,24 @@ footer a:hover {
 /* || Contact Form  */
 
 .card--contact-form {
-    background-color: var(--primary-light);
+    background-color: var(--secondary-color);
 }
 
 .contact-card-inner-wrap {
     border-radius: 8px;
     background-color: var(--primary-very-light);
-    background: -moz-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
+    /* background: -moz-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
     background: -webkit-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
     background: -o-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
     background: -ms-linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
-    background: linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%);
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary-very-light) 5%); */
 }
 
 .contact-card-top-section {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    border-bottom-color: var(--primary-light);
-    background-color: var(--primary-pale);
+    border-bottom-color: var(--secondary-light);
+    background-color: var(--secondary-light);
 }
 
 input:focus {
@@ -607,11 +607,11 @@ textarea:focus {
 }
 
 .contact-submit {
-    border-color: var(--primary-light);
+    border-color: var(--secondary-color);
     border-top-right-radius: 12px;
     border-bottom-left-radius: 12px;
     color: var(--copy-dark);
-    background-color: var(--primary-light);
+    background-color: var(--secondary-color);
     transition: background-color .2s ease-out, color .2s ease-out;
 }
 
