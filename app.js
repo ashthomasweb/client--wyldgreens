@@ -30,29 +30,29 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Prismic
 // Standardized URLs for known types
-var linkResolver = function (doc) {
-    if (doc.type === 'blog') return "/post/" + doc.uid;
-    if (doc.type === 'page') return "/" + doc.uid;
-    // Fallback for other types, in case new custom types get created
-    return "/";
-};
+// var linkResolver = function (doc) {
+//     if (doc.type === 'blog') return "/post/" + doc.uid;
+//     if (doc.type === 'page') return "/" + doc.uid;
+//     // Fallback for other types, in case new custom types get created
+//     return "/";
+// };
 
-// Middleware to inject prismic context
-app.use(function (req, res, next) {
-    res.locals.ctx = {
-        endpoint: prismicEndpoint,
-        linkResolver: linkResolver,
-    };
-    res.locals.PrismicDOM = PrismicDOM;
-    next();
-});
+// // Middleware to inject prismic context
+// app.use(function (req, res, next) {
+//     res.locals.ctx = {
+//         endpoint: prismicEndpoint,
+//         linkResolver: linkResolver,
+//     };
+//     res.locals.PrismicDOM = PrismicDOM;
+//     next();
+// });
 
-// Initialize the prismic api
-function initApi(req) {
-    return Prismic.getApi(prismicEndpoint, {
-        req: req
-    });
-};
+// // Initialize the prismic api
+// function initApi(req) {
+//     return Prismic.getApi(prismicEndpoint, {
+//         req: req
+//     });
+// };
 // END Prismic
 
 
@@ -62,70 +62,70 @@ function initApi(req) {
 
 // Route Handlers
 
+// app.get('/', function (req, res) {
+//     res.render('home', {
+//         pageTitle: 'Home',
+//     });
+// });
+
+// app.get('/about', function (req, res) {
+//     res.render('about', {
+//         pageTitle: "About",
+//     });
+// });
+
+// app.get('/technology', function (req, res) {
+//     res.render('technology', {
+//         pageTitle: "Technology",
+//     });
+// });
+
+// app.get('/blog', function (req, res) {
+//     initApi(req).then(function (api) {
+//         api.query(
+//             Prismic.Predicates.at('document.type', 'post')
+//         ).then(function (response) {
+//             // "response" is the data object you can view with the Prismic API browser.
+//             res.render('blog', {
+//                 document: response.results,
+//                 pageTitle: "Blog",
+//             });
+//         });
+//     });
+// });
+
+// app.get('/posts/:postTitle', function (req, res) {
+//     let url = './posts/' + req.params.postTitle;
+//     initApi(req).then(function (api) {
+//         api.query(
+//             Prismic.Predicates.at('document.type', 'post')
+//         ).then(function (response) {
+//             // "response" is the data object you can view with the Prismic API browser.
+//             if (url) {
+//                 res.render('post', {
+//                     document: response.results,
+//                     pageTitle: "Blog Post",
+//                     title: req.params.postTitle.replace(/-/g, ' '),
+//                 });
+//             }
+//         });
+//     });
+// });
+
+// app.get('/media', function (req, res) {
+//     res.render('media', {
+//         pageTitle: "Media",
+//     });
+// });
+
 app.get('/', function (req, res) {
-    res.render('home', {
-        pageTitle: 'Home',
-    });
-});
-
-app.get('/about', function (req, res) {
-    res.render('about', {
-        pageTitle: "About",
-    });
-});
-
-app.get('/technology', function (req, res) {
-    res.render('technology', {
-        pageTitle: "Technology",
-    });
-});
-
-app.get('/blog', function (req, res) {
-    initApi(req).then(function (api) {
-        api.query(
-            Prismic.Predicates.at('document.type', 'post')
-        ).then(function (response) {
-            // "response" is the data object you can view with the Prismic API browser.
-            res.render('blog', {
-                document: response.results,
-                pageTitle: "Blog",
-            });
-        });
-    });
-});
-
-app.get('/posts/:postTitle', function (req, res) {
-    let url = './posts/' + req.params.postTitle;
-    initApi(req).then(function (api) {
-        api.query(
-            Prismic.Predicates.at('document.type', 'post')
-        ).then(function (response) {
-            // "response" is the data object you can view with the Prismic API browser.
-            if (url) {
-                res.render('post', {
-                    document: response.results,
-                    pageTitle: "Blog Post",
-                    title: req.params.postTitle.replace(/-/g, ' '),
-                });
-            }
-        });
-    });
-});
-
-app.get('/media', function (req, res) {
-    res.render('media', {
-        pageTitle: "Media",
-    });
-});
-
-app.get('/contact', function (req, res) {
     res.render('contact', {
         pageTitle: "Contact",
         responseBool: false,
     });
 });
 
-app.post('/contact', function (req, res) {
+app.post('/', function (req, res) {
 
     let ifError = false;
 
