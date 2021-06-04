@@ -334,7 +334,7 @@ footer a:hover {
 
 .tech-card-inner-wrap {
     border-radius: 8px;
-    background-color: var(--secondary-very-light);
+    background-color: var(--primary-very-light);
     /* background: -moz-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
     background: -webkit-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
     background: -o-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
