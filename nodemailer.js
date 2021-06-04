@@ -35,7 +35,7 @@ function inquiryTemplate() {
     let inqTemplate = `
 
     <div style='max-width: 80%; padding: 30px; border: 1px solid lightgrey; border-radius: 12px; margin: 15px;'>
-        <h2>Hi Ash, someone is looking at the LumberJack Theme</h2>
+        <h2>Hi Max, looks like an order is coming in.</h2>
             <p>Below is a copy of the email.</p> 
         <h2>From:</h2>
             <p style='padding: 0 30px;'><strong>${user_name}</strong></p>
@@ -59,7 +59,7 @@ function confirmTemplate() {
     let confTemplate = `
 
     <div style='max-width: 80%; padding: 30px; border: 1px solid lightgrey; border-radius: 12px; margin: 15px;'>   
-        <h2>Hi ${user_name}, thanks for checking out LumberJack.</h2>
+        <h2>Hi ${user_name}, thanks for checking out Wyldgreens.</h2>
             <p>This is an automatic response confirming that your email was sent. I will reach out to you within the next few days. Below is a copy of your email.</p> 
             <p>Remember, this is an automatic email and doesn't accept replys.</p>
         <h2>From:</h2>
@@ -115,15 +115,15 @@ function newTemplate() {
 // Nodemailer email objects
 function mailNewInquiry(user_name, user_email, message) {
     return `{"from": "info@ashthomasweb.com",
-    "to": "rideoutweb@gmail.com",
-    "subject": "A person is reaching out about the LumberJack theme.",
+    "to": "alek@alekhess.com",
+    "subject": "You are receiving a Wyldgreens order.",
     "html": "${inquiryTemplate()}"}`;
 };
 
 function mailConfirmation(user_name, user_email, message) {
     return `{"from": "info@ashthomasweb.com",
     "to": "${user_email}",
-    "subject": "This is your email confirmation from LumberJack!",
+    "subject": "This is your email confirmation from Wyldgreens!",
     "html": "${confirmTemplate()}"}`;
 };
 
