@@ -10,7 +10,16 @@ const nodemailer = require("nodemailer");
 const {
     user_name,
     user_email,
+    user_address,
+    user_phone,
     message,
+    one_time,
+    weekly,
+    mix_farmers,
+    mix_custom,
+    mix_healthy,
+    mix_salad,
+    mix_spicy
 } = require('./app.js');
 
 // Mailer transport object 
@@ -23,6 +32,49 @@ var transporter = nodemailer.createTransport({
         pass: process.env.MAIL_PASS,
     }
 });
+
+
+function scheduleChoice() {
+    if ( one_time !== undefined ) {
+        return 'One Time Delivery'
+    } else if ( weekly !== undefined ) {
+        return 'Weekly Delivery'
+    }
+}
+
+function mixChoice() {
+    let farmers = '';
+    let custom = '';
+    let healthy = '';
+    let salad = '';
+    let spicy = '';
+
+    if (mix_farmers !== undefined ) {
+        farmers = 'Farmer\'s Mix<br>';
+    }
+
+    if (mix_custom !== undefined ) {
+        custom = 'Custom Mix<br>';
+    }
+
+    if (mix_healthy !== undefined ) {
+        healthy = 'Healthy Mix<br>';
+    }
+
+    if (mix_salad !== undefined ) {
+        salad = 'Salad Mix<br>';
+    }
+
+    if (mix_spicy !== undefined ) {
+        spicy = 'Spicy Mix<br>';
+    }
+
+    return farmers + custom + healthy + salad + spicy;
+}
+
+function subjectLineDate() {
+    return new Date().toString().slice(0, 16);
+}
 
 // ** LumberJack-Setup - Editing supplied HTML email templates **
 
@@ -41,10 +93,18 @@ function inquiryTemplate() {
             <p style='padding: 0 30px;'><strong>${user_name}</strong></p>
         <h2>Email:</h2>
             <p style='padding: 0 30px;'>${user_email}</p>
+        <h2>Address:</h2>
+            <p style='padding: 0 30px;'>${user_address}</p>
+        <h2>Phone:</h2>
+            <p style='padding: 0 30px;'>${user_phone}</p>
+        <h2>Frequency:</h2>
+            <p style='padding: 0 30px;'>${scheduleChoice()}</p>
+        <h2>Mix Choice:</h2>
+            <p style='padding: 0 30px;'>${mixChoice()}</p>
         <h2>Message:</h2>
             <p style='padding: 0 30px;'>${message}</p>
     </div>
-    
+   
     `; // Do not remove backtick
 
     let output = inqTemplate.replace(/\n/g, "").replace(/\r/g, "<br>");
@@ -93,7 +153,7 @@ function newTemplate() {
     let newTemplate = `
 
     <div style='max-width: 80%; padding: 30px; border: 1px solid lightgrey; border-radius: 12px; margin: 15px;'>
-        <h2>Hello, this is a new template for you to use.</h2>
+        <h2 style='color: #000!important;'>Hello, this is a new template for you to use.</h2>
             <p>Below is a copy of the email.</p> 
         <h2>From:</h2>
             <p style='padding: 0 30px;'><strong>${user_name}</strong></p>
@@ -102,7 +162,7 @@ function newTemplate() {
         <h2>Message:</h2>
             <p style='padding: 0 30px;'>${message}</p>
     </div>
-    
+   
     `; // Do not remove backtick
 
     let output = newTemplate.replace(/\n/g, "").replace(/\r/g, "<br>");
@@ -115,24 +175,24 @@ function newTemplate() {
 // Nodemailer email objects
 function mailNewInquiry(user_name, user_email, message) {
     return `{"from": "info@ashthomasweb.com",
-    "to": "ashleythomasweb@gmail.com",
-    "subject": "You are receiving a Wyldgreens order.",
+    "to": "alek@alekhess.com",
+    "subject": "New Wyld order! From: ${user_name} on ${subjectLineDate()}",
     "html": "${inquiryTemplate()}"}`;
 };
 
 function mailConfirmation(user_name, user_email, message) {
     return `{"from": "info@ashthomasweb.com",
     "to": "${user_email}",
-    "subject": "This is your email confirmation from Wyldgreens!",
+    "subject": "Wyld order succesfully placed on ${subjectLineDate()}",
     "html": "${confirmTemplate()}"}`;
 };
 
 
 function newEmailTemp(user_name, user_email, message) {
     return `{"from": "info@ashthomasweb.com",
-    "to": "rideoutweb@gmail.com",
-    "subject": "This is your email confirmation",
-    "html": "${newTemplate()}"}`;
+    "to": "ashthomasweb@gmail.com",
+    "subject": "New Wyld order! From: ${user_name} on ${subjectLineDate()}",
+    "html": "${inquiryTemplate()}"}`;
 };
 
 

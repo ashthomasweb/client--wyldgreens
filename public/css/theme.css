@@ -12,7 +12,7 @@ light green: #8cc63f
 beige: #f9eccc
 wyld: #70c051
  */
- 
+
 :root {
     /* primary theme colors  */
     --primary-color: #222222;
@@ -22,13 +22,13 @@ wyld: #70c051
 
     /* f9eccc */
     /* secondary theme colors  */
-    --secondary-color: #39b55a; 
-    --secondary-light: #41985d5c; 
+    --secondary-color: #39b55a;
+    --secondary-light: #41985d5c;
     --secondary-pale: #d7f1b5;
     --secondary-very-light: #fffbf5;
 
 
-    
+
     /* secondary theme colors - lumberjack  */
     /* --secondary-color: #98887f; 
     --secondary-light: #c7b5ab; 
@@ -40,7 +40,7 @@ wyld: #70c051
     /* highlight color  */
     --highlight: #f0e2d0;
     --borders: #3a3b48;
-    
+
     /* greyscale theme colors  */
     --border-light: #e6e6e6;
     --primary-background: #ffffff;
@@ -55,9 +55,9 @@ wyld: #70c051
     --divider-top: #f0f0f0;
     --divider-bottom: #f5f5f5;
 
-   /* fonts */
-   --headers: Crete round, serif;
-   --copy: nunito, sans-serif;
+    /* fonts */
+    --headers: Crete round, serif;
+    --copy: nunito, sans-serif;
 }
 
 body {
@@ -68,7 +68,12 @@ body {
     color: var(--copy-mid);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--copy-dark);
 }
 
@@ -118,7 +123,8 @@ footer a:hover {
     border-bottom: 4px solid var(--borders);
 }
 
-.start-impact { /* On contact page, this element takes place of "Contact Me" link. This is styled the same without a pointer event or link */
+.start-impact {
+    /* On contact page, this element takes place of "Contact Me" link. This is styled the same without a pointer event or link */
     padding-bottom: 3px;
     border-top: 4px solid var(--primary-color);
     border-bottom: 4px solid var(--primary-color);
@@ -219,7 +225,7 @@ footer a:hover {
     background: -ms-linear-gradient(white, var(--divider-bottom));
     background: linear-gradient(white, var(--divider-bottom));
 }
-  
+
 .greeting-pane--home {
     background-color: #222222;
 }
@@ -246,7 +252,8 @@ footer a:hover {
 
 .navbar-pane li {
     padding-bottom: 3px;
-    border-radius: 4px; /* side curve of underbar */
+    border-radius: 4px;
+    /* side curve of underbar */
     color: var(--copy-dark);
 }
 
@@ -273,7 +280,8 @@ footer a:hover {
 }
 
 .h-menu-drop li {
-    border-radius: 4px;  /* side curve of underbar */
+    border-radius: 4px;
+    /* side curve of underbar */
     color: var(--copy-dark);
 }
 
@@ -281,7 +289,8 @@ footer a:hover {
     border-bottom: 5px solid var(--highlight);
 }
 
-.current { /* this class is assigned via ejs in views/partials/header, cannot be found in any other .css file */
+.current {
+    /* this class is assigned via ejs in views/partials/header, cannot be found in any other .css file */
     border-bottom-color: var(--highlight) !important;
     color: var(--highlight) !important;
 }
@@ -378,11 +387,13 @@ footer a:hover {
     background-color: var(--secondary-color);
 }
 
-.intro-text-box p:nth-child(3) {  /* description */
+.intro-text-box p:nth-child(3) {
+    /* description */
     color: var(--copy-mid);
 }
 
-.intro-read-more { /* button */
+.intro-read-more {
+    /* button */
     border-color: var(--secondary-light);
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
