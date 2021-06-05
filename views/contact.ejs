@@ -34,7 +34,7 @@
 <div class="l-divider divider-top"></div>
 <div style="height: 40px;"></div>
 
-<img class="wyld-why-img" style=" " src="/images/greens/top-down-transparent.png">
+<img class="wyld-why-img" src="/images/greens/top-down-transparent.png">
 
 <div class="wyld-why">
     <h3>A Healthier Planet - A Healthier You</h3>
@@ -43,7 +43,7 @@
         <li>We're committed to changing the food industry by providing safe, locally sourced, chemical-free, nutrient-dense
             microgreens right to your door!</li>
             <li>Our Greens are grown locally in the Colorado mountains, free from bugs, mold, and without the need for any harmful pesticides or chemicals.</li>
-            <li>Our mixes are customizable, packed with flavor, and dense in key nutrients, vitamins, flavonoids, and fiber.</li>
+            <li>Our mixes are customizable, packed with flavor, and dense in key nutrients, vitamins, flavinoids, and fiber.</li>
             <li>We strive to deliver high-quality products with minimal waste or footprint. Our packaging is reusable, recyclable, and keeps greens fresh for weeks!</li>
             <li>We'll personally deliver to your doorstep on your preferred date - free of charge with no contact necessary.</li>
         </ul>
@@ -75,13 +75,13 @@
         <div class="tech-card-inner-wrap">
 
             <div class="tech-card-top-section">
-                <h3><a class="no-style" href="https://www.ejs.co" target="_blank">Farmer's Choice</a></h3>
-                <h4 class="mix-lower-heading">Sunflower, Chorizo, Olives.</h4>
+                <h3><a class="no-style" href="https://www.ejs.co" target="_blank">Farmer's Mix</a></h3>
+                <h4 class="mix-lower-heading">Crop dependent.</h4>
             </div>
 
             <div class="tech-card-bottom-section">
                 <div class="card-box-center">
-                    <img class="card-art" src="/images/greens/green3.jpg">
+                    <img class="card-art" src="/images/greens/green4.jpg">
                 </div>
             </div>
 
@@ -93,12 +93,12 @@
 
             <div class="tech-card-top-section">
                 <h3><a class="no-style" href="https://nodemailer.com/about/" target="_blank">Custom Order</a></h3>
-                <h4 class="mix-lower-heading">You show it, we grow it.</h4>
+                <h4 class="mix-lower-heading">You want it, we grow it.</h4>
             </div>
 
             <div class="tech-card-bottom-section">
                 <div class="card-box-center">
-                    <img class="card-art" src="/images/greens/green4.jpg">
+                    <img class="card-art" src="/images/greens/green3.jpg">
                 </div>
             </div>
 
@@ -114,8 +114,8 @@
         <div class="tech-card-inner-wrap">
 
             <div class="tech-card-top-section">
-                <h3><a class="no-style" href="https://www.ejs.co" target="_blank">Power Greens</a></h3>
-                <h4 class="mix-lower-heading">Radish, Radichio, Pinocchio.</h4>
+                <h3><a class="no-style" href="https://www.ejs.co" target="_blank">Salad Mix</a></h3>
+                <h4 class="mix-lower-heading">Sunflower, Brocolli, Cabbage, Rutabega</h4>
             </div>
 
             <div class="tech-card-bottom-section">
@@ -131,8 +131,8 @@
         <div class="tech-card-inner-wrap">
 
             <div class="tech-card-top-section">
-                <h3><a class="no-style" href="https://nodemailer.com/about/" target="_blank">Sprouted Life</a></h3>
-                <h4 class="mix-lower-heading">Brocolli, Brussels, Oysters.</h4>
+                <h3><a class="no-style" href="https://nodemailer.com/about/" target="_blank">Healthy Mix</a></h3>
+                <h4 class="mix-lower-heading">Brocolli, Pea, Radish</h4>
             </div>
 
             <div class="tech-card-bottom-section">
@@ -260,34 +260,37 @@
                     <input class="form-entry" type="text" name="user_name" oninput="formFieldCheck()">
                     <label class="form-title">Email:</label>
                     <input class="form-entry" type="email" name="user_email" oninput="formFieldCheck()">
-                    <label class="form-title">Address</label>
-                    <input class="form-entry" type="text">
+                    <label class="form-title" >Address</label>
+                    <input class="form-entry" type="text" name="user_address" >
                     <label class="form-title">Phone Number</label>
-                    <input class="form-entry" type="text">
+                    <input class="form-entry" type="text" name="user_phone" >
                     <button id="contact-button" class="contact-submit" type="submit" onclick="sendingText()">Send</button>
                 </div>
                 <div class="wyld-options">
 
                     <div class="wyld-form-plans">
                         <label style="display: inline-block;" class="form-title">One-time</label>
-                        <input style="display: inline-block;" type="checkbox">
+                        <input style="display: inline-block;" type="checkbox" name="one_time">
                         <br>
                         <label style="display: inline-block;" class="form-title">Weekly Delivery</label>
-                        <input style="display: inline-block;" type="checkbox">
+                        <input style="display: inline-block;" type="checkbox" name="weekly">
                     </div>
                     
                     <div class="wyld-form-mix">
-                        <label style="display: inline-block;" class="form-title">Farmer's Choice</label>
-                        <input style="display: inline-block;" type="checkbox">
+                        <label style="display: inline-block;" class="form-title">Farmer's Mix</label>
+                        <input style="display: inline-block;" type="checkbox" name="mix_farmers">
                         <br>
                         <label style="display: inline-block;" class="form-title">Custom Order</label>
-                        <input style="display: inline-block;" type="checkbox">
+                        <input style="display: inline-block;" type="checkbox" name="mix_custom">
                         <br>
-                        <label style="display: inline-block;" class="form-title">Power Greens</label>
-                        <input style="display: inline-block;" type="checkbox">
+                        <label style="display: inline-block;" class="form-title">Healthy Mix</label>
+                        <input style="display: inline-block;" type="checkbox" name="mix_healthy">
                         <br>
-                        <label style="display: inline-block;" class="form-title">Sprouted Life</label>
-                        <input style="display: inline-block;" type="checkbox">
+                        <label style="display: inline-block;" class="form-title">Salad Mix</label>
+                        <input style="display: inline-block;" type="checkbox" name="mix_salad">
+                        <br>
+                        <label style="display: inline-block;" class="form-title">Spicy Mix</label>
+                        <input style="display: inline-block;" type="checkbox" name="mix_spicy">
                     </div>
                     
                 </div>
