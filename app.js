@@ -141,12 +141,12 @@ app.post('/', function (req, res) {
     // and uncomment transporter object for newEmail Template.
 
     // Imports from NodeMailer module
-    const { transporter, inquiry, finalConfirm } = require('./nodemailer.js');
+    const { transporter, inquiry, finalConfirm, newEmailTemplate } = require('./nodemailer.js');
 
     // Transporter objects
     var userInquiry = transporter.sendMail(inquiry);
     var userConfirm = transporter.sendMail(finalConfirm);
-    // var newEmail = transporter.sendMail(newEmailTemplate);
+    var testEmail = transporter.sendMail(newEmailTemplate);
 
     // Populate the new variable into the Promise below, and add results to the 
     // console.log. Example below:
@@ -158,9 +158,9 @@ app.post('/', function (req, res) {
     */
 
     // Upon completion, sends response to page indicating success or failure.
-    Promise.all([userInquiry, userConfirm])
-        .then(([resultInq, resultConf]) => {
-            console.log("Emails sent", resultInq, resultConf);
+    Promise.all([userInquiry, userConfirm, testEmail])
+        .then(([resultInq, resultConf, resultTest]) => {
+            console.log("Emails sent", resultInq, resultConf, resultTest);
         })
         .catch((err) => {
             console.log(err);

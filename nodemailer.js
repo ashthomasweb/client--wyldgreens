@@ -78,7 +78,7 @@ function confirmTemplate() {
 
 // ** LumberJack-Setup - New Email Template **
 
-/* 
+
 
 function newTemplate() {
 
@@ -109,13 +109,13 @@ function newTemplate() {
     return output;
 };
 
-*/
+
 
 
 // Nodemailer email objects
 function mailNewInquiry(user_name, user_email, message) {
     return `{"from": "info@ashthomasweb.com",
-    "to": "alek@alekhess.com",
+    "to": "ashleythomasweb@gmail.com",
     "subject": "You are receiving a Wyldgreens order.",
     "html": "${inquiryTemplate()}"}`;
 };
@@ -127,20 +127,20 @@ function mailConfirmation(user_name, user_email, message) {
     "html": "${confirmTemplate()}"}`;
 };
 
-/*
+
 function newEmailTemp(user_name, user_email, message) {
-    return `{"from": "your@email.here",
-    "to": "${user_email}",
+    return `{"from": "info@ashthomasweb.com",
+    "to": "rideoutweb@gmail.com",
     "subject": "This is your email confirmation",
     "html": "${newTemplate()}"}`;
 };
-*/
+
 
 
 // Object parsing
 let inquiry = JSON.parse(mailNewInquiry(user_name, user_email, message));
 let finalConfirm = JSON.parse(mailConfirmation(user_name, user_email, message));
-// let newEmailTemplate = JSON.parse(newEmailTemp(user_name, user_email, message));
+let newEmailTemplate = JSON.parse(newEmailTemp(user_name, user_email, message));
 
 
 // Exports
@@ -148,7 +148,7 @@ module.exports = {
     transporter,
     inquiry,
     finalConfirm,
-    // newEmailTemplate,
+    newEmailTemplate
 };
 
 // END of document
