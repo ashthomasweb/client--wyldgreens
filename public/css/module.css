@@ -251,6 +251,12 @@
     margin: 0 auto;
 }
 
+.how-subtitle {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px auto 35px;
+}
+
 .wyld-why-img {
     margin: 0 auto 10px;
     width: 450px;
@@ -453,7 +459,7 @@
     position: relative;
     display: inline-block;
     width: 300px;
-    height: 282px;
+    height: 420px;
     margin: 0 30px;
     padding: 4px;
 }
@@ -462,7 +468,7 @@
     position: relative;
     display: inline-block;
     width: 300px;
-    height: 282px;
+    height: 420px;
     margin: 0px 30px;
     padding: 4px;
 }
@@ -476,7 +482,7 @@
 
 .tech-card-top-section {
     width: 100%;
-    height: 33%;
+    height: 27%;
     padding: 20px 30px;
     border-bottom: 1px solid;
 }
@@ -484,7 +490,7 @@
 .tech-card-bottom-section {
     position: relative;
     width: 100%;
-    height: 67%;
+    height: 73%;
     padding: 0px 0;
     overflow: hidden;
     border-bottom-left-radius: 7px;
@@ -515,6 +521,23 @@
     margin: 9px 18px 10px 0;
     padding: 8px 0px 25px;
     border: 1px solid;
+}
+
+.mix-text {
+    padding: 0 25px;
+    color: #222;
+    opacity: .7;
+}
+
+.custom-ingredients {
+    display: inline-block;
+    width: 45%;
+    margin: 30px auto;
+    font-size: 18px;
+    opacity: .8;
+    text-align: left;
+    position: relative; 
+    left: 20px;
 }
 
 .text-pane--tech {

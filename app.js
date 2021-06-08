@@ -176,6 +176,40 @@ app.post('/', function (req, res) {
 
 });
 
+app.get('/mock1', function (req, res) {
+    res.render('mock1', {
+        pageTitle: "Contact",
+        responseBool: false,
+    });
+});
+
+app.get('/mock2', function (req, res) {
+    res.render('mock2', {
+        pageTitle: "Contact",
+        responseBool: false,
+    });
+});
+
+app.get('/mock3', function (req, res) {
+    res.render('mock3', {
+        pageTitle: "Contact",
+        responseBool: false,
+    });
+});
+
+app.get('/mock4', function (req, res) {
+    res.render('mock4', {
+        pageTitle: "Contact",
+        responseBool: false,
+    });
+});
+
+app.get('/mock5', function (req, res) {
+    res.render('mock5', {
+        pageTitle: "Contact",
+        responseBool: false,
+    });
+});
 
 // || Listener 
 
