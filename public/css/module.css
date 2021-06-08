@@ -280,21 +280,71 @@
     margin: 0 auto 10px;
 }
 
+.why-header {
+    text-align: center !important;
+    font-size: 26px;
+    margin: 0 auto 10px;
+}
+
+.why-list {
+    border: 5px solid var(--secondary-color);
+    border-radius: 12px;
+    margin: 30px auto;
+    padding: 30px 10px;
+    background-color: white;
+}
+
+.farm-background {
+    position: absolute;
+}
+
 .wyld-why ul {
-    list-style-image: url('/images/icons/leaf-small.png');
+    /* list-style-image: url('/images/icons/leaf-small.png'); */
 }
 
 .wyld-why li {
     padding: 5px 0 5px 15px;
+    margin-bottom: 25px;
+
+}
+
+.mountains {
+    /* list-style-image: url('/images/icons/why/mountains.png'); */
+    display: inline-block;
+    width: 60%;
+}
+
+.custom {
+    /* list-style-image: url('/images/icons/why/custom.png'); */
+    display: inline-block;
+    width: 60%;
+}
+
+.certified {
+    /* list-style-image: url('/images/icons/why/certified.png'); */
+    display: inline-block;
+    width: 60%;
+}
+
+.truck {
+    /* list-style-image: url('/images/icons/why/truck.png'); */
+    display: inline-block;
+    width: 60%;
+}
+
+.list-item {
+    display: inline-block;
+    width: 130px;
+    vertical-align: top;
 }
 
 .wyld-contact-info {
-    display: inline-block!important;
+    display: inline-block !important;
     width: 40%;
 }
 
 .wyld-options {
-    display: inline-block!important;
+    display: inline-block !important;
     width: 35%;
     position: relative;
     left: 63px;
@@ -308,7 +358,7 @@
     display: block;
     width: 200px;
     padding: 10px;
-    
+
 }
 
 .wyld-form-mix {
