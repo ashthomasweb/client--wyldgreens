@@ -185,12 +185,12 @@
 .how-it-works-wrapper {
     font-size: 25px;
     text-align: center;
-    width: 220px;
+    width: 356px;
     margin: 0 auto;
-    border: dashed 6px grey;
+    border: solid 1px #222;
     position: relative;
     background-color: white;
-    top: -18px;
+    top: -20px;
     border-radius: 5px;
 }
 
@@ -242,6 +242,8 @@
 }
 
 
+
+
 .why-img {
     position: relative;
     /* top: -23px;
@@ -254,12 +256,12 @@
 .how-subtitle {
     font-size: 24px;
     text-align: center;
-    margin: 20px auto 35px;
+    margin: 0px auto 35px;
 }
 
 .wyld-why-img {
     margin: 0 auto 10px;
-    width: 450px;
+    width: 600px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
