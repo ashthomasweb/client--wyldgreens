@@ -192,6 +192,7 @@
     background-color: white;
     top: -20px;
     border-radius: 5px;
+    z-index: 10;
 }
 
 .how-it-works-wrapper h3 {
@@ -261,10 +262,29 @@
 
 .wyld-why-img {
     margin: 0 auto 10px;
-    width: 600px;
+    width: 420px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.committed {
+    max-width: 550px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 22px;
+    color: var(--copy-dark)!important;
+    line-height: 1.3;
+    position: relative;
+}
+
+.grey-back {
+    width: 100%;
+    height: 327px;
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+    background-color: lightgray;
 }
 
 .wyld-why {
@@ -310,6 +330,19 @@
 .farm-background {
     position: absolute;
     opacity: 0.6;
+    width: 100%;
+    height: 1313px;
+
+}
+
+.cloud {
+    position: absolute;
+    opacity: 0.4;
+    left: 97px;
+    width: 80%;
+    /* width: 100%; */
+    /* height: 1352px; */
+
 }
 
 .wyld-why ul {
