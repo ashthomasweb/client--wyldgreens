@@ -5,7 +5,14 @@ function mockPage(input) {
     let host = window.location.hostname;
     console.log(host);
     console.log(input);
+    console.log
+    if ( host === 'localhost' ) {
+        window.location.href = 'http://' + host + ':3000/' + input
+    } else {
+        window.location.href = window.location.protocol + '//' + host + '/' + input;
+    }
 }
+
 // || Contact form check for field input then change button color 
 
 function formFieldCheck() {
