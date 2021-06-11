@@ -1,6 +1,11 @@
 // Main JavaScript file for "LumberJack"
 
 
+function mockPage(input) {
+    let host = window.location.hostname;
+    console.log(host);
+    console.log(input);
+}
 // || Contact form check for field input then change button color 
 
 function formFieldCheck() {

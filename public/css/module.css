@@ -345,6 +345,18 @@
 
 }
 
+.mock-buttons {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mock-buttons button {
+    display: block;
+}
+
+
 .wyld-why ul {
     /* list-style-image: url('/images/icons/leaf-small.png'); */
 }
