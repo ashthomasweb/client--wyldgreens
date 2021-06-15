@@ -14,6 +14,11 @@ function mockPage(input) {
    
 }
 
+function addToOrder(input) {
+    console.log(input);
+    document.querySelector(`[name="${input}"]`).checked = true;
+}
+
 // || Contact form check for field input then change button color 
 
 function formFieldCheck() {

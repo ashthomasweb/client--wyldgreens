@@ -506,7 +506,7 @@
     position: relative;
     display: inline-block;
     width: 300px;
-    height: 420px;
+    height: 450px;
     margin: 0 30px;
     padding: 4px;
 }
@@ -515,7 +515,7 @@
     position: relative;
     display: inline-block;
     width: 300px;
-    height: 420px;
+    height: 450px;
     margin: 0px 30px;
     padding: 4px;
 }
@@ -552,6 +552,14 @@
 
 .tech-price {
     font-size: 22px;
+}
+
+.mix-order {
+    margin-top: 10px;
+}
+
+.plan-order {
+    margin-top: 10px;
 }
 
 .card--tech-innerleft {
