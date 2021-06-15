@@ -23,7 +23,7 @@ wyld: #70c051
     /* f9eccc */
     /* secondary theme colors  */
     --secondary-color: #39b55a;
-    --secondary-light: #41985d5c;
+    --secondary-light: #41984461;
     --secondary-pale: #d7f1b5;
     --secondary-very-light: #fffbf5;
 
@@ -61,7 +61,7 @@ wyld: #70c051
 }
 
 body {
-    background-image: url(/images/patterns/purty-wood.png);
+    background-image: url(/images/patterns/purty-wood-copy.png);
     background-attachment: fixed;
     background-size: auto;
     /* background-color: #e9e9e1; */

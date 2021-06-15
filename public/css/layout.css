@@ -155,7 +155,8 @@
 }
 
 .l-box-third img {
-    width: 150px;
+    height: 119px;
+    width: auto;
     position: relative;
     margin-bottom: 25px;
     /* margin: 0 auto; */

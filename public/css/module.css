@@ -1051,6 +1051,10 @@
     border-bottom: 1px solid;
 }
 
+.contact-card-top-section input[type=checkbox] {
+    float: right;
+}
+
 .contact-card-bottom-section {
     position: relative;
     width: 100%;
