@@ -64,7 +64,7 @@ body {
     background-image: url(/images/patterns/purty-wood-copy.png);
     background-attachment: fixed;
     background-size: auto;
-    /* background-color: #e9e9e1; */
+    background-color: #e9e9e1;
     color: var(--copy-mid);
 }
 
