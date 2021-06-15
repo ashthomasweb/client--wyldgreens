@@ -579,7 +579,7 @@
 .custom-ingredients {
     display: inline-block;
     width: 45%;
-    margin: 30px auto;
+    margin: 0px auto;
     font-size: 18px;
     opacity: .8;
     text-align: left;
