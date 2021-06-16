@@ -190,7 +190,7 @@
     border: solid 1px #222;
     position: relative;
     background-color: white;
-    top: -20px;
+    top: -30px;
     border-radius: 5px;
     z-index: 10;
 }
@@ -586,7 +586,7 @@
 
 .custom-ingredients {
     display: inline-block;
-    width: 45%;
+    width: 22%;
     margin: 0px auto;
     font-size: 18px;
     opacity: .8;
