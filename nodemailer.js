@@ -10,7 +10,7 @@ const nodemailer = require("nodemailer");
 const {
     user_name,
     user_email,
-    user_address,
+    user_city,
     user_phone,
     message,
     one_time,
@@ -94,7 +94,7 @@ function inquiryTemplate() {
         <h2>Email:</h2>
             <p style='padding: 0 30px;'>${user_email}</p>
         <h2>Address:</h2>
-            <p style='padding: 0 30px;'>${user_address}</p>
+            <p style='padding: 0 30px;'>${user_city}</p>
         <h2>Phone:</h2>
             <p style='padding: 0 30px;'>${user_phone}</p>
         <h2>Frequency:</h2>
