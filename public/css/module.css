@@ -346,10 +346,12 @@
 }
 
 .mock-buttons {
+    /* display: none; */
     position: fixed;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 103;
 }
 
 .mock-buttons button {
@@ -435,6 +437,7 @@
     transform: translateX(-50%);
     display: block;
     width: 220px;
+    z-index: 10;
 }
 
 .text-pane--home {
@@ -556,6 +559,16 @@
 
 .mix-order {
     margin-top: 10px;
+}
+
+.plan-back {
+    position: absolute;
+    background-color: blue;
+    height: 262px;
+    width: 100%;
+    margin-top: -15px;
+    opacity: .1;
+    z-index: 1;
 }
 
 .plan-order {
