@@ -416,11 +416,21 @@
 
 .wyld-form-plans {
     border: solid 1px var(--secondary-color);
+    border-radius: 4px;
     display: block;
-    width: 200px;
-    padding: 10px;
-
+    width: 300px;
+    padding: 15px;
+    background-color: whitesmoke;
+    position: relative;
+    left: 30px;
+    bottom: 5px;
 }
+
+.wyld-form-plans label {
+    font-size: 22px;
+    /* font-weight: 700; */
+}
+
 
 .wyld-form-mix {
     border: solid 1px var(--secondary-color);
@@ -428,6 +438,8 @@
     width: 200px;
     padding: 10px;
     margin-top: 11px;
+    background-color: whitesmoke;
+
 }
 
 .avatar-img {
@@ -1068,10 +1080,17 @@
     position: relative;
     display: block;
     width: 800px;
-    height: 700px;
+    height: 720px;
     padding: 4px;
     margin: 0 auto 30px;
 }
+
+.card--contact-form ::placeholder {
+    opacity: 0.4;
+    font-size: 16px;
+    font-style: italic;
+}
+
 
 .contact-card-inner-wrap {
     position: absolute;
@@ -1090,6 +1109,10 @@
     float: right;
 }
 
+.wyld-form-mix input[type=checkbox] {
+    float: right;
+}
+
 .contact-card-bottom-section {
     position: relative;
     width: 100%;
@@ -1101,7 +1124,7 @@
     position: absolute;
     top: -4px;
     right: -4px;
-    width: 161px;
+    width: 375px;
     height: 137px;
     border: 4px solid;
     margin: 0 auto;

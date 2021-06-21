@@ -495,20 +495,20 @@
                                         <div class="wyld-contact-info">
 
                                             <label class="form-title">Your Name:</label>
-                                            <input class="form-entry" type="text" name="user_name"
+                                            <input class="form-entry" type="text" name="user_name" placeholder="Jean Luc"
                                                 oninput="formFieldCheck()">
                                             <label class="form-title">Email:</label>
-                                            <input class="form-entry" type="email" name="user_email"
+                                            <input class="form-entry" type="email" name="user_email" placeholder="example@email.com"
                                                 oninput="formFieldCheck()">
                                             <label class="form-title">City/Town</label>
-                                            <input class="form-entry" type="text" name="user_city">
+                                            <input class="form-entry" type="text" name="user_city" placeholder="Boulder, Superior, Louisville, Lafayette">
                                             <label class="form-title">Phone Number</label>
-                                            <input class="form-entry" type="text" name="user_phone">
+                                            <input class="form-entry" type="text" name="user_phone" placeholder="303 - 494 - 1274">
                                             <button id="contact-button" class="contact-submit" type="submit"
                                                 onclick="sendingText()">Order</button>
                                         </div>
                                         <div class="wyld-options">
-
+                                            <!-- <h3 style="margin: 0 0 10px; font-size: 18px;">Frequency</h3> -->
                                             <div class="wyld-form-plans">
                                                 <label style="display: inline-block;" class="form-title">One-time
                                                     Order</label>
@@ -519,25 +519,24 @@
                                                 <input style="display: inline-block;" type="checkbox" name="weekly">
                                             </div>
 
-                                            
+
                                         </div>
                                     </div>
-                                    
+
                                     <div class="contact-card-bottom-section">
-                                        <div style="display: inline-block; margin: 0 30px 20px 0; " class="wyld-form-mix">
+                                        <div style="display: inline-block; margin: 0 30px 20px 0; "
+                                            class="wyld-form-mix">
                                             <label style="display: inline-block;" class="form-title">Farmer's
                                                 Mix</label>
-                                            <input style="display: inline-block;" type="checkbox"
-                                                name="mix_farmers">
+                                            <input style="display: inline-block;" type="checkbox" name="mix_farmers" >
                                             <br>
                                             <label style="display: inline-block;" class="form-title">Custom
                                                 Order</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_custom">
+                                            <input style="display: inline-block;" type="checkbox" name="mix_custom" >
                                             <br>
                                             <label style="display: inline-block;" class="form-title">Healthy
                                                 Mix</label>
-                                            <input style="display: inline-block;" type="checkbox"
-                                                name="mix_healthy">
+                                            <input style="display: inline-block;" type="checkbox" name="mix_healthy" >
                                             <br>
                                             <label style="display: inline-block;" class="form-title">Salad
                                                 Mix</label>
@@ -547,10 +546,19 @@
                                                 Mix</label>
                                             <input style="display: inline-block;" type="checkbox" name="mix_spicy">
                                         </div>
-                                        <p style="display: inline-block; font-size: 20px; max-width: 400px; text-align: center; margin: 10px auto;">Please leave us information regarding your order. We will be in
+                                        <div style="display: inline-block; max-width: 450px; position: relative; top: 13px; left: 30px;" class="" > 
+                                        
+                                            <p
+                                            style="font-size: 18px; line-height: 1.3; max-width: 400px; text-align: center; margin: 10px auto;">
+                                            Please leave us information regarding your order. We will be in
                                             touch shortly, but would like to know if you have any special requests.</p>
+                                            <p
+                                            style=" font-size: 18px; line-height: 1.3; max-width: 400px; text-align: center; margin: 10px auto;">
+                                            For Custom Orders, please indicate which greens you would like, and remember
+                                            that changes to your order type may take a few weeks to fill.</p>
+                                        </div>
                                         <label class="form-title">Message:</label>
-                                        <textarea class="form-textarea" name="message"
+                                        <textarea class="form-textarea" name="message" placeholder="Please leave us your order details."
                                             oninput="formFieldCheck()"></textarea>
                                     </div>
 
