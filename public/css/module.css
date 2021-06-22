@@ -579,6 +579,8 @@
     font-size: 22px;
 }
 
+
+
 .mix-order {
     margin-top: 10px;
     width: 150px;
@@ -643,6 +645,12 @@
     opacity: .7;
 }
 
+.custom-check {
+    /* display: inline-block; */
+    float: right;
+
+}
+
 .custom-ingredients {
     display: inline-block;
     width: 22%;
@@ -652,6 +660,10 @@
     text-align: left;
     position: relative; 
     left: 20px;
+}
+
+.custom-ing {
+    float: left;
 }
 
 .text-pane--tech {
