@@ -620,7 +620,7 @@ textarea:focus {
 .contact-submit {
     border-color: var(--secondary-color);
     border-top-right-radius: 12px;
-    border-bottom-left-radius: 12px;
+    /* border-bottom-left-radius: 12px; */
     color: var(--copy-dark);
     background-color: var(--secondary-color);
     transition: background-color .2s ease-out, color .2s ease-out;

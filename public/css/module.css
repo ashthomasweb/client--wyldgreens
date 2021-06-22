@@ -408,7 +408,7 @@
     display: inline-block !important;
     width: 35%;
     position: relative;
-    left: 108px;
+    left: 95px;
     bottom: 10px;
 
 }
@@ -421,10 +421,13 @@
 
 
 .wyld-form-plans {
-    border: solid 1px var(--secondary-color);
+    border-left: solid 1px var(--secondary-color);
+    border-bottom: solid 1px var(--secondary-color);
+    /* border: solid 1px var(--secondary-color); */
+
     border-bottom-left-radius: 4px;
     display: block;
-    width: 358px;
+    width: 371px;
     height: 126px;
     padding: 15px 20px 30px;
     background-color: whitesmoke;
@@ -1129,6 +1132,7 @@
 
 .contact-submit {
     position: absolute;
+    z-index: 20;
     top: -4px;
     right: -4px;
     width: 375px;
