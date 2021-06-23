@@ -527,6 +527,39 @@
     text-align: center;
 }
 
+.leaf-bullet-top {
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+    top: 19px;
+    left: 10px;
+    width: 13px;
+    opacity: .6;
+}
+
+.leaf-bullet-single {
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+    top: 18px;
+    left: 10px;
+    width: 13px;
+    opacity: .6;
+
+}
+
+.leaf-bullet-double {
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+    top: 29px;
+    left: 10px;
+    width: 13px;
+    opacity: .6;
+
+}
+
+
 .card--tech-left {
     position: relative;
     display: inline-block;
@@ -543,6 +576,25 @@
     height: 450px;
     margin: 0px 30px;
     padding: 4px;
+}
+
+.card--tech-sides {
+    position: relative;
+    display: inline-block;
+    width: 270px;
+    height: 450px;
+    margin: 0px 5px;
+    padding: 4px;
+}
+
+.card--tech-center {
+    position: relative;
+    display: inline-block;
+    width: 320px;
+    height: 500px;
+    margin: 0px 5px;
+    padding: 4px;
+    top: 10px;
 }
 
 .tech-card-inner-wrap {
@@ -608,7 +660,7 @@
 .plan-order {
     margin-top: 10px;
     border: 4px solid var(--secondary-color);
-    width: 300px;
+    width: 270px;
     height: 50px;
     position: absolute;
     bottom: 26px;

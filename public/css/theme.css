@@ -341,6 +341,14 @@ footer a:hover {
     background-color: var(--secondary-color);
 }
 
+.card--tech-center {
+    background-color: var(--secondary-color);
+}
+
+.card--tech-sides {
+    background-color: var(--secondary-color);
+}
+
 .tech-card-inner-wrap {
     border-radius: 8px;
     background-color: var(--primary-very-light);
