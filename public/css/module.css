@@ -688,12 +688,12 @@
     position: absolute;
     top: 0px;
     left: 45px;
-    font-size: 26px!important;
+    font-size: 26px !important;
     letter-spacing: 2px;
 }
 
 .cta-num-colon {
-    font-size: 20px!important;
+    font-size: 20px !important;
     position: relative;
     bottom: 2px;
 }
@@ -1263,6 +1263,13 @@
     margin: 10px auto;
     font-size: 20px;
     line-height: 1.6;
+}
+
+.grey-drop {
+    position: absolute !important;
+    width: 100% !important;
+    z-index: -1;
+    top: 0px;
 }
 
 .card--contact-form {
