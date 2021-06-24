@@ -151,7 +151,7 @@
 
 .l-box-third h3 {
     text-align: center;
-    font-size: 32px;
+    font-size: 31px;
 }
 
 .l-box-third img {
@@ -172,6 +172,9 @@
     line-height: 0;
 }
 
+.mix-wrap {
+    margin-bottom: 10px;
+}
 
 /* || Card Global */
 

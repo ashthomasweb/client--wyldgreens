@@ -681,6 +681,7 @@
 
 .form-num {
     display: inline-block;
+    width: 65px;
 }
 
 .cta-num {
