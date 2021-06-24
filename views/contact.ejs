@@ -293,40 +293,48 @@
                             <div style="height: 350px; width: 662px;" class="card card--tech-right">
                                 <div class="tech-card-inner-wrap">
 
-                                    <div class="tech-card-top-section">
+                                    <div class="tech-card-top-section ">
                                         <h3><a class="no-style" href="https://nodemailer.com/about/"
                                                 target="_blank">Custom Order</a></h3>
-                                        <h4 class="mix-lower-heading">Horizontal orientation? Inner layout still very
-                                            rough.</h4>
+                                        <h4 class="mix-lower-heading">Pick one to four greens and build your own mix.</h4>
                                     </div>
 
-                                    <div class="tech-card-bottom-section">
-                                        <div style="">
-                                            <img style="width: 40%; height: auto; top: 0px; padding: 10px; float: left; margin-left: 20px; "
+                                    <div class="tech-card-bottom-section ">
+                                        <div style="" class="wyld-left-section">
+                                            <img style="width: 40%; height: auto; top: -11px; position: relative; padding: 10px; float: left; margin-left: 20px; "
                                                 class="card-art" src="/images/greens/top-down-transparent.png">
                                         </div>
                                         <div style="position: relative; top: 50%; transform: translateY(-50%);  "
-                                            class="">
-                                            <p style="margin: 10px; padding: 0 20px;">This will collapse to vertical
-                                                arrangement on mobile. Pick up to 4 of our premium,
-                                                freshly grown ingredients. Please remember, custom orders may take a few
+                                            class="wyld-right-section">
+                                            <p style="margin: 10px; padding: 0 0px; opacity: .7; line-height: 1.1; color: #222; ">Our premium,
+                                                freshly grown ingredients are harvested and delivered the same day. Custom orders may take a few
                                                 weeks to initally fill.</p>
-                                            <ul class="custom-ingredients">
-                                                <li>- Broccoli</li>
-                                                <li>- Sunflower</li>
-                                                <li>- Rutabaga</li>
-                                                <li>- Pea</li>
-                                            </ul>
-                                            <ul class="custom-ingredients">
-                                                <li>- Mustard</li>
-                                                <li>- Radish</li>
-                                                <li>- Cabbage</li>
-                                                <li>- Ideas?</li>
+                                                <div class="ingred-box">
 
-                                            </ul>
+                                                    <ul class="custom-ingredients">
+                                                        <input type="checkbox" style="display: inline-block;">
+                                                        <li>- Broccoli</li><br>
+                                                        <input type="checkbox" style="display: inline-block;">
+                                                        <li>- Sunflower</li><br>
+                                                        <input type="checkbox" style="display: inline-block;">
+                                                        <li>- Rutabaga</li><br>
+                                                        <input type="checkbox" style="display: inline-block;">
+                                                        <li>- Pea</li><br>
+                                                    </ul>
+                                                    <ul class="custom-ingredients">
+                                                        <input type="checkbox" style="display: inline-block;">
+                                                        <li>- Mustard</li><br>
+                                                        <input type="checkbox" style="display: inline-block;">
+                                                        <li>- Radish</li><br>
+                                                        <input type="checkbox" style="display: inline-block;">
+                                                        <li>- Cabbage</li><br>
 
-                                            <button style="position: relative; bottom: -18px;" class="mix-order"
-                                                type="button" onclick="addToOrder('mix_custom')">Add 1 to order</button>
+                                                        
+                                                    </ul>
+                                                    <button style="right: 0px;" class="custom-order"
+                                                        type="button" onclick="addToOrder('mix_custom')">Build Your Custom Mix</button>
+                                                </div>
+
                                         </div>
                                     </div>
 
@@ -367,8 +375,8 @@
                                     <div style=" height: 36%; padding-top: 8px;" class="tech-card-top-section">
                                         <h3 style="font-size: 60px; margin-bottom: 11px;"><a class="no-style"
                                                 href="https://www.ejs.co" target="_blank">$12</a></h3>
-                                        <h3><a class="no-style" href="https://www.ejs.co" target="_blank">One-time<br>
-                                                Order</a></h3>
+                                        <h3><a class="no-style" href="https://www.ejs.co"
+                                                target="_blank">One-time<br>Order</a></h3>
                                     </div>
 
                                     <div class="tech-card-bottom-section">
@@ -383,8 +391,7 @@
                                             <h4 class="plan-lower-items">Add an extra to your weekly order</h4>
                                         </div>
                                         <button style="bottom: 34px; " class="plan-order" type="button"
-                                            onclick="addToOrder('one_time')">Order
-                                            Once</button>
+                                            onclick="addToOrder('one_time')">Order Once</button>
                                     </div>
 
                                 </div>
@@ -398,27 +405,29 @@
                                                 href="https://nodemailer.com/about/" target="_blank">$10</a></h3>
                                         <h3><a class="no-style" href="https://nodemailer.com/about/"
                                                 target="_blank">Weekly Subscription</a></h3>
-                                        <h4 style="font-weight: 700; opacity: 1; font-size: 20px; margin-top: 10px; border-top: 1px solid var(--secondary-color); border-bottom: 1px solid var(--secondary-color); color: var(--secondary-color); padding: 4px; width: 312px; position: relative; top: 4px; left: 50%; transform: translateX(-50%); background-color: white; ">*Best Value!
+                                        <h4
+                                            style="font-weight: 700; opacity: 1; font-size: 20px; margin-top: 10px; border-top: 1px solid var(--secondary-color); border-bottom: 1px solid var(--secondary-color); color: var(--secondary-color); padding: 4px; width: 312px; position: relative; top: 4px; left: 50%; transform: translateX(-50%); background-color: white; ">
+                                            *Best Value!
                                         </h4>
 
                                     </div>
 
                                     <div class="tech-card-bottom-section">
                                         <div class="card-box-center"">
-                                            <img class="leaf-bullet-top" " src="/images/icons/leaf.png">
-                                            <h4 class=" plan-lower-items">Billed monthly, just<br>set it and forget it!</h4>
+                                            <img class=" leaf-bullet-top" " src="/images/icons/leaf.png"> <h4
+                                            class=" plan-lower-items">Billed monthly, just<br>set it and forget it!</h4>
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
                                             <h4 class="plan-lower-items">Reusable container<br>picked up each week</h4>
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
-                                            <h4 class="plan-lower-items">Always have fresh greens<br>for your family</h4>
+                                            <h4 class="plan-lower-items">Always have fresh greens<br>for your family
+                                            </h4>
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
                                             <h4 class="plan-lower-items">Stay green throughout<br>the cold winter!</h4>
 
                                         </div>
 
                                         <button style="bottom: 38px; width: 320px;" class="plan-order" type="button"
-                                            onclick="addToOrder('weekly')">Schedule
-                                            Delivery</button>
+                                            onclick="addToOrder('weekly')">Schedule Delivery</button>
 
                                     </div>
 
@@ -440,15 +449,16 @@
 
                                     <div class="tech-card-bottom-section">
                                         <div class="card-box-center"">
-                                            <img class="leaf-bullet-top" src="/images/icons/leaf.png">
+                                            <img class=" leaf-bullet-top" src="/images/icons/leaf.png">
                                             <h4 class=" plan-lower-items">A full tray of greens,<br>4 boxes worth</h4>
-                                          
+
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
-                                            <h4 class="plan-lower-items">Great for restaurants<br>and special events</h4>
-                                            
+                                            <h4 class="plan-lower-items">Great for restaurants<br>and special events
+                                            </h4>
+
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
                                             <h4 class="plan-lower-items">Can be ordered as a subscription</h4>
-                                            
+
                                             <img class="leaf-bullet-single" src="/images/icons/leaf.png">
                                             <h4 class="plan-lower-items">Great for big parties!</h4>
 
@@ -568,9 +578,9 @@
                                                 Mix</label>
                                             <input style="display: inline-block;" type="checkbox" name="mix_farmers">
                                             <br>
-                                            <label style="display: inline-block;" class="form-title">Custom
-                                                Order</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_custom">
+                                            <label style="display: inline-block;" class="form-title">Spicy
+                                                Mix</label>
+                                            <input style="display: inline-block;" type="checkbox" name="mix_spicy">
                                             <br>
                                             <label style="display: inline-block;" class="form-title">Healthy
                                                 Mix</label>
@@ -580,9 +590,9 @@
                                                 Mix</label>
                                             <input style="display: inline-block;" type="checkbox" name="mix_salad">
                                             <br>
-                                            <label style="display: inline-block;" class="form-title">Spicy
-                                                Mix</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_spicy">
+                                            <label style="display: inline-block;" class="form-title">Custom
+                                                Order</label>
+                                            <input style="display: inline-block;" type="checkbox" name="mix_custom">
                                         </div>
                                         <div style="display: inline-block; max-width: 450px; position: relative; top: 13px; left: 30px;"
                                             class="">
