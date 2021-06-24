@@ -98,23 +98,40 @@
                         <!-- HEADER -->
 
                         <div class="how-it-works-wrapper">
-                            <h3>Delicious Microgreens<br>Delivered to Your Door.</h3>
+                            <h3>Delicious Microgreens<br>Delivered to Your Door</h3>
                         </div>
+                        <div class="cta-back">
 
-                        <div class="l-box-third">
-                            <img class="why-img" src="/images/Web Icons/Asset 6.png">
-                            <h3>1. Pick a Mix</h3>
-                        </div>
-                        <div class="l-box-third">
-                            <img class="why-img" src="/images/Web Icons/Asset 5.png">
-                            <h3>2. Pick a Plan</h3>
-                        </div>
-                        <div class="l-box-third">
-                            <img class="why-img" src="/images/Web Icons/round-cart-kelly-green-pop.png">
-                            <h3>3. Place an Order</h3>
-                        </div>
 
-                        <div class="l-divider divider-bottom"></div>
+                            <div class="l-box-third">
+                                <div id="mix-button" class="cta-button-background">
+                                    <h3 style="left: 10px; " class="cta-num">1<span class="cta-num-colon">:</span></h3>
+
+                                        <img class="why-img" src="/images/Web Icons/Asset 6.png">
+                                        <h3>Pick a Mix</h3>
+                                    </div>
+                            </div>
+
+                            <div class="l-box-third">
+                                <div id="plan-button" class="cta-button-background">
+                                    <h3 class="cta-num">2<span class="cta-num-colon">:</span></h3>
+
+                                        <img class="why-img" src="/images/Web Icons/Asset 5.png">
+                                        <h3>Pick a Plan</h3>
+
+                                    </div>
+                            </div>
+
+                            <div class="l-box-third">
+                                <div id="order-button" class="cta-button-background">
+                                    <h3 style="font-size: 23px!important; top: 1px; left: 9px;" class="cta-num">3<span style="bottom: 0;" class="cta-num-colon">:</span></h3>
+                                        <img class="why-img" src="/images/Web Icons/round-cart-kelly-green-pop.png">
+                                        <h3>Place an Order</h3>
+                                    </div>
+                            </div>
+
+                        </div>
+                        <!-- <div class="l-divider divider-bottom"></div> -->
 
                         <!-- WHY GO WYLD FARM SCENE -->
 
@@ -165,7 +182,7 @@
 
                         <!-- PICK A MIX SECTION -->
 
-                        <div class="avatar-pane--home">
+                        <div id="pick-mix" class="avatar-pane--home">
                             <img class="avatar-img" style="width: 140px" src="/images/Web Icons/Asset 6.png">
                             <h2>Pick a Mix</h2>
                         </div>
@@ -296,7 +313,8 @@
                                     <div class="tech-card-top-section ">
                                         <h3><a class="no-style" href="https://nodemailer.com/about/"
                                                 target="_blank">Custom Order</a></h3>
-                                        <h4 class="mix-lower-heading">Pick one to four greens and build your own mix.</h4>
+                                        <h4 class="mix-lower-heading">Pick one to four greens and build your own mix.
+                                        </h4>
                                     </div>
 
                                     <div class="tech-card-bottom-section ">
@@ -306,34 +324,37 @@
                                         </div>
                                         <div style="position: relative; top: 50%; transform: translateY(-50%);  "
                                             class="wyld-right-section">
-                                            <p style="margin: 10px; padding: 0 0px; opacity: .7; line-height: 1.1; color: #222; ">Our premium,
-                                                freshly grown ingredients are harvested and delivered the same day. Custom orders may take a few
+                                            <p
+                                                style="margin: 10px; padding: 0 0px; opacity: .7; line-height: 1.1; color: #222; ">
+                                                Our premium,
+                                                freshly grown ingredients are harvested and delivered the same day.
+                                                Custom orders may take a few
                                                 weeks to initally fill.</p>
-                                                <div class="ingred-box">
+                                            <div class="ingred-box">
 
-                                                    <ul class="custom-ingredients">
-                                                        <input type="checkbox" style="display: inline-block;">
-                                                        <li>- Broccoli</li><br>
-                                                        <input type="checkbox" style="display: inline-block;">
-                                                        <li>- Sunflower</li><br>
-                                                        <input type="checkbox" style="display: inline-block;">
-                                                        <li>- Rutabaga</li><br>
-                                                        <input type="checkbox" style="display: inline-block;">
-                                                        <li>- Pea</li><br>
-                                                    </ul>
-                                                    <ul class="custom-ingredients">
-                                                        <input type="checkbox" style="display: inline-block;">
-                                                        <li>- Mustard</li><br>
-                                                        <input type="checkbox" style="display: inline-block;">
-                                                        <li>- Radish</li><br>
-                                                        <input type="checkbox" style="display: inline-block;">
-                                                        <li>- Cabbage</li><br>
+                                                <ul class="custom-ingredients">
+                                                    <input type="checkbox" style="display: inline-block;">
+                                                    <li>- Broccoli</li><br>
+                                                    <input type="checkbox" style="display: inline-block;">
+                                                    <li>- Sunflower</li><br>
+                                                    <input type="checkbox" style="display: inline-block;">
+                                                    <li>- Rutabaga</li><br>
+                                                    <input type="checkbox" style="display: inline-block;">
+                                                    <li>- Pea</li><br>
+                                                </ul>
+                                                <ul class="custom-ingredients">
+                                                    <input type="checkbox" style="display: inline-block;">
+                                                    <li>- Mustard</li><br>
+                                                    <input type="checkbox" style="display: inline-block;">
+                                                    <li>- Radish</li><br>
+                                                    <input type="checkbox" style="display: inline-block;">
+                                                    <li>- Cabbage</li><br>
 
-                                                        
-                                                    </ul>
-                                                    <button style="right: 0px;" class="custom-order"
-                                                        type="button" onclick="addToOrder('mix_custom')">Build Your Custom Mix</button>
-                                                </div>
+
+                                                </ul>
+                                                <button style="right: 0px;" class="custom-order" type="button"
+                                                    onclick="addToOrder('mix_custom')">Build Your Custom Mix</button>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -351,7 +372,7 @@
                         <div style="height: 1217px; margin-top: -40px; background-color: #00987c; " class="plan-back">
                         </div>
 
-                        <div class="avatar-pane--home" style="top: -45px;">
+                        <div id="pick-plan" class="avatar-pane--home" style="top: -45px;">
                             <img class="avatar-img" style="width: 150px;" src="/images/Web Icons/Asset 5.png">
                             <h2>Pick a Plan</h2>
                         </div>
@@ -388,7 +409,7 @@
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
                                             <h4 class="plan-lower-items">Give healthy<br>nutrition as a gift</h4>
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
-                                            <h4 class="plan-lower-items">Add an extra to your weekly order</h4>
+                                            <h4 class="plan-lower-items">Add an extra to<br>your weekly order</h4>
                                         </div>
                                         <button style="bottom: 34px; " class="plan-order" type="button"
                                             onclick="addToOrder('one_time')">Order Once</button>
@@ -457,7 +478,7 @@
                                             </h4>
 
                                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
-                                            <h4 class="plan-lower-items">Can be ordered as a subscription</h4>
+                                            <h4 class="plan-lower-items">Also available as a subscription</h4>
 
                                             <img class="leaf-bullet-single" src="/images/icons/leaf.png">
                                             <h4 class="plan-lower-items">Great for big parties!</h4>
@@ -489,7 +510,7 @@
 
                         <!-- ORDER FORM SECTION -->
 
-                        <div class="avatar-pane--home" style="top: -40px; ">
+                        <div id="order-form" class="avatar-pane--home" style="top: -40px; ">
                             <img class="avatar-img" style="width: 150px; "
                                 src="/images/Web Icons/round-cart-kelly-green-pop.png">
                             <h2>Place an Order</h2>
@@ -502,7 +523,7 @@
 
                         <div style="height: 20px;"></div>
 
-                        <!-- CONTACT FORM -->
+                        <!-- ORDER FORM -->
 
                         <div class="card card--contact-form">
                             <div class="contact-card-inner-wrap">
@@ -574,25 +595,34 @@
                                     <div class="contact-card-bottom-section">
                                         <div style="display: inline-block; margin: 0 30px 20px 0; "
                                             class="wyld-form-mix">
+                                            <input style="display: inline-block;" type="checkbox" name="mix_farmers">
                                             <label style="display: inline-block;" class="form-title">Farmer's
                                                 Mix</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_farmers">
+                                            <input class="form-num" type="number" name="farmers-num" placeholder="0"  min="0" max="4">
                                             <br>
+                                            <input style="display: inline-block;" type="checkbox" name="mix_spicy">
                                             <label style="display: inline-block;" class="form-title">Spicy
                                                 Mix</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_spicy">
+                                            <input class="form-num" type="number" name="spicy-num" placeholder="0"  min="0" max="4">
+
                                             <br>
+                                            <input style="display: inline-block;" type="checkbox" name="mix_healthy">
                                             <label style="display: inline-block;" class="form-title">Healthy
                                                 Mix</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_healthy">
+                                            <input class="form-num" type="number" name="healthy-num" placeholder="0"  min="0" max="4">
+
                                             <br>
+                                            <input style="display: inline-block;" type="checkbox" name="mix_salad">
                                             <label style="display: inline-block;" class="form-title">Salad
                                                 Mix</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_salad">
+                                            <input class="form-num" type="number" name="salad-num" placeholder="0"  min="0" max="4">
+
                                             <br>
+                                            <input style="display: inline-block;" type="checkbox" name="mix_custom">
                                             <label style="display: inline-block;" class="form-title">Custom
                                                 Order</label>
-                                            <input style="display: inline-block;" type="checkbox" name="mix_custom">
+                                            <input class="form-num" type="number" name="custom-num" placeholder="0"  min="0" max="4">
+
                                         </div>
                                         <div style="display: inline-block; max-width: 450px; position: relative; top: 13px; left: 30px;"
                                             class="">

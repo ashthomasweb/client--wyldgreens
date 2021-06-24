@@ -192,6 +192,17 @@ function hamburger() {
 
 }
 
+document.querySelector("#mix-button").addEventListener('click', () => {
+    window.location.href="#pick-mix";
+});
+
+document.querySelector("#plan-button").addEventListener('click', () => {
+    window.location.href="#pick-plan";
+});
+
+document.querySelector("#order-button").addEventListener('click', () => {
+    window.location.href="#order-form";
+});
 
 // || Blog Main hover event - Needs refactor. Does not work in firefox, produces error if inspector is open.
 

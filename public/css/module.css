@@ -185,12 +185,12 @@
 .how-it-works-wrapper {
     font-size: 25px;
     text-align: center;
-    width: 356px;
+    width: 348px;
     margin: 0 auto;
     border: solid 1px #222;
     position: relative;
     background-color: white;
-    top: -30px;
+    top: -48px;
     border-radius: 5px;
     z-index: 10;
 }
@@ -243,7 +243,10 @@
 }
 
 
-
+.cta-link {
+    /* width: 100%; */
+    /* display: block; */
+}
 
 .why-img {
     position: relative;
@@ -251,7 +254,7 @@
     left: 55px; */
     display: inline-block;
     width: 220px;
-    margin: 0 auto;
+    margin: 0 auto -20px;
 }
 
 .how-subtitle {
@@ -445,7 +448,7 @@
 .wyld-form-mix {
     border: solid 1px var(--secondary-color);
     display: block;
-    width: 200px;
+    width: 280px;
     padding: 10px;
     margin-top: 11px;
     background-color: whitesmoke;
@@ -636,10 +639,62 @@
     border: 1px solid var(--secondary-color);
     width: 328px;
     margin-top: 20px;
-border-radius: 4px;
+    border-radius: 4px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+}
+
+#mix-button {
+    left: 28px;
+    position: relative;
+
+}
+
+#order-button {
+    right: 28px;
+    position: relative;
+
+}
+
+.cta-back {
+    position: relative;
+    z-index: 5;
+    background-color: #f0f9f7;
+    width: 100%;
+    height: 295px;
+    padding-top: 48px;
+    top: -72px;
+    margin-bottom: -72px;
+}
+
+.cta-button-background {
+    background-color: white;
+    width: 259px;
+    height: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 0 6px #222;
+    cursor: pointer;
+}
+
+.form-num {
+    display: inline-block;
+}
+
+.cta-num {
+    position: absolute;
+    top: 0px;
+    left: 45px;
+    font-size: 26px!important;
+    letter-spacing: 2px;
+}
+
+.cta-num-colon {
+    font-size: 20px!important;
+    position: relative;
+    bottom: 2px;
 }
 
 .wyld-left-section {
@@ -680,11 +735,9 @@ border-radius: 4px;
     border-top: solid 1px var(--secondary-color);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-
-    border-bottom: none;    
-    border-left: none;    
-    border-right: none;    
-
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
     color: #222;
     font-family: var(--headers);
     font-weight: 700;
@@ -1245,6 +1298,11 @@ border-radius: 4px;
 }
 
 .wyld-form-mix input[type=checkbox] {
+    float: left;
+    margin-right: 6px;
+}
+
+.wyld-form-mix input[type=number] {
     float: right;
 }
 
