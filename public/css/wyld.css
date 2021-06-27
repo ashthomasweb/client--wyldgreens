@@ -1,4 +1,3 @@
-
 .wyld-form-mix input[type=checkbox] {
     float: left;
     margin-right: 6px;
@@ -7,6 +6,7 @@
 .wyld-form-mix input[type=number] {
     float: right;
 }
+
 .contact-card-top-section input[type=checkbox] {
     float: right;
 }
@@ -385,9 +385,11 @@
 
 .custom-ingredients li {
     display: inline-block;
+    font-weight: 400;
+    font-family: var(--copy);
 }
 
-.custom-order {
+.custom-order-button {
     margin-top: 0px;
     width: 327px;
     height: 44px;
@@ -395,6 +397,28 @@
     border-top: solid 1px var(--secondary-color);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    color: #222;
+    font-family: var(--headers);
+    font-weight: 700;
+    font-size: 15px;
+
+    position: relative;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    bottom: 0px;
+}
+
+.custom-order {
+    margin-top: 0px;
+    width: 327px;
+    height: 44px;
+    background-color: var(--secondary-color);
+    /* border-top: solid 1px var(--secondary-color); */
+    /* border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px; */
     border-bottom: none;
     border-left: none;
     border-right: none;
@@ -442,4 +466,22 @@
     width: 100% !important;
     z-index: -1;
     top: 0px;
+}
+
+/* .custom-order {
+    height: 350px; 
+    width: 662px;
+} */
+
+.custom-text {
+    margin: 10px;
+    padding: 0 0px;
+    opacity: .7  !important;
+    line-height: 1.1;
+    color: #222;
+    font-family: var(--copy);
+    font-weight: 400;
+    /* background-color: var(--secondary-light); */
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
