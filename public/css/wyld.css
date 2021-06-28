@@ -120,9 +120,53 @@
     z-index: 10;
 }
 
-/* .mix-text p {
-    
-} */
+
+
+.mix-body-text {
+    max-width: 550px;
+    padding: 50px 0 20px;
+    margin: 0 auto;
+}
+
+.mix-body-text p {
+    display: inline-block;
+    max-width: 550px;
+    margin: 0px 0px 10px 0px;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.plan-text {
+    max-width: 550px;
+    padding: 0px 0 20px;
+    margin: 0 auto 60px;
+}
+
+.plan-text p {
+    display: inline-block;
+    max-width: 550px;
+    margin: 0px 0px 10px 0px;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.order-text {
+    max-width: 550px;
+    padding: 0px 0 20px;
+    margin: 0 auto;
+}
+
+.order-text p {
+    display: inline-block;
+    max-width: 550px;
+    margin: 0px 0px 10px 0px;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
 
 .wyld-why {
     max-width: 605px;
