@@ -1,18 +1,18 @@
 // Main JavaScript file for "LumberJack"
 
 
-function mockPage(input) {
-    let host = window.location.hostname;
-    console.log(host);
-    console.log(input);
-    if ( host === 'localhost' ) {
-        window.location.href = 'http://' + host + ':3000/' + input
-    } else {
-        window.location.href = window.location.protocol + '//' + host + '/' + input;
-    }
+// function mockPage(input) {
+//     let host = window.location.hostname;
+//     console.log(host);
+//     console.log(input);
+//     if ( host === 'localhost' ) {
+//         window.location.href = 'http://' + host + ':3000/' + input
+//     } else {
+//         window.location.href = window.location.protocol + '//' + host + '/' + input;
+//     }
 
    
-}
+// }
 
 function addToOrder(input) {
     console.log(input);
