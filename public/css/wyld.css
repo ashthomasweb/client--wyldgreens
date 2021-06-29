@@ -122,6 +122,7 @@
 
 
 
+
 .mix-body-text {
     max-width: 550px;
     padding: 50px 0 20px;
@@ -151,6 +152,18 @@
     font-size: 20px;
     line-height: 1.6;
 }
+
+
+.custom-img {
+    width: 40%;
+    height: auto;
+    top: -11px;
+    position: relative;
+    padding: 10px;
+    float: left;
+    margin: 18px 0 18px 20px;
+}
+
 
 .order-text {
     max-width: 550px;
@@ -297,6 +310,60 @@
     position: relative;
     left: 95px;
     bottom: 10px;
+}
+
+
+.card--tech-left {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 450px;
+    margin: 0 30px;
+    padding: 4px;
+}
+
+.card--tech-right {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 450px;
+    margin: 0px 30px;
+    padding: 4px;
+}
+
+.card--tech-sides {
+    position: relative;
+    bottom: 0;
+    display: inline-block;
+    width: 270px;
+    height: 430px;
+    margin: 0px 5px;
+    padding: 4px;
+}
+
+.side-plans {
+    height: 36%;
+    padding-top: 8px;
+}
+
+.center-plan {
+    height: 36%;
+    padding-top: 0px;
+}
+
+.card--tech-center {
+    position: relative;
+    display: inline-block;
+    width: 320px;
+    height: 500px;
+    margin: 0px 5px;
+    padding: 4px;
+    top: 10px;
+}
+
+.plan-title {
+    font-size: 60px !important;
+    margin-bottom: 11px !important;
 }
 
 .plan-freq {
@@ -455,6 +522,13 @@
     height: 100%;
     display: inline-block;
     padding-top: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.adjust-up {
+    top: -45px;
 }
 
 .mix-order {
@@ -499,8 +573,8 @@
 
 .custom-order {
     margin-top: 0px;
-    width: 327px;
-    height: 44px;
+    width: 662px;
+    height: 350px;
     background-color: var(--secondary-color);
     border-bottom: none;
     border-left: none;

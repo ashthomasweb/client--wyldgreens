@@ -269,42 +269,6 @@
 }
 
 
-.card--tech-left {
-    position: relative;
-    display: inline-block;
-    width: 300px;
-    height: 450px;
-    margin: 0 30px;
-    padding: 4px;
-}
-
-.card--tech-right {
-    position: relative;
-    display: inline-block;
-    width: 300px;
-    height: 450px;
-    margin: 0px 30px;
-    padding: 4px;
-}
-
-.card--tech-sides {
-    position: relative;
-    display: inline-block;
-    width: 270px;
-    height: 450px;
-    margin: 0px 5px;
-    padding: 4px;
-}
-
-.card--tech-center {
-    position: relative;
-    display: inline-block;
-    width: 320px;
-    height: 500px;
-    margin: 0px 5px;
-    padding: 4px;
-    top: 10px;
-}
 
 .tech-card-inner-wrap {
     position: absolute;
