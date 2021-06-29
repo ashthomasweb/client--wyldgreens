@@ -860,12 +860,7 @@
     display: block;
 }
 
-.form-title {
-    margin-bottom: 6px;
-    font-family: var(--copy);
-    font-size: 20px;
-    font-weight: 400;
-}
+
 
 .form-entry {
     width: 315px;

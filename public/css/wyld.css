@@ -355,7 +355,7 @@
     position: relative;
     display: inline-block;
     width: 320px;
-    height: 500px;
+    height: 470px;
     margin: 0px 5px;
     padding: 4px;
     top: 10px;
@@ -389,14 +389,26 @@
 
 .wyld-form-plans label {
     font-size: 22px;
+    display: inline-block;
+}
+
+.wyld-form-plans input {
+    display: inline-block;
+}
+
+.delivery-text {
+    font-size: 16px;
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 0px;
 }
 
 .wyld-form-mix {
     border: solid 1px var(--secondary-color);
-    display: block;
+    display: inline-block;
     width: 280px;
     padding: 10px;
-    margin-top: 11px;
+    margin: 0 30px 20px 0;
     background-color: whitesmoke;
 }
 
@@ -489,9 +501,6 @@
 
 .cta-num-3 {
     position: absolute;
-    /* top: 0px;
-    left: 45px; */
-    /* font-size: 26px !important; */
     letter-spacing: 2px;
     font-size: 23px !important;
     top: 1px;
@@ -499,7 +508,6 @@
     font-family: var(--headers);
     font-weight: 700;
     color: var(--copy-dark);
-
 }
 
 .cta-num-colon {
@@ -529,6 +537,10 @@
 
 .adjust-up {
     top: -45px;
+}
+
+.adjust-order {
+    top: -25px;
 }
 
 .mix-order {
@@ -605,7 +617,7 @@
     width: 270px;
     height: 50px;
     position: absolute;
-    bottom: 26px;
+    bottom: 34px;
     left: -4px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -615,6 +627,28 @@
     font-family: var(--headers);
     font-weight: 700;
     cursor: pointer;
+}
+
+.center-plan-btn {
+    bottom: 38px;
+    width: 320px;
+}
+
+.best-value {
+    font-weight: 700;
+    opacity: 1;
+    font-size: 20px;
+    margin-top: 10px;
+    border-top: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 4px;
+    width: 312px;
+    position: relative;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
 }
 
 .grey-drop {
@@ -634,4 +668,39 @@
     font-weight: 400;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+}
+
+.mix-wrap {
+    margin-bottom: 10px;
+}
+
+.mix-wrap input[type=checkbox] {
+    display: inline-block;
+}
+
+.form-title {
+    margin-bottom: 6px;
+    font-family: var(--copy);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.mix-title {
+    display: inline;
+}
+
+.form-text-wrap {
+    display: inline-block;
+    max-width: 450px;
+    position: relative;
+    top: 13px;
+    left: 20px;
+}
+
+.form-text-p {
+    font-size: 18px;
+    line-height: 1.3;
+    max-width: 400px;
+    text-align: center;
+    margin: 10px auto;
 }
