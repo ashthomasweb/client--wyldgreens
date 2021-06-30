@@ -304,16 +304,7 @@
     font-size: 22px;
 }
 
-.ingred-box {
-    background-color: white;
-    border: 1px solid var(--secondary-color);
-    width: 328px;
-    margin-top: 20px;
-    border-radius: 4px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 
 .card--tech-innerleft {
     float: left;
@@ -329,35 +320,6 @@
     margin: 9px 18px 10px 0;
     padding: 8px 0px 25px;
     border: 1px solid;
-}
-
-.mix-text {
-    padding: 0 25px;
-    color: #222;
-    opacity: .7;
-}
-
-.custom-check {
-    /* display: inline-block; */
-    float: right;
-
-}
-
-.custom-ingredients {
-    display: inline-block;
-    width: 49%;
-    margin: 0px auto;
-    font-size: 18px;
-    opacity: .8;
-    text-align: left;
-    position: relative;
-    left: 8px;
-    padding: 8px;
-    vertical-align: top;
-}
-
-.custom-ing {
-    float: left;
 }
 
 .text-pane--tech {

@@ -11,12 +11,84 @@
 //         window.location.href = window.location.protocol + '//' + host + '/' + input;
 //     }
 
-   
+
 // }
+
+let orderBtn = document.querySelector(".custom-order-button");
 
 function addToOrder(input) {
     console.log(input);
     document.querySelector(`[name="${input}"]`).checked = true;
+    if (input === 'mix_custom') {
+        let orderBtn = document.querySelector(".custom-order-button");
+
+        orderBtn.innerText = "Pick Up To 4";
+
+        customOrder();
+    }
+}
+
+function customOrder() {
+    let customChecks = document.querySelectorAll('.custom-check');
+
+    let hiddenBtn = document.querySelector(".custom-order-hidden");
+
+    // hiddenBtn.style.display = "inline-block";
+    // hiddenBtn.style.borderTop = "none";
+    // hiddenBtn.style.bottom = "-1px";
+    // orderBtn.style.width = "160px";
+    // orderBtn.style.left = "0";
+    // orderBtn.style.backgroundColor = "whitesmoke";
+
+    orderBtn.classList.add('custom-order-btn-clicked');
+    hiddenBtn.classList.add('custom-order-hidden-clicked');
+
+
+    for (i = 0; i < document.querySelectorAll('.custom-check').length; i++) {
+        document.querySelectorAll('.custom-check')[i].style.opacity = '1';
+        document.querySelectorAll('.custom-check')[i].disabled = false;
+    }
+
+}
+
+// hiddenBtn.addEventListener('click', sendCheck);
+
+function sendCheck() {
+    sendToForm();
+    hiddenBtn.style.pointerEvents = 'none';
+}
+
+function checkCheck() {
+    let customChecks = document.querySelectorAll('.custom-check');
+
+    let count = 0;
+    for (i = 0; i < customChecks.length; i++) {
+        if (customChecks[i].checked == true) {
+            count++;
+        }
+        
+    }
+    console.log(count);
+
+    
+
+    if (count > 4 ) {
+        orderBtn.style.pointerEvents = 'none';
+        orderBtn.innerText = "Too many!";
+    } else if (count > 0 && count <= 4 ) {
+        orderBtn.innerText = "Pick up to 4";
+        orderBtn.style.pointerEvents = 'none';
+            
+    } else if (count === 0 ) {
+        orderBtn.innerText = "Ready?";
+
+    }
+}
+
+function sendToForm() {
+    console.log('hi');
+    let prevText = document.querySelector("#message-body").value;
+    document.querySelector("#message-body").value = `${prevText} Hi, I would like a custom order with the following:`;
 }
 
 // || Contact form check for field input then change button color 
@@ -193,15 +265,15 @@ function hamburger() {
 }
 
 document.querySelector("#mix-button").addEventListener('click', () => {
-    window.location.href="#pick-mix";
+    window.location.href = "#pick-mix";
 });
 
 document.querySelector("#plan-button").addEventListener('click', () => {
-    window.location.href="#pick-plan";
+    window.location.href = "#pick-plan";
 });
 
 document.querySelector("#order-button").addEventListener('click', () => {
-    window.location.href="#order-form";
+    window.location.href = "#order-form";
 });
 
 // || Blog Main hover event - Needs refactor. Does not work in firefox, produces error if inspector is open.
