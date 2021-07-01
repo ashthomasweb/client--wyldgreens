@@ -86,9 +86,13 @@ function checkCheck() {
 }
 
 function sendToForm() {
-    console.log('hi');
+    let customChecks = document.querySelectorAll('.custom-check');
     let prevText = document.querySelector("#message-body").value;
-    document.querySelector("#message-body").value = `${prevText} Hi, I would like a custom order with the following:`;
+    let itemList = [];
+    for (i = 0; i < document.querySelectorAll('.custom-check').length; i++) {
+        customChecks[i].checked === true && itemList.push(customChecks[i].name);
+    }
+    document.querySelector("#message-body").value = `I would like a custom order with the following:${itemList}.\n\n${prevText}`;
 }
 
 // || Contact form check for field input then change button color 
