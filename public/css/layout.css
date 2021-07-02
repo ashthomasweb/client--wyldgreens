@@ -194,9 +194,11 @@
 }
 
 .card-art {
+    box-sizing: border-box;
     height: 188px;
     border-radius: 6px;
-    /* border: 1px solid var(--secondary-light); */
+    border: 1px solid var(--secondary-light);
+    background-color: var(--secondary-light);
     margin: 18px auto;
 }
 

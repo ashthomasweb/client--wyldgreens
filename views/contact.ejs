@@ -120,11 +120,16 @@
                         <p class="mix-text">Let us pick your greens, we will make sure you get a tasty
                             combination.</p>
 
-                        <button id="farmers-order-btn" class="mix-order-btn" type="button" onclick="farmersMix()">Place Order</button>
-                            <div id="farmers-quantity" class="mix-quantity">
-                                <p>How<br>Many?</p>
-                                <input class="mix-num-input" type="number" min="0" max="3" value="1">
-                            </div>
+
+                        <div id="farmers-pane" class="mix-btn-pane"></div>
+
+                        <button id="farmers-order-btn" class="mix-order-btn" type="button" onclick="farmersMix()">Place
+                            Order</button>
+                        <div id="farmers-quantity" class="mix-quantity">
+                            <p>How<br>Many?</p>
+                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                        </div>
+
                     </div>
 
                 </div>
@@ -140,12 +145,15 @@
 
                     <div class="tech-card-bottom-section">
                         <div class="">
-                            <img class="card-art" src="/images/greens/green3.jpg">
+                            <img class="card-art" src="/images/greens/green2.jpg">
                         </div>
                         <p class="mix-text">Our Spicy Mix packs a punch for soups and salads, adding
                             robust flavors and zest.</p>
 
-                        <button id="spicy-order-btn" class="mix-order-btn" type="button" onclick="spicyMix()">Place Order</button>
+                        <div id="spicy-pane" class="mix-btn-pane"></div>
+
+                        <button id="spicy-order-btn" class="mix-order-btn" type="button" onclick="spicyMix()">Place
+                            Order</button>
                         <div id="spicy-quantity" class="mix-quantity">
                             <p>How<br>Many?</p>
                             <input class="mix-num-input" type="number" min="0" max="3" value="1">
@@ -179,7 +187,10 @@
                         <p class="mix-text">The perfect mix for an all around healthy and tasty salad
                             year-round.</p>
 
-                        <button id="salad-order-btn" class="mix-order-btn" type="button" onclick="saladMix()">Place Order</button>
+                        <div id="salad-pane" class="mix-btn-pane"></div>
+
+                        <button id="salad-order-btn" class="mix-order-btn" type="button" onclick="saladMix()">Place
+                            Order</button>
                         <div id="salad-quantity" class="mix-quantity">
                             <p>How<br>Many?</p>
                             <input class="mix-num-input" type="number" min="0" max="3" value="1">
@@ -194,7 +205,7 @@
 
                     <div class="tech-card-top-section">
                         <h3>Healthy Mix</h3>
-                        <h4 class="mix-lower-heading">Broccoli, Pea Sprouts, and Radish</h4>
+                        <h4 class="mix-lower-heading">Broccoli, Pea Sprouts,<br>and Radish</h4>
                     </div>
 
                     <div class="tech-card-bottom-section">
@@ -203,11 +214,17 @@
                         </div>
                         <p class="mix-text">Our Healthy Mix is a powerhouse of nutrients designed to
                             boost healing and recovery time.</p>
-                        <button id="healthy-order-btn" class="mix-order-btn" type="button" onclick="healthyMix()">Place Order</button>
+
+                        <div id="healthy-pane" class="mix-btn-pane"></div>
+
+                        <button id="healthy-order-btn" class="mix-order-btn" type="button" onclick="healthyMix()">Place
+                            Order</button>
                         <div id="healthy-quantity" class="mix-quantity">
                             <p>How<br>Many?</p>
-                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                            <input class="mix-num-input" type="number" min="0" max="3" value="1"
+                                oninput="healthyInputCheck()">
                         </div>
+
                     </div>
 
                 </div>
@@ -226,7 +243,7 @@
 
                     <div class="tech-card-top-section ">
                         <h3>Custom Order</h3>
-                        <h4 class="mix-lower-heading">Pick one to four greens and build your own mix.
+                        <h4 class="mix-lower-heading">Pick one to four greens and build your own mix
                         </h4>
                     </div>
 

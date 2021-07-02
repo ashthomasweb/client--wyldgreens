@@ -344,12 +344,28 @@
     margin: 18px 0 18px 20px;
 }
 
+.mix-btn-pane {
+    height: 44px;
+    width: 120%;
+    right: -30px;
+    position: absolute;
+    bottom: -1px;
+    z-index: 1;
+    background-color: whitesmoke;
+    transition: border .25s ease-out .1s, box-shadow .25s ease-out .1s;
+}
+
+.mix-btn-pane-open {
+    box-shadow: 1px 0px 13px -5px #222;
+}
+
 .mix-order-btn {
     margin-top: 10px;
     width: 150px;
     height: 45px;
     background-color: #c5dbc3;
     border: solid 1px var(--secondary-color);
+    border-bottom: none;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     color: #222;
@@ -359,8 +375,8 @@
     z-index: 10;
     position: relative;
     cursor: pointer;
-    transition: transform .3s ease-out, border-top-left-radius .3s ease-out, border-top-right-radius .3s ease-out;
-    bottom: 1px;
+    transition: transform .2s ease-out, border-top-left-radius .2s ease-out, border-top-right-radius .2s ease-out;
+    bottom: -12px;
 
 }
 
@@ -372,9 +388,9 @@
     position: absolute;
     right: 71px;
     bottom: -1px;
-    z-index: 1;
+    z-index: 2;
     border-radius: 4px;
-    transition: transform .3s ease-out, border-top-left-radius .3s ease-out, border-top-right-radius .3s ease-out;
+    transition: transform .2s ease-out, border-top-left-radius .2s ease-out, border-top-right-radius .2s ease-out;
 
 }
 
@@ -431,7 +447,7 @@
     background-color: white;
     border: 1px solid var(--secondary-color);
     width: 329px;
-    height: 138px;
+    height: 139px;
     margin-top: 20px;
     border-radius: 6px;
     position: relative;
@@ -444,7 +460,7 @@
 }
 
 .custom-btn-slider {
-    height: 43px;
+    height: 45px;
     width: 500px;
     position: absolute;
     transition: transform .3s ease-out;
@@ -463,7 +479,7 @@
     background-color: whitesmoke;
     position: absolute;
     right: 23px;
-
+    padding-top: 1px;
 }
 
 
@@ -518,7 +534,7 @@
     z-index: 1;
     margin-top: 0px;
     width: 327px;
-    height: 44px;
+    height: 45px;
     background-color: var(--secondary-light);
     border-top: solid 1px var(--secondary-color);
     /* border-bottom-left-radius: 4px; */
@@ -540,7 +556,7 @@
     border-top: none;
     background-color: whitesmoke;
     width: 150px;
-    height: 44px;
+    height: 45px;
     pointer-events: none;
     opacity: .7;
 }
@@ -550,7 +566,7 @@
 .custom-order-hidden {
     z-index: 5;
     margin-top: 0px;
-    height: 43px;
+    height: 45px;
     background-color: var(--secondary-light);
     border-top: solid 1px var(--secondary-color);
     /* border-bottom-left-radius: 4px; */
@@ -574,7 +590,7 @@
     display: inline-block;
     border-top: none;
     border-bottom-left-radius: 0px;
-    height: 44px;
+    height: 45px;
 
 }
 
@@ -643,7 +659,7 @@
     width: 270px;
     height: 50px;
     position: absolute;
-    bottom: 34px;
+    bottom: 47px;
     left: -4px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -656,7 +672,7 @@
 }
 
 .center-plan-btn {
-    bottom: 38px;
+    bottom: 52px;
     width: 320px;
 }
 
