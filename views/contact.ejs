@@ -120,8 +120,11 @@
                         <p class="mix-text">Let us pick your greens, we will make sure you get a tasty
                             combination.</p>
 
-                        <button class="mix-order" type="button" onclick="addToOrder('mix_farmers')">Add
-                            1 to order</button>
+                        <button id="farmers-order-btn" class="mix-order-btn" type="button" onclick="farmersMix()">Place Order</button>
+                            <div id="farmers-quantity" class="mix-quantity">
+                                <p>How<br>Many?</p>
+                                <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                            </div>
                     </div>
 
                 </div>
@@ -142,8 +145,11 @@
                         <p class="mix-text">Our Spicy Mix packs a punch for soups and salads, adding
                             robust flavors and zest.</p>
 
-                        <button class="mix-order" type="button" onclick="addToOrder('mix_spicy')">Add 1
-                            to order</button>
+                        <button id="spicy-order-btn" class="mix-order-btn" type="button" onclick="spicyMix()">Place Order</button>
+                        <div id="spicy-quantity" class="mix-quantity">
+                            <p>How<br>Many?</p>
+                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                        </div>
                     </div>
 
                 </div>
@@ -173,8 +179,11 @@
                         <p class="mix-text">The perfect mix for an all around healthy and tasty salad
                             year-round.</p>
 
-                        <button class="mix-order" type="button" onclick="addToOrder('mix_salad')">Add 1
-                            to order</button>
+                        <button id="salad-order-btn" class="mix-order-btn" type="button" onclick="saladMix()">Place Order</button>
+                        <div id="salad-quantity" class="mix-quantity">
+                            <p>How<br>Many?</p>
+                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                        </div>
                     </div>
 
                 </div>
@@ -194,8 +203,11 @@
                         </div>
                         <p class="mix-text">Our Healthy Mix is a powerhouse of nutrients designed to
                             boost healing and recovery time.</p>
-                        <button class="mix-order" type="button" onclick="addToOrder('mix_healthy')">Add
-                            1 to order</button>
+                        <button id="healthy-order-btn" class="mix-order-btn" type="button" onclick="healthyMix()">Place Order</button>
+                        <div id="healthy-quantity" class="mix-quantity">
+                            <p>How<br>Many?</p>
+                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                        </div>
                     </div>
 
                 </div>
@@ -230,27 +242,41 @@
 
                             <div class="ingred-box">
                                 <ul class="custom-ingredients">
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Broccoli" oninput="checkCheck()">
+                                    <input class="custom-check" type="checkbox" disabled="true" name=" Broccoli"
+                                        oninput="ingredCheck()">
                                     <li>- Broccoli</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Sunflower" oninput="checkCheck()">
+                                    <input class="custom-check" type="checkbox" disabled="true" name=" Sunflower"
+                                        oninput="ingredCheck()">
                                     <li>- Sunflower</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Rutabaga" oninput="checkCheck()">
+                                    <input class="custom-check" type="checkbox" disabled="true" name=" Rutabaga"
+                                        oninput="ingredCheck()">
                                     <li>- Rutabaga</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Pea" oninput="checkCheck()">
+                                    <input class="custom-check" type="checkbox" disabled="true" name=" Pea"
+                                        oninput="ingredCheck()">
                                     <li>- Pea</li><br>
                                 </ul>
                                 <ul class="custom-ingredients">
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Mustard" oninput="checkCheck()">
+                                    <input class="custom-check" type="checkbox" disabled="true" name=" Mustard"
+                                        oninput="ingredCheck()">
                                     <li>- Mustard</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Radish" oninput="checkCheck()">
+                                    <input class="custom-check" type="checkbox" disabled="true" name=" Radish"
+                                        oninput="ingredCheck()">
                                     <li>- Radish</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Cabbage" oninput="checkCheck()">
+                                    <input class="custom-check" type="checkbox" disabled="true" name=" Cabbage"
+                                        oninput="ingredCheck()">
                                     <li>- Cabbage</li><br>
                                 </ul>
-                                <button class="custom-order-button" type="button"
-                                    onclick="addToOrder('mix_custom')">Start Your Custom Mix</button>
-                                <button class="custom-order-hidden" type="button"
-                                    onclick="sendToForm()">Add to Order!</button>
+                                <div class="custom-btn-slider">
+
+                                    <button class="custom-order-button" type="button" onclick="customOrderOn()">Start
+                                        Your Custom Mix</button>
+                                    <button class="custom-order-hidden" type="button" onclick="promptQuantity()">Create
+                                        Mix!</button>
+                                    <div class="custom-quantity">
+                                        <p>How<br>Many?</p>
+                                        <input class="custom-num-input" type="number" min="0" max="3" value="1">
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -507,8 +533,8 @@
                             </p>
                         </div>
                         <label class="form-title">Message:</label>
-                        <textarea id="message-body" class="form-textarea" name="message" placeholder="Please leave us your order details."
-                            oninput="formFieldCheck()"></textarea>
+                        <textarea id="message-body" class="form-textarea" name="message"
+                            placeholder="Please leave us your order details." oninput="formFieldCheck()"></textarea>
                     </div>
 
                 </form>

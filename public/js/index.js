@@ -15,85 +15,211 @@
 // }
 
 let orderBtn = document.querySelector(".custom-order-button");
+let hiddenBtn = document.querySelector(".custom-order-hidden");
+let ingredChecks = document.querySelectorAll('.custom-check');
+let orderBox = document.querySelector('.ingred-box');
 
 function addToOrder(input) {
-    console.log(input);
     document.querySelector(`[name="${input}"]`).checked = true;
-    if (input === 'mix_custom') {
-        let orderBtn = document.querySelector(".custom-order-button");
-
-        orderBtn.innerText = "Pick Up To 4";
-
-        customOrder();
-    }
 }
 
-function customOrder() {
-    let customChecks = document.querySelectorAll('.custom-check');
-
-    let hiddenBtn = document.querySelector(".custom-order-hidden");
-
-    // hiddenBtn.style.display = "inline-block";
-    // hiddenBtn.style.borderTop = "none";
-    // hiddenBtn.style.bottom = "-1px";
-    // orderBtn.style.width = "160px";
-    // orderBtn.style.left = "0";
-    // orderBtn.style.backgroundColor = "whitesmoke";
-
+function customOrderOn() {
+    orderBtn.innerText = "Pick up to 4";
     orderBtn.classList.add('custom-order-btn-clicked');
     hiddenBtn.classList.add('custom-order-hidden-clicked');
-
-
-    for (i = 0; i < document.querySelectorAll('.custom-check').length; i++) {
-        document.querySelectorAll('.custom-check')[i].style.opacity = '1';
-        document.querySelectorAll('.custom-check')[i].disabled = false;
-    }
-
-}
-
-// hiddenBtn.addEventListener('click', sendCheck);
-
-function sendCheck() {
-    sendToForm();
+    orderBox.classList.add('custom-order-shadow');
     hiddenBtn.style.pointerEvents = 'none';
+
+    for (i = 0; i < ingredChecks.length; i++) {
+        ingredChecks[i].style.opacity = '1';
+        ingredChecks[i].disabled = false;
+        ingredChecks[i].style.cursor = "pointer";
+    }
 }
 
-function checkCheck() {
-    let customChecks = document.querySelectorAll('.custom-check');
+function customOrderOff() {
+    orderBtn.classList.remove('custom-order-btn-clicked');
+    hiddenBtn.classList.remove('custom-order-hidden-clicked');
+    orderBox.classList.remove('custom-order-shadow');
 
+    orderBtn.innerText = "Start A New Custom Order";
+    orderBtn.style.pointerEvents = 'auto';
+    document.querySelector('.custom-btn-slider').classList.remove('custom-btn-slider-anim');
+
+
+    document.querySelector(".custom-text").innerText = "Thanks for the order! If you want more than one you can change the quantity on the form below. Please let us know if you have any other requests."
+    for (i = 0; i < ingredChecks.length; i++) {
+        ingredChecks[i].style.opacity = '0.4';
+        ingredChecks[i].disabled = true;
+        ingredChecks[i].checked = false;
+        ingredChecks[i].style.cursor = "default";
+
+    }
+}
+
+function ingredCheck() {
+    let customChecks = document.querySelectorAll('.custom-check');
     let count = 0;
     for (i = 0; i < customChecks.length; i++) {
         if (customChecks[i].checked == true) {
             count++;
         }
-        
     }
-    console.log(count);
 
-    
-
-    if (count > 4 ) {
+    if (count > 4) {
         orderBtn.style.pointerEvents = 'none';
         orderBtn.innerText = "Too many!";
-    } else if (count > 0 && count <= 4 ) {
+        hiddenBtn.style.pointerEvents = "none";
+        hiddenBtn.style.color = 'grey';
+        document.querySelector(".custom-quantity p").innerText = "Too Many Items!";
+        document.querySelector(".custom-quantity p").style.left = "0px";
+        document.querySelector(".custom-quantity p").style.top = "15px";
+        document.querySelector(".custom-quantity input").style.display = "none";
+
+    } else if (count > 0 && count <= 4) {
         orderBtn.innerText = "Pick up to 4";
         orderBtn.style.pointerEvents = 'none';
-            
-    } else if (count === 0 ) {
-        orderBtn.innerText = "Ready?";
+        hiddenBtn.style.pointerEvents = "auto";
+        hiddenBtn.style.color = '#222';
+        document.querySelector(".custom-quantity p").innerHTML = "How<br>Many?";
+        document.querySelector(".custom-quantity p").style.left = "-8px";
+        document.querySelector(".custom-quantity p").style.top = "7px";
+        document.querySelector(".custom-quantity input").style.display = "inline-block";
+
+    } else if (count === 0) {
+        hiddenBtn.style.pointerEvents = "none";
 
     }
 }
 
-function sendToForm() {
+let customQuanBool = false;
+
+function promptQuantity() {
+    
     let customChecks = document.querySelectorAll('.custom-check');
     let prevText = document.querySelector("#message-body").value;
     let itemList = [];
-    for (i = 0; i < document.querySelectorAll('.custom-check').length; i++) {
-        customChecks[i].checked === true && itemList.push(customChecks[i].name);
+    
+    if (customQuanBool === true ) {
+        customQuanBool = false;
+        
+        for (i = 0; i < document.querySelectorAll('.custom-check').length; i++) {
+            customChecks[i].checked === true && itemList.push(customChecks[i].name);
+        }
+
+        let boxVar = "box";
+        if ( Number(document.querySelector(".custom-quantity input").value) > 1 ) {
+            boxVar = "boxes";
+        }
+
+        document.querySelector(".wyld-form-mix input[name=custom-num]").value = Number(document.querySelector(".wyld-form-mix input[name=custom-num]").value) + Number(document.querySelector(".custom-quantity input").value);
+        document.querySelector("#message-body").value = `I would like ${document.querySelector(".custom-quantity input").value} custom order ${boxVar} with the following:${itemList}.\n\n${prevText}`;
+        
+        addToOrder('mix_custom');
+        customOrderOff();
+    } else if ( customQuanBool === false ) {
+        customQuanBool = true;
+        hiddenBtn.innerText = "Add to Order Form";
+        document.querySelector('.custom-btn-slider').classList.add('custom-btn-slider-anim');
     }
-    document.querySelector("#message-body").value = `I would like a custom order with the following:${itemList}.\n\n${prevText}`;
 }
+
+let healthyBool = false;
+function healthyMix() {
+    if (healthyBool === false) {
+        healthyBool = !healthyBool;
+        document.querySelector("#healthy-order-btn").classList.add('mix-button-clicked');
+        document.querySelector("#healthy-quantity").classList.add('mix-quantity-clicked');
+        document.querySelector("#healthy-order-btn").innerText = "Add to Order Form";
+    } else if (healthyBool === true) {
+        healthyBool = !healthyBool;
+        document.querySelector("#healthy-order-btn").classList.remove('mix-button-clicked');
+        document.querySelector("#healthy-quantity").classList.remove('mix-quantity-clicked');
+        document.querySelector("#healthy-order-btn").innerText = "Place Order";
+        document.querySelector(".wyld-form-mix input[name=healthy-num]").value = document.querySelector("#healthy-quantity input").value;
+        addToOrder('mix_healthy');
+    }
+}
+
+let saladBool = false;
+function saladMix() {
+    if (saladBool === false) {
+        saladBool = !saladBool;
+        document.querySelector("#salad-order-btn").classList.add('mix-button-clicked');
+        document.querySelector("#salad-quantity").classList.add('mix-quantity-clicked');
+        document.querySelector("#salad-order-btn").innerText = "Add to Order Form";
+    } else if (saladBool === true) {
+        saladBool = !saladBool;
+        document.querySelector("#salad-order-btn").classList.remove('mix-button-clicked');
+        document.querySelector("#salad-quantity").classList.remove('mix-quantity-clicked');
+        document.querySelector("#salad-order-btn").innerText = "Place Order";
+        document.querySelector(".wyld-form-mix input[name=salad-num]").value = document.querySelector("#salad-quantity input").value;
+        addToOrder('mix_salad');
+    }
+}
+
+let spicyBool = false;
+function spicyMix() {
+    if (spicyBool === false) {
+        spicyBool = !spicyBool;
+        document.querySelector("#spicy-order-btn").classList.add('mix-button-clicked');
+        document.querySelector("#spicy-quantity").classList.add('mix-quantity-clicked');
+        document.querySelector("#spicy-order-btn").innerText = "Add to Order Form";
+    } else if (spicyBool === true) {
+        spicyBool = !spicyBool;
+        document.querySelector("#spicy-order-btn").classList.remove('mix-button-clicked');
+        document.querySelector("#spicy-quantity").classList.remove('mix-quantity-clicked');
+        document.querySelector("#spicy-order-btn").innerText = "Place Order";
+        document.querySelector(".wyld-form-mix input[name=spicy-num]").value = document.querySelector("#spicy-quantity input").value;
+        addToOrder('mix_spicy');
+    }
+}
+
+let farmersBool = false;
+function farmersMix() {
+    if (farmersBool === false) {
+        farmersBool = !farmersBool;
+        document.querySelector("#farmers-order-btn").classList.add('mix-button-clicked');
+        document.querySelector("#farmers-quantity").classList.add('mix-quantity-clicked');
+        document.querySelector("#farmers-order-btn").innerText = "Add to Order Form";
+    } else if (farmersBool === true) {
+        farmersBool = !farmersBool;
+        document.querySelector("#farmers-order-btn").classList.remove('mix-button-clicked');
+        document.querySelector("#farmers-quantity").classList.remove('mix-quantity-clicked');
+        document.querySelector("#farmers-order-btn").innerText = "Place Order";
+        document.querySelector(".wyld-form-mix input[name=farmers-num]").value = document.querySelector("#farmers-quantity input").value;
+        addToOrder('mix_farmers');
+    }
+}
+
+
+
+
+// let barsPos = 0;
+// let barsRot = 0;
+// let bar2Vis = 1;
+// let menuPos = 20;
+
+// let animA = setInterval(barMid, 8);
+
+// // middle bar disappear
+// function barMid() {
+//     if (bar2Vis < 0.1) {
+//         // normally clearInterval would be executed when value reaches 0, but due to bit arithmetic 
+//         // 0.1 - 0.1 is displayed in extended notation. 
+//         clearInterval(animA);
+//         // reset opacity to typical value for consistency.
+//         bar2Vis = 0;
+//         bar2.style.opacity = bar2Vis;
+//     } else {
+//         bar2Vis = bar2Vis - 0.1;
+//         bar2.style.opacity = bar2Vis;
+//     }
+// }
+
+
+
+
 
 // || Contact form check for field input then change button color 
 
@@ -123,6 +249,7 @@ function sendingText() {
 
 // || Hamburger Menu for "LumberJack"
 
+
 function hamburger() {
 
     let bar1 = document.getElementById("h-bar1");
@@ -139,6 +266,7 @@ function hamburger() {
 
         let animA = setInterval(barMid, 8);
 
+        // middle bar disappear
         function barMid() {
             if (bar2Vis < 0.1) {
                 // normally clearInterval would be executed when value reaches 0, but due to bit arithmetic 
@@ -153,6 +281,7 @@ function hamburger() {
             }
         }
 
+        // top and bottom bars move and rotate
         setTimeout(function () {
 
             let animB = setInterval(barMove, 30);
