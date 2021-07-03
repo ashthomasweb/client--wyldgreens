@@ -116,11 +116,14 @@ function promptQuantity() {
         document.querySelector("#message-body").value = `I would like ${document.querySelector(".custom-quantity input").value} custom order ${boxVar} with the following:${itemList}.\n\n${prevText}`;
         
         addToOrder('mix_custom');
+        hiddenBtn.style.right = "-1px";
+
         customOrderOff();
     } else if ( customQuanBool === false ) {
         customQuanBool = true;
         hiddenBtn.innerText = "Add to Order Form";
         document.querySelector('.custom-btn-slider').classList.add('custom-btn-slider-anim');
+        hiddenBtn.style.right = "1px";
     }
 }
 
