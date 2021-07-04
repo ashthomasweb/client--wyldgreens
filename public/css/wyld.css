@@ -196,11 +196,12 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    opacity: 1;
+    opacity: 0;
     z-index: 100;
     top: 0;
 
-    background-color: #00000090;
+    background-color: #000000b9;
+    pointer-events: none;
 }
 
 .lightbox img {
@@ -332,12 +333,13 @@
 
 .wyld-why li {
     padding: 5px 0 5px 15px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .mountains {
     display: inline-block;
     width: 60%;
+    margin-bottom: 10px;
 }
 
 .custom {
@@ -359,6 +361,7 @@
     display: inline-block;
     width: 130px;
     vertical-align: top;
+    position: relative;
 }
 
 /* MIX  */

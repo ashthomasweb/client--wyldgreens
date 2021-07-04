@@ -1,18 +1,46 @@
 // Main JavaScript file for "LumberJack"
 
 
-// function mockPage(input) {
-//     let host = window.location.hostname;
-//     console.log(host);
-//     console.log(input);
-//     if ( host === 'localhost' ) {
-//         window.location.href = 'http://' + host + ':3000/' + input
-//     } else {
-//         window.location.href = window.location.protocol + '//' + host + '/' + input;
-//     }
+function mockPage(input) {
+    let host = window.location.hostname;
+    console.log(host);
+    console.log(input);
+    if ( host === 'localhost' ) {
+        window.location.href = 'http://' + host + ':3000/' + input
+    } else {
+        window.location.href = window.location.protocol + '//' + host + '/' + input;
+    }
 
 
-// }
+}
+
+let lightboxBool = false;
+let lightboxPane = document.querySelector('.lightbox');
+function lightbox() {
+    if ( lightboxBool === true ) {
+        lightboxPane.style.opacity = "0";
+        lightboxPane.pointerEvents = 'none';
+
+    } else if ( lightboxBool === false ) {
+        lightboxPane.pointerEvents = 'auto';
+        lightboxPane.style.opacity = "1";
+    }
+    lightboxBool = !lightboxBool;
+}
+
+function runLightbox(input) {
+    lightboxPane.pointerEvents = 'auto';
+
+    document.querySelector('.lightbox img').attributes.src.value = `/images/greens/${input}`;
+    lightbox();
+}
+
+function lightboxOff() {
+    lightbox();
+    console.log('hi');
+}
+
+
 
 let orderBtn = document.querySelector(".custom-order-button");
 let hiddenBtn = document.querySelector(".custom-order-hidden");
