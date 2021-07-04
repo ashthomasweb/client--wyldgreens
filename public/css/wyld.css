@@ -97,7 +97,7 @@
     border: solid 1px #222;
     position: relative;
     background-color: white;
-    top: -48px;
+    top: -36px;
     border-radius: 5px;
     z-index: 10;
 }
@@ -188,7 +188,7 @@
 }
 
 .second-arrow {
-    left: 626px;
+    left: 625px;
 
 }
 
@@ -222,8 +222,8 @@
     width: 100%;
     height: 270px;
     padding-top: 48px;
-    top: -72px;
-    margin-bottom: -72px;
+    top: -48px;
+    margin-bottom: -55px;
 }
 
 .cta-button-background {
@@ -293,7 +293,7 @@
     margin: 0 auto 20px;
     position: relative;
     font-size: 60px;
-    padding-top: 75px;
+    padding-top: 71px;
 }
 
 .why-subheader {
@@ -308,7 +308,7 @@
 .why-list {
     border: 5px solid var(--secondary-color);
     border-radius: 12px;
-    margin: 30px auto;
+    margin: 27px auto;
     padding: 30px 10px;
     background-color: white;
 }
@@ -321,14 +321,15 @@
 }
 
 .farm-scene {
-    height: 1121px;
+    height: 1102px;
 }
 
 .cloud {
     position: absolute;
-    opacity: 0.4;
-    left: 97px;
-    width: 80%;
+    left: 55px;
+    width: 87%;
+    opacity: 0.25;
+    top: 311px;
 }
 
 .wyld-why li {
