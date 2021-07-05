@@ -712,26 +712,126 @@
 
 .plan-order {
     margin-top: 10px;
-    border: 4px solid var(--secondary-color);
-    width: 270px;
-    height: 50px;
+    border: 1px solid var(--secondary-color);
+    width: 180px;
+    height: 45px;
     position: absolute;
-    bottom: 47px;
-    left: -4px;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    background-color: var(--secondary-light);
-    font-size: 22px;
+    bottom: 51px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom: none;
+
+    background-color: #c5dbc3;
+    font-size: 20px;
     color: #222;
     font-family: var(--headers);
     font-weight: 700;
     cursor: pointer;
+    z-index: 5;
+    transition: transform .2s ease-out, border-top-right-radius .2s ease-out, width .2s ease-out;
 }
 
 .center-plan-btn {
-    bottom: 52px;
-    width: 320px;
+    bottom: 56px;
+    width: 190px;
 }
+
+.weekly-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 24px;
+    display: none;
+}
+
+.one_time-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 19px;
+    display: none;
+}
+
+.bulk-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 19px;
+    display: none;
+}
+
+.sides-btn-clicked {
+    transform: translateX(-88%);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    width: 150px;
+}
+
+.center-btn-clicked {
+    transform: translateX(-83%);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+
+}
+
+.plan-btn-pane {
+    height: 45px;
+    width: 120%;
+    right: -30px;
+    position: absolute;
+    bottom: 50px;
+    z-index: 1;
+    transition: border .25s ease-out .1s, box-shadow .25s ease-out .1s;
+}
+
+.plan-btn-pane-open {
+    box-shadow: 1px 0px 13px -5px #222;
+}
+
+#weekly-pane {
+    bottom: 55px;
+}
+
+#weekly-added {
+    bottom: 55px;
+    padding-right: 5px;
+}
+
+.plan-added {
+    height: 45px;
+    /* border: 1px solid var(--secondary-color); */
+    width: 150px;
+    background-color: white;
+    position: absolute;
+    right: 67px;
+    bottom: 50px;
+    z-index: 2;
+    border-radius: 4px;
+    transition: transform .2s ease-out, border-top-left-radius .2s ease-out, border-top-right-radius .2s ease-out;
+
+}
+
+.plan-added p {
+    position: relative;
+    left: -8px;
+    font-size: 14px;
+    display: inline-block;
+    top: 15px;
+    font-family: var(--headers);
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.plan-added-clicked {
+    transform: translateX(72px);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: none;
+}
+
+
 
 .plan-text {
     max-width: 550px;

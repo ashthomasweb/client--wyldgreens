@@ -29,7 +29,7 @@
             <div class="l-box-third">
                 <div id="mix-button" class="cta-button-background make-smaller">
                     <!-- <p class="cta-num-1">1<span class="cta-num-colon">:</span></p> -->
-                    <img class="cta-img" src="/images/icons/cta/plan-white.png">
+                    <img class="cta-img" style="height: 118px; " src="/images/icons/cta/plan2-white.png">
                     <h3>Pick Your Plan</h3>
                 </div>
             </div>
@@ -37,7 +37,7 @@
             <div class="l-box-third">
                 <div id="plan-button" class="cta-button-background make-smaller">
                     <!-- <p class="cta-num-2">2<span class="cta-num-colon">:</span></p> -->
-                    <img class="cta-img" src="/images/icons/cta/leaf.png">
+                    <img class="cta-img" style="height: 116px; " src="/images/icons/cta/leaf.png">
                     <h3>Pick Your Mix</h3>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="l-box-third">
                 <div id="order-button" class="cta-button-background make-smaller">
                     <!-- <p class="cta-num-3">3<span class="cta-num-colon adjust-colon-down">:</span></p> -->
-                    <img class="cta-img" src="/images/icons/cta/order-tall-white.png">
+                    <img class="cta-img" style="top: 7px; height: 116px;  " src="/images/icons/cta/email2-white.png">
                     <h3>Place an Order</h3>
                 </div>
             </div>
@@ -100,7 +100,7 @@
         
 
         <div id="pick-plan" style="top: -80px; " class="avatar-pane--home adjust-up">
-            <img class="section-img" src="/images/icons/cta/plan-white.png">
+            <img class="section-img" src="/images/icons/cta/plan2-white.png">
             <h2>Pick a Plan</h2>
         </div>
 
@@ -109,7 +109,9 @@
         <div style="margin-top: -20px;" class="plan-text">
             <p>Each order comes in a reusable container. One box of greens is enough for 2 people to use
                 as toppings or one person to use as a salad mix for one week. Multiple boxes can be
-                ordered each week.</p>
+                ordered each week. Prices below are for one box of greens.</p>
+
+               
         </div>
 
         <div style="height: 40px;"></div>
@@ -122,6 +124,7 @@
                     <div class="tech-card-top-section side-plans">
                         <h3 class="plan-title">$12</h3>
                         <h3>One-time<br>Order</h3>
+
                     </div>
 
                     <div class="tech-card-bottom-section">
@@ -135,7 +138,14 @@
                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
                             <h4 class="plan-lower-items">Add an extra to<br>your weekly order</h4>
                         </div>
-                        <button class="plan-order" type="button" onclick="addToOrder('one_time')">Order Once</button>
+                        
+                        
+                        <div id="one_time-pane" class="plan-btn-pane"></div>
+                        <button id="one_time-order-btn" class="plan-order" type="button" onclick="oneTimeDel()">Order Once</button>
+                        <div id="one_time-added" class="plan-added">
+                            <p>Added</p>
+                            <img class="one_time-btn-check" src="/images/icons/check.png">
+                        </div>
                     </div>
 
                 </div>
@@ -161,9 +171,14 @@
                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
                             <h4 class="plan-lower-items">Stay green throughout<br>the cold winter!</h4>
                         </div>
-
-                        <button class="plan-order center-plan-btn" type="button" onclick="addToOrder('weekly')">Schedule
-                            Delivery</button>
+                        
+                        <div id="weekly-pane" class="plan-btn-pane"></div>
+                        
+                        <button id="weekly-order-btn"class="plan-order center-plan-btn" type="button" onclick="weeklyDel()">Get Started</button>
+                        <div id="weekly-added" class="plan-added">
+                            <p>Added</p>
+                            <img class="weekly-btn-check" src="/images/icons/check.png">
+                        </div>
                     </div>
 
                 </div>
@@ -175,6 +190,7 @@
                     <div class="tech-card-top-section side-plans">
                         <h3 class="plan-title">$30</h3>
                         <h3>Bulk/Party Order</h3>
+
                     </div>
 
                     <div class="tech-card-bottom-section">
@@ -189,8 +205,13 @@
                             <h4 class="plan-lower-items">Great for big parties!</h4>
                         </div>
 
-                        <button class="plan-order" type="button" onclick="addToOrder('weekly')">Stock Up</button>
-
+                        
+                        <div id="bulk-pane" class="plan-btn-pane"></div>
+                        <button id="bulk-order-btn" class="plan-order" type="button" onclick="bulkDel()">Stock Up</button>
+                        <div id="bulk-added" class="plan-added">
+                            <p>Added</p>
+                            <img class="bulk-btn-check" src="/images/icons/check.png">
+                        </div>
                     </div>
 
                 </div>
@@ -202,7 +223,9 @@
 
         <!-- PLAN TEXT -->
 
+        
         <div style="margin-bottom: 30px;" class="plan-text">
+            <p>Please pick a plan above to add it to your order.</p>
             <p>Schedule your order once a week, or setup a monthly payment and save! Order greens for
                 someone you care about. Give the gift of nutrition! We have a reuseable container option
                 to keep both your and our environmental footprint as low as possible. Show up to a
@@ -381,7 +404,7 @@
                         <div class="wyld-right-section">
                             <p class="custom-text">
                                 Our premium, freshly grown ingredients are harvested and delivered the same day. Custom
-                                orders may take a few weeks to initally fill.
+                                orders may take a few weeks to initially fill.
                             </p>
 
                             <div class="ingred-box">
@@ -437,7 +460,7 @@
         <!-- ORDER FORM SECTION -->
 
         <div id="order-form" style="top: -43px;" class="avatar-pane--home adjust-order">
-            <img class="section-img" src="/images/icons/cta/order-tall-white.png">
+            <img class="section-img" src="/images/icons/cta/email2-white.png">
             <h2>Place an Order</h2>
         </div>
 
