@@ -142,7 +142,7 @@
 .l-box-third {
     position: relative;
     display: inline-block;
-    /* vertical-align: top; */
+    vertical-align: top;
     width: 33%;
     margin: 0px auto;
     font-size: 18px;
@@ -152,6 +152,11 @@
 .l-box-third h3 {
     text-align: center;
     font-size: 31px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 .l-box-third img {

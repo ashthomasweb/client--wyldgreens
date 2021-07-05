@@ -14,7 +14,7 @@
     left: 50%;
     transform: translateX(-50%);
     display: block;
-    width: 150px;
+    width: 120px;
     z-index: 10;
 }
 
@@ -158,14 +158,26 @@
     bottom: 0px;
 }
 
-#mix-button {
+#plan-button {
     left: 28px;
     position: relative;
+}
+
+#plan-button h3 {
+    bottom: 13px;
+}
+
+#mix-button h3 {
+    bottom: 17px;
 }
 
 #order-button {
     right: 28px;
     position: relative;
+}
+
+#order-button h3 {
+    bottom: 13px;
 }
 
 
@@ -229,7 +241,8 @@
 .cta-button-background {
     background-color: white;
     width: 259px;
-    height: 100%;
+    height: 194px;
+    
     padding: 15px;
     margin: 0 auto;
     border-radius: 12px;
@@ -486,6 +499,39 @@
     opacity: .7;
 }
 
+.farmers-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 90px;
+    display: none;
+}
+
+.spicy-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 90px;
+    display: none;
+}
+
+.salad-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 90px;
+    display: none;
+}
+
+.healthy-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 90px;
+    display: none;
+}
+
+
 .custom-check {
     display: inline-block;
     opacity: 0.4;
@@ -733,7 +779,7 @@
 }
 
 .center-plan-btn {
-    bottom: 56px;
+    bottom: 55px;
     width: 190px;
 }
 

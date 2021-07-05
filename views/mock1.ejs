@@ -27,17 +27,17 @@
 
 
             <div class="l-box-third">
-                <div id="mix-button" class="cta-button-background make-smaller">
+                <div id="plan-button" class="cta-button-background make-smaller">
                     <!-- <p class="cta-num-1">1<span class="cta-num-colon">:</span></p> -->
-                    <img class="cta-img" style="height: 118px; " src="/images/icons/cta/plan2-white.png">
+                    <img class="cta-img" style="height: 118px; " src="/images/icons/cta/plan-leaf.png">
                     <h3>Pick Your Plan</h3>
                 </div>
             </div>
 
             <div class="l-box-third">
-                <div id="plan-button" class="cta-button-background make-smaller">
+                <div id="mix-button" class="cta-button-background make-smaller">
                     <!-- <p class="cta-num-2">2<span class="cta-num-colon">:</span></p> -->
-                    <img class="cta-img" style="height: 116px; " src="/images/icons/cta/leaf.png">
+                    <img class="cta-img" style="height: 116px; " src="/images/icons/cta/hand.png">
                     <h3>Pick Your Mix</h3>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="l-box-third">
                 <div id="order-button" class="cta-button-background make-smaller">
                     <!-- <p class="cta-num-3">3<span class="cta-num-colon adjust-colon-down">:</span></p> -->
-                    <img class="cta-img" style="top: 7px; height: 116px;  " src="/images/icons/cta/email2-white.png">
+                    <img class="cta-img" style="top: 7px; height: 102px;  " src="/images/icons/cta/email-leaf.png">
                     <h3>Place an Order</h3>
                 </div>
             </div>
@@ -96,12 +96,9 @@
 
         <!-- PLAN SECTION -->
 
-        <div class="l-divider divider-top"></div>
-
-
-
-        <div id="pick-plan" style="top: -80px; " class="avatar-pane--home adjust-up">
-            <img class="section-img" src="/images/icons/cta/plan2-white.png">
+        <div  class="l-divider divider-top"></div>
+        <div id="pick-plan" style="top: -70px; " class="avatar-pane--home adjust-up">
+            <img class="section-img" style="width: 110px;" src="/images/icons/cta/plan-leaf-white.png">
             <h2>Pick a Plan</h2>
         </div>
 
@@ -238,8 +235,8 @@
         <!-- PICK A MIX SECTION -->
         <div class="mix-back"></div>
 
-        <div id="pick-mix" style="top: -32px;" class="avatar-pane--home">
-            <img class="section-img" src="/images/icons/cta/leaf-white.png">
+        <div id="pick-mix" style="top: -15px;" class="avatar-pane--home">
+            <img class="section-img" src="/images/icons/cta/hand-white.png">
             <h2>Pick a Mix</h2>
         </div>
 
@@ -273,8 +270,10 @@
                         <button id="farmers-order-btn" class="mix-order-btn" type="button" onclick="farmersMix()">Place
                             Order</button>
                         <div id="farmers-quantity" class="mix-quantity">
+                            <img class="farmers-btn-check" src="/images/icons/check.png">
+
                             <p>How<br>Many?</p>
-                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                            <input oninput="farmersUpdate()" class="mix-num-input" type="number" min="0" max="3" value="1">
                         </div>
                     </div>
 
@@ -300,6 +299,8 @@
                         <button id="spicy-order-btn" class="mix-order-btn" type="button" onclick="spicyMix()">Place
                             Order</button>
                         <div id="spicy-quantity" class="mix-quantity">
+                            <img class="spicy-btn-check" src="/images/icons/check.png">
+
                             <p>How<br>Many?</p>
                             <input class="mix-num-input" type="number" min="0" max="3" value="1">
                         </div>
@@ -335,6 +336,8 @@
                         <button id="salad-order-btn" class="mix-order-btn" type="button" onclick="saladMix()">Place
                             Order</button>
                         <div id="salad-quantity" class="mix-quantity">
+                            <img class="salad-btn-check" src="/images/icons/check.png">
+
                             <p>How<br>Many?</p>
                             <input class="mix-num-input" type="number" min="0" max="3" value="1">
                         </div>
@@ -363,6 +366,8 @@
                         <button id="healthy-order-btn" class="mix-order-btn" type="button" onclick="healthyMix()">Place
                             Order</button>
                         <div id="healthy-quantity" class="mix-quantity">
+                            <img class="healthy-btn-check" src="/images/icons/check.png">
+
                             <p>How<br>Many?</p>
                             <input class="mix-num-input" type="number" min="0" max="3" value="1"
                                 oninput="healthyInputCheck()">
@@ -433,6 +438,7 @@
                                     <button class="custom-order-hidden" type="button" onclick="promptQuantity()">Create
                                         Mix!</button>
                                     <div class="custom-quantity">
+
                                         <p>How<br>Many?</p>
                                         <input class="custom-num-input" type="number" min="0" max="3" value="1">
                                     </div>
@@ -453,7 +459,7 @@
         <!-- ORDER FORM SECTION -->
 
         <div id="order-form" style="top: -43px;" class="avatar-pane--home adjust-order">
-            <img class="section-img" src="/images/icons/cta/email2-white.png">
+            <img class="section-img" src="/images/icons/cta/email-leaf-white.png">
             <h2>Place an Order</h2>
         </div>
 
@@ -532,7 +538,7 @@
                     <div class="contact-card-bottom-section">
                         <div class="wyld-form-mix">
                             <div class="mix-wrap">
-                                <input type="checkbox" name="mix_farmers">
+                                <input type="checkbox" name="mix_farmers" >
                                 <label class="form-title mix-title">Farmer's Mix</label>
                                 <input class="form-num" type="number" name="farmers-num" placeholder="0" min="0"
                                     max="4">

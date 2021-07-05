@@ -117,6 +117,7 @@ function bulkClose() {
 
 
 let weeklyDelBool = false;
+
 function weeklyDel() {
     if (weeklyDelBool === false) {
         weeklyDelBool = !weeklyDelBool;
@@ -136,6 +137,7 @@ function weeklyDel() {
 }
 
 let bulkDelBool = false;
+
 function bulkDel() {
     if (bulkDelBool === false) {
         bulkDelBool = !bulkDelBool;
@@ -384,32 +386,70 @@ function spicyMix() {
     }
 }
 
+
 let farmersBool = false;
+let farmersUpdateBool = false;
 
-function farmersMix() {
-    if (farmersBool === false) {
-        farmersBool = !farmersBool;
-        document.querySelector("#farmers-order-btn").classList.add('mix-button-clicked');
-        document.querySelector("#farmers-quantity").classList.add('mix-quantity-clicked');
-        document.querySelector("#farmers-order-btn").innerText = "Add to Order Form";
-        document.querySelector("#farmers-pane").classList.add("mix-btn-pane-open");
-        setTimeout(() => {
-            document.querySelector("#farmers-pane.mix-btn-pane").style.transition = "box-shadow .1s ease-out";
-        }, 400);
-    } else if (farmersBool === true) {
-        farmersBool = !farmersBool;
-        document.querySelector("#farmers-order-btn").classList.remove('mix-button-clicked');
-        document.querySelector("#farmers-quantity").classList.remove('mix-quantity-clicked');
-        document.querySelector("#farmers-pane").classList.remove("mix-btn-pane-open");
+function farmersUpdate() {
+    if ( document.querySelector('[name=mix_farmers]').checked === true ) {
+        document.querySelector("#farmers-quantity p").style.opacity = "1";
+        document.querySelector("#farmers-quantity img").style.display = "none";
+        farmersUpdateBool = true;
+        document.querySelector("#farmers-order-btn").innerText = "Update Quantity";
+        // sendData();
+        console.log('yes')
 
-        setTimeout(() => {
-            document.querySelector("#farmers-pane.mix-btn-pane").style.transition = "box-shadow .25s ease-out .1s";
-        }, 200);
-        document.querySelector("#farmers-order-btn").innerText = "View Order";
+    }
+    console.log('no')
+
+}
+
+function sendData() {
+    document.querySelector("#farmers-order-btn").innerText = "Added to Order!";
+        document.querySelector("#farmers-order-btn").pointerEvents = "none";
+
+        document.querySelector("#farmers-quantity p").style.opacity = "0";
+        document.querySelector("#farmers-quantity img").style.display = "block";
+
         document.querySelector(".wyld-form-mix input[name=farmers-num]").value = document.querySelector("#farmers-quantity input").value;
         addToOrder('mix_farmers');
+}
+
+function farmersMix() {
+
+    if (farmersUpdateBool === true) {
+        sendData();
+
+    } else if (farmersUpdateBool === false) {
+
+
+
+        if (farmersBool === false) { // open slider
+            farmersBool = !farmersBool;
+            document.querySelector("#farmers-order-btn").classList.add('mix-button-clicked');
+            document.querySelector("#farmers-quantity").classList.add('mix-quantity-clicked');
+            document.querySelector("#farmers-order-btn").innerText = "Add to Order Form";
+            document.querySelector("#farmers-pane").classList.add("mix-btn-pane-open");
+            setTimeout(() => {
+                document.querySelector("#farmers-pane.mix-btn-pane").style.transition = "box-shadow .1s ease-out";
+            }, 400);
+        } else if (farmersBool === true) {
+            farmersBool = !farmersBool;
+            // document.querySelector("#farmers-order-btn").classList.remove('mix-button-clicked');
+            // document.querySelector("#farmers-quantity").classList.remove('mix-quantity-clicked');
+            // document.querySelector("#farmers-pane").classList.remove("mix-btn-pane-open");
+            // setTimeout(() => {
+            //     document.querySelector("#farmers-pane.mix-btn-pane").style.transition = "box-shadow .25s ease-out .1s";
+            // }, 200);
+
+            sendData();
+        }
+
     }
 }
+
+
+
 
 
 // || Contact form check for field input then change button color 
@@ -588,16 +628,19 @@ function hamburger() {
 
 }
 
-document.querySelector("#mix-button").addEventListener('click', () => {
-    window.location.href = "#pick-mix";
-});
-
 document.querySelector("#plan-button").addEventListener('click', () => {
     window.location.href = "#pick-plan";
+    window.scrollBy(0, -50);
+});
+
+document.querySelector("#mix-button").addEventListener('click', () => {
+    window.location.href = "#pick-mix";
+    window.scrollBy(0, -50);
 });
 
 document.querySelector("#order-button").addEventListener('click', () => {
     window.location.href = "#order-form";
+    window.scrollBy(0, -50);
 });
 
 // || Blog Main hover event - Needs refactor. Does not work in firefox, produces error if inspector is open.
