@@ -722,7 +722,6 @@
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     border-bottom: none;
-
     background-color: #c5dbc3;
     font-size: 20px;
     color: #222;
@@ -801,7 +800,6 @@
 
 .plan-added {
     height: 45px;
-    /* border: 1px solid var(--secondary-color); */
     width: 150px;
     background-color: white;
     position: absolute;
@@ -810,7 +808,6 @@
     z-index: 2;
     border-radius: 4px;
     transition: transform .2s ease-out, border-top-left-radius .2s ease-out, border-top-right-radius .2s ease-out;
-
 }
 
 .plan-added p {
@@ -830,8 +827,6 @@
     border-top-right-radius: 0;
     border: none;
 }
-
-
 
 .plan-text {
     max-width: 550px;
