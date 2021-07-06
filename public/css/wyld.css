@@ -422,7 +422,7 @@
 
 .mix-order-btn {
     margin-top: 10px;
-    width: 150px;
+    width: 148px;
     height: 45px;
     background-color: #c5dbc3;
     border: solid 1px var(--secondary-color);
@@ -456,8 +456,8 @@
 }
 
 .mix-quantity p {
-    position: relative;
-    left: -3px;
+    position: absolute;
+    left: 23px;
     font-size: 14px;
     display: inline-block;
     top: 8px;
@@ -467,10 +467,10 @@
 
 .mix-num-input {
     display: inline-block;
-    top: 3px;
+    top: 6px;
     width: 50px;
-    position: relative;
-    left: 10px;
+    position: absolute;
+    right: 14px;
     padding: 3px 2px 2px 5px;
     border-radius: 0px;
     border: solid 1px grey;
@@ -486,12 +486,89 @@
 }
 
 .mix-button-clicked {
-    transform: translateX(-72px);
+    transform: translateX(-73px);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     /* border: none; */
 }
 
+.remove-btn-cover {
+    z-index: 2;
+    position: absolute;
+    bottom: 0px;
+    left: 99px;
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: 10px;
+}
+
+.farmers-remove {
+    z-index: 1;
+    position: absolute;
+    bottom: 5px;
+    left: 115px;
+    width: 70px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--secondary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: bottom .2s ease-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.spicy-remove {
+    z-index: 1;
+    position: absolute;
+    bottom: 5px;
+    left: 115px;
+    width: 70px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--secondary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: bottom .2s ease-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.salad-remove {
+    z-index: 1;
+    position: absolute;
+    bottom: 5px;
+    left: 115px;
+    width: 70px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--secondary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: bottom .2s ease-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.healthy-remove {
+    z-index: 1;
+    position: absolute;
+    bottom: 5px;
+    left: 115px;
+    width: 70px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--secondary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: bottom .2s ease-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.mix-remove-clicked {
+    bottom: -18px;
+}
 
 .mix-text {
     padding: 0 25px;
@@ -507,10 +584,26 @@
     display: none;
 }
 
+.farmers-btn-cross {
+    width: 30px;
+    position: absolute;
+    bottom: 8px;
+    right: 90px;
+    display: none;
+}
+
 .spicy-btn-check {
     width: 30px;
     position: absolute;
     bottom: 11px;
+    right: 90px;
+    display: none;
+}
+
+.spicy-btn-cross {
+    width: 30px;
+    position: absolute;
+    bottom: 8px;
     right: 90px;
     display: none;
 }
@@ -523,6 +616,14 @@
     display: none;
 }
 
+.salad-btn-cross {
+    width: 30px;
+    position: absolute;
+    bottom: 8px;
+    right: 90px;
+    display: none;
+}
+
 .healthy-btn-check {
     width: 30px;
     position: absolute;
@@ -531,6 +632,13 @@
     display: none;
 }
 
+.healthy-btn-cross {
+    width: 30px;
+    position: absolute;
+    bottom: 8px;
+    right: 90px;
+    display: none;
+}
 
 .custom-check {
     display: inline-block;

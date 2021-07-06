@@ -251,7 +251,10 @@
         <!-- FIRST PRODUCT ROW -->
 
         <div class="card-pane--tech">
+
             <div class="card card--tech-left">
+                <div class="remove-btn-cover"></div>
+                <button class="farmers-remove" type="button" onclick="farmersCloseBtn()">Close</button>
                 <div class="tech-card-inner-wrap">
 
                     <div class="tech-card-top-section">
@@ -271,16 +274,20 @@
                             Order</button>
                         <div id="farmers-quantity" class="mix-quantity">
                             <img class="farmers-btn-check" src="/images/icons/check.png">
+                            <img class="farmers-btn-cross" src="/images/icons/cross.png">
 
                             <p>How<br>Many?</p>
-                            <input oninput="farmersUpdate()" class="mix-num-input" type="number" min="0" max="3" value="1">
+                            <input oninput="farmersUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
                         </div>
+
                     </div>
 
                 </div>
             </div>
 
             <div class="card card--tech-right">
+                <div class="remove-btn-cover"></div>
+                <button class="spicy-remove" type="button" onclick="spicyCloseBtn()">Close</button>
                 <div class="tech-card-inner-wrap">
 
                     <div class="tech-card-top-section">
@@ -300,9 +307,10 @@
                             Order</button>
                         <div id="spicy-quantity" class="mix-quantity">
                             <img class="spicy-btn-check" src="/images/icons/check.png">
+                            <img class="spicy-btn-cross" src="/images/icons/cross.png">
 
                             <p>How<br>Many?</p>
-                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                            <input oninput="spicyUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
                         </div>
                     </div>
 
@@ -318,6 +326,9 @@
 
         <div class="card-pane--tech">
             <div class="card card--tech-left">
+                <div class="remove-btn-cover"></div>
+                <button class="salad-remove" type="button" onclick="saladCloseBtn()">Close</button>
+
                 <div class="tech-card-inner-wrap">
 
                     <div class="tech-card-top-section">
@@ -337,9 +348,10 @@
                             Order</button>
                         <div id="salad-quantity" class="mix-quantity">
                             <img class="salad-btn-check" src="/images/icons/check.png">
+                            <img class="salad-btn-cross" src="/images/icons/cross.png">
 
                             <p>How<br>Many?</p>
-                            <input class="mix-num-input" type="number" min="0" max="3" value="1">
+                            <input oninput="saladUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
                         </div>
                     </div>
 
@@ -347,6 +359,8 @@
             </div>
 
             <div class="card card--tech-right">
+                <div class="remove-btn-cover"></div>
+                <button class="healthy-remove" type="button" onclick="healthyCloseBtn()">Close</button>
                 <div class="tech-card-inner-wrap">
 
                     <div class="tech-card-top-section">
@@ -367,10 +381,11 @@
                             Order</button>
                         <div id="healthy-quantity" class="mix-quantity">
                             <img class="healthy-btn-check" src="/images/icons/check.png">
+                            <img class="healthy-btn-cross" src="/images/icons/cross.png">
 
                             <p>How<br>Many?</p>
-                            <input class="mix-num-input" type="number" min="0" max="3" value="1"
-                                oninput="healthyInputCheck()">
+                            <input class="mix-num-input" type="number" min="1" max="3" value="1"
+                                oninput="healthyUpdate()">
                         </div>
 
                     </div>
