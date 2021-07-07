@@ -566,7 +566,50 @@
     cursor: pointer;
 }
 
+.custom-remove {
+    z-index: 2;
+    position: absolute;
+    bottom: 5px;
+    left: 127px;
+    width: 70px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--secondary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: bottom .2s ease-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.custom-new {
+    z-index: 1;
+    position: absolute;
+    bottom: 40px;
+    left: 42px;
+    width: 120px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--secondary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: bottom .2s ease-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.ingred-wrap {
+    width: 89%;
+    position: relative;
+    left: 20px;
+    transition: box-shadow .2s ease-out;
+}
+
 .mix-remove-clicked {
+    bottom: -18px;
+}
+
+.custom-remove-clicked {
     bottom: -18px;
 }
 
@@ -640,6 +683,22 @@
     display: none;
 }
 
+.custom-btn-check {
+    width: 30px;
+    position: absolute;
+    bottom: 11px;
+    right: 102px;
+    display: none;
+}
+
+.custom-btn-cross {
+    width: 30px;
+    position: absolute;
+    bottom: 8px;
+    right: 90px;
+    display: none;
+}
+
 .custom-check {
     display: inline-block;
     opacity: 0.4;
@@ -658,30 +717,32 @@
     font-size: 0;
     overflow: hidden;
     transition: box-shadow .2s ease-out;
-
+    z-index: 5;
 }
 
 .custom-btn-slider {
+    border-top: 1px solid lightgrey;
     height: 45px;
     width: 500px;
     position: absolute;
     transition: transform .3s ease-out;
-
+    background-color: white;    
+    z-index: 4;
+    bottom: 0;
 }
 
 
 .custom-btn-slider-anim {
-    transform: translateX(-150px);
+    transform: translateX(-164px);
 
 }
 
 .custom-quantity {
     height: 44px;
-    width: 150px;
+    width: 164px;
     background-color: whitesmoke;
     position: absolute;
-    right: 23px;
-    padding-top: 1px;
+    right: 9px;
 }
 
 
@@ -721,10 +782,11 @@
     vertical-align: top;
 }
 
-.custom-ingredients li {
+.custom-ingredients label {
     display: inline-block;
     font-weight: 400;
     font-family: var(--copy);
+    cursor: pointer;
 }
 
 .custom-order-shadow {
@@ -750,14 +812,14 @@
     font-size: 15px;
     position: relative;
     float: left;
-    bottom: 0px;
+    bottom: 1px;
     cursor: pointer;
 }
 
 .custom-order-btn-clicked {
     border-top: none;
     background-color: whitesmoke;
-    width: 150px;
+    width: 164px;
     height: 45px;
     pointer-events: none;
     opacity: .7;
@@ -779,11 +841,11 @@
     font-weight: 700;
     font-size: 15px;
     position: relative;
-    bottom: 0px;
+    bottom: 1px;
     /* right: 1px; */
     cursor: pointer;
     display: none;
-    width: 177px;
+    width: 166px;
     float: left;
 }
 
@@ -793,7 +855,7 @@
     border-bottom-left-radius: 0px;
     height: 45px;
     
-    right: -1px;
+    right: 0px;
 }
 
 .custom-order {

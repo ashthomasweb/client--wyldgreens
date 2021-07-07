@@ -182,26 +182,33 @@ let orderBtn = document.querySelector(".custom-order-button");
 let hiddenBtn = document.querySelector(".custom-order-hidden");
 let ingredChecks = document.querySelectorAll('.custom-check');
 let orderBox = document.querySelector('.ingred-box');
-
+let customClose = document.querySelector('.custom-remove');
+let orderWrap = document.querySelector('.ingred-wrap');
+let customQuanP = document.querySelector('.custom-quantity p');
+let customQuanCheck = document.querySelector('.custom-btn-check');
+let customQuanCross = document.querySelector('.custom-btn-cross');
 
 function customOrderOn() {
     orderBtn.innerText = "Pick up to 4";
     orderBtn.classList.add('custom-order-btn-clicked');
     hiddenBtn.classList.add('custom-order-hidden-clicked');
-    orderBox.classList.add('custom-order-shadow');
+    orderWrap.classList.add('custom-order-shadow');
     hiddenBtn.style.pointerEvents = 'none';
-
+    customClose.classList.add('custom-remove-clicked');
+    // document.querySelectorAll('.custom-ingredients label').style.cursor = "pointer";
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].style.opacity = '1';
         ingredChecks[i].disabled = false;
         ingredChecks[i].style.cursor = "pointer";
+        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = "pointer";
     }
 }
 
 function customOrderOff() {
     orderBtn.classList.remove('custom-order-btn-clicked');
     hiddenBtn.classList.remove('custom-order-hidden-clicked');
-    orderBox.classList.remove('custom-order-shadow');
+    orderWrap.classList.remove('custom-order-shadow');
+    customClose.classList.remove('custom-remove-clicked');
 
     orderBtn.innerText = "Start A New Custom Order";
     orderBtn.style.pointerEvents = 'auto';
@@ -214,7 +221,7 @@ function customOrderOff() {
         ingredChecks[i].disabled = true;
         ingredChecks[i].checked = false;
         ingredChecks[i].style.cursor = "default";
-
+        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = "default";
     }
 }
 
@@ -277,9 +284,22 @@ function promptQuantity() {
         document.querySelector("#message-body").value = `I would like ${document.querySelector(".custom-quantity input").value} custom order ${boxVar} with the following:${itemList}.\n\n${prevText}`;
 
         addToOrder('mix_custom');
-        hiddenBtn.style.right = "-1px";
+        hiddenBtn.innerText = "Added To Order";
+        hiddenBtn.style.pointerEvents = "none";
+        customQuanP.style.opacity = "0";
+        customQuanCheck.style.display = "block";
 
-        customOrderOff();
+        for (i = 0; i < ingredChecks.length; i++) {
+            ingredChecks[i].style.opacity = '0.4';
+            ingredChecks[i].disabled = true;
+            // ingredChecks[i].checked = false;
+            ingredChecks[i].style.cursor = "default";
+            document.querySelectorAll('.custom-ingredients label')[i].style.cursor = "default";
+        }
+
+        // hiddenBtn.style.right = "-1px";
+
+        // customOrderOff();
     } else if (customQuanBool === false) {
         customQuanBool = true;
         hiddenBtn.innerText = "Add to Order Form";
@@ -289,106 +309,6 @@ function promptQuantity() {
 }
 
 // MIX SELECTION BUTTONS
-
-// let healthyBool = false;
-
-// function healthyMix() {
-//     if (healthyBool === false) {
-//         healthyBool = !healthyBool;
-//         document.querySelector("#healthy-order-btn").classList.add('mix-button-clicked');
-//         document.querySelector("#healthy-quantity").classList.add('mix-quantity-clicked');
-//         document.querySelector("#healthy-order-btn").innerText = "Add to Order Form";
-//         document.querySelector("#healthy-pane").classList.add("mix-btn-pane-open");
-//         setTimeout(() => {
-//             document.querySelector("#healthy-pane.mix-btn-pane").style.transition = "box-shadow .1s ease-out";
-//         }, 400);
-
-//     } else if (healthyBool === true) {
-//         healthyBool = !healthyBool;
-//         document.querySelector("#healthy-order-btn").classList.remove('mix-button-clicked');
-//         document.querySelector("#healthy-quantity").classList.remove('mix-quantity-clicked');
-//         document.querySelector("#healthy-pane").classList.remove("mix-btn-pane-open");
-//         setTimeout(() => {
-//             document.querySelector("#healthy-pane.mix-btn-pane").style.transition = "box-shadow .25s ease-out .1s";
-//         }, 200);
-
-//         document.querySelector("#healthy-order-btn").innerText = "View Order";
-//         document.querySelector(".wyld-form-mix input[name=healthy-num]").value = document.querySelector("#healthy-quantity input").value;
-//         addToOrder('mix_healthy');
-//     }
-// }
-
-// function healthyInputCheck() {
-//     let input = Number(document.querySelector("#healthy-quantity input").value);
-//     let button = document.querySelector("#healthy-order-btn");
-//     if (input === 0) {
-//         button.style.pointerEvents = "none";
-//         button.style.color = "#666";
-//     } else if (input > 0) {
-//         button.style.pointerEvents = "auto";
-//         button.style.color = "#222";
-//     }
-// }
-
-
-
-// let saladBool = false;
-
-// function saladMix() {
-//     if (saladBool === false) {
-//         saladBool = !saladBool;
-//         document.querySelector("#salad-order-btn").classList.add('mix-button-clicked');
-//         document.querySelector("#salad-quantity").classList.add('mix-quantity-clicked');
-//         document.querySelector("#salad-order-btn").innerText = "Add to Order Form";
-//         document.querySelector("#salad-pane").classList.add("mix-btn-pane-open");
-//         setTimeout(() => {
-//             document.querySelector("#salad-pane.mix-btn-pane").style.transition = "box-shadow .1s ease-out";
-//         }, 400);
-//     } else if (saladBool === true) {
-//         saladBool = !saladBool;
-//         document.querySelector("#salad-order-btn").classList.remove('mix-button-clicked');
-//         document.querySelector("#salad-quantity").classList.remove('mix-quantity-clicked');
-//         document.querySelector("#salad-pane").classList.remove("mix-btn-pane-open");
-
-//         setTimeout(() => {
-//             document.querySelector("#salad-pane.mix-btn-pane").style.transition = "box-shadow .25s ease-out .1s";
-//         }, 200);
-//         document.querySelector("#salad-order-btn").innerText = "View Order";
-//         document.querySelector(".wyld-form-mix input[name=salad-num]").value = document.querySelector("#salad-quantity input").value;
-//         addToOrder('mix_salad');
-//     }
-// }
-
-// let spicyBool = false;
-
-// function spicyMix() {
-//     if (spicyBool === false) {
-//         spicyBool = !spicyBool;
-//         document.querySelector("#spicy-order-btn").classList.add('mix-button-clicked');
-//         document.querySelector("#spicy-quantity").classList.add('mix-quantity-clicked');
-//         document.querySelector("#spicy-order-btn").innerText = "Add to Order Form";
-//         document.querySelector("#spicy-pane").classList.add("mix-btn-pane-open");
-//         setTimeout(() => {
-//             document.querySelector("#spicy-pane.mix-btn-pane").style.transition = "box-shadow .1s ease-out";
-//         }, 400);
-//     } else if (spicyBool === true) {
-//         spicyBool = !spicyBool;
-//         document.querySelector("#spicy-order-btn").classList.remove('mix-button-clicked');
-//         document.querySelector("#spicy-quantity").classList.remove('mix-quantity-clicked');
-//         document.querySelector("#spicy-pane").classList.remove("mix-btn-pane-open");
-
-//         setTimeout(() => {
-//             document.querySelector("#spicy-pane.mix-btn-pane").style.transition = "box-shadow .25s ease-out .1s";
-//         }, 200);
-//         document.querySelector("#spicy-order-btn").innerText = "View Order";
-//         document.querySelector(".wyld-form-mix input[name=spicy-num]").value = document.querySelector("#spicy-quantity input").value;
-//         addToOrder('mix_spicy');
-//     }
-// }
-
-
-
-
 
 // 'Farmers Mix' order button control booleans
 let farmersBool = false;

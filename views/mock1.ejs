@@ -402,6 +402,7 @@
         <div class="card-pane--tech">
 
             <div class="card card--tech-right custom-order">
+                
                 <div class="tech-card-inner-wrap">
 
                     <div class="tech-card-top-section ">
@@ -419,48 +420,48 @@
                                 Our premium, freshly grown ingredients are harvested and delivered the same day. Custom
                                 orders may take a few weeks to initially fill.
                             </p>
+                            <div class="ingred-wrap">
 
-                            <div class="ingred-box">
-                                <ul class="custom-ingredients">
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Broccoli"
-                                        oninput="ingredCheck()">
-                                    <li>- Broccoli</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Sunflower"
-                                        oninput="ingredCheck()">
-                                    <li>- Sunflower</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Rutabaga"
-                                        oninput="ingredCheck()">
-                                    <li>- Rutabaga</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Pea"
-                                        oninput="ingredCheck()">
-                                    <li>- Pea</li><br>
-                                </ul>
-                                <ul class="custom-ingredients">
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Mustard"
-                                        oninput="ingredCheck()">
-                                    <li>- Mustard</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Radish"
-                                        oninput="ingredCheck()">
-                                    <li>- Radish</li><br>
-                                    <input class="custom-check" type="checkbox" disabled="true" name=" Cabbage"
-                                        oninput="ingredCheck()">
-                                    <li>- Cabbage</li><br>
-                                </ul>
-                                <div class="custom-btn-slider">
-
-                                    <button class="custom-order-button" type="button" onclick="customOrderOn()">Start
+                                <button class="custom-new" type="button" onclick="customNewOrder()">Start New Order</button>
+                                <button class="custom-remove" type="button" onclick="customOrderOff()">Close</button>
+                                <div class="ingred-box">
+                                    
+                                    <ul class="custom-ingredients">
+                                        <label for=" Broccoli"><input id=" Broccoli" class="custom-check" type="checkbox" disabled="true" name=" Broccoli"
+                                            oninput="ingredCheck()">- Broccoli</label><br>
+                                        <label for=" Sunflower"><input id=" Sunflower" class="custom-check" type="checkbox" disabled="true" name=" Sunflower"
+                                            oninput="ingredCheck()">- Sunflower</label><br>
+                                        <label for=" Rutabaga"><input id=" Rutabaga" class="custom-check" type="checkbox" disabled="true" name=" Rutabaga"
+                                            oninput="ingredCheck()">- Rutabaga</label><br>
+                                        <label for=" Pea"><input id=" Pea" class="custom-check" type="checkbox" disabled="true" name=" Pea"
+                                            oninput="ingredCheck()">- Pea</label><br>
+                                    </ul>
+                                    <ul class="custom-ingredients">
+                                        <label for=" Mustard" ><input id=" Mustard" class="custom-check" type="checkbox" disabled="true" name=" Mustard"
+                                            oninput="ingredCheck()">- Mustard</label><br>
+                                        <label for=" Radish"><input id=" Radish" class="custom-check" type="checkbox" disabled="true" name=" Radish"
+                                            oninput="ingredCheck()">- Radish</label><br>
+                                        <label for=" Cabbage"><input id=" Cabbage" class="custom-check" type="checkbox" disabled="true" name=" Cabbage"
+                                            oninput="ingredCheck()">- Cabbage</label><br>
+                                    </ul>
+                                    <div class="custom-btn-slider">
+                                        
+                                        <button class="custom-order-button" type="button" onclick="customOrderOn()">Start
                                         Your Custom Mix</button>
-                                    <button class="custom-order-hidden" type="button" onclick="promptQuantity()">Create
-                                        Mix!</button>
-                                    <div class="custom-quantity">
-
-                                        <p>How<br>Many?</p>
-                                        <input class="custom-num-input" type="number" min="0" max="3" value="1">
+                                        <button class="custom-order-hidden" type="button" onclick="promptQuantity()">Create
+                                            Mix!</button>
+                                            <div class="custom-quantity">
+                                                <img class="custom-btn-check" src="/images/icons/check.png">
+                                                <img class="custom-btn-cross" src="/images/icons/cross.png">
+                                                
+                                                <p>How<br>Many?</p>
+                                                <input oninput="customUpdate()" class="custom-num-input" type="number" min="0" max="3" value="1">
+                                            </div>
+                                        </div>
                                     </div>
+                                    
                                 </div>
                             </div>
-
-                        </div>
                     </div>
 
                 </div>
