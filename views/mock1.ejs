@@ -186,7 +186,7 @@
                 <div class="tech-card-inner-wrap">
 
                     <div class="tech-card-top-section side-plans">
-                        <h3 class="plan-title">$30</h3>
+                        <h3 class="plan-title">$35</h3>
                         <h3>Bulk/Party Order</h3>
                     </div>
 
@@ -423,7 +423,9 @@
                             <div class="ingred-wrap">
 
                                 <button class="custom-new" type="button" onclick="customNewOrder()">Start New Order</button>
-                                <button class="custom-remove" type="button" onclick="customOrderOff()">Close</button>
+                                <button class="custom-close" type="button" onclick="customOrderOff()">Close</button>
+                                <button class="custom-remove" type="button" onclick="customRemoveOrder()">Remove Order</button>
+
                                 <div class="ingred-box">
                                     
                                     <ul class="custom-ingredients">
@@ -446,8 +448,7 @@
                                     </ul>
                                     <div class="custom-btn-slider">
                                         
-                                        <button class="custom-order-button" type="button" onclick="customOrderOn()">Start
-                                        Your Custom Mix</button>
+                                        <button class="custom-order-button" type="button" onclick="customOrderOn()">Start A New Custom Order</button>
                                         <button class="custom-order-hidden" type="button" onclick="promptQuantity()">Create
                                             Mix!</button>
                                             <div class="custom-quantity">
@@ -455,7 +456,7 @@
                                                 <img class="custom-btn-cross" src="/images/icons/cross.png">
                                                 
                                                 <p>How<br>Many?</p>
-                                                <input oninput="customUpdate()" class="custom-num-input" type="number" min="0" max="3" value="1">
+                                                <input oninput="customUpdate()" class="custom-num-input" type="number" min="1" max="3" value="1">
                                             </div>
                                         </div>
                                     </div>
@@ -544,7 +545,7 @@
                                 <br>
                                 <label class="form-title">Bulk Order</label>
                                 <input type="checkbox" name="bulk">
-                                <p class="delivery-text">Deliveries always take place on<br>Wednesday afternoons and
+                                <p class="delivery-text">Deliveries always take place on<br>Thursday afternoons and
                                     evenings.</p>
                             </div>
 
@@ -585,6 +586,11 @@
                                 <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="4">
                             </div>
 
+                            <div class="mix-wrap">
+                                <label class="form-title mix-title">Total Price</label>
+                                <input class="price-num" type="number" name="custom-num" placeholder="0">
+                            </div>
+
                         </div>
 
                         <div class="form-text-wrap">
@@ -597,9 +603,12 @@
                                 that changes to your order type may take a few weeks to fill.
                             </p>
                         </div>
-                        <label class="form-title">Message:</label>
-                        <textarea id="message-body" class="form-textarea" name="message"
+                        <label class="form-title">Order Details:</label>
+                        <label class="form-title message">Message:</label><br>
+                        <textarea id="details-body" class="form-textarea" name="order-details"
                             placeholder="Please leave us your order details." oninput="formFieldCheck()"></textarea>
+                        <textarea id="message-body" class="form-textarea-message" name="message"
+                            placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
                     </div>
 
                 </form>

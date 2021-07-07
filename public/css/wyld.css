@@ -566,7 +566,7 @@
     cursor: pointer;
 }
 
-.custom-remove {
+.custom-close {
     z-index: 2;
     position: absolute;
     bottom: 5px;
@@ -577,7 +577,7 @@
     border: 1px solid var(--secondary-color);
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    transition: bottom .2s ease-out;
+    transition: bottom .2s ease-out, left .2s ease-in-out;
     background-color: whitesmoke;
     cursor: pointer;
 }
@@ -585,8 +585,24 @@
 .custom-new {
     z-index: 1;
     position: absolute;
-    bottom: 40px;
-    left: 42px;
+    bottom: 5px;
+    left: 19px;
+    width: 120px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--secondary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: bottom .2s ease-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.custom-remove {
+    z-index: 1;
+    position: absolute;
+    bottom: 5px;
+    left: 183px;
     width: 120px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
@@ -609,8 +625,14 @@
     bottom: -18px;
 }
 
+.custom-close-clicked {
+    bottom: -18px;
+}
+
+
 .custom-remove-clicked {
     bottom: -18px;
+
 }
 
 .mix-text {
@@ -687,7 +709,7 @@
     width: 30px;
     position: absolute;
     bottom: 11px;
-    right: 102px;
+    right: 97px;
     display: none;
 }
 
@@ -742,13 +764,13 @@
     width: 164px;
     background-color: whitesmoke;
     position: absolute;
-    right: 9px;
+    right: 10px;
 }
 
 
 .custom-quantity p {
-    position: relative;
-    left: -8px;
+    position: absolute;
+    left: 31px;
     font-size: 14px;
     display: inline-block;
     top: 7px;
@@ -758,10 +780,10 @@
 
 .custom-num-input {
     display: inline-block;
-    top: 2px;
+    top: 6px;
     width: 50px;
-    position: relative;
-    left: 10px;
+    position: absolute;
+    left: 97px;
     padding: 3px 2px 2px 5px;
     border-radius: 0px;
     border: solid 1px grey;
@@ -786,7 +808,7 @@
     display: inline-block;
     font-weight: 400;
     font-family: var(--copy);
-    cursor: pointer;
+    cursor: default;
 }
 
 .custom-order-shadow {
@@ -822,7 +844,7 @@
     width: 164px;
     height: 45px;
     pointer-events: none;
-    opacity: .7;
+    opacity: .8;
 }
 
 .custom-order-hidden {
@@ -1236,6 +1258,12 @@
     font-family: var(--copy);
     font-size: 20px;
     font-weight: 400;
+    display: inline-block;
+}
+
+.message {
+    left: 249px;
+    position: relative;
 }
 
 .mix-title {
@@ -1256,4 +1284,12 @@
     max-width: 400px;
     text-align: center;
     margin: 10px auto;
+}
+
+.price-num {
+    user-select: none;
+    pointer-events: none;
+    cursor: none;
+    width: 50px;
+
 }

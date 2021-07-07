@@ -627,6 +627,10 @@ textarea:focus {
     border-color: var(--primary-light);
 }
 
+.form-textarea-message {
+    border-color: var(--primary-light);
+}
+
 .contact-submit {
     border-color: var(--secondary-color);
     border-top-right-radius: 12px;
