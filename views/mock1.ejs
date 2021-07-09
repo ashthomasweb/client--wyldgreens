@@ -46,7 +46,7 @@
                 <div id="order-button" class="cta-button-background make-smaller">
                     <!-- <p class="cta-num-3">3<span class="cta-num-colon adjust-colon-down">:</span></p> -->
                     <img class="cta-img" style="top: 7px; height: 102px;  " src="/images/icons/cta/email-leaf.png">
-                    <h3>Place an Order</h3>
+                    <h3>Place An Order</h3>
                 </div>
             </div>
 
@@ -96,7 +96,7 @@
 
         <!-- PLAN SECTION -->
 
-        <div  class="l-divider divider-top"></div>
+        <div class="l-divider divider-top"></div>
         <div id="pick-plan" style="top: -70px; " class="avatar-pane--home adjust-up">
             <img class="section-img" style="width: 110px;" src="/images/icons/cta/plan-leaf-white.png">
             <h2>Pick a Plan</h2>
@@ -193,7 +193,7 @@
                     <div class="tech-card-bottom-section">
                         <div class="card-box-center">
                             <img class=" leaf-bullet-top" src="/images/icons/leaf.png">
-                            <h4 class="plan-lower-items">A full tray of greens,<br>4 boxes worth</h4>
+                            <h4 class="plan-lower-items">A full tray of greens,<br>3 boxes worth</h4>
                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
                             <h4 class="plan-lower-items">Great for restaurants<br>and special events</h4>
                             <img class="leaf-bullet-double" src="/images/icons/leaf.png">
@@ -277,7 +277,8 @@
                             <img class="farmers-btn-cross" src="/images/icons/cross.png">
 
                             <p>How<br>Many?</p>
-                            <input oninput="farmersUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
+                            <input oninput="farmersUpdate()" class="mix-num-input" type="number" min="1" max="3"
+                                value="1">
                         </div>
 
                     </div>
@@ -310,7 +311,8 @@
                             <img class="spicy-btn-cross" src="/images/icons/cross.png">
 
                             <p>How<br>Many?</p>
-                            <input oninput="spicyUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
+                            <input oninput="spicyUpdate()" class="mix-num-input" type="number" min="1" max="3"
+                                value="1">
                         </div>
                     </div>
 
@@ -351,7 +353,8 @@
                             <img class="salad-btn-cross" src="/images/icons/cross.png">
 
                             <p>How<br>Many?</p>
-                            <input oninput="saladUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
+                            <input oninput="saladUpdate()" class="mix-num-input" type="number" min="1" max="3"
+                                value="1">
                         </div>
                     </div>
 
@@ -402,7 +405,7 @@
         <div class="card-pane--tech">
 
             <div class="card card--tech-right custom-order">
-                
+
                 <div class="tech-card-inner-wrap">
 
                     <div class="tech-card-top-section ">
@@ -422,47 +425,57 @@
                             </p>
                             <div class="ingred-wrap">
 
-                                <button class="custom-new" type="button" onclick="customNewOrder()">Start New Order</button>
+                                <button class="custom-new" type="button" onclick="customNewOrder()">Start New
+                                    Order</button>
                                 <button class="custom-close" type="button" onclick="customOrderOff()">Close</button>
-                                <button class="custom-remove" type="button" onclick="customRemoveOrder()">Remove Order</button>
+                                <!-- <button class="custom-remove" type="button" onclick="customRemoveOrder()">Remove Order</button> -->
 
                                 <div class="ingred-box">
-                                    
+
                                     <ul class="custom-ingredients">
-                                        <label for=" Broccoli"><input id=" Broccoli" class="custom-check" type="checkbox" disabled="true" name=" Broccoli"
-                                            oninput="ingredCheck()">- Broccoli</label><br>
-                                        <label for=" Sunflower"><input id=" Sunflower" class="custom-check" type="checkbox" disabled="true" name=" Sunflower"
-                                            oninput="ingredCheck()">- Sunflower</label><br>
-                                        <label for=" Rutabaga"><input id=" Rutabaga" class="custom-check" type="checkbox" disabled="true" name=" Rutabaga"
-                                            oninput="ingredCheck()">- Rutabaga</label><br>
-                                        <label for=" Pea"><input id=" Pea" class="custom-check" type="checkbox" disabled="true" name=" Pea"
-                                            oninput="ingredCheck()">- Pea</label><br>
+                                        <label for=" Broccoli"><input id=" Broccoli" class="custom-check"
+                                                type="checkbox" disabled="true" name=" Broccoli"
+                                                oninput="ingredCheck()">- Broccoli</label><br>
+                                        <label for=" Sunflower"><input id=" Sunflower" class="custom-check"
+                                                type="checkbox" disabled="true" name=" Sunflower"
+                                                oninput="ingredCheck()">- Sunflower</label><br>
+                                        <label for=" Rutabaga"><input id=" Rutabaga" class="custom-check"
+                                                type="checkbox" disabled="true" name=" Rutabaga"
+                                                oninput="ingredCheck()">- Rutabaga</label><br>
+                                        <label for=" Pea"><input id=" Pea" class="custom-check" type="checkbox"
+                                                disabled="true" name=" Pea" oninput="ingredCheck()">- Pea</label><br>
                                     </ul>
                                     <ul class="custom-ingredients">
-                                        <label for=" Mustard" ><input id=" Mustard" class="custom-check" type="checkbox" disabled="true" name=" Mustard"
-                                            oninput="ingredCheck()">- Mustard</label><br>
-                                        <label for=" Radish"><input id=" Radish" class="custom-check" type="checkbox" disabled="true" name=" Radish"
-                                            oninput="ingredCheck()">- Radish</label><br>
-                                        <label for=" Cabbage"><input id=" Cabbage" class="custom-check" type="checkbox" disabled="true" name=" Cabbage"
-                                            oninput="ingredCheck()">- Cabbage</label><br>
+                                        <label for=" Mustard"><input id=" Mustard" class="custom-check" type="checkbox"
+                                                disabled="true" name=" Mustard" oninput="ingredCheck()">-
+                                            Mustard</label><br>
+                                        <label for=" Radish"><input id=" Radish" class="custom-check" type="checkbox"
+                                                disabled="true" name=" Radish" oninput="ingredCheck()">-
+                                            Radish</label><br>
+                                        <label for=" Cabbage"><input id=" Cabbage" class="custom-check" type="checkbox"
+                                                disabled="true" name=" Cabbage" oninput="ingredCheck()">-
+                                            Cabbage</label><br>
                                     </ul>
                                     <div class="custom-btn-slider">
-                                        
-                                        <button class="custom-order-button" type="button" onclick="customOrderOn()">Start A New Custom Order</button>
-                                        <button class="custom-order-hidden" type="button" onclick="promptQuantity()">Create
+
+                                        <button class="custom-order-button" type="button"
+                                            onclick="customOrderOn()">Start A New Custom Order</button>
+                                        <button class="custom-order-hidden" type="button"
+                                            onclick="promptQuantity()">Create
                                             Mix!</button>
-                                            <div class="custom-quantity">
-                                                <img class="custom-btn-check" src="/images/icons/check.png">
-                                                <img class="custom-btn-cross" src="/images/icons/cross.png">
-                                                
-                                                <p>How<br>Many?</p>
-                                                <input oninput="customUpdate()" class="custom-num-input" type="number" min="1" max="3" value="1">
-                                            </div>
+                                        <div class="custom-quantity">
+                                            <img class="custom-btn-check" src="/images/icons/check.png">
+                                            <img class="custom-btn-cross" src="/images/icons/cross.png">
+
+                                            <p>How<br>Many?</p>
+                                            <input oninput="customUpdate()" class="custom-num-input" type="number"
+                                                min="1" max="3" value="1">
                                         </div>
                                     </div>
-                                    
                                 </div>
+
                             </div>
+                        </div>
                     </div>
 
                 </div>
@@ -477,7 +490,7 @@
 
         <div id="order-form" style="top: -43px;" class="avatar-pane--home adjust-order">
             <img class="section-img" src="/images/icons/cta/email-leaf-white.png">
-            <h2>Place an Order</h2>
+            <h2>Place Your Order</h2>
         </div>
 
         <div class="order-text">
@@ -538,13 +551,13 @@
                         <div class="wyld-options">
                             <div class="wyld-form-plans">
                                 <label class="form-title">One-time Order</label>
-                                <input type="checkbox" name="one_time">
+                                <input type="checkbox" name="one_time" oninput="oneTimeDel()">
                                 <br>
                                 <label class="form-title">Weekly Delivery</label>
-                                <input type="checkbox" name="weekly">
+                                <input type="checkbox" name="weekly" oninput="weeklyDel()">
                                 <br>
                                 <label class="form-title">Bulk Order</label>
-                                <input type="checkbox" name="bulk">
+                                <input type="checkbox" name="bulk" oninput="bulkDel()">
                                 <p class="delivery-text">Deliveries always take place on<br>Thursday afternoons and
                                     evenings.</p>
                             </div>
@@ -555,35 +568,38 @@
                     <div class="contact-card-bottom-section">
                         <div class="wyld-form-mix">
                             <div class="mix-wrap">
-                                <input type="checkbox" name="mix_farmers" >
+                                <input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">
                                 <label class="form-title mix-title">Farmer's Mix</label>
-                                <input class="form-num" type="number" name="farmers-num" placeholder="0" min="0"
-                                    max="4">
+                                <input class="form-num" type="number" name="farmers-num" placeholder="0" min="0" max="3"
+                                    oninput="farmersInput()">
                             </div>
 
                             <div class="mix-wrap">
-                                <input type="checkbox" name="mix_spicy">
+                                <input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">
                                 <label class="form-title mix-title">Spicy Mix</label>
-                                <input class="form-num" type="number" name="spicy-num" placeholder="0" min="0" max="4">
+                                <input class="form-num" type="number" name="spicy-num" placeholder="0" min="0" max="3"
+                                    oninput="spicyInput()">
                             </div>
 
                             <div class="mix-wrap">
-                                <input type="checkbox" name="mix_healthy">
+                                <input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">
                                 <label class="form-title mix-title">Healthy Mix</label>
-                                <input class="form-num" type="number" name="healthy-num" placeholder="0" min="0"
-                                    max="4">
+                                <input class="form-num" type="number" name="healthy-num" placeholder="0" min="0" max="3"
+                                    oninput="healthyInput()">
                             </div>
 
                             <div class="mix-wrap">
-                                <input type="checkbox" name="mix_salad">
+                                <input type="checkbox" name="mix_salad" oninput="saladCheckbox()">
                                 <label class="form-title mix-title">Salad Mix</label>
-                                <input class="form-num" type="number" name="salad-num" placeholder="0" min="0" max="4">
+                                <input class="form-num" type="number" name="salad-num" placeholder="0" min="0" max="3"
+                                    oninput="saladInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_custom">
                                 <label class="form-title mix-title">Custom Order</label>
-                                <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="4">
+                                <input method="" class="form-num" type="number" name="custom-num" placeholder="0"
+                                    min="0" max="3" onchange="customQuantityVerify()">
                             </div>
 
                             <div class="mix-wrap">
@@ -603,12 +619,33 @@
                                 that changes to your order type may take a few weeks to fill.
                             </p>
                         </div>
-                        <label class="form-title">Order Details:</label>
-                        <label class="form-title message">Message:</label><br>
-                        <textarea id="details-body" class="form-textarea" name="order-details"
-                            placeholder="Please leave us your order details." oninput="formFieldCheck()"></textarea>
-                        <textarea id="message-body" class="form-textarea-message" name="message"
-                            placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
+                        <!-- <label class="form-title">Custom Order Details:</label> -->
+                        <!-- <textarea id="details-body" class="form-textarea" name="order-details"
+                            placeholder="Please complete your order details." oninput="formFieldCheck()"></textarea> -->
+
+                        <div class="custom-order-details">
+                            <label class="form-title">Custom Order:</label><br>
+
+                            <div class="order num-1">
+                                <p></p>
+                                <input type="number" oninput="order1Input()">
+                            </div>
+                            <div class="order num-2">
+                                <p></p>
+                                <input type="number"  oninput="order2Input()">
+                            </div>
+                            <div class="order num-3">
+                                <p></p>
+                                <input type="number" oninput="order3Input()" >
+                            </div>
+
+                        </div>
+                        <div class="message-details">
+
+                            <label class="form-title message">Message:</label><br>
+                            <textarea id="message-body" class="form-textarea-message" name="message"
+                                placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
+                        </div>
                     </div>
 
                 </form>

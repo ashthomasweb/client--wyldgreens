@@ -237,45 +237,47 @@ function customOrderOff() { // close pane
     }
 }
 
-function customRemoveOrder() {
-    customQuanBool = false;
-    customUpdateBool = false;
-    currentOrderSubmitted = false;
+// function customRemoveOrder() {
+//     customQuanBool = false;
+//     customUpdateBool = false;
+//     currentOrderSubmitted = false;
 
-    customOrderArray.pop();
-
-
-    customQuanCheck.style.display = "none";
-    customQuanInput.value = "0";
-    hiddenBtn.innerText = "Deleted from Order";
-    customQuanP.style.opacity = "0";
-    customQuanCross.style.display = "block";
-    customRemove.style.pointerEvents = "none";
-    customNew.style.pointerEvents = "none";
-    document.querySelector("#details-body").value = customOrderArray.join();
+//     customOrderArray.pop();
 
 
-    
-    setTimeout(() => {
-        customOrderOff();
-        customRemove.classList.remove('custom-remove-clicked');
-        customNew.classList.remove('custom-remove-clicked');
-    }, 2000);
-    setTimeout(() => {
-        customQuanCross.style.display = "none";
-        customQuanP.style.opacity = "1";
-        customQuanInput.value = "1";
-        customClose.style.pointerEvents = "auto";
-    }, 2300);
-}
+//     customQuanCheck.style.display = "none";
+//     customQuanInput.value = "0";
+//     hiddenBtn.innerText = "Deleted from Order";
+//     customQuanP.style.opacity = "0";
+//     customQuanCross.style.display = "block";
+//     customRemove.style.pointerEvents = "none";
+//     customNew.style.pointerEvents = "none";
+//     document.querySelector("#details-body").value = customOrderArray.join();
+
+//     setTimeout(() => {
+//         customOrderOff();
+//         customRemove.classList.remove('custom-remove-clicked');
+//         customNew.classList.remove('custom-remove-clicked');
+//     }, 2000);
+//     setTimeout(() => {
+//         customQuanCross.style.display = "none";
+//         customQuanP.style.opacity = "1";
+//         customQuanInput.value = "1";
+//         customClose.style.pointerEvents = "auto";
+//     }, 2300);
+//     getTotalCustom();
+
+// }
 
 function customNewOrder() {
     customQuanBool = false;
     customUpdateBool = false;
     currentOrderSubmitted = false;
     customNew.classList.remove('custom-remove-clicked');
-    customRemove.classList.remove('custom-remove-clicked');
+    // customRemove.classList.remove('custom-remove-clicked');
     customOrderOff();
+    getTotalCustom();
+    checkCustomQuantities();
 }
 
 
@@ -341,13 +343,118 @@ function ingredCheck() {
 }
 
 let customQuanBool = false;
-
 let customUpdateBool = false;
 
-function sendCustomData() {
-    let prevText = document.querySelector("#message-body").value;
-    let itemList = [];
+let customOrder1 = {
+    quantity: 0,
+    ingredients: ""
+};
+let customOrder2 = {
+    quantity: 0,
+    ingredients: ""
+};
+let customOrder3 = {
+    quantity: 0,
+    ingredients: ""
+};
 
+function checkCustomQuantities() {
+    if ( customOrder1.quantity + customOrder2.quantity + customOrder3.quantity >= 3 ) {
+        console.log('max');
+        customOrderBtn.style.pointerEvents = "none";
+        customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form"
+    } else {
+        customOrderBtn.style.pointerEvents = "auto";
+        customOrderBtn.innerHTML = "Start A New Custom Order";
+    }
+}
+
+function getTotalCustom() {
+    let total = customOrder1.quantity + customOrder2.quantity + customOrder3.quantity;
+    
+    document.querySelector(".wyld-form-mix input[name=custom-num]").value = total;
+
+    if (total > 3) {
+        customOrderBtn.style.pointerEvents = "none";
+        customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
+    }
+
+}
+
+function order1Input() {
+    customOrder1.quantity = Number(document.querySelector('.num-1 input').value);
+    customNewOrder();
+    getTotalCustom();
+}
+
+function order2Input() {
+    customOrder2.quantity = Number(document.querySelector('.num-2 input').value);
+    customNewOrder();
+    getTotalCustom();
+}
+
+function order3Input() {
+    customOrder3.quantity = Number(document.querySelector('.num-3 input').value);
+    customNewOrder();
+    getTotalCustom();
+}
+
+function customQuantityVerify() { // NEEDS to check if pane is open before applying styles
+    let total = Number(document.querySelector(".wyld-form-mix input[name=custom-num]").value);
+
+    if (total >= 3) {
+        console.log('more')
+        customOrderBtn.style.pointerEvents = "none";
+        customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
+        
+    } else if (total <= 2) {
+        customOrderBtn.style.pointerEvents = "auto";
+        customOrderBtn.innerHTML = "Start A New Custom Order";
+        console.log('less');
+    }
+    console.log('input');
+
+}
+
+function customObjectHandling(quantity, ingredients) {
+    if ( customOrder1.ingredients === "" ) {
+        customOrder1.quantity = quantity;
+        customOrder1.ingredients = ingredients;
+        checkCustomQuantities();
+    } else if ( customOrder2.ingredients === "" ) {
+        customOrder2.quantity = quantity;
+        customOrder2.ingredients = ingredients;
+        checkCustomQuantities();
+    } else if ( customOrder3.ingredients === "" ) {
+        customOrder3.quantity = quantity;
+        customOrder3.ingredients = ingredients;
+        checkCustomQuantities();
+    }
+}
+
+function newCustomDisplay() {
+    document.querySelector(".num-1 p").innerText = "Custom order with the following: " + customOrder1.ingredients;
+    document.querySelector(".num-1 input").value = customOrder1.quantity.toString();
+    document.querySelector(".num-2 p").innerText = "Custom order with the following: " + customOrder2.ingredients;
+    document.querySelector(".num-2 input").value = customOrder2.quantity.toString();
+    document.querySelector(".num-3 p").innerText = "Custom order with the following: " + customOrder3.ingredients;
+    document.querySelector(".num-3 input").value = customOrder3.quantity.toString();
+}
+
+function customObjectUpdate(quantity) {
+    if ( customOrder2.ingredients === "" ) {
+        customOrder1.quantity = quantity;
+    } else if ( customOrder2.ingredients !== "" ) {
+        if ( customOrder3.ingredients === "" ) {
+            customOrder2.quantity = quantity;
+        } else {
+            customOrder3.quantity = quantity;
+        }
+    }
+}
+
+function sendCustomData(update) {
+    
     currentOrderSubmitted = true;
     hiddenBtn.innerText = "Added to Order!";
     hiddenBtn.style.pointerEvents = "none";
@@ -355,45 +462,37 @@ function sendCustomData() {
     customQuanCheck.style.display = "block";
     document.querySelector(".wyld-form-mix input[name=custom-num]").value = customQuanInput.value;
     addToOrder('mix_custom');
-
+    
     // data gathering and packaging
+    
+    let boxVar = "box";
+    let newOrderQuan = Number(customQuanInput.value);
+    let itemList = [];
+    
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].checked === true && itemList.push(ingredChecks[i].name);
     }
-    let boxVar = "box";
-    if (Number(document.querySelector(".custom-quantity input").value) > 1) {
+    if (Number(customQuanInput.value) > 1) {
         boxVar = "boxes";
     }
-    customOrderArray.push(`${document.querySelector(".custom-quantity input").value} custom order ${boxVar} containing:\n${itemList}\n\n`);
-    document.querySelector("#details-body").value = customOrderArray.join("");
+    
+    // custom order object update
+    if ( update === true ) {
+        customObjectUpdate(newOrderQuan);
+    } else {
+        // custom order object handling
+        customObjectHandling(newOrderQuan, itemList);
+    }
 
     getTotalCustom();
-
+    newCustomDisplay();
 }
-
-function getTotalCustom() {
-    let total = 0;
-    customOrderArray.forEach((item) => {
-        total = total + Number(item.slice(0,1));
-    })
-    document.querySelector(".wyld-form-mix input[name=custom-num]").value = total;
-
-    console.log(total);
-
-}
-
-let customOrderArray = [];
 
 function promptQuantity() {
 
-
     if (customUpdateBool === true) { // if updating quantity - data already sent to form
-        customOrderArray.pop();
-        sendCustomData();
-        console.log('hi')
-
+        sendCustomData(true);
     } else if (customUpdateBool === false) {
-
 
         if (customQuanBool === true) { // action when quantity box displayed and ingredients selected - data submission
             customQuanBool = false;
@@ -405,9 +504,7 @@ function promptQuantity() {
             // display new option buttons
             customNew.classList.add('custom-remove-clicked');
             customClose.classList.remove('custom-close-clicked');
-            customRemove.style.pointerEvents = "auto";
             customNew.style.pointerEvents = "auto";
-            customRemove.classList.add('custom-remove-clicked');
 
             // turn off ingredient selection
             for (i = 0; i < ingredChecks.length; i++) {
@@ -419,7 +516,7 @@ function promptQuantity() {
             }
 
         } else if (customQuanBool === false) { // first click after adding ingredient
-            if ( bulkDelBool === true ) {
+            if (bulkDelBool === true) {
                 customQuanP.innerHTML = "Bulk<br>Order";
                 customQuanInput.value = "4";
             }
@@ -900,10 +997,105 @@ function sendHealthyData() {
 }
 
 
+let farmersCheck = document.querySelector(".mix-wrap input[name=mix_farmers]");
 
+function farmersCheckbox() {
+    if (farmersCheck.checked === false) {
+        farmersCloseBtn();
+    } else if (farmersCheck.checked === true) {
+        farmersMix();
+        farmersMix();
+    }
+}
 
+function farmersInput() {
+    if (Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) >= 4) {
+        document.querySelector(".mix-wrap input[name=farmers-num]").value = "3";
+    }
 
+    if (farmersCheck.checked === false) {
+        farmersMix();
+        farmersMix();
 
+    } else if (farmersCheck.checked === true) {
+        farmersQuanInput.value = document.querySelector(".mix-wrap input[name=farmers-num]").value;
+    }
+}
+
+let spicyCheck = document.querySelector(".mix-wrap input[name=mix_spicy]");
+
+function spicyCheckbox() {
+    if (spicyCheck.checked === false) {
+        spicyCloseBtn();
+    } else if (spicyCheck.checked === true) {
+        spicyMix();
+        spicyMix();
+    }
+}
+
+function spicyInput() {
+
+    if (Number(document.querySelector(".mix-wrap input[name=spicy-num]").value) >= 4) {
+        document.querySelector(".mix-wrap input[name=spicy-num]").value = "3";
+    }
+    if (spicyCheck.checked === false) {
+        spicyMix();
+        spicyMix();
+
+    } else if (spicyCheck.checked === true) {
+        spicyQuanInput.value = document.querySelector(".mix-wrap input[name=spicy-num]").value;
+    }
+}
+
+let saladCheck = document.querySelector(".mix-wrap input[name=mix_salad]");
+
+function saladCheckbox() {
+    if (saladCheck.checked === false) {
+        saladCloseBtn();
+    } else if (saladCheck.checked === true) {
+        saladMix();
+        saladMix();
+    }
+}
+
+function saladInput() {
+    if (Number(document.querySelector(".mix-wrap input[name=salad-num]").value) >= 4) {
+        document.querySelector(".mix-wrap input[name=salad-num]").value = "3";
+    }
+
+    if (saladCheck.checked === false) {
+        saladMix();
+        saladMix();
+
+    } else if (saladCheck.checked === true) {
+        saladQuanInput.value = document.querySelector(".mix-wrap input[name=salad-num]").value;
+    }
+}
+
+let healthyCheck = document.querySelector(".mix-wrap input[name=mix_healthy]");
+
+function healthyCheckbox() {
+
+    if (Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) >= 4) {
+        document.querySelector(".mix-wrap input[name=healthy-num]").value = "3";
+    }
+    if (healthyCheck.checked === false) {
+        healthyCloseBtn();
+    } else if (healthyCheck.checked === true) {
+        healthyMix();
+        healthyMix();
+    }
+}
+
+function healthyInput() {
+    if (healthyCheck.checked === false) {
+        healthyMix();
+        healthyMix();
+
+    } else if (healthyCheck.checked === true) {
+        healthyQuanInput.value = document.querySelector(".mix-wrap input[name=healthy-num]").value;
+    }
+}
 
 // || Contact form check for field input then change button color 
 

@@ -1262,7 +1262,7 @@
 }
 
 .message {
-    left: 249px;
+    left: 176px;
     position: relative;
 }
 
@@ -1292,4 +1292,24 @@
     cursor: none;
     width: 50px;
 
+}
+
+.custom-order-details {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.message-details {
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.order {
+    margin: 10px auto;
+
+}
+
+.order input {
+    width: 100px;
 }
