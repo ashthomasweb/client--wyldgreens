@@ -1311,5 +1311,16 @@
 }
 
 .order input {
-    width: 100px;
+    width: 40px;
+    margin: -2px 7px 14px 0;
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.order p {
+    display: inline-block;
+    max-width: 270px;
+    vertical-align: top;
+
 }

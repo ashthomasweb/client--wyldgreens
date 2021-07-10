@@ -430,7 +430,7 @@
                                 <button class="custom-close" type="button" onclick="customOrderOff()">Close</button>
                                 <!-- <button class="custom-remove" type="button" onclick="customRemoveOrder()">Remove Order</button> -->
 
-                                <div class="ingred-box">
+                                <div id="ingred-box" class="ingred-box">
 
                                     <ul class="custom-ingredients">
                                         <label for=" Broccoli"><input id=" Broccoli" class="custom-check"
@@ -571,28 +571,28 @@
                                 <input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">
                                 <label class="form-title mix-title">Farmer's Mix</label>
                                 <input class="form-num" type="number" name="farmers-num" placeholder="0" min="0" max="3"
-                                    oninput="farmersInput()">
+                                    onchange="farmersInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">
                                 <label class="form-title mix-title">Spicy Mix</label>
                                 <input class="form-num" type="number" name="spicy-num" placeholder="0" min="0" max="3"
-                                    oninput="spicyInput()">
+                                    onchange="spicyInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">
                                 <label class="form-title mix-title">Healthy Mix</label>
                                 <input class="form-num" type="number" name="healthy-num" placeholder="0" min="0" max="3"
-                                    oninput="healthyInput()">
+                                    onchange="healthyInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_salad" oninput="saladCheckbox()">
                                 <label class="form-title mix-title">Salad Mix</label>
                                 <input class="form-num" type="number" name="salad-num" placeholder="0" min="0" max="3"
-                                    oninput="saladInput()">
+                                    onchange="saladInput()">
                             </div>
 
                             <div class="mix-wrap">
@@ -627,16 +627,16 @@
                             <label class="form-title">Custom Order:</label><br>
 
                             <div class="order num-1">
-                                <p></p>
                                 <input type="number" oninput="order1Input()">
+                                <p onclick="addIngredientForm1()">Add ingredients</p>
                             </div>
                             <div class="order num-2">
-                                <p></p>
                                 <input type="number"  oninput="order2Input()">
+                                <p>Add ingredients</p>
                             </div>
                             <div class="order num-3">
-                                <p></p>
                                 <input type="number" oninput="order3Input()" >
+                                <p>Add ingredients</p>
                             </div>
 
                         </div>

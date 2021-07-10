@@ -359,7 +359,7 @@ let customOrder3 = {
 };
 
 function checkCustomQuantities() {
-    if ( customOrder1.quantity + customOrder2.quantity + customOrder3.quantity >= 3 ) {
+    if (customOrder1.quantity + customOrder2.quantity + customOrder3.quantity >= 3) {
         console.log('max');
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form"
@@ -371,7 +371,7 @@ function checkCustomQuantities() {
 
 function getTotalCustom() {
     let total = customOrder1.quantity + customOrder2.quantity + customOrder3.quantity;
-    
+
     document.querySelector(".wyld-form-mix input[name=custom-num]").value = total;
 
     if (total > 3) {
@@ -406,26 +406,27 @@ function customQuantityVerify() { // NEEDS to check if pane is open before apply
         console.log('more')
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
-        
+
     } else if (total <= 2) {
         customOrderBtn.style.pointerEvents = "auto";
         customOrderBtn.innerHTML = "Start A New Custom Order";
         console.log('less');
     }
     console.log('input');
+    getPriceTotal();
 
 }
 
 function customObjectHandling(quantity, ingredients) {
-    if ( customOrder1.ingredients === "" ) {
+    if (customOrder1.ingredients === "") {
         customOrder1.quantity = quantity;
         customOrder1.ingredients = ingredients;
         checkCustomQuantities();
-    } else if ( customOrder2.ingredients === "" ) {
+    } else if (customOrder2.ingredients === "") {
         customOrder2.quantity = quantity;
         customOrder2.ingredients = ingredients;
         checkCustomQuantities();
-    } else if ( customOrder3.ingredients === "" ) {
+    } else if (customOrder3.ingredients === "") {
         customOrder3.quantity = quantity;
         customOrder3.ingredients = ingredients;
         checkCustomQuantities();
@@ -433,19 +434,19 @@ function customObjectHandling(quantity, ingredients) {
 }
 
 function newCustomDisplay() {
-    document.querySelector(".num-1 p").innerText = "Custom order with the following: " + customOrder1.ingredients;
+    document.querySelector(".num-1 p").innerHTML = `Custom order with the following:<br>  - ${customOrder1.ingredients}`;
     document.querySelector(".num-1 input").value = customOrder1.quantity.toString();
-    document.querySelector(".num-2 p").innerText = "Custom order with the following: " + customOrder2.ingredients;
+    document.querySelector(".num-2 p").innerHTML = `Custom order with the following:<br>  - ${customOrder2.ingredients}`;
     document.querySelector(".num-2 input").value = customOrder2.quantity.toString();
-    document.querySelector(".num-3 p").innerText = "Custom order with the following: " + customOrder3.ingredients;
+    document.querySelector(".num-3 p").innerHTML = `Custom order with the following:<br>  - ${customOrder3.ingredients}`;
     document.querySelector(".num-3 input").value = customOrder3.quantity.toString();
 }
 
 function customObjectUpdate(quantity) {
-    if ( customOrder2.ingredients === "" ) {
+    if (customOrder2.ingredients === "") {
         customOrder1.quantity = quantity;
-    } else if ( customOrder2.ingredients !== "" ) {
-        if ( customOrder3.ingredients === "" ) {
+    } else if (customOrder2.ingredients !== "") {
+        if (customOrder3.ingredients === "") {
             customOrder2.quantity = quantity;
         } else {
             customOrder3.quantity = quantity;
@@ -454,7 +455,7 @@ function customObjectUpdate(quantity) {
 }
 
 function sendCustomData(update) {
-    
+
     currentOrderSubmitted = true;
     hiddenBtn.innerText = "Added to Order!";
     hiddenBtn.style.pointerEvents = "none";
@@ -462,22 +463,22 @@ function sendCustomData(update) {
     customQuanCheck.style.display = "block";
     document.querySelector(".wyld-form-mix input[name=custom-num]").value = customQuanInput.value;
     addToOrder('mix_custom');
-    
+
     // data gathering and packaging
-    
+
     let boxVar = "box";
     let newOrderQuan = Number(customQuanInput.value);
     let itemList = [];
-    
+
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].checked === true && itemList.push(ingredChecks[i].name);
     }
     if (Number(customQuanInput.value) > 1) {
         boxVar = "boxes";
     }
-    
+
     // custom order object update
-    if ( update === true ) {
+    if (update === true) {
         customObjectUpdate(newOrderQuan);
     } else {
         // custom order object handling
@@ -528,6 +529,10 @@ function promptQuantity() {
     }
 }
 
+function addIngredientForm1() {
+    window.location.href = "#ingred-box";
+    window.scrollBy(0, -50);
+}
 // MIX SELECTION BUTTONS
 
 // 'Farmers Mix' order button control booleans
@@ -1006,6 +1011,7 @@ function farmersCheckbox() {
         farmersMix();
         farmersMix();
     }
+
 }
 
 function farmersInput() {
@@ -1020,6 +1026,7 @@ function farmersInput() {
     } else if (farmersCheck.checked === true) {
         farmersQuanInput.value = document.querySelector(".mix-wrap input[name=farmers-num]").value;
     }
+    getPriceTotal();
 }
 
 let spicyCheck = document.querySelector(".mix-wrap input[name=mix_spicy]");
@@ -1045,6 +1052,8 @@ function spicyInput() {
     } else if (spicyCheck.checked === true) {
         spicyQuanInput.value = document.querySelector(".mix-wrap input[name=spicy-num]").value;
     }
+    getPriceTotal();
+
 }
 
 let saladCheck = document.querySelector(".mix-wrap input[name=mix_salad]");
@@ -1070,6 +1079,8 @@ function saladInput() {
     } else if (saladCheck.checked === true) {
         saladQuanInput.value = document.querySelector(".mix-wrap input[name=salad-num]").value;
     }
+    getPriceTotal();
+
 }
 
 let healthyCheck = document.querySelector(".mix-wrap input[name=mix_healthy]");
@@ -1095,7 +1106,42 @@ function healthyInput() {
     } else if (healthyCheck.checked === true) {
         healthyQuanInput.value = document.querySelector(".mix-wrap input[name=healthy-num]").value;
     }
+    getPriceTotal();
+
 }
+
+function getPriceTotal() {
+    let planPrice;
+    if (document.querySelector('[name=weekly]').checked === true) {
+        planPrice = 10;
+
+    } else if (document.querySelector('[name=one_time]').checked === true) {
+        planPrice = 12;
+
+    } else if (document.querySelector('[name=bulk]').checked === true) {
+        planPrice = 30;
+        document.querySelector('[name=farmers-num]').value = "3";
+        document.querySelector('[name=spicy-num]').value = "3";
+        document.querySelector('[name=salad-num]').value = "3";
+        document.querySelector('[name=healthy-num]').value = "3";
+        document.querySelector('[name=custom-num]').value = "3";
+        document.querySelector('num-2').style.opacity = "0";
+        document.querySelector('num-3').style.opacity = "0";
+
+
+        console.log('hi')
+    }
+
+}
+
+// function check() {
+//     let thing = document.querySelector('[name=weekly]');
+
+//     document.querySelector('[name=bulk]').checked === true && console.log('test');
+//     thing.checked === true && console.log('thingtest');
+
+
+// }
 
 // || Contact form check for field input then change button color 
 
