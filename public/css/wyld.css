@@ -1210,6 +1210,7 @@
     padding: 10px;
     margin: 0 30px 20px 0;
     background-color: whitesmoke;
+    position: relative;
 }
 
 .order-text {
@@ -1323,4 +1324,25 @@
     max-width: 270px;
     vertical-align: top;
 
+}
+
+.bulk-discount-pane {
+    display: none;
+    position: absolute;
+    bottom: 16px;
+    right: 95px;
+}
+
+.bulk-discount-pane p {
+    font-family: var(--headers);
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 14px;
+    
+}
+
+.price-total {
+    position: absolute;
+    top: 50%;
+    left: 231px;
 }

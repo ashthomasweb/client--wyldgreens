@@ -116,6 +116,8 @@ function bulkClose() {
 }
 
 
+
+
 let weeklyDelBool = false;
 
 function weeklyDel() {
@@ -127,19 +129,68 @@ function weeklyDel() {
         document.querySelector('.weekly-btn-check').style.display = "block";
         document.querySelector('.one_time-btn-check').style.display = "none";
         document.querySelector('.bulk-btn-check').style.display = "none";
+        hideBulkDiscount();
+        bulkMaxOff();
         clearPlansForm();
         addToOrder('weekly');
+        getPriceTotal();
+
     } else if (weeklyDelBool === true) {
         weeklyDelBool = !weeklyDelBool;
         weeklyClose();
         clearPlansForm();
+        if ( formCheckWeekly.checked === false && formCheckBulk === false && formCheckOnetime === false ) {
+            formTotalPrice.value = '0';
+        }
+        getPriceTotal();
+
     }
 }
 
+let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
+let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
+
+
+let bulkMaxBool = false;
+function bulkMax() {
+    bulkMaxBool = true;
+    
+
+    formQuanList.forEach( (item, i) => {
+        if ( formCheckList[i].checked === true ) {
+            item.value = "1";
+        } else {
+            item.value = "";
+        }
+        item.max = "1";
+    });
+
+}
+
+function bulkMaxOff() {
+  
+    
+    if ( bulkMaxBool === true ) {
+
+        formQuanList.forEach( (item, i) => {
+            if ( formCheckList[i].checked === false ) {
+                item.value = "";
+            } else {
+                item.value = "1";
+            }
+            item.max = "3";
+        });
+        
+    }
+
+    bulkMaxBool = false;
+}
+
+let bulkDiscount = document.querySelector('.bulk-discount-pane');
 let bulkDelBool = false;
 
 function bulkDel() {
-    if (bulkDelBool === false) {
+    if (bulkDelBool === false) { // turns ON bulk delivery options
         bulkDelBool = !bulkDelBool;
         weeklyClose();
         bulkOpen();
@@ -149,10 +200,20 @@ function bulkDel() {
         document.querySelector('.bulk-btn-check').style.display = "block";
         clearPlansForm();
         addToOrder('bulk');
-    } else if (bulkDelBool === true) {
+        displayBulkDiscount();
+        bulkMax();
+        
+        getPriceTotal();
+    } else if (bulkDelBool === true) { // turns OFF bulk delivery options
         bulkDelBool = !bulkDelBool;
         clearPlansForm();
         bulkClose();
+        if ( formCheckWeekly.checked === false && formCheckBulk === false && formCheckOnetime === false ) {
+            formTotalPrice.value = '0';
+        }
+        hideBulkDiscount();
+        bulkMaxOff();
+        getPriceTotal();
     }
 }
 
@@ -167,12 +228,20 @@ function oneTimeDel() {
         document.querySelector('.weekly-btn-check').style.display = "none";
         document.querySelector('.one_time-btn-check').style.display = "block";
         document.querySelector('.bulk-btn-check').style.display = "none";
+        hideBulkDiscount();
+        bulkMaxOff();
         clearPlansForm();
         addToOrder('one_time');
+        getPriceTotal();
     } else if (oneTimeDelBool === true) {
         oneTimeDelBool = !oneTimeDelBool;
         oneTimeClose();
         clearPlansForm();
+        if ( formCheckWeekly.checked === false && formCheckBulk === false && formCheckOnetime === false ) {
+            formTotalPrice.value = '0';
+        }
+        getPriceTotal();
+
     }
 }
 
@@ -403,16 +472,16 @@ function customQuantityVerify() { // NEEDS to check if pane is open before apply
     let total = Number(document.querySelector(".wyld-form-mix input[name=custom-num]").value);
 
     if (total >= 3) {
-        console.log('more')
+        // console.log('more')
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
 
     } else if (total <= 2) {
         customOrderBtn.style.pointerEvents = "auto";
         customOrderBtn.innerHTML = "Start A New Custom Order";
-        console.log('less');
+        // console.log('less');
     }
-    console.log('input');
+    // console.log('input');
     getPriceTotal();
 
 }
@@ -1001,6 +1070,13 @@ function sendHealthyData() {
     addToOrder('mix_healthy');
 }
 
+function displayBulkDiscount() {
+    bulkDiscount.style.display = "block"
+}
+
+function hideBulkDiscount() {
+    bulkDiscount.style.display = "none"
+}
 
 let farmersCheck = document.querySelector(".mix-wrap input[name=mix_farmers]");
 
@@ -1011,12 +1087,18 @@ function farmersCheckbox() {
         farmersMix();
         farmersMix();
     }
-
+    getPriceTotal();
 }
 
 function farmersInput() {
     if (Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) >= 4) {
         document.querySelector(".mix-wrap input[name=farmers-num]").value = "3";
+    }
+
+    if ( bulkMaxBool === true ) {
+        if (Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) >= 1) {
+            document.querySelector(".mix-wrap input[name=farmers-num]").value = "1";
+        }
     }
 
     if (farmersCheck.checked === false) {
@@ -1026,7 +1108,9 @@ function farmersInput() {
     } else if (farmersCheck.checked === true) {
         farmersQuanInput.value = document.querySelector(".mix-wrap input[name=farmers-num]").value;
     }
+    Number(formFarmersQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal();
+
 }
 
 let spicyCheck = document.querySelector(".mix-wrap input[name=mix_spicy]");
@@ -1038,6 +1122,8 @@ function spicyCheckbox() {
         spicyMix();
         spicyMix();
     }
+    getPriceTotal();
+
 }
 
 function spicyInput() {
@@ -1045,6 +1131,13 @@ function spicyInput() {
     if (Number(document.querySelector(".mix-wrap input[name=spicy-num]").value) >= 4) {
         document.querySelector(".mix-wrap input[name=spicy-num]").value = "3";
     }
+
+    if ( bulkMaxBool === true ) {
+        if (Number(document.querySelector(".mix-wrap input[name=spicy-num]").value) >= 1) {
+            document.querySelector(".mix-wrap input[name=spicy-num]").value = "1";
+        }
+    }
+
     if (spicyCheck.checked === false) {
         spicyMix();
         spicyMix();
@@ -1052,6 +1145,7 @@ function spicyInput() {
     } else if (spicyCheck.checked === true) {
         spicyQuanInput.value = document.querySelector(".mix-wrap input[name=spicy-num]").value;
     }
+    Number(formSpicyQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal();
 
 }
@@ -1065,12 +1159,21 @@ function saladCheckbox() {
         saladMix();
         saladMix();
     }
+    getPriceTotal();
+
 }
 
 function saladInput() {
     if (Number(document.querySelector(".mix-wrap input[name=salad-num]").value) >= 4) {
         document.querySelector(".mix-wrap input[name=salad-num]").value = "3";
     }
+
+    if ( bulkMaxBool === true ) {
+        if (Number(document.querySelector(".mix-wrap input[name=salad-num]").value) >= 1) {
+            document.querySelector(".mix-wrap input[name=salad-num]").value = "1";
+        }
+    }
+
 
     if (saladCheck.checked === false) {
         saladMix();
@@ -1079,6 +1182,7 @@ function saladInput() {
     } else if (saladCheck.checked === true) {
         saladQuanInput.value = document.querySelector(".mix-wrap input[name=salad-num]").value;
     }
+    Number(formSaladQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal();
 
 }
@@ -1086,19 +1190,28 @@ function saladInput() {
 let healthyCheck = document.querySelector(".mix-wrap input[name=mix_healthy]");
 
 function healthyCheckbox() {
-
-    if (Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) >= 4) {
-        document.querySelector(".mix-wrap input[name=healthy-num]").value = "3";
-    }
     if (healthyCheck.checked === false) {
         healthyCloseBtn();
     } else if (healthyCheck.checked === true) {
         healthyMix();
         healthyMix();
     }
+    getPriceTotal();
+
 }
 
 function healthyInput() {
+
+    if (Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) >= 4) {
+        document.querySelector(".mix-wrap input[name=healthy-num]").value = "3";
+    }
+
+    if ( bulkMaxBool === true ) {
+        if (Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) >= 1) {
+            document.querySelector(".mix-wrap input[name=healthy-num]").value = "1";
+        }
+    }
+
     if (healthyCheck.checked === false) {
         healthyMix();
         healthyMix();
@@ -1106,42 +1219,71 @@ function healthyInput() {
     } else if (healthyCheck.checked === true) {
         healthyQuanInput.value = document.querySelector(".mix-wrap input[name=healthy-num]").value;
     }
+    Number(formHealthyQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal();
 
 }
 
+// function bulkPriceDisplay() {
+//     if (formCheckBulk.checked === true) {
+//         formFarmersQuan.value = "3";
+//         formHealthyQuan.value = "3";
+//         formSaladQuan.value = "3";
+//         formSpicyQuan.value = "3";
+//         formCustomQuan.value = "3";
+//         document.querySelector('.num-2').style.opacity = "0";
+//         document.querySelector('.num-3').style.opacity = "0";
+//     } else {
+//         // formFarmersQuan.value = "";
+//         // formHealthyQuan.value = "";
+//         // formSaladQuan.value = "";
+//         // formSpicyQuan.value = "";
+//         // formCustomQuan.value = "";
+//         document.querySelector('.num-2').style.opacity = "1";
+//         document.querySelector('.num-3').style.opacity = "1";
+//     }
+// }
+
+let formCheckWeekly = document.querySelector('[name=weekly]');
+let formCheckOnetime = document.querySelector('[name=one_time]');
+let formCheckBulk = document.querySelector('[name=bulk]');
+let formFarmersQuan = document.querySelector('[name=farmers-num]');
+let formHealthyQuan = document.querySelector('[name=healthy-num]');
+let formSaladQuan = document.querySelector('[name=salad-num]');
+let formSpicyQuan = document.querySelector('[name=spicy-num]');
+let formCustomQuan = document.querySelector('[name=custom-num]');
+let formTotalPrice = document.querySelector('[name=total-num]');
+
 function getPriceTotal() {
     let planPrice;
-    if (document.querySelector('[name=weekly]').checked === true) {
-        planPrice = 10;
-
-    } else if (document.querySelector('[name=one_time]').checked === true) {
-        planPrice = 12;
-
-    } else if (document.querySelector('[name=bulk]').checked === true) {
-        planPrice = 30;
-        document.querySelector('[name=farmers-num]').value = "3";
-        document.querySelector('[name=spicy-num]').value = "3";
-        document.querySelector('[name=salad-num]').value = "3";
-        document.querySelector('[name=healthy-num]').value = "3";
-        document.querySelector('[name=custom-num]').value = "3";
-        document.querySelector('num-2').style.opacity = "0";
-        document.querySelector('num-3').style.opacity = "0";
-
-
-        console.log('hi')
+    function getPlanPrice(input) {
+        planPrice = input;
     }
 
+    formCheckWeekly.checked === true && getPlanPrice(10);
+    formCheckOnetime.checked === true && getPlanPrice(12);
+    formCheckBulk.checked === true && getPlanPrice(30);
+
+ 
+
+    function getTotalQuantity() {
+        let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
+        let totalQuantity = 0;
+        // console.log(checkList.value)
+
+        for ( let i = 0; i <= checkList.length - 2; i++ ) {
+           
+            totalQuantity += Number(checkList[i].value);
+        } 
+        return totalQuantity;
+
+    }
+    // getTotalQuantity();
+    let price = getTotalQuantity() * planPrice;
+
+    formTotalPrice.value = price;
 }
 
-// function check() {
-//     let thing = document.querySelector('[name=weekly]');
-
-//     document.querySelector('[name=bulk]').checked === true && console.log('test');
-//     thing.checked === true && console.log('thingtest');
-
-
-// }
 
 // || Contact form check for field input then change button color 
 
