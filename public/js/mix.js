@@ -70,7 +70,7 @@ function farmersCloseBtn() { // hidden tab close button
     farmersUpdateBool = false;
 
     function panelClose() { // close button panel
-        farmersOrderBtn.innerText = "Place Order";
+        farmersOrderBtn.innerText = "Add To Order";
         farmersPane.classList.remove("mix-btn-pane-open");
         farmersOrderBtn.classList.remove('mix-button-clicked');
         farmersQuan.classList.remove('mix-quantity-clicked');
@@ -183,7 +183,7 @@ function spicyCloseBtn() { // hidden tab close button
     spicyUpdateBool = false;
 
     function panelClose() { // close button panel
-        spicyOrderBtn.innerText = "Place Order";
+        spicyOrderBtn.innerText = "Add To Order";
         spicyPane.classList.remove("mix-btn-pane-open");
         spicyOrderBtn.classList.remove('mix-button-clicked');
         spicyQuan.classList.remove('mix-quantity-clicked');
@@ -295,7 +295,7 @@ function saladCloseBtn() { // hidden tab close button
     saladUpdateBool = false;
 
     function panelClose() { // close button panel
-        saladOrderBtn.innerText = "Place Order";
+        saladOrderBtn.innerText = "Add To Order";
         saladPane.classList.remove("mix-btn-pane-open");
         saladOrderBtn.classList.remove('mix-button-clicked');
         saladQuan.classList.remove('mix-quantity-clicked');
@@ -407,7 +407,7 @@ function healthyCloseBtn() { // hidden tab close button
     healthyUpdateBool = false;
 
     function panelClose() { // close button panel
-        healthyOrderBtn.innerText = "Place Order";
+        healthyOrderBtn.innerText = "Add To Order";
         healthyPane.classList.remove("mix-btn-pane-open");
         healthyOrderBtn.classList.remove('mix-button-clicked');
         healthyQuan.classList.remove('mix-quantity-clicked');
