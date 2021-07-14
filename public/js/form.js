@@ -71,6 +71,7 @@ function bulkClose() {
 
 
 let weeklyDelBool = false;
+
 function weeklyDel() {
     if (weeklyDelBool === false) {
         weeklyDelBool = !weeklyDelBool;
@@ -99,6 +100,7 @@ function weeklyDel() {
 }
 
 let bulkDelBool = false;
+
 function bulkDel() {
     if (bulkDelBool === false) { // turns ON bulk delivery options
         bulkDelBool = !bulkDelBool;
@@ -128,6 +130,7 @@ function bulkDel() {
 }
 
 let oneTimeDelBool = false;
+
 function oneTimeDel() {
     if (oneTimeDelBool === false) { // turns ON one-time delivery options
         oneTimeDelBool = !oneTimeDelBool;
@@ -168,9 +171,11 @@ function oneTimeDel() {
 
 
 let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
+let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
 
 let bulkMaxBool = false;
+
 function bulkMax() {
     bulkMaxBool = true;
 
@@ -183,6 +188,15 @@ function bulkMax() {
             }
             item.max = "1";
         }
+    });
+
+    formCustomQuanList.forEach((item) => {
+        if (Number(item.value) > 0) {
+            item.value = "1";
+        } else {
+            item.value = "";
+        }
+        item.max = "1";
     });
 
 }
@@ -200,6 +214,15 @@ function bulkMaxOff() {
             item.max = "3";
         });
 
+        formCustomQuanList.forEach((item) => {
+            if (Number(item.value) > 0) {
+                item.value = "1";
+            } else {
+                item.value = "";
+            }
+            item.max = "3";
+        });
+
     }
 
     bulkMaxBool = false;
@@ -207,15 +230,27 @@ function bulkMaxOff() {
 
 let bulkDiscount = document.querySelector('.bulk-discount-pane');
 
+function discountDisplayHandler() {
+    displayBulkDiscount();
+    hideBulkDiscount();
+}
+
 function displayBulkDiscount() {
     bulkDiscount.style.display = "block";
+    // console.log('hi')
 }
 
 function hideBulkDiscount() {
     let discountBool = false
-    formQuanList.forEach((item) => {
-        if (item.value === "3") {
+    let temp = [...formQuanList];
+    temp.pop();
+    let list = temp.concat(formCustomQuanList);
+    console.log(list)
+    list.forEach((item) => {
+        if (Number(item.value) === 3) {
             discountBool = true;
+        } else if (Number(item.value) < 3) {
+            discounBool = false;
         }
     });
     if (discountBool === false) {
@@ -282,7 +317,7 @@ function spicyCheckbox() {
         spicyMix();
     }
     getPriceTotal();
-
+    discountDisplayHandler();
 }
 
 function spicyInput() {
@@ -510,7 +545,7 @@ function customQuantityVerify() { // NEEDS to check if pane is open before apply
 
 
 function checkCustomQuantities() {
-    if ( customOrder3.quantity === 20 ) {
+    if (customOrder3.quantity === 20) {
         console.log('max');
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Order Form"
@@ -525,8 +560,8 @@ function getTotalCustom() {
 
     document.querySelector(".wyld-form-mix input[name=custom-num]").value = total;
 
-    
-    if ( customOrder1.ingredients !== "" && customOrder2.ingredients !== "" && customOrder3.ingredients !== "" ) {
+
+    if (customOrder1.ingredients !== "" && customOrder2.ingredients !== "" && customOrder3.ingredients !== "") {
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
     }
@@ -537,18 +572,24 @@ function getTotalCustom() {
 
 function order1Input() {
     customOrder1.quantity = Number(document.querySelector('.num-1 input').value);
+    Number(document.querySelector('.num-1 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
+
     customNewOrder();
     getTotalCustom();
 }
 
 function order2Input() {
     customOrder2.quantity = Number(document.querySelector('.num-2 input').value);
+    Number(document.querySelector('.num-2 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
+
     customNewOrder();
     getTotalCustom();
 }
 
 function order3Input() {
     customOrder3.quantity = Number(document.querySelector('.num-3 input').value);
+    Number(document.querySelector('.num-3 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
+
     customNewOrder();
     getTotalCustom();
 }
@@ -557,11 +598,14 @@ function order3Input() {
 function newCustomDisplay() {
     document.querySelector(".num-1 p").innerHTML = `Custom order with the following:<br>  - ${customOrder1.ingredients}`;
     document.querySelector(".num-1 input").value = customOrder1.quantity.toString();
-
+    // document.querySelector(".num-1 p").innerHTML = "Add Ingredients";
+    document.querySelector(".num-2 ").style.display = "block";
     if (customOrder2.quantity !== 0) {
         document.querySelector('.num-2').style.display = "block";
         document.querySelector(".num-2 p").innerHTML = `Custom order with the following:<br>  - ${customOrder2.ingredients}`;
         document.querySelector(".num-2 input").value = customOrder2.quantity.toString();
+        document.querySelector(".num-3 ").style.display = "block";
+
     }
 
     if (customOrder3.quantity !== 0) {
@@ -575,6 +619,7 @@ function newCustomDisplay() {
 
 
 function addIngredientForm() {
+    customNewOrder();
     window.location.href = "#ingred-box";
     window.scrollBy(0, -180);
 }
@@ -582,21 +627,21 @@ function addIngredientForm() {
 
 
 function removeCustomOrder(input) {
-    if ( input === 1 ) {
+    if (input === 1) {
         customOrder1.quantity = 0;
         customOrder1.ingredients = "";
         document.querySelector(".num-1 p").innerHTML = "Add Ingredients";
         document.querySelector(".num-1 input").value = "0";
         customNewOrder();
 
-    } else if ( input === 2 ) {
+    } else if (input === 2) {
         customOrder2.quantity = 0;
         customOrder2.ingredients = "";
         document.querySelector(".num-2 p").innerHTML = "Add Ingredients";
         document.querySelector(".num-2 input").value = "0";
         customNewOrder();
 
-    } else if ( input === 3 ) {
+    } else if (input === 3) {
         customOrder3.quantity = 0;
         customOrder3.ingredients = "";
         document.querySelector(".num-3 p").innerHTML = "Add Ingredients";
@@ -604,7 +649,7 @@ function removeCustomOrder(input) {
         customNewOrder();
 
     }
-    
+
 }
 
 
@@ -640,7 +685,7 @@ function removeCustomOrder(input) {
 // function customTotalHandler() {
 //     let inputGroup = Array.from(document.querySelectorAll('.order input'));
 
-    
+
 // }
 
 
@@ -678,26 +723,3 @@ function removeCustomOrder(input) {
 //         document.querySelector('.num-3').style.opacity = "1";
 //     }
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

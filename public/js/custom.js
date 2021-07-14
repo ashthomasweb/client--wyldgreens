@@ -199,6 +199,8 @@ function sendCustomData(update) {
 
     getTotalCustom();
     newCustomDisplay();
+    discountDisplayHandler();
+
 }
 
 function promptQuantity() {

@@ -225,6 +225,7 @@ function sendSpicyData() {
     spicyQuanCheck.style.display = "block";
     document.querySelector(".wyld-form-mix input[name=spicy-num]").value = spicyQuanInput.value;
     addToOrder('mix_spicy');
+    discountDisplayHandler();
 }
 
 // 'Salad Mix' order button control booleans
