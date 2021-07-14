@@ -15,7 +15,7 @@
 .l-header-wrapper {
     z-index: 50;
     position: relative;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -73,13 +73,13 @@
 /* || Body */
 
 .l-body-wrapper--home {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     min-height: calc(100vh - 246px);
     margin: 0px auto 0px;
 }
 
 .l-body-wrapper {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     min-height: calc(100vh - 186px);
     margin: 60px auto 0px auto;
 }
@@ -89,7 +89,7 @@
 }
 
 .l-body-wrapper--contact {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     min-height: calc(100vh - 186px);
     margin: 0px auto 0px auto;
 }
@@ -114,7 +114,7 @@
 .l-footer-wrapper {
     width: 100%;
     height: 120px;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     padding: 35px 0;
     margin: 0 auto;
     font-size: 0;

@@ -61,10 +61,10 @@ wyld: #70c051
 }
 
 body {
-    background-image: url(/images/patterns/purty-wood-copy.png);
-    background-attachment: fixed;
-    background-size: auto;
-    background-color: #e9e6e1;
+    /* background-image: url(/images/patterns/purty-wood-copy.png); */
+    /* background-attachment: fixed; */
+    /* background-size: auto; */
+    /* background-color: #e9e6e1; */
     color: var(--copy-mid);
 }
 
@@ -199,7 +199,7 @@ footer a:hover {
 }
 
 .l-content-wrapper--contact {
-    box-shadow: 0px 0px 8px var(--shadow);
+    /* box-shadow: 0px 0px 8px var(--shadow); */
     background-color: var(--clear);
 }
 
