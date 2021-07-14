@@ -425,7 +425,8 @@
                             </p>
                             <div class="ingred-wrap">
 
-                                <button class="custom-new" type="button" onclick="customNewOrder()">Keep Shopping</button>
+                                <button class="custom-new" type="button" onclick="customNewOrder()">Keep
+                                    Shopping</button>
                                 <button class="custom-close" type="button" onclick="customOrderOff()">Close</button>
                                 <!-- <button class="custom-remove" type="button" onclick="customRemoveOrder()">Remove Order</button> -->
 
@@ -597,18 +598,18 @@
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_custom">
                                 <label class="form-title mix-title">Custom Mix</label>
-                                <input class="form-num" type="number" name="custom-num" placeholder="0"
-                                    min="0" max="3" onchange="customQuantityVerify()">
+                                <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="3"
+                                    onchange="customQuantityVerify()">
                             </div>
                         </div>
-                        
+
                         <div class="price-total">
 
                             <div class="mix-wrap">
                                 <label class="form-title mix-title">Total</label>
                                 <input class="price-num" type="number" name="total-num" placeholder="0">
                             </div>
-                            
+
                             <div class="bulk-discount-pane">
                                 <p>Discount<br>Applied!</p>
                             </div>
@@ -628,35 +629,41 @@
                         <!-- <textarea id="details-body" class="form-textarea" name="order-details"
                             placeholder="Please complete your order details." oninput="formFieldCheck()"></textarea> -->
 
-                            <div class="lower-section">
+                        <div class="lower-section">
 
-                                <div class="custom-order-details">
-                                    <label class="form-title">Custom Mix Details:</label><br>
-                                    
-                                    <div class="order num-1">
-                                        <input type="number"  max="3"  oninput="order1Input()">
-                                        <p onclick="addIngredientForm1()">Add ingredients</p>
-                                    </div>
-                                    <div class="order num-2">
-                                        <input type="number"  max="3" oninput="order2Input()">
-                                        <p>Add ingredients</p>
-                                    </div>
-                                    <div class="order num-3">
-                                        <input type="number"  max="3"  oninput="order3Input()" >
-                                        <p>Add ingredients</p>
-                                    </div>
-                                    
+                            <div class="custom-order-details">
+                                <label class="form-title">Custom Mix Details:</label><br>
+
+                                <div class="order num-1">
+                                    <img onclick="removeCustomOrder(1)" class="form-btn-cross" src="/images/icons/cross.png">
+
+                                    <input type="number" max="3" oninput="order1Input()">
+                                    <p onclick="addIngredientForm()">Add ingredients</p>
                                 </div>
-                                <div class="message-details">
-                                    
-                                    <label class="form-title message">Message:</label><br>
-                                    <textarea id="message-body" class="form-textarea-message" name="message"
+                                <div class="order num-2">
+                                    <img onclick="removeCustomOrder(2)" class="form-btn-cross" src="/images/icons/cross.png">
+
+                                    <input type="number" max="3" oninput="order2Input()">
+                                    <p onclick="addIngredientForm()">Add ingredients</p>
+                                </div>
+                                <div class="order num-3">
+                                    <img onclick="removeCustomOrder(3)" class="form-btn-cross" src="/images/icons/cross.png">
+
+                                    <input type="number" max="3" oninput="order3Input()">
+                                    <p onclick="addIngredientForm()">Add ingredients</p>
+                                </div>
+
+                            </div>
+                            <div class="message-details">
+
+                                <label class="form-title message">Message:</label><br>
+                                <textarea id="message-body" class="form-textarea-message" name="message"
                                     placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
-                                </div>
                             </div>
                         </div>
-                            <button id="contact-button" class="contact-submit-bottom" type="submit"
-                                onclick="sendingText()">Place Your Order</button>
+                    </div>
+                    <button id="contact-button" class="contact-submit-bottom" type="submit"
+                        onclick="sendingText()">Place Your Order</button>
 
                 </form>
 

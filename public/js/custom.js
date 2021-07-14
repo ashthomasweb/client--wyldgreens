@@ -67,7 +67,6 @@ function customOrderOff() { // close pane
 
 //     customOrderArray.pop();
 
-
 //     customQuanCheck.style.display = "none";
 //     customQuanInput.value = "0";
 //     hiddenBtn.innerText = "Deleted from Order";
@@ -102,7 +101,6 @@ function customNewOrder() {
     checkCustomQuantities();
     // customOrderOn();
 }
-
 
 let currentOrderSubmitted = false;
 
@@ -168,9 +166,6 @@ function ingredCheck() {
 let customQuanBool = false;
 let customUpdateBool = false;
 
-
-
-
 function sendCustomData(update) {
 
     currentOrderSubmitted = true;
@@ -196,7 +191,7 @@ function sendCustomData(update) {
 
     // custom order object update
     if (update === true) {
-        customObjectUpdate(newOrderQuan);
+        customObjectUpdate(newOrderQuan, currentOrder);
     } else {
         // custom order object handling
         customObjectHandling(newOrderQuan, itemList);
@@ -246,31 +241,23 @@ function promptQuantity() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function customObjectUpdate(quantity) {
-    if (customOrder2.ingredients === "") {
+function customObjectUpdate(quantity, currentOrder) {
+    if ( currentOrder === 1 ) {
         customOrder1.quantity = quantity;
-    } else if (customOrder2.ingredients !== "") {
-        if (customOrder3.ingredients === "") {
-            customOrder2.quantity = quantity;
-        } else {
-            customOrder3.quantity = quantity;
-        }
+    } else if (currentOrder === 2 ) {
+        customOrder2.quantity = quantity;
+    } else if ( currentOrder === 3 ) {
+        customOrder3.quantity = quantity;
     }
+
+    // if (customOrder2.ingredients === "") {
+    // } else if (customOrder2.ingredients !== "") {
+    //     if (customOrder3.ingredients === "") {
+    //         customOrder2.quantity = quantity;
+    //     } else {
+    //         customOrder3.quantity = quantity;
+    //     }
+    // }
 }
 
 let customOrder1 = {
@@ -286,9 +273,26 @@ let customOrder3 = {
     ingredients: ""
 };
 
+let currentOrder;
 
 
+function customObjectHandling(quantity, ingredients) {
+    if (customOrder1.ingredients === "") {
+        customOrder1.quantity = quantity;
+        customOrder1.ingredients = ingredients;
+        checkCustomQuantities();
+        currentOrder = 1;
+    } else if (customOrder2.ingredients === "") {
+        customOrder2.quantity = quantity;
+        customOrder2.ingredients = ingredients;
+        checkCustomQuantities();
+        currentOrder = 2;
 
+    } else if (customOrder3.ingredients === "") {
+        customOrder3.quantity = quantity;
+        customOrder3.ingredients = ingredients;
+        checkCustomQuantities();
+        currentOrder = 3;
 
-
-
+    }
+}

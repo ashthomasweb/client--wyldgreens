@@ -67,15 +67,36 @@
 
     <% } %> -->
 <script>
+    /* something to do with sending the form and updating display? */
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);
     }
+
+    // MOCK PAGE MENU
+
+// function mockPage(input) {
+//     let host = window.location.hostname;
+//     console.log(host);
+//     console.log(input);
+//     if ( host === 'localhost' ) {
+//         window.location.href = 'http://' + host + ':3000/' + input
+//     } else {
+//         window.location.href = window.location.protocol + '//' + host + '/' + input;
+//     }
+// }
+
+
+
+
 </script>
 <script src="/js/index.js" charset="utf-8"></script>
 <script src="/js/mix.js" charset="utf-8"></script>
+<script src="/js/form.js" charset="utf-8"></script>
 <script src="/js/custom.js" charset="utf-8"></script>
-
 <script src="/js/mquery.js" charset="utf-8"></script>
+<script src="/js/template.js" charset="utf-8"></script>
+<script src="/js/main.js" charset="utf-8"></script>
+
 
 <script>
     if (window.location.pathname === '/mock2') {

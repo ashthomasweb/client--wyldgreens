@@ -1,54 +1,10 @@
-// Main JavaScript file for "LumberJack"
-
-
-// MOCK PAGE MENU
-
-// function mockPage(input) {
-//     let host = window.location.hostname;
-//     console.log(host);
-//     console.log(input);
-//     if ( host === 'localhost' ) {
-//         window.location.href = 'http://' + host + ':3000/' + input
-//     } else {
-//         window.location.href = window.location.protocol + '//' + host + '/' + input;
-//     }
-// }
-
-
-
-// LIGHTBOX
-
-let lightboxBool = false;
-let lightboxPane = document.querySelector('.lightbox');
-
-function lightbox() {
-    if (lightboxBool === true) {
-        lightboxPane.style.opacity = "0";
-        lightboxPane.pointerEvents = 'none';
-
-    } else if (lightboxBool === false) {
-        lightboxPane.pointerEvents = 'auto';
-        lightboxPane.style.opacity = "1";
-    }
-    lightboxBool = !lightboxBool;
-}
-
-function runLightbox(input) {
-    lightboxPane.pointerEvents = 'auto';
-
-    document.querySelector('.lightbox img').attributes.src.value = `/images/greens/${input}`;
-    lightbox();
-}
-
-function lightboxOff() {
-    lightbox();
-    console.log('hi');
-}
+// JavaScript file for "Wyld"
 
 
 
 
-// PLAN SELECTION BUTTONS
+
+// PLAN SELECTION / FORM CHECK HANDLERS
 
 let weeklyPane = document.querySelector('#weekly-pane');
 let weeklyOrderBtn = document.querySelector('#weekly-order-btn');
@@ -70,7 +26,6 @@ function weeklyOpen() {
 
 function weeklyClose() {
     weeklyDelBool = false;
-
     weeklyPane.classList.remove('plan-btn-pane-open');
     weeklyOrderBtn.classList.remove('center-btn-clicked');
     weeklyAdded.classList.remove('plan-added-clicked');
@@ -84,7 +39,6 @@ function oneTimeOpen() {
 
 function oneTimeClose() {
     oneTimeDelBool = false;
-
     oneTimePane.classList.remove('plan-btn-pane-open');
     oneTimeOrderBtn.classList.remove('sides-btn-clicked');
     oneTimeAdded.classList.remove('plan-added-clicked');
@@ -98,7 +52,6 @@ function bulkOpen() {
 
 function bulkClose() {
     bulkDelBool = false;
-
     bulkPane.classList.remove('plan-btn-pane-open');
     bulkOrderBtn.classList.remove('sides-btn-clicked');
     bulkAdded.classList.remove('plan-added-clicked');
@@ -107,8 +60,17 @@ function bulkClose() {
 
 
 
-let weeklyDelBool = false;
 
+
+
+
+
+
+
+
+
+
+let weeklyDelBool = false;
 function weeklyDel() {
     if (weeklyDelBool === false) {
         weeklyDelBool = !weeklyDelBool;
@@ -136,49 +98,7 @@ function weeklyDel() {
     }
 }
 
-let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
-let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
-
-
-let bulkMaxBool = false;
-
-function bulkMax() {
-    bulkMaxBool = true;
-
-    formQuanList.forEach((item, i) => {
-        if (i !== formCheckList.length - 1) {
-            if (formCheckList[i].checked === true) {
-                item.value = "1";
-            } else {
-                item.value = "";
-            }
-            item.max = "1";
-        }
-    });
-
-}
-
-function bulkMaxOff() {
-
-    if (bulkMaxBool === true) {
-
-        formQuanList.forEach((item, i) => {
-            if (formCheckList[i].checked === false) {
-                item.value = "";
-            } else {
-                item.value = "1";
-            }
-            item.max = "3";
-        });
-
-    }
-
-    bulkMaxBool = false;
-}
-
-let bulkDiscount = document.querySelector('.bulk-discount-pane');
 let bulkDelBool = false;
-
 function bulkDel() {
     if (bulkDelBool === false) { // turns ON bulk delivery options
         bulkDelBool = !bulkDelBool;
@@ -208,7 +128,6 @@ function bulkDel() {
 }
 
 let oneTimeDelBool = false;
-
 function oneTimeDel() {
     if (oneTimeDelBool === false) { // turns ON one-time delivery options
         oneTimeDelBool = !oneTimeDelBool;
@@ -248,9 +167,48 @@ function oneTimeDel() {
 
 
 
+let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
+let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
+
+let bulkMaxBool = false;
+function bulkMax() {
+    bulkMaxBool = true;
+
+    formQuanList.forEach((item, i) => {
+        if (i !== formCheckList.length - 1) {
+            if (formCheckList[i].checked === true) {
+                item.value = "1";
+            } else {
+                item.value = "";
+            }
+            item.max = "1";
+        }
+    });
+
+}
+
+function bulkMaxOff() {
+
+    if (bulkMaxBool === true) {
+
+        formQuanList.forEach((item, i) => {
+            if (formCheckList[i].checked === false) {
+                item.value = "";
+            } else {
+                item.value = "1";
+            }
+            item.max = "3";
+        });
+
+    }
+
+    bulkMaxBool = false;
+}
+
+let bulkDiscount = document.querySelector('.bulk-discount-pane');
 
 function displayBulkDiscount() {
-    bulkDiscount.style.display = "block"
+    bulkDiscount.style.display = "block";
 }
 
 function hideBulkDiscount() {
@@ -261,9 +219,23 @@ function hideBulkDiscount() {
         }
     });
     if (discountBool === false) {
-        bulkDiscount.style.display = "none"
+        bulkDiscount.style.display = "none";
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let farmersCheck = document.querySelector(".mix-wrap input[name=mix_farmers]");
 
@@ -411,25 +383,17 @@ function healthyInput() {
 
 }
 
-// function bulkPriceDisplay() {
-//     if (formCheckBulk.checked === true) {
-//         formFarmersQuan.value = "3";
-//         formHealthyQuan.value = "3";
-//         formSaladQuan.value = "3";
-//         formSpicyQuan.value = "3";
-//         formCustomQuan.value = "3";
-//         document.querySelector('.num-2').style.opacity = "0";
-//         document.querySelector('.num-3').style.opacity = "0";
-//     } else {
-//         // formFarmersQuan.value = "";
-//         // formHealthyQuan.value = "";
-//         // formSaladQuan.value = "";
-//         // formSpicyQuan.value = "";
-//         // formCustomQuan.value = "";
-//         document.querySelector('.num-2').style.opacity = "1";
-//         document.querySelector('.num-3').style.opacity = "1";
-//     }
-// }
+
+
+
+
+
+
+
+
+
+
+
 
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
@@ -454,7 +418,6 @@ function clearPlansForm() {
     document.querySelector('[name=one_time]').checked = false;
 }
 
-
 function getPriceTotal() {
     let planPrice;
 
@@ -467,11 +430,9 @@ function getPriceTotal() {
     formCheckBulk.checked === true && getPlanPrice(30);
 
 
-
     function getTotalQuantity() {
         let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
         let totalQuantity = 0;
-        // console.log(checkList.value)
 
         for (let i = 0; i <= checkList.length - 1; i++) {
 
@@ -480,7 +441,6 @@ function getPriceTotal() {
         return totalQuantity;
 
     }
-    // getTotalQuantity();
     let price = getTotalQuantity() * planPrice;
 
     formTotalPrice.value = price;
@@ -499,7 +459,6 @@ function formFieldCheck() {
         elem.style.backgroundColor = "var(--primary-light)";
         elem.style.pointerEvents = "none";
         elem.style.color = "var(--copy-dark)";
-        // elem.innerText = "Test2";
 
     } else { // upon typing
         elem.style.backgroundColor = "var(--primary-color)";
@@ -519,9 +478,9 @@ let customFormCheck = document.querySelector('.wyld-form-mix input[name=mix_cust
 
 function customQuantityVerify() { // NEEDS to check if pane is open before applying styles
 
-    if (Number(formCustomQuan.value) >= 4) {
-        formCustomQuan.value = "3";
-    }
+    // if (Number(formCustomQuan.value) >= 4) {
+    //     formCustomQuan.value = "3";
+    // }
 
     if (bulkMaxBool === true) {
         if (Number(formCustomQuan.value) >= 1) {
@@ -533,7 +492,7 @@ function customQuantityVerify() { // NEEDS to check if pane is open before apply
 
     let total = Number(document.querySelector(".wyld-form-mix input[name=custom-num]").value);
 
-    if (total >= 3) {
+    if (total >= 10) {
         // console.log('more')
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
@@ -551,10 +510,10 @@ function customQuantityVerify() { // NEEDS to check if pane is open before apply
 
 
 function checkCustomQuantities() {
-    if (customOrder1.quantity + customOrder2.quantity + customOrder3.quantity >= 8 && customOrder1.ingredients !== "") {
+    if ( customOrder3.quantity === 20 ) {
         console.log('max');
         customOrderBtn.style.pointerEvents = "none";
-        customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form"
+        customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Order Form"
     } else {
         customOrderBtn.style.pointerEvents = "auto";
         customOrderBtn.innerHTML = "Start A New Custom Order";
@@ -566,10 +525,13 @@ function getTotalCustom() {
 
     document.querySelector(".wyld-form-mix input[name=custom-num]").value = total;
 
-    if (total > 3) {
+    
+    if ( customOrder1.ingredients !== "" && customOrder2.ingredients !== "" && customOrder3.ingredients !== "" ) {
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
     }
+
+    getPriceTotal();
 
 }
 
@@ -612,33 +574,36 @@ function newCustomDisplay() {
 
 
 
-function customObjectHandling(quantity, ingredients) {
-    if (customOrder1.ingredients === "") {
-        customOrder1.quantity = quantity;
-        customOrder1.ingredients = ingredients;
-        checkCustomQuantities();
-    } else if (customOrder2.ingredients === "") {
-        customOrder2.quantity = quantity;
-        customOrder2.ingredients = ingredients;
-        checkCustomQuantities();
-    } else if (customOrder3.ingredients === "") {
-        customOrder3.quantity = quantity;
-        customOrder3.ingredients = ingredients;
-        checkCustomQuantities();
-    }
-}
-
-
-function addIngredientForm1() {
+function addIngredientForm() {
     window.location.href = "#ingred-box";
     window.scrollBy(0, -180);
 }
 
 
 
-function customTotalHandler() {
-    let inputGroup = Array.from(document.querySelectorAll('.order input'));
+function removeCustomOrder(input) {
+    if ( input === 1 ) {
+        customOrder1.quantity = 0;
+        customOrder1.ingredients = "";
+        document.querySelector(".num-1 p").innerHTML = "Add Ingredients";
+        document.querySelector(".num-1 input").value = "0";
+        customNewOrder();
 
+    } else if ( input === 2 ) {
+        customOrder2.quantity = 0;
+        customOrder2.ingredients = "";
+        document.querySelector(".num-2 p").innerHTML = "Add Ingredients";
+        document.querySelector(".num-2 input").value = "0";
+        customNewOrder();
+
+    } else if ( input === 3 ) {
+        customOrder3.quantity = 0;
+        customOrder3.ingredients = "";
+        document.querySelector(".num-3 p").innerHTML = "Add Ingredients";
+        document.querySelector(".num-3 input").value = "0";
+        customNewOrder();
+
+    }
     
 }
 
@@ -672,280 +637,67 @@ function customTotalHandler() {
 
 
 
+// function customTotalHandler() {
+//     let inputGroup = Array.from(document.querySelectorAll('.order input'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-// || Hamburger Menu for "LumberJack"
-
-
-function hamburger() {
-
-    let bar1 = document.getElementById("h-bar1");
-    let bar2 = document.getElementById("h-bar2");
-    let bar3 = document.getElementById("h-bar3");
-    let menu = document.getElementById("h-menu");
-
-    function menuOpen() {
-
-        let barsPos = 0;
-        let barsRot = 0;
-        let bar2Vis = 1;
-        let menuPos = 20;
-
-        let animA = setInterval(barMid, 8);
-
-        // middle bar disappear
-        function barMid() {
-            if (bar2Vis < 0.1) {
-                // normally clearInterval would be executed when value reaches 0, but due to bit arithmetic 
-                // 0.1 - 0.1 is displayed in extended notation. 
-                clearInterval(animA);
-                // reset opacity to typical value for consistency.
-                bar2Vis = 0;
-                bar2.style.opacity = bar2Vis;
-            } else {
-                bar2Vis = bar2Vis - 0.1;
-                bar2.style.opacity = bar2Vis;
-            }
-        }
-
-        // top and bottom bars move and rotate
-        setTimeout(function () {
-
-            let animB = setInterval(barMove, 30);
-
-            function barMove() {
-                if (barsPos == 8) {
-                    clearInterval(animB);
-                } else {
-                    barsPos++;
-                    bar1.style.top = barsPos + "px";
-                    bar3.style.bottom = barsPos + "px";
-                }
-            }
-
-            setTimeout(function () {
-
-                let animC = setInterval(barRotation, 2);
-
-                function barRotation() {
-                    if (barsRot == 45) {
-                        clearInterval(animC);
-                    } else {
-                        barsRot++;
-                        bar1.style.transform = "rotate(" + barsRot + "deg)";
-                        bar3.style.transform = "rotate(-" + barsRot + "deg)";
-                    }
-                }
-            }, 70);
-
-        }, 50);
-
-        let animD = setInterval(menuAppear, 1);
-
-        function menuAppear() {
-            if (menuPos == 65) {
-                clearInterval(animD);
-            } else {
-                menuPos++;
-                menu.style.top = menuPos + "px";
-            }
-        }
-
-    }
-
-    function menuClose() {
-        let barsPos = 8;
-        let barsRot = 45;
-        let bar2Vis = 0;
-        let menuPos = 65;
-
-        setTimeout(function () {
-
-            let animA = setInterval(barMid, 8);
-
-            function barMid() {
-                if (bar2Vis > 0.9) {
-                    clearInterval(animA);
-                } else {
-                    bar2Vis = bar2Vis + 0.1;
-                    bar2.style.opacity = bar2Vis;
-                }
-            }
-        }, 150);
-
-        let animB = setInterval(barMove, 30);
-
-        function barMove() {
-            if (barsPos == 0) {
-                clearInterval(animB);
-            } else {
-                barsPos--;
-                bar1.style.top = barsPos + "px";
-                bar3.style.bottom = barsPos + "px";
-            }
-        }
-
-        setTimeout(function () {
-            let animC = setInterval(barRotation, 2);
-
-            function barRotation() {
-                if (barsRot == 0) {
-                    clearInterval(animC);
-                } else {
-                    barsRot--;
-                    bar1.style.transform = "rotate(" + barsRot + "deg)";
-                    bar3.style.transform = "rotate(-" + barsRot + "deg)";
-                }
-            }
-        }, 30);
-
-        let animD = setInterval(menuAppear, 1);
-
-        function menuAppear() {
-            if (menuPos == 20) {
-                clearInterval(animD);
-            } else {
-                menuPos--;
-                menu.style.top = menuPos + "px";
-            }
-        }
-
-    }
-
-    // Boolean check for menu checkbox 
-
-    if (document.getElementById("h-menu-input").checked == true) {
-        menuOpen();
-        document.getElementById("h-box").style.backgroundColor = "var(--highlight)";
-    } else {
-        menuClose();
-        document.getElementById("h-box").style.backgroundColor = "var(--primary-pale)";
-    }
-
-}
-
-document.querySelector("#plan-button").addEventListener('click', () => {
-    window.location.href = "#pick-plan";
-    window.scrollBy(0, -50);
-});
-
-document.querySelector("#mix-button").addEventListener('click', () => {
-    window.location.href = "#pick-mix";
-    window.scrollBy(0, -50);
-});
-
-document.querySelector("#order-button").addEventListener('click', () => {
-    window.location.href = "#order-form";
-    window.scrollBy(0, -50);
-});
-
-// || Blog Main hover event - Needs refactor. Does not work in firefox, produces error if inspector is open.
-
-function mouseHover(event) {
-    let path = event.path;
-    let parent;
-    let btn;
-
-    path.forEach(findName);
-
-    function findName(item) {
-        if (item.className == "card card--blog-main") {
-            parent = item;
-            btn = parent.children[0].children[1].children[0].children[2];
-            btn.style.backgroundColor = "var(--secondary-color)";
-            btn.style.color = "white";
-            parent.addEventListener("mouseout", function () {
-                btn.style.backgroundColor = "var(--secondary-pale)";
-                btn.style.color = "var(--copy-dark)";
-            })
-        }
-
-    }
-
-}
-
-
-// || Footer Social Share Menu 
-
-let shareBool = true;
-let menuPos = 0;
-
-function footerShare() {
-
-    let shareMenu = document.getElementById("share-menu");
-    let menuButton = document.getElementById("footer-share");
-
-    function shareOpen() {
-
-        let shareAnimA = setInterval(menuOn, 1);
-
-        function menuOn() {
-            if (menuPos == -56) {
-                clearInterval(shareAnimA);
-                shareBool = false;
-            } else {
-                menuPos--
-                shareMenu.style.top = menuPos + "px";
-            }
-        }
-    }
-
-    function shareClose() {
-
-        let shareAnimB = setInterval(menuOff, 1);
-
-        function menuOff() {
-            if (menuPos == 0) {
-                clearInterval(shareAnimB);
-                shareBool = true;
-            } else {
-                menuPos++;
-                shareMenu.style.top = menuPos + "px";
-            }
-        }
-    }
-
-    if (shareBool == true) {
-        shareOpen();
-        menuButton.style.backgroundColor = "var(--primary-color)";
-    } else {
-        shareClose();
-        menuButton.style.backgroundColor = "var(--secondary-light)";
-    }
-
-}
-
-
-// || Open share menu on load 
-
-function shareIfBlog() {
-    let check = document.title;
-    if (check == "Blog Post" || check == "Blog") {
-        footerShare();
-    }
-}
-
-
-
-// || Blog post url character matching - Not working.
-
-// function postReplace(x) {
-//     let objA = "location.href='./posts/"
-//     let temp = x.replace(/ /g, "-").replace(/\'/g, "").replace(/\,/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\./g, "").replace(/\//g, "").replace(/\"/g, "");
-//     let z = objA + temp;
-//     console.log(z);
-//     return z
+    
 // }
 
-/* || END of document  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function bulkPriceDisplay() {
+//     if (formCheckBulk.checked === true) {
+//         formFarmersQuan.value = "3";
+//         formHealthyQuan.value = "3";
+//         formSaladQuan.value = "3";
+//         formSpicyQuan.value = "3";
+//         formCustomQuan.value = "3";
+//         document.querySelector('.num-2').style.opacity = "0";
+//         document.querySelector('.num-3').style.opacity = "0";
+//     } else {
+//         // formFarmersQuan.value = "";
+//         // formHealthyQuan.value = "";
+//         // formSaladQuan.value = "";
+//         // formSpicyQuan.value = "";
+//         // formCustomQuan.value = "";
+//         document.querySelector('.num-2').style.opacity = "1";
+//         document.querySelector('.num-3').style.opacity = "1";
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
