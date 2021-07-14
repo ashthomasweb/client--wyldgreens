@@ -61,8 +61,8 @@ wyld: #70c051
 }
 
 body {
-    /* background-image: url(/images/patterns/purty-wood-copy.png); */
     /* background-attachment: fixed; */
+    
     /* background-size: auto; */
     /* background-color: #e9e6e1; */
     color: var(--copy-mid);
@@ -191,11 +191,12 @@ footer a:hover {
 }
 
 .l-body-wrapper--contact {
-    background-color: white;
+    /* background-color: white; */
+    background-image: url(/images/horse-farm-large.png);
 
     /* background: url(/images/mountain-scene-contact.png); */
-    /* background-size: cover; */
-    /* background-position-x: center; */
+    background-size: cover;
+    background-position-x: center;
 }
 
 .l-content-wrapper--contact {
