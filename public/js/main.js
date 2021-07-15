@@ -1,5 +1,4 @@
 
-
 // CTA BUTTONS 
 
 document.querySelector("#plan-button").addEventListener('click', () => {
@@ -17,7 +16,6 @@ document.querySelector("#order-button").addEventListener('click', () => {
     window.scrollBy(0, -50);
 });
 
-
 // PARALLAX
 
 document.addEventListener('scroll', () => {
@@ -26,8 +24,6 @@ document.addEventListener('scroll', () => {
     let string = `-${amount}px`;
     document.querySelector('.l-body-wrapper--contact').style.backgroundPositionY = string;
 });
-
-
 
 // LIGHTBOX
 
@@ -56,4 +52,3 @@ function runLightbox(input) {
 function lightboxOff() {
     lightbox();
 }
-

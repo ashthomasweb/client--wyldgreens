@@ -6,15 +6,6 @@ function customObjectUpdate(quantity, currentOrder) {
     } else if (currentOrder === 3) {
         customOrder3.quantity = quantity;
     }
-
-    // if (customOrder2.ingredients === "") {
-    // } else if (customOrder2.ingredients !== "") {
-    //     if (customOrder3.ingredients === "") {
-    //         customOrder2.quantity = quantity;
-    //     } else {
-    //         customOrder3.quantity = quantity;
-    //     }
-    // }
 }
 
 let customOrder1 = {
@@ -31,7 +22,6 @@ let customOrder3 = {
 };
 
 let currentOrder;
-
 
 function customObjectHandling(quantity, ingredients) {
     if (customOrder1.ingredients === "") {
@@ -54,9 +44,6 @@ function customObjectHandling(quantity, ingredients) {
     }
 }
 
-
-
-
 function newCustomDisplay() {
     document.querySelector(".num-1 p").innerHTML = `Custom order with the following:<br>  - ${customOrder1.ingredients}`;
     document.querySelector(".num-1 input").value = customOrder1.quantity.toString();
@@ -78,16 +65,12 @@ function newCustomDisplay() {
     }
 }
 
-
-
 function addIngredientForm() {
     customNewOrder();
     customOrderOn();
     window.location.href = "#ingred-box";
     window.scrollBy(0, -180);
 }
-
-
 
 function removeCustomOrder(input) {
     if (input === 1) {
@@ -115,8 +98,6 @@ function removeCustomOrder(input) {
     getPriceTotal();
 }
 
-
-
 function getTotalCustom() {
     let num1Quan = Number(document.querySelector('.num-1 input').value);
     let num2Quan = Number(document.querySelector('.num-2 input').value);
@@ -130,7 +111,6 @@ function getTotalCustom() {
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
     }
-
 }
 
 
@@ -139,9 +119,7 @@ function order1Input() {
     Number(document.querySelector('.num-1 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
 
     customNewOrder();
-    // getTotalCustom();
     getPriceTotal(21);
-
 }
 
 function order2Input() {
@@ -149,9 +127,7 @@ function order2Input() {
     Number(document.querySelector('.num-2 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
 
     customNewOrder();
-    // getTotalCustom();
     getPriceTotal(20);
-
 }
 
 function order3Input() {
@@ -159,7 +135,6 @@ function order3Input() {
     Number(document.querySelector('.num-3 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
 
     customNewOrder();
-    // getTotalCustom();
     getPriceTotal(19);
 }
 

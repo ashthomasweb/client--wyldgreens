@@ -1,6 +1,5 @@
 // JavaScript file for "Wyld"
 
-
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
 let formCheckBulk = document.querySelector('[name=bulk]');
@@ -10,8 +9,6 @@ let formSaladQuan = document.querySelector('[name=salad-num]');
 let formSpicyQuan = document.querySelector('[name=spicy-num]');
 let formCustomQuan = document.querySelector('[name=custom-num]');
 let formTotalPrice = document.querySelector('[name=total-num]');
-
-
 
 // ADD CHECK TO FORM
 
@@ -70,7 +67,6 @@ function farmersCheckbox() {
         document.querySelector(".mix-wrap input[name=farmers-num]").value = "1";
     }
     getPriceTotal(16);
-    discountDisplayHandler();
 }
 
 function spicyCheckbox() {
@@ -83,7 +79,6 @@ function spicyCheckbox() {
         document.querySelector(".mix-wrap input[name=spicy-num]").value = "1";
     }
     getPriceTotal(15);
-    discountDisplayHandler();
 }
 
 function saladCheckbox() {
@@ -96,7 +91,6 @@ function saladCheckbox() {
         document.querySelector(".mix-wrap input[name=salad-num]").value = "1";
     }
     getPriceTotal(14);
-    discountDisplayHandler();
 }
 
 function healthyCheckbox() {
@@ -109,7 +103,6 @@ function healthyCheckbox() {
         document.querySelector(".mix-wrap input[name=healthy-num]").value = "1";
     }
     getPriceTotal(13);
-    discountDisplayHandler();
 }
 
 function farmersInput() {
@@ -131,9 +124,6 @@ function farmersInput() {
         farmersQuanInput.value = document.querySelector(".mix-wrap input[name=farmers-num]").value;
     }
     
-    // if ( Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) === 0 ) {
-    //     farmersCheck.checked = false;
-    // }
     Number(formFarmersQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal(12);
 }
@@ -153,7 +143,6 @@ function spicyInput() {
     if (spicyCheck.checked === false) {
         spicyMix();
         spicyMix();
-
     } else if (spicyCheck.checked === true) {
         spicyQuanInput.value = document.querySelector(".mix-wrap input[name=spicy-num]").value;
     }

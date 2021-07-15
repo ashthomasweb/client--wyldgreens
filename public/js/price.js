@@ -56,14 +56,8 @@ function bulkMaxOff() {
     }
 
     bulkMaxBool = false;
-    // getTotalCustom();
     getPriceTotal(1);
 
-}
-
-function discountDisplayHandler() {
-    displayBulkDiscount();
-    hideBulkDiscount();
 }
 
 function displayBulkDiscount() {
@@ -85,7 +79,6 @@ function hideBulkDiscount() {
     }
 }
 
-
 function getPriceTotal(id) {
     
     let planPrice;
@@ -96,10 +89,10 @@ function getPriceTotal(id) {
     }
     
     getTotalCustom();
+
     formCheckWeekly.checked === true && getPlanPrice(10);
     formCheckOnetime.checked === true && getPlanPrice(12);
     formCheckBulk.checked === true && getPlanPrice(30);
-    
     
     let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
     let totalQuantity = 0;
@@ -110,8 +103,9 @@ function getPriceTotal(id) {
     }
     console.log(`${id}: ${totalQuantity}`);
     
-    
     price = totalQuantity * planPrice;
 
     formTotalPrice.value = price;
+    displayBulkDiscount();
+    hideBulkDiscount();
 }

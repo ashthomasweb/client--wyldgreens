@@ -171,7 +171,7 @@ function sendCustomData(update) {
 
     // getTotalCustom();
     newCustomDisplay();
-    discountDisplayHandler();
+    
     getPriceTotal(17);
 }
 
