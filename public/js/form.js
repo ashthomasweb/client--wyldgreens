@@ -114,6 +114,7 @@ function bulkDel() {
         addToOrder('bulk');
         displayBulkDiscount();
         bulkMax();
+        getTotalCustom();
 
         getPriceTotal();
     } else if (bulkDelBool === true) { // turns OFF bulk delivery options
@@ -125,6 +126,8 @@ function bulkDel() {
         }
         hideBulkDiscount();
         bulkMaxOff();
+    getTotalCustom();
+
         getPriceTotal();
     }
 }
@@ -198,6 +201,9 @@ function bulkMax() {
         }
         item.max = "1";
     });
+    getTotalCustom();
+    getPriceTotal();
+
 
 }
 
@@ -226,6 +232,10 @@ function bulkMaxOff() {
     }
 
     bulkMaxBool = false;
+    getTotalCustom();
+
+    getPriceTotal();
+
 }
 
 let bulkDiscount = document.querySelector('.bulk-discount-pane');
@@ -464,6 +474,7 @@ function getPriceTotal() {
     formCheckOnetime.checked === true && getPlanPrice(12);
     formCheckBulk.checked === true && getPlanPrice(30);
 
+    getTotalCustom();
 
     function getTotalQuantity() {
         let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
@@ -556,8 +567,13 @@ function checkCustomQuantities() {
 }
 
 function getTotalCustom() {
-    let total = customOrder1.quantity + customOrder2.quantity + customOrder3.quantity;
+    let num1Quan = Number(document.querySelector('.num-1 input').value);
+    let num2Quan = Number(document.querySelector('.num-2 input').value);
+    let num3Quan = Number(document.querySelector('.num-3 input').value);
 
+    let total = num1Quan + num2Quan + num3Quan;
+
+    console.log(total)
     document.querySelector(".wyld-form-mix input[name=custom-num]").value = total;
 
 
@@ -566,7 +582,7 @@ function getTotalCustom() {
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
     }
 
-    getPriceTotal();
+    // getPriceTotal();
 
 }
 
@@ -576,6 +592,8 @@ function order1Input() {
 
     customNewOrder();
     getTotalCustom();
+    getPriceTotal();
+
 }
 
 function order2Input() {
@@ -584,6 +602,8 @@ function order2Input() {
 
     customNewOrder();
     getTotalCustom();
+    getPriceTotal();
+
 }
 
 function order3Input() {
@@ -592,6 +612,7 @@ function order3Input() {
 
     customNewOrder();
     getTotalCustom();
+    getPriceTotal();
 }
 
 
@@ -620,6 +641,7 @@ function newCustomDisplay() {
 
 function addIngredientForm() {
     customNewOrder();
+    customOrderOn();
     window.location.href = "#ingred-box";
     window.scrollBy(0, -180);
 }

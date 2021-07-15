@@ -129,6 +129,9 @@ function customUpdate() { // apply styles if data already sent to form
 }
 
 function ingredCheck() {
+    if ( customOrderBtn.innerText != "Pick up to 4" ) {
+        customOrderOn();
+    } 
     let customChecks = document.querySelectorAll('.custom-check');
     let count = 0;
     for (i = 0; i < customChecks.length; i++) {

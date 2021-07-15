@@ -268,6 +268,53 @@ function lightboxOff() {
 }
 
 
+// PARALLAX
+
+document.addEventListener('scroll', () => {
+
+    let imageOffsetRatio = 517.5;
+
+    let amount = ( window.scrollY / imageOffsetRatio ) * 100;
+    let string = "-" + amount.toString() + "px";
+    console.log(string);
+
+    document.querySelector('.l-body-wrapper--contact').style.backgroundPositionY = string;
+
+    console.log(window.scrollY);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // || Blog post url character matching - Not working.
 

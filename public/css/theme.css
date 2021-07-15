@@ -191,12 +191,11 @@ footer a:hover {
 }
 
 .l-body-wrapper--contact {
-    /* background-color: white; */
     background-image: url(/images/horse-farm-large.png);
-
-    /* background: url(/images/mountain-scene-contact.png); */
-    background-size: cover;
-    background-position-x: center;
+    background-size: 100vw 2000px;
+    background-position-y: 0%;
+    background-attachment: fixed;
+    /* transition: background-position-y .1s linear; */
 }
 
 .l-content-wrapper--contact {
