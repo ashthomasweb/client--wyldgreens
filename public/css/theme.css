@@ -195,7 +195,7 @@ footer a:hover {
     background-size: 100vw 2000px;
     background-position-y: 0%;
     background-attachment: fixed;
-    /* transition: background-position-y .1s linear; */
+    /* transition: background-position-y 1s ease-in-out; */
 }
 
 .l-content-wrapper--contact {
