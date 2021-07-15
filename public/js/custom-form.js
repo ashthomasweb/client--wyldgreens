@@ -26,7 +26,7 @@ function customOrderOn() { // open pane, apply styles
     customClose.classList.add('custom-close-clicked');
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].style.opacity = '1';
-        ingredChecks[i].disabled = false;
+        // ingredChecks[i].disabled = false;
         ingredChecks[i].style.cursor = "pointer";
         document.querySelectorAll('.custom-ingredients label')[i].style.cursor = "pointer";
         document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = "auto";
@@ -53,43 +53,12 @@ function customOrderOff() { // close pane
 
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].style.opacity = '0.4';
-        ingredChecks[i].disabled = true;
+        // ingredChecks[i].disabled = true;
         ingredChecks[i].checked = false;
         ingredChecks[i].style.cursor = "default";
         document.querySelectorAll('.custom-ingredients label')[i].style.cursor = "default";
     }
 }
-
-// function customRemoveOrder() {
-//     customQuanBool = false;
-//     customUpdateBool = false;
-//     currentOrderSubmitted = false;
-
-//     customOrderArray.pop();
-
-//     customQuanCheck.style.display = "none";
-//     customQuanInput.value = "0";
-//     hiddenBtn.innerText = "Deleted from Order";
-//     customQuanP.style.opacity = "0";
-//     customQuanCross.style.display = "block";
-//     customRemove.style.pointerEvents = "none";
-//     customNew.style.pointerEvents = "none";
-//     document.querySelector("#details-body").value = customOrderArray.join();
-
-//     setTimeout(() => {
-//         customOrderOff();
-//         customRemove.classList.remove('custom-remove-clicked');
-//         customNew.classList.remove('custom-remove-clicked');
-//     }, 2000);
-//     setTimeout(() => {
-//         customQuanCross.style.display = "none";
-//         customQuanP.style.opacity = "1";
-//         customQuanInput.value = "1";
-//         customClose.style.pointerEvents = "auto";
-//     }, 2300);
-//     getTotalCustom();
-
-// }
 
 function customNewOrder() {
     customQuanBool = false;
@@ -200,10 +169,10 @@ function sendCustomData(update) {
         customObjectHandling(newOrderQuan, itemList);
     }
 
-    getTotalCustom();
+    // getTotalCustom();
     newCustomDisplay();
     discountDisplayHandler();
-
+    getPriceTotal(17);
 }
 
 function promptQuantity() {
@@ -230,7 +199,7 @@ function promptQuantity() {
                 if (ingredChecks[i].checked === false) {
                     ingredChecks[i].style.opacity = '0.5';
                 }
-                document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = "none";
+                // document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = "none";
             }
 
         } else if (customQuanBool === false) { // first click after adding ingredient

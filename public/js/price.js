@@ -1,8 +1,7 @@
-
-
 let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
 let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
+let bulkDiscount = document.querySelector('.bulk-discount-pane');
 
 let bulkMaxBool = false;
 
@@ -28,10 +27,8 @@ function bulkMax() {
         }
         item.max = "1";
     });
-    getTotalCustom();
-    getPriceTotal();
-
-
+    // getTotalCustom();
+    getPriceTotal(2);
 }
 
 function bulkMaxOff() {
@@ -59,13 +56,10 @@ function bulkMaxOff() {
     }
 
     bulkMaxBool = false;
-    getTotalCustom();
-
-    getPriceTotal();
+    // getTotalCustom();
+    getPriceTotal(1);
 
 }
-
-let bulkDiscount = document.querySelector('.bulk-discount-pane');
 
 function discountDisplayHandler() {
     displayBulkDiscount();
@@ -74,7 +68,6 @@ function discountDisplayHandler() {
 
 function displayBulkDiscount() {
     bulkDiscount.style.display = "block";
-    // console.log('hi')
 }
 
 function hideBulkDiscount() {
@@ -82,12 +75,9 @@ function hideBulkDiscount() {
     let temp = [...formQuanList];
     temp.pop();
     let list = temp.concat(formCustomQuanList);
-    console.log(list)
     list.forEach((item) => {
         if (Number(item.value) === 3) {
             discountBool = true;
-        } else if (Number(item.value) < 3) {
-            discounBool = false;
         }
     });
     if (discountBool === false) {
@@ -96,34 +86,32 @@ function hideBulkDiscount() {
 }
 
 
-
-
-
-function getPriceTotal() {
+function getPriceTotal(id) {
+    
     let planPrice;
-
+    let price;
+    
     function getPlanPrice(input) {
         planPrice = input;
     }
-
+    
+    getTotalCustom();
     formCheckWeekly.checked === true && getPlanPrice(10);
     formCheckOnetime.checked === true && getPlanPrice(12);
     formCheckBulk.checked === true && getPlanPrice(30);
-
-    getTotalCustom();
-
-    function getTotalQuantity() {
-        let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
-        let totalQuantity = 0;
-
-        for (let i = 0; i <= checkList.length - 1; i++) {
-
-            totalQuantity += Number(checkList[i].value);
-        }
-        return totalQuantity;
-
+    
+    
+    let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
+    let totalQuantity = 0;
+    
+    for (let i = 0; i <= checkList.length - 1; i++) {
+        
+        totalQuantity += Number(checkList[i].value);
     }
-    let price = getTotalQuantity() * planPrice;
+    console.log(`${id}: ${totalQuantity}`);
+    
+    
+    price = totalQuantity * planPrice;
 
     formTotalPrice.value = price;
 }

@@ -25,7 +25,35 @@ document.addEventListener('scroll', () => {
     let amount = ( window.scrollY / imageOffsetRatio ) * 100;
     let string = `-${amount}px`;
     document.querySelector('.l-body-wrapper--contact').style.backgroundPositionY = string;
-    console.log(window.scrollY);
 });
 
+
+
+// LIGHTBOX
+
+let lightboxBool = false;
+let lightboxPane = document.querySelector('.lightbox');
+
+function lightbox() {
+    if (lightboxBool === true) {
+        lightboxPane.style.opacity = "0";
+        lightboxPane.pointerEvents = 'none';
+
+    } else if (lightboxBool === false) {
+        lightboxPane.pointerEvents = 'auto';
+        lightboxPane.style.opacity = "1";
+    }
+    lightboxBool = !lightboxBool;
+}
+
+function runLightbox(input) {
+    lightboxPane.pointerEvents = 'auto';
+
+    document.querySelector('.lightbox img').attributes.src.value = `/images/greens/${input}`;
+    lightbox();
+}
+
+function lightboxOff() {
+    lightbox();
+}
 

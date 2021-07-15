@@ -1,10 +1,9 @@
-
 function customObjectUpdate(quantity, currentOrder) {
-    if ( currentOrder === 1 ) {
+    if (currentOrder === 1) {
         customOrder1.quantity = quantity;
-    } else if (currentOrder === 2 ) {
+    } else if (currentOrder === 2) {
         customOrder2.quantity = quantity;
-    } else if ( currentOrder === 3 ) {
+    } else if (currentOrder === 3) {
         customOrder3.quantity = quantity;
     }
 
@@ -113,7 +112,7 @@ function removeCustomOrder(input) {
         customNewOrder();
 
     }
-
+    getPriceTotal();
 }
 
 
@@ -125,16 +124,12 @@ function getTotalCustom() {
 
     let total = num1Quan + num2Quan + num3Quan;
 
-    console.log(total)
     document.querySelector(".wyld-form-mix input[name=custom-num]").value = total;
-
 
     if (customOrder1.ingredients !== "" && customOrder2.ingredients !== "" && customOrder3.ingredients !== "") {
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
     }
-
-    // getPriceTotal();
 
 }
 
@@ -144,8 +139,8 @@ function order1Input() {
     Number(document.querySelector('.num-1 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
 
     customNewOrder();
-    getTotalCustom();
-    getPriceTotal();
+    // getTotalCustom();
+    getPriceTotal(21);
 
 }
 
@@ -154,8 +149,8 @@ function order2Input() {
     Number(document.querySelector('.num-2 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
 
     customNewOrder();
-    getTotalCustom();
-    getPriceTotal();
+    // getTotalCustom();
+    getPriceTotal(20);
 
 }
 
@@ -164,8 +159,8 @@ function order3Input() {
     Number(document.querySelector('.num-3 input').value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
 
     customNewOrder();
-    getTotalCustom();
-    getPriceTotal();
+    // getTotalCustom();
+    getPriceTotal(19);
 }
 
 
@@ -187,10 +182,6 @@ let customFormCheck = document.querySelector('.wyld-form-mix input[name=mix_cust
 
 function customQuantityVerify() { // NEEDS to check if pane is open before applying styles
 
-    // if (Number(formCustomQuan.value) >= 4) {
-    //     formCustomQuan.value = "3";
-    // }
-
     if (bulkMaxBool === true) {
         if (Number(formCustomQuan.value) >= 1) {
             formCustomQuan.value = "1";
@@ -202,17 +193,25 @@ function customQuantityVerify() { // NEEDS to check if pane is open before apply
     let total = Number(document.querySelector(".wyld-form-mix input[name=custom-num]").value);
 
     if (total >= 10) {
-        // console.log('more')
         customOrderBtn.style.pointerEvents = "none";
         customOrderBtn.innerHTML = "Max 3 per week<br>Please Check Quantity On Form";
 
     } else if (total <= 2) {
         customOrderBtn.style.pointerEvents = "auto";
         customOrderBtn.innerHTML = "Start A New Custom Order";
-        // console.log('less');
     }
-    // console.log('input');
-    getPriceTotal();
+    getPriceTotal(18);
 
 }
 
+function bulkQuantityAdjust() {
+    if (customOrder1.quantity != 0) {
+        customOrder1.quantity = 1;
+    }
+    if (customOrder2.quantity != 0) {
+        customOrder2.quantity = 1;
+    }
+    if (customOrder3.quantity != 0) {
+        customOrder3.quantity = 1;
+    }
+}

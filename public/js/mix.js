@@ -112,6 +112,9 @@ function sendFarmerData() {
     farmersQuanCheck.style.display = "block";
     document.querySelector(".wyld-form-mix input[name=farmers-num]").value = farmersQuanInput.value;
     addToOrder('mix_farmers');
+    getPriceTotal(22);
+    discountDisplayHandler();
+
 }
 
 
@@ -225,6 +228,8 @@ function sendSpicyData() {
     spicyQuanCheck.style.display = "block";
     document.querySelector(".wyld-form-mix input[name=spicy-num]").value = spicyQuanInput.value;
     addToOrder('mix_spicy');
+    getPriceTotal(23);
+
     discountDisplayHandler();
 }
 
@@ -338,6 +343,9 @@ function sendSaladData() {
     saladQuanCheck.style.display = "block";
     document.querySelector(".wyld-form-mix input[name=salad-num]").value = saladQuanInput.value;
     addToOrder('mix_salad');
+    getPriceTotal(24);
+    discountDisplayHandler();
+
 }
 
 // 'Healthy Mix' order button control booleans
@@ -450,6 +458,8 @@ function sendHealthyData() {
     healthyQuanCheck.style.display = "block";
     document.querySelector(".wyld-form-mix input[name=healthy-num]").value = healthyQuanInput.value;
     addToOrder('mix_healthy');
+    getPriceTotal(25);
+    discountDisplayHandler();
 }
 
 

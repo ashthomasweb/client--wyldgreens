@@ -1,6 +1,9 @@
-
-
 // PLAN SELECTION / FORM CHECK HANDLERS
+
+let oneTimeDelBool = false;
+let weeklyDelBool = false;
+let bulkDelBool = false;
+
 
 let weeklyPane = document.querySelector('#weekly-pane');
 let weeklyOrderBtn = document.querySelector('#weekly-order-btn');
@@ -53,21 +56,6 @@ function bulkClose() {
     bulkAdded.classList.remove('plan-added-clicked');
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-let weeklyDelBool = false;
-
 function weeklyDel() {
     if (weeklyDelBool === false) {
         weeklyDelBool = !weeklyDelBool;
@@ -81,21 +69,22 @@ function weeklyDel() {
         bulkMaxOff();
         clearPlansForm();
         addToOrder('weekly');
-        getPriceTotal();
+        // getTotalCustom();
+
+        getPriceTotal(8);
 
     } else if (weeklyDelBool === true) {
         weeklyDelBool = !weeklyDelBool;
         weeklyClose();
         clearPlansForm();
-        if (formCheckWeekly.checked === false && formCheckBulk === false && formCheckOnetime === false) {
+        if (formCheckWeekly.checked === false && formCheckBulk.checked === false && formCheckOnetime.checked === false) {
             formTotalPrice.value = '0';
         }
-        getPriceTotal();
+        // getTotalCustom();
 
+        getPriceTotal(7);
     }
 }
-
-let bulkDelBool = false;
 
 function bulkDel() {
     if (bulkDelBool === false) { // turns ON bulk delivery options
@@ -110,25 +99,23 @@ function bulkDel() {
         addToOrder('bulk');
         displayBulkDiscount();
         bulkMax();
-        getTotalCustom();
+        // getTotalCustom();
 
-        getPriceTotal();
+        bulkQuantityAdjust();
+        getPriceTotal(6);
     } else if (bulkDelBool === true) { // turns OFF bulk delivery options
         bulkDelBool = !bulkDelBool;
         clearPlansForm();
         bulkClose();
-        if (formCheckWeekly.checked === false && formCheckBulk === false && formCheckOnetime === false) {
+        if (formCheckWeekly.checked === false && formCheckBulk.checked === false && formCheckOnetime.checked === false) {
             formTotalPrice.value = '0';
         }
         hideBulkDiscount();
         bulkMaxOff();
-    getTotalCustom();
-
-        getPriceTotal();
+        // getTotalCustom();
+        getPriceTotal(5);
     }
 }
-
-let oneTimeDelBool = false;
 
 function oneTimeDel() {
     if (oneTimeDelBool === false) { // turns ON one-time delivery options
@@ -143,17 +130,18 @@ function oneTimeDel() {
         bulkMaxOff();
         clearPlansForm();
         addToOrder('one_time');
-        getPriceTotal();
+        // getTotalCustom();
+
+        getPriceTotal(4);
     } else if (oneTimeDelBool === true) { // turns OFF one-time delivery options
         oneTimeDelBool = !oneTimeDelBool;
         oneTimeClose();
         clearPlansForm();
-        if (formCheckWeekly.checked === false && formCheckBulk === false && formCheckOnetime === false) {
+        if (formCheckWeekly.checked === false && formCheckBulk.checked === false && formCheckOnetime.checked === false) {
             formTotalPrice.value = '0';
         }
-        getPriceTotal();
+        // getTotalCustom();
 
+        getPriceTotal(3);
     }
 }
-
-
