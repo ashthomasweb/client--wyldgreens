@@ -74,12 +74,40 @@ function hideBulkDiscount() {
             discountBool = true;
         }
     });
+    if ( bulkDelBool === true ) {
+        discountBool = true;
+    }
     if (discountBool === false) {
         bulkDiscount.style.display = "none";
     }
 }
 
+function changeMixMax() {
+    if ( bulkDelBool === true ) {
+        farmersQuanInput.max = "1";
+        healthyQuanInput.max = "1";
+        saladQuanInput.max = "1";
+        spicyQuanInput.max = "1";
+
+    } else if ( bulkDelBool === false ) {
+        farmersQuanInput.max = "3";
+        healthyQuanInput.max = "3";
+        saladQuanInput.max = "3";
+        spicyQuanInput.max = "3";
+    }
+}
+
+
+
+
+
+
+
+
+
 function getPriceTotal(id) {
+
+    customRemoveDisplayHandler();
     
     let planPrice;
     let price;

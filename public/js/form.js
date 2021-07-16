@@ -60,7 +60,7 @@ let spicyCheck = document.querySelector(".mix-wrap input[name=mix_spicy]");
 function farmersCheckbox() {
     if (farmersCheck.checked === false) {
         farmersCloseBtn();
-        document.querySelector(".mix-wrap input[name=farmers-num]").value = "0";
+        document.querySelector(".mix-wrap input[name=farmers-num]").value = "";
     } else if (farmersCheck.checked === true) {
         farmersMix();
         farmersMix();
@@ -72,7 +72,7 @@ function farmersCheckbox() {
 function spicyCheckbox() {
     if (spicyCheck.checked === false) {
         spicyCloseBtn();
-        document.querySelector(".mix-wrap input[name=spicy-num]").value = "0";
+        document.querySelector(".mix-wrap input[name=spicy-num]").value = "";
     } else if (spicyCheck.checked === true) {
         spicyMix();
         spicyMix();
@@ -84,7 +84,7 @@ function spicyCheckbox() {
 function saladCheckbox() {
     if (saladCheck.checked === false) {
         saladCloseBtn();
-        document.querySelector(".mix-wrap input[name=salad-num]").value = "0";
+        document.querySelector(".mix-wrap input[name=salad-num]").value = "";
     } else if (saladCheck.checked === true) {
         saladMix();
         saladMix();
@@ -96,7 +96,7 @@ function saladCheckbox() {
 function healthyCheckbox() {
     if (healthyCheck.checked === false) {
         healthyCloseBtn();
-        document.querySelector(".mix-wrap input[name=healthy-num]").value = "0";
+        document.querySelector(".mix-wrap input[name=healthy-num]").value = "";
     } else if (healthyCheck.checked === true) {
         healthyMix();
         healthyMix();
@@ -109,6 +109,7 @@ function farmersInput() {
     if (Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) >= 4) {
         document.querySelector(".mix-wrap input[name=farmers-num]").value = "3";
     }
+    
     
     if (bulkMaxBool === true) {
         if (Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) >= 1) {
@@ -124,6 +125,11 @@ function farmersInput() {
         farmersQuanInput.value = document.querySelector(".mix-wrap input[name=farmers-num]").value;
     }
     
+    if ( Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) < 1 || document.querySelector(".mix-wrap input[name=farmers-num]").value === "" ) {
+        farmersCheck.checked = false;
+        farmersCloseBtn();
+    }
+
     Number(formFarmersQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal(12);
 }
@@ -147,14 +153,19 @@ function spicyInput() {
         spicyQuanInput.value = document.querySelector(".mix-wrap input[name=spicy-num]").value;
     }
 
+    if ( Number(document.querySelector(".mix-wrap input[name=spicy-num]").value) < 1 || document.querySelector(".mix-wrap input[name=spicy-num]").value === "" ) {
+        spicyCheck.checked = false;
+        spicyCloseBtn();
+    }
+
     Number(formSpicyQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal(11);
 }
 
 function saladInput() {
-    if (Number(document.querySelector(".mix-wrap input[name=salad-num]").value) >= 4) {
+    if (Number(formSaladQuan.value) >= 4) {
         document.querySelector(".mix-wrap input[name=salad-num]").value = "3";
-    }
+    } 
 
     if (bulkMaxBool === true) {
         if (Number(document.querySelector(".mix-wrap input[name=salad-num]").value) >= 1) {
@@ -168,6 +179,11 @@ function saladInput() {
 
     } else if (saladCheck.checked === true) {
         saladQuanInput.value = document.querySelector(".mix-wrap input[name=salad-num]").value;
+    }
+
+    if ( Number(document.querySelector(".mix-wrap input[name=salad-num]").value) < 1 || document.querySelector(".mix-wrap input[name=salad-num]").value === "" ) {
+        saladCheck.checked = false;
+        saladCloseBtn();
     }
 
     Number(formSaladQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
@@ -192,6 +208,11 @@ function healthyInput() {
 
     } else if (healthyCheck.checked === true) {
         healthyQuanInput.value = document.querySelector(".mix-wrap input[name=healthy-num]").value;
+    }
+
+    if ( Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) < 1 || document.querySelector(".mix-wrap input[name=healthy-num]").value === "" ) {
+        healthyCheck.checked = false;
+        healthyCloseBtn();
     }
 
     Number(formHealthyQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();

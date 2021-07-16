@@ -99,6 +99,7 @@ function bulkDel() {
         addToOrder('bulk');
         displayBulkDiscount();
         bulkMax();
+        changeMixMax();
         // getTotalCustom();
 
         bulkQuantityAdjust();
@@ -111,6 +112,7 @@ function bulkDel() {
             formTotalPrice.value = '0';
         }
         hideBulkDiscount();
+        changeMixMax();
         bulkMaxOff();
         // getTotalCustom();
         getPriceTotal(5);

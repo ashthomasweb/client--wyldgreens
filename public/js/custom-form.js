@@ -67,7 +67,9 @@ function customNewOrder() {
     customNew.classList.remove('custom-remove-clicked');
     customOrderOff();
     getTotalCustom();
-    checkCustomQuantities();
+    // checkCustomQuantities();
+    maxOutCustom();
+
     // customOrderOn();
 }
 
@@ -203,10 +205,7 @@ function promptQuantity() {
             }
 
         } else if (customQuanBool === false) { // first click after adding ingredient
-            if (bulkDelBool === true) {
-                customQuanP.innerHTML = "Bulk<br>Order";
-                customQuanInput.value = "4";
-            }
+           
             customQuanBool = true;
             hiddenBtn.innerText = "Add to Order Form";
             document.querySelector('.custom-btn-slider').classList.add('custom-btn-slider-anim');

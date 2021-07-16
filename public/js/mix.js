@@ -81,14 +81,15 @@ function farmersCloseBtn() { // hidden tab close button
     }
 
     if (farmersClose.innerText === "Remove") { // if product already added
-        document.querySelector(".wyld-form-mix input[name=farmers-num]").value = "0";
+        document.querySelector(".wyld-form-mix input[name=farmers-num]").value = "";
         document.querySelector('[name=mix_farmers]').checked = false;
         farmersQuanCheck.style.display = "none";
-        farmersQuanInput.value = "0";
+        farmersQuanInput.value = "";
         farmersOrderBtn.innerText = "Deleted from Order";
         farmersQuanP.style.opacity = "0";
         farmersQuanCross.style.display = "block";
         farmersClose.style.pointerEvents = "none";
+        getPriceTotal();
         setTimeout(() => {
             farmersOrderBtn.style.pointerEvents = "auto";
             panelClose();
@@ -196,14 +197,16 @@ function spicyCloseBtn() { // hidden tab close button
     }
 
     if (spicyClose.innerText === "Remove") { // if product already added
-        document.querySelector(".wyld-form-mix input[name=spicy-num]").value = "0";
+        document.querySelector(".wyld-form-mix input[name=spicy-num]").value = "";
         document.querySelector('[name=mix_spicy]').checked = false;
         spicyQuanCheck.style.display = "none";
-        spicyQuanInput.value = "0";
+        spicyQuanInput.value = "";
         spicyOrderBtn.innerText = "Deleted from Order";
         spicyQuanP.style.opacity = "0";
         spicyQuanCross.style.display = "block";
         spicyClose.style.pointerEvents = "none";
+        getPriceTotal();
+
         setTimeout(() => {
             spicyOrderBtn.style.pointerEvents = "auto";
             panelClose();
@@ -311,14 +314,16 @@ function saladCloseBtn() { // hidden tab close button
     }
 
     if (saladClose.innerText === "Remove") { // if product already added
-        document.querySelector(".wyld-form-mix input[name=salad-num]").value = "0";
+        document.querySelector(".wyld-form-mix input[name=salad-num]").value = "";
         document.querySelector('[name=mix_salad]').checked = false;
         saladQuanCheck.style.display = "none";
-        saladQuanInput.value = "0";
+        saladQuanInput.value = "";
         saladOrderBtn.innerText = "Deleted from Order";
         saladQuanP.style.opacity = "0";
         saladQuanCross.style.display = "block";
         saladClose.style.pointerEvents = "none";
+        getPriceTotal();
+
         setTimeout(() => {
             saladOrderBtn.style.pointerEvents = "auto";
             panelClose();
@@ -426,14 +431,16 @@ function healthyCloseBtn() { // hidden tab close button
     }
 
     if (healthyClose.innerText === "Remove") { // if product already added
-        document.querySelector(".wyld-form-mix input[name=healthy-num]").value = "0";
+        document.querySelector(".wyld-form-mix input[name=healthy-num]").value = "";
         document.querySelector('[name=mix_healthy]').checked = false;
         healthyQuanCheck.style.display = "none";
-        healthyQuanInput.value = "0";
+        healthyQuanInput.value = "";
         healthyOrderBtn.innerText = "Deleted from Order";
         healthyQuanP.style.opacity = "0";
         healthyQuanCross.style.display = "block";
         healthyClose.style.pointerEvents = "none";
+        getPriceTotal();
+
         setTimeout(() => {
             healthyOrderBtn.style.pointerEvents = "auto";
             panelClose();
