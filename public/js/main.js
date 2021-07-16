@@ -1,3 +1,36 @@
+// DOM OBJECT ASSIGNMENTS
+
+// main
+
+
+// plans
+
+
+// mix
+
+
+
+// custom form 
+
+
+
+
+// custom orders
+
+
+
+
+// form
+
+
+
+// price
+
+
+
+
+
+
 
 // CTA BUTTONS 
 
