@@ -1,8 +1,10 @@
 
 // CUSTOM MIX FORM
 
-let customOrderBtn = document.querySelector(".custom-order-button");
-let hiddenBtn = document.querySelector(".custom-order-hidden");
+// DOM OBJECT ASSIGNMENTS
+
+let customOrderBtn = document.querySelector('.custom-order-button');
+let hiddenBtn = document.querySelector('.custom-order-hidden');
 let ingredChecks = document.querySelectorAll('.custom-check');
 let orderBox = document.querySelector('.ingred-box');
 let customClose = document.querySelector('.custom-close');
@@ -13,9 +15,14 @@ let customQuanCross = document.querySelector('.custom-btn-cross');
 let customNew = document.querySelector('.custom-new');
 let customQuanInput = document.querySelector('.custom-quantity input');
 let customRemove = document.querySelector('.custom-remove');
+let customIngredList = document.querySelectorAll('.custom-ingredients label');
+let customBtnSlider = document.querySelector('.custom-btn-slider');
+
+
+
 
 function customOrderOn() { // open pane, apply styles
-    customOrderBtn.innerText = "Pick up to 4";
+    customOrderBtn.innerText = 'Pick up to 4';
     customOrderBtn.classList.add('custom-order-btn-clicked');
     customOrderBtn.style.pointerEvents = 'none';
 
@@ -27,9 +34,9 @@ function customOrderOn() { // open pane, apply styles
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].style.opacity = '1';
         // ingredChecks[i].disabled = false;
-        ingredChecks[i].style.cursor = "pointer";
-        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = "pointer";
-        document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = "auto";
+        ingredChecks[i].style.cursor = 'pointer';
+        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = 'pointer';
+        document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = 'auto';
     }
 }
 
@@ -42,21 +49,21 @@ function customOrderOff() { // close pane
     orderWrap.classList.remove('custom-order-shadow');
     customClose.classList.remove('custom-close-clicked');
     customNew.classList.remove('custom-close-clicked');
-    customQuanCheck.style.display = "none";
-    customQuanP.style.opacity = "1";
+    customQuanCheck.style.display = 'none';
+    customQuanP.style.opacity = '1';
 
-    customOrderBtn.innerText = "Start A New Custom Order";
+    customOrderBtn.innerText = 'Start A New Custom Order';
     customOrderBtn.style.pointerEvents = 'auto';
-    document.querySelector('.custom-btn-slider').classList.remove('custom-btn-slider-anim');
-    hiddenBtn.innerText = "Create Mix!"
+    customBtnSlider.classList.remove('custom-btn-slider-anim');
+    hiddenBtn.innerText = 'Create Mix!'
     customQuanInput.value = 1;
 
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].style.opacity = '0.4';
         // ingredChecks[i].disabled = true;
         ingredChecks[i].checked = false;
-        ingredChecks[i].style.cursor = "default";
-        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = "default";
+        ingredChecks[i].style.cursor = 'default';
+        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = 'default';
     }
 }
 
@@ -77,30 +84,30 @@ let currentOrderSubmitted = false;
 
 function customUpdate() { // apply styles if data already sent to form
     if (Number(customQuanInput.value) > 3 || Number(customQuanInput.value) === 0) {
-        customQuanP.style.opacity = "1";
-        customQuanCheck.style.display = "none";
-        customQuanP.innerHTML = "Max 3<br>per week";
-        customQuanP.style.left = "23px";
-        hiddenBtn.style.pointerEvents = "none";
+        customQuanP.style.opacity = '1';
+        customQuanCheck.style.display = 'none';
+        customQuanP.innerHTML = 'Max 3<br>per week';
+        customQuanP.style.left = '23px';
+        hiddenBtn.style.pointerEvents = 'none';
 
     } else if (Number(customQuanInput.value) >= 1 || Number(customQuanInput.value) <= 3) {
-        customQuanP.innerHTML = "How<br>Many?";
-        customQuanP.style.left = "31px";
-        hiddenBtn.style.pointerEvents = "auto";
+        customQuanP.innerHTML = 'How<br>Many?';
+        customQuanP.style.left = '31px';
+        hiddenBtn.style.pointerEvents = 'auto';
 
         if (currentOrderSubmitted === true) {
             customUpdateBool = true;
-            customQuanP.style.opacity = "1";
-            customQuanCheck.style.display = "none";
-            hiddenBtn.innerText = "Update Quantity";
-            hiddenBtn.style.pointerEvents = "auto";
+            customQuanP.style.opacity = '1';
+            customQuanCheck.style.display = 'none';
+            hiddenBtn.innerText = 'Update Quantity';
+            hiddenBtn.style.pointerEvents = 'auto';
         }
     }
 
 }
 
 function ingredCheck() {
-    if ( customOrderBtn.innerText != "Pick up to 4" ) {
+    if ( customOrderBtn.innerText != 'Pick up to 4' ) {
         customOrderOn();
     } 
     let customChecks = document.querySelectorAll('.custom-check');
@@ -113,26 +120,26 @@ function ingredCheck() {
 
     if (count > 4) {
         customOrderBtn.style.pointerEvents = 'none';
-        customOrderBtn.innerText = "Too many!";
-        hiddenBtn.style.pointerEvents = "none";
+        customOrderBtn.innerText = 'Too many!';
+        hiddenBtn.style.pointerEvents = 'none';
         hiddenBtn.style.color = 'grey';
-        document.querySelector(".custom-quantity p").innerText = "Too Many Items!";
-        // document.querySelector(".custom-quantity p").style.left = "px";
-        document.querySelector(".custom-quantity p").style.top = "15px";
-        document.querySelector(".custom-quantity input").style.display = "none";
+        customQuanP.innerText = 'Too Many Items!';
+        // customQuanP.style.left = 'px';
+        customQuanP.style.top = '15px';
+        customQuanInput.style.display = 'none';
 
     } else if (count > 0 && count <= 4) {
-        customOrderBtn.innerText = "Pick up to 4";
+        customOrderBtn.innerText = 'Pick up to 4';
         customOrderBtn.style.pointerEvents = 'none';
-        hiddenBtn.style.pointerEvents = "auto";
+        hiddenBtn.style.pointerEvents = 'auto';
         hiddenBtn.style.color = '#222';
-        document.querySelector(".custom-quantity p").innerHTML = "How<br>Many?";
-        document.querySelector(".custom-quantity p").style.left = "31px";
-        document.querySelector(".custom-quantity p").style.top = "7px";
-        document.querySelector(".custom-quantity input").style.display = "inline-block";
+        customQuanP.innerHTML = 'How<br>Many?';
+        customQuanP.style.left = '31px';
+        customQuanP.style.top = '7px';
+        customQuanInput.style.display = 'inline-block';
 
     } else if (count === 0) {
-        hiddenBtn.style.pointerEvents = "none";
+        hiddenBtn.style.pointerEvents = 'none';
 
     }
 }
@@ -143,16 +150,16 @@ let customUpdateBool = false;
 function sendCustomData(update) {
 
     currentOrderSubmitted = true;
-    hiddenBtn.innerText = "Added to Order!";
-    hiddenBtn.style.pointerEvents = "none";
-    customQuanP.style.opacity = "0";
-    customQuanCheck.style.display = "block";
-    document.querySelector(".wyld-form-mix input[name=custom-num]").value = customQuanInput.value;
+    hiddenBtn.innerText = 'Added to Order!';
+    hiddenBtn.style.pointerEvents = 'none';
+    customQuanP.style.opacity = '0';
+    customQuanCheck.style.display = 'block';
+    formCustomQuan.value = customQuanInput.value;
     addToOrder('mix_custom');
 
     // data gathering and packaging
 
-    let boxVar = "box";
+    let boxVar = 'box';
     let newOrderQuan = Number(customQuanInput.value);
     let itemList = [];
 
@@ -160,7 +167,7 @@ function sendCustomData(update) {
         ingredChecks[i].checked === true && itemList.push(ingredChecks[i].name);
     }
     if (Number(customQuanInput.value) > 1) {
-        boxVar = "boxes";
+        boxVar = 'boxes';
     }
 
     // custom order object update
@@ -193,23 +200,23 @@ function promptQuantity() {
             // display new option buttons
             customNew.classList.add('custom-remove-clicked');
             customClose.classList.remove('custom-close-clicked');
-            customNew.style.pointerEvents = "auto";
+            customNew.style.pointerEvents = 'auto';
 
             // turn off ingredient selection
             for (i = 0; i < ingredChecks.length; i++) {
-                ingredChecks[i].style.cursor = "default";
+                ingredChecks[i].style.cursor = 'default';
                 if (ingredChecks[i].checked === false) {
                     ingredChecks[i].style.opacity = '0.5';
                 }
-                // document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = "none";
+                // document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = 'none';
             }
 
         } else if (customQuanBool === false) { // first click after adding ingredient
            
             customQuanBool = true;
-            hiddenBtn.innerText = "Add to Order Form";
-            document.querySelector('.custom-btn-slider').classList.add('custom-btn-slider-anim');
-            hiddenBtn.style.right = "1px";
+            hiddenBtn.innerText = 'Add to Order Form';
+            customBtnSlider.classList.add('custom-btn-slider-anim');
+            hiddenBtn.style.right = '1px';
         }
     }
 }

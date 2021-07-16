@@ -1,26 +1,8 @@
 // DOM OBJECT ASSIGNMENTS
 
-// main
-
-
-// plans
-
-
-// mix
-
-
-
-// custom form 
-
-
-
-
-// custom orders
-
-
-
-
 // form
+
+
 
 
 
@@ -32,20 +14,39 @@
 
 
 
+
+
+
+
+
+
+// DOM OBJECT ASSIGNMENTS
+
+let ctaBtnPlan = document.querySelector('#plan-button');
+let ctaBtnMix = document.querySelector('#mix-button');
+let ctaBtnOrder = document.querySelector('#order-button');
+
+let pxBack = document.querySelector('.l-body-wrapper--contact');
+
+let lightboxPane = document.querySelector('.lightbox');
+let lightboxImg = document.querySelector('.lightbox img');
+
+
+
 // CTA BUTTONS 
 
-document.querySelector("#plan-button").addEventListener('click', () => {
-    window.location.href = "#pick-plan";
+ctaBtnPlan.addEventListener('click', () => {
+    window.location.href = '#pick-plan';
     window.scrollBy(0, -50);
 });
 
-document.querySelector("#mix-button").addEventListener('click', () => {
-    window.location.href = "#pick-mix";
+ctaBtnMix.addEventListener('click', () => {
+    window.location.href = '#pick-mix';
     window.scrollBy(0, -50);
 });
 
-document.querySelector("#order-button").addEventListener('click', () => {
-    window.location.href = "#order-form";
+ctaBtnOrder.addEventListener('click', () => {
+    window.location.href = '#order-form';
     window.scrollBy(0, -50);
 });
 
@@ -55,30 +56,29 @@ document.addEventListener('scroll', () => {
     let imageOffsetRatio = 470;
     let amount = ( window.scrollY / imageOffsetRatio ) * 100;
     let string = `-${amount}px`;
-    document.querySelector('.l-body-wrapper--contact').style.backgroundPositionY = string;
+    pxBack.style.backgroundPositionY = string;
 });
 
 // LIGHTBOX
 
+
 let lightboxBool = false;
-let lightboxPane = document.querySelector('.lightbox');
 
 function lightbox() {
     if (lightboxBool === true) {
-        lightboxPane.style.opacity = "0";
+        lightboxPane.style.opacity = '0';
         lightboxPane.pointerEvents = 'none';
 
     } else if (lightboxBool === false) {
         lightboxPane.pointerEvents = 'auto';
-        lightboxPane.style.opacity = "1";
+        lightboxPane.style.opacity = '1';
     }
     lightboxBool = !lightboxBool;
 }
 
 function runLightbox(input) {
     lightboxPane.pointerEvents = 'auto';
-
-    document.querySelector('.lightbox img').attributes.src.value = `/images/greens/${input}`;
+    lightboxImg.attributes.src.value = `/images/greens/${input}`;
     lightbox();
 }
 

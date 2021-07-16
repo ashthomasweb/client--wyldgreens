@@ -1,4 +1,5 @@
-// JavaScript file for "Wyld"
+// JavaScript file for 'Wyld'
+
 
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
@@ -10,61 +11,64 @@ let formSpicyQuan = document.querySelector('[name=spicy-num]');
 let formCustomQuan = document.querySelector('[name=custom-num]');
 let formTotalPrice = document.querySelector('[name=total-num]');
 
+let farmersCheck = document.querySelector('[name=mix_farmers]');
+let healthyCheck = document.querySelector('[name=mix_healthy]');
+let saladCheck = document.querySelector('[name=mix_salad]');
+let spicyCheck = document.querySelector('[name=mix_spicy]');
+let customCheck = document.querySelector('[name=mix_custom]');
+
+
+
 // ADD CHECK TO FORM
 
 function addToOrder(input) {
-    document.querySelector(`[name="${input}"]`).checked = true;
+    document.querySelector(`[name='${input}']`).checked = true;
 }
 
 // CLEAR PLANS ON FORM
 
 function clearPlansForm() {
-    document.querySelector('[name=weekly]').checked = false;
-    document.querySelector('[name=bulk]').checked = false;
-    document.querySelector('[name=one_time]').checked = false;
+    formCheckWeekly.checked = false;
+    formCheckBulk.checked = false;
+    formCheckOnetime.checked = false;
 }
 
 // FIELD CHECK AND STYLE CHANGE ON STATE
 
 function formFieldCheck() {
-    let name = document.forms["contact"]["user_name"].value;
-    let email = document.forms["contact"]["user_email"].value;
-    let message = document.forms["contact"]["message"].value;
-    let elem = document.getElementById("contact-button");
+    let name = document.forms['contact']['user_name'].value;
+    let email = document.forms['contact']['user_email'].value;
+    let message = document.forms['contact']['message'].value;
+    let elem = document.getElementById('contact-button');
 
-    if (name == "" || email == "" || message == "") { // on ready
-        elem.style.backgroundColor = "var(--primary-light)";
-        elem.style.pointerEvents = "none";
-        elem.style.color = "var(--copy-dark)";
+    if (name == '' || email == '' || message == '') { // on ready
+        elem.style.backgroundColor = 'var(--primary-light)';
+        elem.style.pointerEvents = 'none';
+        elem.style.color = 'var(--copy-dark)';
 
     } else { // upon typing
-        elem.style.backgroundColor = "var(--primary-color)";
-        elem.style.pointerEvents = "auto";
-        elem.style.color = "var(--highlight)";
-        elem.innerHTML = "Place<br>Your Order"
+        elem.style.backgroundColor = 'var(--primary-color)';
+        elem.style.pointerEvents = 'auto';
+        elem.style.color = 'var(--highlight)';
+        elem.innerHTML = 'Place<br>Your Order'
     }
 }
 
 function sendingText() {
-    let elem = document.getElementById("contact-button");
-    elem.innerText = "Sending";
+    let elem = document.getElementById('contact-button');
+    elem.innerText = 'Sending';
 }
 
 // MIX CHECKBOX AND INPUT HANDLING
 
-let farmersCheck = document.querySelector(".mix-wrap input[name=mix_farmers]");
-let healthyCheck = document.querySelector(".mix-wrap input[name=mix_healthy]");
-let saladCheck = document.querySelector(".mix-wrap input[name=mix_salad]");
-let spicyCheck = document.querySelector(".mix-wrap input[name=mix_spicy]");
-
 function farmersCheckbox() {
     if (farmersCheck.checked === false) {
         farmersCloseBtn();
-        document.querySelector(".mix-wrap input[name=farmers-num]").value = "";
+        formFarmersQuan.value = '';
     } else if (farmersCheck.checked === true) {
         farmersMix();
         farmersMix();
-        document.querySelector(".mix-wrap input[name=farmers-num]").value = "1";
+        formFarmersQuan.value = '1';
     }
     getPriceTotal(16);
 }
@@ -72,11 +76,11 @@ function farmersCheckbox() {
 function spicyCheckbox() {
     if (spicyCheck.checked === false) {
         spicyCloseBtn();
-        document.querySelector(".mix-wrap input[name=spicy-num]").value = "";
+        formSpicyQuan.value = '';
     } else if (spicyCheck.checked === true) {
         spicyMix();
         spicyMix();
-        document.querySelector(".mix-wrap input[name=spicy-num]").value = "1";
+        formSpicyQuan.value = '1';
     }
     getPriceTotal(15);
 }
@@ -84,11 +88,11 @@ function spicyCheckbox() {
 function saladCheckbox() {
     if (saladCheck.checked === false) {
         saladCloseBtn();
-        document.querySelector(".mix-wrap input[name=salad-num]").value = "";
+        formSaladQuan.value = '';
     } else if (saladCheck.checked === true) {
         saladMix();
         saladMix();
-        document.querySelector(".mix-wrap input[name=salad-num]").value = "1";
+        formSaladQuan.value = '1';
     }
     getPriceTotal(14);
 }
@@ -96,24 +100,24 @@ function saladCheckbox() {
 function healthyCheckbox() {
     if (healthyCheck.checked === false) {
         healthyCloseBtn();
-        document.querySelector(".mix-wrap input[name=healthy-num]").value = "";
+        formHealthyQuan.value = '';
     } else if (healthyCheck.checked === true) {
         healthyMix();
         healthyMix();
-        document.querySelector(".mix-wrap input[name=healthy-num]").value = "1";
+        formHealthyQuan.value = '1';
     }
     getPriceTotal(13);
 }
 
 function farmersInput() {
-    if (Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) >= 4) {
-        document.querySelector(".mix-wrap input[name=farmers-num]").value = "3";
+    if (Number(formFarmersQuan.value) >= 4) {
+        formFarmersQuan.value = '3';
     }
     
     
     if (bulkMaxBool === true) {
-        if (Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) >= 1) {
-            document.querySelector(".mix-wrap input[name=farmers-num]").value = "1";
+        if (Number(formFarmersQuan.value) >= 1) {
+            formFarmersQuan.value = '1';
         }
     }
     
@@ -122,10 +126,10 @@ function farmersInput() {
         farmersMix();
         
     } else if (farmersCheck.checked === true) {
-        farmersQuanInput.value = document.querySelector(".mix-wrap input[name=farmers-num]").value;
+        farmersQuanInput.value = formFarmersQuan.value;
     }
     
-    if ( Number(document.querySelector(".mix-wrap input[name=farmers-num]").value) < 1 || document.querySelector(".mix-wrap input[name=farmers-num]").value === "" ) {
+    if ( Number(formFarmersQuan.value) < 1 || formFarmersQuan.value === '' ) {
         farmersCheck.checked = false;
         farmersCloseBtn();
     }
@@ -136,13 +140,13 @@ function farmersInput() {
 
 function spicyInput() {
 
-    if (Number(document.querySelector(".mix-wrap input[name=spicy-num]").value) >= 4) {
-        document.querySelector(".mix-wrap input[name=spicy-num]").value = "3";
+    if (Number(formSpicyQuan.value) >= 4) {
+        formSpicyQuan.value = '3';
     }
 
     if (bulkMaxBool === true) {
-        if (Number(document.querySelector(".mix-wrap input[name=spicy-num]").value) >= 1) {
-            document.querySelector(".mix-wrap input[name=spicy-num]").value = "1";
+        if (Number(formSpicyQuan.value) >= 1) {
+            formSpicyQuan.value = '1';
         }
     }
 
@@ -150,10 +154,10 @@ function spicyInput() {
         spicyMix();
         spicyMix();
     } else if (spicyCheck.checked === true) {
-        spicyQuanInput.value = document.querySelector(".mix-wrap input[name=spicy-num]").value;
+        spicyQuanInput.value = formSpicyQuan.value;
     }
 
-    if ( Number(document.querySelector(".mix-wrap input[name=spicy-num]").value) < 1 || document.querySelector(".mix-wrap input[name=spicy-num]").value === "" ) {
+    if ( Number(formSpicyQuan.value) < 1 || formSpicyQuan.value === '' ) {
         spicyCheck.checked = false;
         spicyCloseBtn();
     }
@@ -164,12 +168,12 @@ function spicyInput() {
 
 function saladInput() {
     if (Number(formSaladQuan.value) >= 4) {
-        document.querySelector(".mix-wrap input[name=salad-num]").value = "3";
+        formSaladQuan.value = '3';
     } 
 
     if (bulkMaxBool === true) {
-        if (Number(document.querySelector(".mix-wrap input[name=salad-num]").value) >= 1) {
-            document.querySelector(".mix-wrap input[name=salad-num]").value = "1";
+        if (Number(formSaladQuan.value) >= 1) {
+            formSaladQuan.value = '1';
         }
     }
 
@@ -178,10 +182,10 @@ function saladInput() {
         saladMix();
 
     } else if (saladCheck.checked === true) {
-        saladQuanInput.value = document.querySelector(".mix-wrap input[name=salad-num]").value;
+        saladQuanInput.value = formSaladQuan.value;
     }
 
-    if ( Number(document.querySelector(".mix-wrap input[name=salad-num]").value) < 1 || document.querySelector(".mix-wrap input[name=salad-num]").value === "" ) {
+    if ( Number(formSaladQuan.value) < 1 || formSaladQuan.value === '' ) {
         saladCheck.checked = false;
         saladCloseBtn();
     }
@@ -192,13 +196,13 @@ function saladInput() {
 
 function healthyInput() {
 
-    if (Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) >= 4) {
-        document.querySelector(".mix-wrap input[name=healthy-num]").value = "3";
+    if (Number(formHealthyQuan.value) >= 4) {
+        formHealthyQuan.value = '3';
     }
 
     if (bulkMaxBool === true) {
-        if (Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) >= 1) {
-            document.querySelector(".mix-wrap input[name=healthy-num]").value = "1";
+        if (Number(formHealthyQuan.value) >= 1) {
+            formHealthyQuan.value = '1';
         }
     }
 
@@ -207,10 +211,10 @@ function healthyInput() {
         healthyMix();
 
     } else if (healthyCheck.checked === true) {
-        healthyQuanInput.value = document.querySelector(".mix-wrap input[name=healthy-num]").value;
+        healthyQuanInput.value = formHealthyQuan.value;
     }
 
-    if ( Number(document.querySelector(".mix-wrap input[name=healthy-num]").value) < 1 || document.querySelector(".mix-wrap input[name=healthy-num]").value === "" ) {
+    if ( Number(formHealthyQuan.value) < 1 || formHealthyQuan.value === '' ) {
         healthyCheck.checked = false;
         healthyCloseBtn();
     }
