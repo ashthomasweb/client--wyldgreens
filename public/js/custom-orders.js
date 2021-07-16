@@ -16,11 +16,6 @@ let customOrder3P = document.querySelector('.num-3 p')
 let customOrder3Input = document.querySelector('.num-3 input')
 let customOrder3Img = document.querySelector('.num-3 img')
 
-
-
-
-
-
 function customObjectUpdate(quantity, currentOrder) {
     if (currentOrder === 1) {
         customOrder1.quantity = quantity;
@@ -122,7 +117,6 @@ function maxOutCustom() {
     }
 }
 
-
 function getTotalCustom() {
     let num1Quan = Number(customOrder1Input.value);
     let num2Quan = Number(customOrder2Input.value);
@@ -142,7 +136,6 @@ function getTotalCustom() {
         customCheck.checked = false;
     }
 }
-
 
 function order1Input() {
     if (Number(customOrder1Input.value) >= 4) {
@@ -207,9 +200,7 @@ function customRemoveDisplayHandler() {
     }
 }
 
-
-
-function customQuantityVerify() { // NEEDS to check if pane is open before applying styles
+function customQuantityVerify() { 
 
     if (bulkMaxBool === true) {
         if (Number(formCustomQuan.value) >= 1) {
@@ -226,7 +217,6 @@ function customQuantityVerify() { // NEEDS to check if pane is open before apply
         customOrderBtn.innerHTML = 'Start A New Custom Order';
     }
     getPriceTotal(18);
-
 }
 
 function bulkQuantityAdjust() {
@@ -240,3 +230,4 @@ function bulkQuantityAdjust() {
         customOrder3.quantity = 1;
     }
 }
+

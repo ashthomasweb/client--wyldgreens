@@ -18,9 +18,6 @@ let customRemove = document.querySelector('.custom-remove');
 let customIngredList = document.querySelectorAll('.custom-ingredients label');
 let customBtnSlider = document.querySelector('.custom-btn-slider');
 
-
-
-
 function customOrderOn() { // open pane, apply styles
     customOrderBtn.innerText = 'Pick up to 4';
     customOrderBtn.classList.add('custom-order-btn-clicked');
@@ -60,7 +57,6 @@ function customOrderOff() { // close pane
 
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].style.opacity = '0.4';
-        // ingredChecks[i].disabled = true;
         ingredChecks[i].checked = false;
         ingredChecks[i].style.cursor = 'default';
         document.querySelectorAll('.custom-ingredients label')[i].style.cursor = 'default';
@@ -74,10 +70,7 @@ function customNewOrder() {
     customNew.classList.remove('custom-remove-clicked');
     customOrderOff();
     getTotalCustom();
-    // checkCustomQuantities();
     maxOutCustom();
-
-    // customOrderOn();
 }
 
 let currentOrderSubmitted = false;
@@ -124,7 +117,6 @@ function ingredCheck() {
         hiddenBtn.style.pointerEvents = 'none';
         hiddenBtn.style.color = 'grey';
         customQuanP.innerText = 'Too Many Items!';
-        // customQuanP.style.left = 'px';
         customQuanP.style.top = '15px';
         customQuanInput.style.display = 'none';
 
@@ -140,7 +132,6 @@ function ingredCheck() {
 
     } else if (count === 0) {
         hiddenBtn.style.pointerEvents = 'none';
-
     }
 }
 
@@ -178,9 +169,7 @@ function sendCustomData(update) {
         customObjectHandling(newOrderQuan, itemList);
     }
 
-    // getTotalCustom();
     newCustomDisplay();
-    
     getPriceTotal(17);
 }
 
@@ -208,11 +197,9 @@ function promptQuantity() {
                 if (ingredChecks[i].checked === false) {
                     ingredChecks[i].style.opacity = '0.5';
                 }
-                // document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = 'none';
             }
 
         } else if (customQuanBool === false) { // first click after adding ingredient
-           
             customQuanBool = true;
             hiddenBtn.innerText = 'Add to Order Form';
             customBtnSlider.classList.add('custom-btn-slider-anim');
@@ -220,3 +207,4 @@ function promptQuantity() {
         }
     }
 }
+

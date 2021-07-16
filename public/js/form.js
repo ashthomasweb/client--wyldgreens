@@ -1,6 +1,5 @@
 // JavaScript file for 'Wyld'
 
-
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
 let formCheckBulk = document.querySelector('[name=bulk]');
@@ -16,8 +15,6 @@ let healthyCheck = document.querySelector('[name=mix_healthy]');
 let saladCheck = document.querySelector('[name=mix_salad]');
 let spicyCheck = document.querySelector('[name=mix_spicy]');
 let customCheck = document.querySelector('[name=mix_custom]');
-
-
 
 // ADD CHECK TO FORM
 

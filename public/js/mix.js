@@ -1,7 +1,5 @@
 
 
-// MIX SELECTION BUTTONS
-
 // DOM variables
 
 let farmersOrderBtn = document.querySelector('#farmers-order-btn');
@@ -41,10 +39,8 @@ let healthyQuanCross = document.querySelector('.healthy-btn-cross');
 let healthyQuanInput = document.querySelector('#healthy-quantity input');
 
 
+// MIX SELECTION BUTTONS
 
-
-
-// 'Farmers Mix' order button control booleans
 let farmersBool = false;
 let farmersUpdateBool = false;
 
@@ -149,13 +145,8 @@ function sendFarmerData() {
 
 }
 
-// 'Spicy Mix' order button control booleans
 let spicyBool = false;
 let spicyUpdateBool = false;
-
-// DOM variables
-
-
 
 function spicyMix() { // primary button
     if (spicyUpdateBool === true) { // if updating quantity - data already sent to form
@@ -259,13 +250,8 @@ function sendSpicyData() {
     
 }
 
-// 'Salad Mix' order button control booleans
 let saladBool = false;
 let saladUpdateBool = false;
-
-// DOM variables
-
-
 
 function saladMix() { // primary button
     if (saladUpdateBool === true) { // if updating quantity - data already sent to form
@@ -369,12 +355,8 @@ function sendSaladData() {
 
 }
 
-// 'Healthy Mix' order button control booleans
 let healthyBool = false;
 let healthyUpdateBool = false;
-
-// DOM variables
-
 
 function healthyMix() { // primary button
     if (healthyUpdateBool === true) { // if updating quantity - data already sent to form

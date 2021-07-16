@@ -1,12 +1,8 @@
 
-
 let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
 let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
 let bulkDiscount = document.querySelector('.bulk-discount-pane');
-
-
-
 
 let bulkMaxBool = false;
 
@@ -32,7 +28,6 @@ function bulkMax() {
         }
         item.max = '1';
     });
-    // getTotalCustom();
     getPriceTotal(2);
 }
 
@@ -57,12 +52,10 @@ function bulkMaxOff() {
             }
             item.max = '3';
         });
-
     }
 
     bulkMaxBool = false;
     getPriceTotal(1);
-
 }
 
 function displayBulkDiscount() {
@@ -102,14 +95,6 @@ function changeMixMax() {
     }
 }
 
-
-
-
-
-
-
-
-
 function getPriceTotal(id) {
 
     customRemoveDisplayHandler();
@@ -142,3 +127,4 @@ function getPriceTotal(id) {
     displayBulkDiscount();
     hideBulkDiscount();
 }
+

@@ -15,14 +15,13 @@ let bulkOrderBtn = document.querySelector('#bulk-order-btn');
 let bulkAdded = document.querySelector('#bulk-added');
 let bulkCheck = document.querySelector('.bulk-btn-check');
 
-
 let oneTimeDelBool = false;
 let weeklyDelBool = false;
 let bulkDelBool = false;
 
 
-
 // PLAN SELECTION STYLES
+
 function weeklyOpen() {
     weeklyPane.classList.add('plan-btn-pane-open');
     weeklyOrderBtn.classList.add('center-btn-clicked');
@@ -143,3 +142,4 @@ function oneTimeDel() {
         getPriceTotal(3);
     }
 }
+

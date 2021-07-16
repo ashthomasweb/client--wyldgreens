@@ -1,24 +1,3 @@
-// DOM OBJECT ASSIGNMENTS
-
-// form
-
-
-
-
-
-// price
-
-
-
-
-
-
-
-
-
-
-
-
 
 // DOM OBJECT ASSIGNMENTS
 
@@ -30,8 +9,6 @@ let pxBack = document.querySelector('.l-body-wrapper--contact');
 
 let lightboxPane = document.querySelector('.lightbox');
 let lightboxImg = document.querySelector('.lightbox img');
-
-
 
 // CTA BUTTONS 
 
