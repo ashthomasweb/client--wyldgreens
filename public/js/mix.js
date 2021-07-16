@@ -38,7 +38,6 @@ let healthyQuanCheck = document.querySelector('#healthy-quantity img');
 let healthyQuanCross = document.querySelector('.healthy-btn-cross');
 let healthyQuanInput = document.querySelector('#healthy-quantity input');
 
-
 // MIX SELECTION BUTTONS
 
 let farmersBool = false;
