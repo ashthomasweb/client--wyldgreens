@@ -32,8 +32,8 @@ function customOrderOn() { // open pane, apply styles
         ingredChecks[i].style.opacity = '1';
         // ingredChecks[i].disabled = false;
         ingredChecks[i].style.cursor = 'pointer';
-        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = 'pointer';
-        document.querySelectorAll('.custom-ingredients label')[i].style.pointerEvents = 'auto';
+        customIngredList[i].style.cursor = 'pointer';
+        customIngredList[i].style.pointerEvents = 'auto';
     }
 }
 
@@ -59,7 +59,7 @@ function customOrderOff() { // close pane
         ingredChecks[i].style.opacity = '0.4';
         ingredChecks[i].checked = false;
         ingredChecks[i].style.cursor = 'default';
-        document.querySelectorAll('.custom-ingredients label')[i].style.cursor = 'default';
+        customIngredList[i].style.cursor = 'default';
     }
 }
 

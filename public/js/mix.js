@@ -1,5 +1,3 @@
-
-
 // DOM variables
 
 let farmersOrderBtn = document.querySelector('#farmers-order-btn');
@@ -39,6 +37,13 @@ let healthyQuanCross = document.querySelector('.healthy-btn-cross');
 let healthyQuanInput = document.querySelector('#healthy-quantity input');
 
 // MIX SELECTION BUTTONS
+
+
+
+
+
+
+
 
 let farmersBool = false;
 let farmersUpdateBool = false;
@@ -80,7 +85,7 @@ function farmersUpdate() { // apply styles if data already sent to form
         farmersQuanP.style.left = '23px';
         farmersOrderBtn.style.pointerEvents = 'auto';
 
-        if (customIngredList.checked === true) {
+        if (farmersCheck.checked === true) {
             farmersUpdateBool = true;
             farmersQuanP.style.opacity = '1';
             farmersQuanCheck.style.display = 'none';
@@ -91,44 +96,54 @@ function farmersUpdate() { // apply styles if data already sent to form
 
 }
 
+
+let farmersAnimA;
+let farmersAnimB;
+
+function farmersPanelClose() { // close button panel
+    farmersOrderBtn.innerText = 'Add To Order';
+    farmersPane.classList.remove('mix-btn-pane-open');
+    farmersOrderBtn.classList.remove('mix-button-clicked');
+    farmersQuan.classList.remove('mix-quantity-clicked');
+    farmersClose.classList.remove('mix-remove-clicked');
+    setTimeout(() => {
+        farmersPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
+    }, 200);
+}
+
 function farmersCloseBtn() { // hidden tab close button
     farmersBool = false;
     farmersUpdateBool = false;
 
-    function panelClose() { // close button panel
-        farmersOrderBtn.innerText = 'Add To Order';
-        farmersPane.classList.remove('mix-btn-pane-open');
-        farmersOrderBtn.classList.remove('mix-button-clicked');
-        farmersQuan.classList.remove('mix-quantity-clicked');
-        farmersClose.classList.remove('mix-remove-clicked');
-        setTimeout(() => {
-            farmersPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
-        }, 200);
-    }
-
-    if (farmersClose.innerText === 'Remove') { // if product already added
-        formFarmersQuan.value = '';
-        customIngredList.checked = false;
-        farmersQuanCheck.style.display = 'none';
-        farmersQuanInput.value = '';
-        farmersOrderBtn.innerText = 'Deleted from Order';
-        farmersQuanP.style.opacity = '0';
-        farmersQuanCross.style.display = 'block';
-        farmersClose.style.pointerEvents = 'none';
-        getPriceTotal();
-        setTimeout(() => {
+    function delayedDelete() {
+        farmersAnimA = setTimeout(() => {
             farmersOrderBtn.style.pointerEvents = 'auto';
-            panelClose();
+            farmersPanelClose();
         }, 2000);
-        setTimeout(() => {
+
+        farmersAnimB = setTimeout(() => {
             farmersQuanCross.style.display = 'none';
             farmersQuanP.style.opacity = '1';
             farmersQuanInput.value = '1';
             farmersClose.innerText = 'Close';
             farmersClose.style.pointerEvents = 'auto';
         }, 2300);
+    }
+
+    if (farmersClose.innerText === 'Remove') { // if product already added
+        formFarmersQuan.value = '';
+        farmersCheck.checked = false;
+        farmersQuanCheck.style.display = 'none';
+        farmersQuanInput.value = '';
+        farmersOrderBtn.innerText = 'Deleted from Order';
+        farmersQuanP.style.opacity = '0';
+        farmersQuanCross.style.display = 'block';
+        farmersClose.style.pointerEvents = 'none';
+        getPriceTotal(27);
+        delayedDelete();
+
     } else { // if no product added
-        panelClose();
+        farmersPanelClose();
     }
 }
 
@@ -140,9 +155,23 @@ function sendFarmerData() {
     formFarmersQuan.value = farmersQuanInput.value;
     addToOrder('mix_farmers');
     getPriceTotal(22);
-    
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let spicyBool = false;
 let spicyUpdateBool = false;
@@ -195,19 +224,37 @@ function spicyUpdate() { // apply styles if data already sent to form
 
 }
 
+let spicyAnimA;
+let spicyAnimB;
+
+function spicyPanelClose() {
+    spicyOrderBtn.innerText = 'Add To Order';
+    spicyPane.classList.remove('mix-btn-pane-open');
+    spicyOrderBtn.classList.remove('mix-button-clicked');
+    spicyQuan.classList.remove('mix-quantity-clicked');
+    spicyClose.classList.remove('mix-remove-clicked');
+    setTimeout(() => {
+        spicyPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
+    }, 200);
+}
+
 function spicyCloseBtn() { // hidden tab close button
     spicyBool = false;
     spicyUpdateBool = false;
 
-    function panelClose() { // close button panel
-        spicyOrderBtn.innerText = 'Add To Order';
-        spicyPane.classList.remove('mix-btn-pane-open');
-        spicyOrderBtn.classList.remove('mix-button-clicked');
-        spicyQuan.classList.remove('mix-quantity-clicked');
-        spicyClose.classList.remove('mix-remove-clicked');
-        setTimeout(() => {
-            spicyPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
-        }, 200);
+    function delayedDelete() {
+        spicyAnimA = setTimeout(() => {
+            spicyOrderBtn.style.pointerEvents = 'auto';
+            spicyPanelClose();
+        }, 2000);
+
+        spicyAnimB = setTimeout(() => {
+            spicyQuanCross.style.display = 'none';
+            spicyQuanP.style.opacity = '1';
+            spicyQuanInput.value = '1';
+            spicyClose.innerText = 'Close';
+            spicyClose.style.pointerEvents = 'auto';
+        }, 2300);
     }
 
     if (spicyClose.innerText === 'Remove') { // if product already added
@@ -219,21 +266,11 @@ function spicyCloseBtn() { // hidden tab close button
         spicyQuanP.style.opacity = '0';
         spicyQuanCross.style.display = 'block';
         spicyClose.style.pointerEvents = 'none';
-        getPriceTotal();
+        getPriceTotal(28);
+        delayedDelete();
 
-        setTimeout(() => {
-            spicyOrderBtn.style.pointerEvents = 'auto';
-            panelClose();
-        }, 2000);
-        setTimeout(() => {
-            spicyQuanCross.style.display = 'none';
-            spicyQuanP.style.opacity = '1';
-            spicyQuanInput.value = '1';
-            spicyClose.innerText = 'Close';
-            spicyClose.style.pointerEvents = 'auto';
-        }, 2300);
     } else { // if no product added
-        panelClose();
+        spicyPanelClose();
     }
 }
 
@@ -246,8 +283,11 @@ function sendSpicyData() {
     addToOrder('mix_spicy');
     getPriceTotal(23);
 
-    
 }
+
+
+
+
 
 let saladBool = false;
 let saladUpdateBool = false;
@@ -300,19 +340,37 @@ function saladUpdate() { // apply styles if data already sent to form
 
 }
 
+let saladAnimA;
+let saladAnimB;
+
+function saladPanelClose() {
+    saladOrderBtn.innerText = 'Add To Order';
+    saladPane.classList.remove('mix-btn-pane-open');
+    saladOrderBtn.classList.remove('mix-button-clicked');
+    saladQuan.classList.remove('mix-quantity-clicked');
+    saladClose.classList.remove('mix-remove-clicked');
+    setTimeout(() => {
+        saladPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
+    }, 200);
+}
+
 function saladCloseBtn() { // hidden tab close button
     saladBool = false;
     saladUpdateBool = false;
 
-    function panelClose() { // close button panel
-        saladOrderBtn.innerText = 'Add To Order';
-        saladPane.classList.remove('mix-btn-pane-open');
-        saladOrderBtn.classList.remove('mix-button-clicked');
-        saladQuan.classList.remove('mix-quantity-clicked');
-        saladClose.classList.remove('mix-remove-clicked');
-        setTimeout(() => {
-            saladPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
-        }, 200);
+    function delayedDelete() {
+        saladAnimA = setTimeout(() => {
+            saladOrderBtn.style.pointerEvents = 'auto';
+            saladPanelClose();
+        }, 2000);
+
+        saladAnimB = setTimeout(() => {
+            saladQuanCross.style.display = 'none';
+            saladQuanP.style.opacity = '1';
+            saladQuanInput.value = '1';
+            saladClose.innerText = 'Close';
+            saladClose.style.pointerEvents = 'auto';
+        }, 2300);
     }
 
     if (saladClose.innerText === 'Remove') { // if product already added
@@ -324,21 +382,11 @@ function saladCloseBtn() { // hidden tab close button
         saladQuanP.style.opacity = '0';
         saladQuanCross.style.display = 'block';
         saladClose.style.pointerEvents = 'none';
-        getPriceTotal();
+        getPriceTotal(29);
+        delayedDelete();
 
-        setTimeout(() => {
-            saladOrderBtn.style.pointerEvents = 'auto';
-            panelClose();
-        }, 2000);
-        setTimeout(() => {
-            saladQuanCross.style.display = 'none';
-            saladQuanP.style.opacity = '1';
-            saladQuanInput.value = '1';
-            saladClose.innerText = 'Close';
-            saladClose.style.pointerEvents = 'auto';
-        }, 2300);
     } else { // if no product added
-        panelClose();
+        saladPanelClose();
     }
 }
 
@@ -350,9 +398,12 @@ function sendSaladData() {
     formSaladQuan.value = saladQuanInput.value;
     addToOrder('mix_salad');
     getPriceTotal(24);
-    
-
 }
+
+
+
+
+
 
 let healthyBool = false;
 let healthyUpdateBool = false;
@@ -405,19 +456,37 @@ function healthyUpdate() { // apply styles if data already sent to form
 
 }
 
+let healthyAnimA;
+let healthyAnimB;
+
+function healthyPanelClose() { // close button panel
+    healthyOrderBtn.innerText = 'Add To Order';
+    healthyPane.classList.remove('mix-btn-pane-open');
+    healthyOrderBtn.classList.remove('mix-button-clicked');
+    healthyQuan.classList.remove('mix-quantity-clicked');
+    healthyClose.classList.remove('mix-remove-clicked');
+    setTimeout(() => {
+        healthyPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
+    }, 200);
+}
+
 function healthyCloseBtn() { // hidden tab close button
     healthyBool = false;
     healthyUpdateBool = false;
 
-    function panelClose() { // close button panel
-        healthyOrderBtn.innerText = 'Add To Order';
-        healthyPane.classList.remove('mix-btn-pane-open');
-        healthyOrderBtn.classList.remove('mix-button-clicked');
-        healthyQuan.classList.remove('mix-quantity-clicked');
-        healthyClose.classList.remove('mix-remove-clicked');
-        setTimeout(() => {
-            healthyPane.style.transition = 'border .25s ease-out .1s, box-shadow .25s ease-out .1s';
-        }, 200);
+    function delayedDelete() {
+        healthyAnimA = setTimeout(() => {
+            healthyOrderBtn.style.pointerEvents = 'auto';
+            healthyPanelClose();
+        }, 2000);
+
+        healthyAnimB = setTimeout(() => {
+            healthyQuanCross.style.display = 'none';
+            healthyQuanP.style.opacity = '1';
+            healthyQuanInput.value = '1';
+            healthyClose.innerText = 'Close';
+            healthyClose.style.pointerEvents = 'auto';
+        }, 2300);
     }
 
     if (healthyClose.innerText === 'Remove') { // if product already added
@@ -429,21 +498,12 @@ function healthyCloseBtn() { // hidden tab close button
         healthyQuanP.style.opacity = '0';
         healthyQuanCross.style.display = 'block';
         healthyClose.style.pointerEvents = 'none';
-        getPriceTotal();
+        formHealthyQuan.style.pointerEvents = 'none';
+        getPriceTotal(30);
+        delayedDelete();
 
-        setTimeout(() => {
-            healthyOrderBtn.style.pointerEvents = 'auto';
-            panelClose();
-        }, 2000);
-        setTimeout(() => {
-            healthyQuanCross.style.display = 'none';
-            healthyQuanP.style.opacity = '1';
-            healthyQuanInput.value = '1';
-            healthyClose.innerText = 'Close';
-            healthyClose.style.pointerEvents = 'auto';
-        }, 2300);
     } else { // if no product added
-        panelClose();
+        healthyPanelClose();
     }
 }
 
@@ -455,7 +515,4 @@ function sendHealthyData() {
     formHealthyQuan.value = healthyQuanInput.value;
     addToOrder('mix_healthy');
     getPriceTotal(25);
-    
 }
-
-

@@ -107,7 +107,7 @@ function removeCustomOrder(input) {
         customNewOrder();
 
     }
-    getPriceTotal();
+    getPriceTotal(26);
 }
 
 function maxOutCustom() {
