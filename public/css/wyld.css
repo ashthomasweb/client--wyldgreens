@@ -81,6 +81,16 @@
     font-size: 26px;
 }
 
+.card--wyld-center {
+    position: relative;
+    display: inline-block;
+    width: 320px;
+    height: 470px;
+    margin: 0px 5px;
+    padding: 4px;
+    top: 10px;
+}
+
 .card--wyld-innerleft {
     float: left;
     width: 118px;
@@ -139,7 +149,7 @@
 
 .wyld-card-inner-wrap {
     border-radius: 8px;
-    background-color: white;
+    background-color: whitesmoke;
     /* background: -moz-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
     background: -webkit-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
     background: -o-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
@@ -204,6 +214,30 @@
     padding: 4px;
 }
 
+/* LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: 100;
+    top: 0;
+    background-color: #000000b9;
+    pointer-events: none;
+}
+
+.lightbox img {
+    width: 750px;
+    height: auto;
+    top: 75px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+}
+
 /* HEADER  */
 
 .grey-drop {
@@ -234,7 +268,6 @@
 }
 
 .fullwidth-right-cont img {
-    /* width: 100vw; */
     display: block;
     margin: 18px auto 23px;
 }
@@ -336,9 +369,6 @@
     bottom: 13px;
 }
 
-
-.cta-link {}
-
 .cta-img {
     position: relative;
     display: inline-block;
@@ -357,36 +387,11 @@
 
 .second-arrow {
     left: 625px;
-
-}
-
-.lightbox {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    z-index: 100;
-    top: 0;
-
-    background-color: #000000b9;
-    pointer-events: none;
-}
-
-.lightbox img {
-    width: 750px;
-    height: auto;
-    top: 75px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
 }
 
 .cta-back {
     position: relative;
     z-index: 5;
-    /* background-color: #f0f9f7; */
     width: 100%;
     height: 270px;
     padding-top: 48px;
@@ -398,7 +403,6 @@
     background-color: white;
     width: 259px;
     height: 194px;
-    
     padding: 15px;
     margin: 0 auto;
     border-radius: 12px;
@@ -414,7 +418,6 @@
 .make-smaller h3 {
     font-size: 22px;
 }
-
     
 /* WHY  */
 
@@ -508,7 +511,6 @@
 .mountains {
     display: inline-block;
     width: 60%;
-    /* margin-bottom: 10px; */
 }
 
 .custom {
@@ -1010,18 +1012,13 @@
     height: 45px;
     background-color: var(--secondary-light);
     border: solid 1px var(--secondary-color);
-    /* border-bottom-left-radius: 4px; */
-    /* border-bottom-right-radius: 4px; */
     border-bottom: none;
-    /* border-left: none; */
-    /* border-right: none; */
     color: #222;
     font-family: var(--headers);
     font-weight: 700;
     font-size: 15px;
     position: relative;
     bottom: 1px;
-    /* right: 1px; */
     cursor: pointer;
     display: none;
     width: 166px;
@@ -1030,10 +1027,8 @@
 
 .custom-order-hidden-clicked {
     display: inline-block;
-    /* border-top: none; */
     border-bottom-left-radius: 0px;
     height: 45px;
-    
     right: 0px;
 }
 
@@ -1259,16 +1254,6 @@
     padding-top: 0px;
 }
 
-.card--wyld-center {
-    position: relative;
-    display: inline-block;
-    width: 320px;
-    height: 470px;
-    margin: 0px 5px;
-    padding: 4px;
-    top: 10px;
-}
-
 .wyld-left-section {
     width: 45%;
     display: inline;
@@ -1316,61 +1301,9 @@
     opacity: .6;
 }
 
-/* ORDER  */
+/* ORDER */
 
-.wyld-form-mix input[type=checkbox] {
-    float: left;
-    margin-right: 6px;
-}
-
-.wyld-form-mix input[type=number] {
-    float: right;
-}
-
-.contact-card-top-section input[type=checkbox] {
-    float: right;
-}
-
-.wyld-form-plans {
-    border-left: solid 1px var(--secondary-color);
-    border-bottom: solid 1px var(--secondary-color);
-    border-bottom-left-radius: 4px;
-    display: block;
-    width: 371px;
-    height: 140px;
-    padding: 15px 20px 30px;
-    background-color: whitesmoke;
-    position: relative;
-    left: 0px;
-    bottom: -6px;
-}
-
-.wyld-form-plans label {
-    font-size: 22px;
-    display: inline-block;
-}
-
-.wyld-form-plans input {
-    display: inline-block;
-}
-
-.delivery-text {
-    font-size: 16px;
-    text-align: center;
-    opacity: 0.7;
-    margin-top: 0px;
-}
-
-.wyld-form-mix {
-    border: solid 1px var(--secondary-color);
-    display: inline-block;
-    width: 280px;
-    padding: 10px;
-    margin: 0 30px 20px 0;
-    background-color: whitesmoke;
-    position: relative;
-}
-
+/* 
 .order-text {
     max-width: 550px;
     padding: 0px 0 20px;
@@ -1386,31 +1319,7 @@
     line-height: 1.6;
 }
 
-.form-num {
-    display: inline-block;
-    width: 65px;
-}
-
-.wyld-contact-info {
-    display: inline-block !important;
-    width: 40%;
-}
-
-.wyld-options {
-    display: inline-block !important;
-    width: 35%;
-    position: relative;
-    left: 95px;
-    bottom: 10px;
-}
-
-.mix-wrap {
-    margin-bottom: 10px;
-}
-
-.mix-wrap input[type=checkbox] {
-    display: inline-block;
-}
+*/
 
 .form-title {
     margin-bottom: 6px;
@@ -1420,14 +1329,159 @@
     display: inline-block;
 }
 
-.message {
-    left: 176px;
+
+/* TOP SECTION */
+
+/* CUSTOMER INFO */
+.wyld-contact-info {
+    display: inline-block !important;
+    width: 40%;
+}
+
+/* REVIEW/PLANS */
+
+.wyld-options {
+    display: inline-block !important;
+    width: 35%;
     position: relative;
+    left: 95px;
+    bottom: 10px;
+}
+
+.wyld-form-plans {
+    border-left: solid 1px var(--secondary-color);
+    border-bottom: solid 1px var(--secondary-color);
+    border-bottom-left-radius: 4px;
+    display: block;
+    width: 371px;
+    height: 140px;
+    padding: 15px 20px 30px;
+    background-color: whitesmoke;
+    position: relative;
+    left: -1px;
+    bottom: -6px;
+}
+
+.wyld-form-plans label {
+    font-size: 22px;
+    display: inline-block;
+}
+
+.wyld-form-plans input {
+    display: inline-block;
+}
+
+.contact-card-top-section input[type=checkbox] {
+    float: right;
+}
+
+.delivery-text {
+    font-size: 16px;
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 0px;
+}
+
+.wyld-form-plans label {
+    cursor: pointer;
+}
+
+.wyld-form-plans input {
+    width: 28px;
+    height: 23px;
+    margin-bottom: 0px;
+}
+
+/* BOTTOM SECTION */
+
+.lower-section {
+    width: 100%;
+    height: fit-content;
+    margin-top: 78px;
+}
+
+/* MIX BOX */
+
+.wyld-form-mix {
+    border: solid 1px var(--secondary-light);
+    display: inline-block;
+    width: 280px;
+    padding: 10px;
+    margin: 0 30px 20px 0;
+    background-color: #c5e2c8;
+    position: relative;
+}
+
+.mix-wrap {
+    margin-bottom: 10px;
+}
+
+.mix-wrap input {
+    border: 1px solid var(--secondary-light);
+}
+
+.mix-wrap input[type=checkbox] {
+    display: inline-block;
+}
+
+.wyld-form-mix input[type=checkbox] {
+    float: left;
+    margin-right: 6px;
+}
+
+.wyld-form-mix input[type=number] {
+    float: right;
+}
+
+.form-num {
+    display: inline-block;
+    width: 65px;
 }
 
 .mix-title {
     display: inline;
 }
+
+.mix-wrap input[name=mix_custom] {
+    pointer-events: none;
+}
+
+.mix-wrap input[name=custom-num] {
+    user-select: none;
+    cursor: none;
+    pointer-events: none;
+}
+
+/* PRICE BOX */
+
+.bulk-discount-pane {
+    display: none;
+    position: absolute;
+    bottom: 16px;
+    right: 95px;
+}
+
+.bulk-discount-pane p {
+    font-family: var(--headers);
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.price-num {
+    user-select: none;
+    pointer-events: none;
+    cursor: none;
+    width: 50px;
+}
+
+.price-total {
+    position: absolute;
+    top: 42%;
+    left: 231px;
+}
+
+/* COPY BOX */
 
 .form-text-wrap {
     display: inline-block;
@@ -1445,28 +1499,15 @@
     margin: 10px auto;
 }
 
-.price-num {
-    user-select: none;
-    pointer-events: none;
-    cursor: none;
-    width: 50px;
-
-}
+/* CUSTOM ORDERS */
 
 .custom-order-details {
     display: inline-block;
     vertical-align: top;
 }
 
-.message-details {
-    display: inline-block;
-    vertical-align: top;
-
-}
-
 .order {
     margin: 10px auto;
-
 }
 
 .order input {
@@ -1474,52 +1515,12 @@
     margin: -2px 7px 14px 0;
     display: inline-block;
     vertical-align: top;
-
 }
 
 .order p {
     display: inline-block;
     max-width: 270px;
     vertical-align: top;
-
-}
-
-.bulk-discount-pane {
-    display: none;
-    position: absolute;
-    bottom: 16px;
-    right: 95px;
-}
-
-.bulk-discount-pane p {
-    font-family: var(--headers);
-    color: var(--secondary-color);
-    font-weight: 700;
-    font-size: 14px;
-    
-}
-
-.price-total {
-    position: absolute;
-    top: 42%;
-    left: 231px;
-}
-
-.wyld-form-plans label {
-    cursor: pointer;
-}
-
-.wyld-form-plans input {
-    width: 28px;
-    height: 23px;
-    margin-bottom: 0px;
-}
-
-.lower-section {
-    width: 100%;
-    height: fit-content;
-    margin-top: 78px;
-
 }
 
 .num-1 {
@@ -1529,20 +1530,35 @@
 .num-2 {
     display: none;
     cursor: pointer;
-    
 }
 
 .num-3 {
     display: none;
     cursor: pointer;
+}
+
+.form-btn-cross {
+    display: inline-block;
+    width: 15px;
+    margin: 0 15px 0 0px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+/* MESSAGE AREA */
+
+.message {
+    left: 176px;
+    position: relative;
+}
+
+.message-details {
+    display: inline-block;
+    vertical-align: top;
 
 }
 
-.mix-wrap input[name=custom-num] {
-    user-select: none;
-    cursor: none;
-    pointer-events: none;
-}
+/* BOTTOM SUBMIT */
 
 .contact-submit-bottom {
     background-color: var(--secondary-color);
@@ -1560,26 +1576,3 @@
     pointer-events: none;
 }
 
-.form-btn-cross {
-    display: inline-block;
-    width: 15px;
-    margin: 0 15px 0 0px;
-    cursor: pointer;
-    opacity: 0.3;
-}
-
-.l-divider {
-    opacity: 0 !important;
-}
-
-.mix-wrap input[name=mix_custom] {
-    pointer-events: none;
-}
-
-.pick-above {
-    text-align: center;
-}
-
-.fade {
-    background-color: whitesmoke;
-}
