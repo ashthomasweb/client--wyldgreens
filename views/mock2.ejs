@@ -2,14 +2,16 @@
 
 <%- include("../views/partials/header.ejs") -%>
 
+<!-- HEADER -->
+
 <div class="greeting-pane--home">
     <div class="fullwidth-wrapper">
         <div class="fullwidth-right-cont">
             <img src="/images/logo/Asset 2.png">
-            <!-- <img class="grey-drop" src="/images/logo/grey-drop.png"> -->
         </div>
     </div>
 </div>
+
 <div class="lightbox">
     <img src="/images/greens/alek-cut.png">
 </div>
@@ -17,7 +19,7 @@
 <div class="l-body-wrapper--contact">
     <div class="l-content-wrapper--contact">
 
-        <!-- HEADER -->
+        <!-- CTA BUTTONS -->
 
         <div class="how-it-works-wrapper">
             <h3>Delicious Microgreens<br>Delivered to Your Door</h3>
@@ -26,10 +28,8 @@
             <img class="green-arrow" src="/images/icons/cta/arrow.png">
             <img class="green-arrow second-arrow" src="/images/icons/cta/arrow.png">
 
-
             <div class="l-box-third">
                 <div id="plan-button" class="cta-button-background make-smaller">
-                    <!-- <p class="cta-num-1">1<span class="cta-num-colon">:</span></p> -->
                     <img class="cta-img" style="height: 118px; " src="/images/icons/cta/plan-leaf.png">
                     <h3>Pick Your Plan</h3>
                 </div>
@@ -37,7 +37,6 @@
 
             <div class="l-box-third">
                 <div id="mix-button" class="cta-button-background make-smaller">
-                    <!-- <p class="cta-num-2">2<span class="cta-num-colon">:</span></p> -->
                     <img class="cta-img" style="height: 116px; " src="/images/icons/cta/hand.png">
                     <h3>Pick Your Mix</h3>
                 </div>
@@ -45,7 +44,6 @@
 
             <div class="l-box-third">
                 <div id="order-button" class="cta-button-background make-smaller">
-                    <!-- <p class="cta-num-3">3<span class="cta-num-colon adjust-colon-down">:</span></p> -->
                     <img class="cta-img" style="top: 7px; height: 102px;  " src="/images/icons/cta/email-leaf.png">
                     <h3>Place An Order</h3>
                 </div>
@@ -61,14 +59,13 @@
             <p class="committed">We are committed to serving our community by providing safe,
                 locally sourced, chemical-free, nutrient-dense microgreens right to your door!</p>
 
-            <!-- WHY POINTS -->
+            <!-- WHY BULLET POINTS -->
 
             <div class="wyld-why">
 
                 <ul class="why-list">
                     <h3 class="why-subheader">A Healthier Planet - A Healthier You</h3>
-                    <img class="list-item" style="width: 105px; top: 16px; left: -3px; "
-                        src="/images/icons/why/mountains.png">
+                    <img class="list-item" style="width: 105px; top: 16px; left: -3px; " src="/images/icons/why/mountains.png">
                     <li class="mountains">Our Greens are grown locally in the Colorado foothills, free
                         from bugs, mold, and without the need for any harmful pesticides or chemicals
                     </li>
@@ -88,10 +85,10 @@
                     </li>
                 </ul>
             </div>
+
             <div style="height: 123px;"></div>
 
         </div>
-
 
         <!-- PLAN SECTION -->
 
@@ -100,30 +97,29 @@
             <h2>Pick a Plan</h2>
         </div>
 
-        <!-- PLAN TEXT -->
+        <!-- PLAN TOP TEXT -->
 
         <div style="margin-top: -20px;" class="plan-text">
             <p>Each order comes in a reusable container. One box of greens is enough for 2 people to use
                 as toppings or one person to use as a salad mix for one week. Multiple boxes can be
                 ordered each week. Prices below are for one box of greens.</p>
-
-
         </div>
 
         <div style="height: 40px;"></div>
+
         <!-- PLAN ROW -->
 
-        <div class="card-pane--tech">
-            <div class="card card--tech-sides">
-                <div class="tech-card-inner-wrap">
+        <div class="card-pane--wyld">
+            <div class="card card--wyld-sides">
+                <div class="wyld-card-inner-wrap">
 
-                    <div class="tech-card-top-section side-plans">
+                    <div class="wyld-card-top-section side-plans">
                         <h3 class="plan-title">$12</h3>
                         <h3>One-time<br>Order</h3>
 
                     </div>
 
-                    <div class="tech-card-bottom-section">
+                    <div class="wyld-card-bottom-section">
                         <div class="card-box-center">
                             <img class="leaf-bullet-top" src="/images/icons/leaf.png">
                             <h4 class="plan-lower-items">Perfect addition to<br>a dinner date</h4>
@@ -147,16 +143,16 @@
                 </div>
             </div>
 
-            <div class="card card--tech-center">
-                <div class="tech-card-inner-wrap">
+            <div class="card card--wyld-center">
+                <div class="wyld-card-inner-wrap">
 
-                    <div class="tech-card-top-section center-plan">
+                    <div class="wyld-card-top-section center-plan">
                         <h3 class="plan-title">$10</h3>
                         <h3>Weekly Subscription</h3>
                         <h4 class="best-value">*Best Value!</h4>
                     </div>
 
-                    <div class="tech-card-bottom-section">
+                    <div class="wyld-card-bottom-section">
                         <div class="card-box-center">
                             <img class="leaf-bullet-top" src="/images/icons/leaf.png">
                             <h4 class="plan-lower-items">Billed monthly, just<br>set it and forget it!</h4>
@@ -169,8 +165,7 @@
                         </div>
 
                         <div id="weekly-pane" class="plan-btn-pane"></div>
-                        <button id="weekly-order-btn" class="plan-order center-plan-btn" type="button"
-                            onclick="weeklyDel()">Get Started</button>
+                        <button id="weekly-order-btn" class="plan-order center-plan-btn" type="button" onclick="weeklyDel()">Get Started</button>
                         <div id="weekly-added" class="plan-added">
                             <p>Added</p>
                             <img class="weekly-btn-check" src="/images/icons/check.png">
@@ -180,15 +175,15 @@
                 </div>
             </div>
 
-            <div class="card card--tech-sides">
-                <div class="tech-card-inner-wrap">
+            <div class="card card--wyld-sides">
+                <div class="wyld-card-inner-wrap">
 
-                    <div class="tech-card-top-section side-plans">
+                    <div class="wyld-card-top-section side-plans">
                         <h3 class="plan-title">$35</h3>
                         <h3>Bulk/Party Order</h3>
                     </div>
 
-                    <div class="tech-card-bottom-section">
+                    <div class="wyld-card-bottom-section">
                         <div class="card-box-center">
                             <img class=" leaf-bullet-top" src="/images/icons/leaf.png">
                             <h4 class="plan-lower-items">A full tray of greens,<br>3 boxes worth</h4>
@@ -216,7 +211,7 @@
 
         <div style="height: 150px;"></div>
 
-        <!-- PLAN TEXT -->
+        <!-- PLAN BOTTOM TEXT -->
 
         <div style="margin-bottom: 30px;" class="plan-text">
             <p>Schedule your order once a week, or setup a monthly payment and save! Order greens for
@@ -229,7 +224,6 @@
 
         <div style="height: 50px;"></div>
 
-
         <div id="pick-mix" style="top: -15px;" class="avatar-pane--home">
             <img class="section-img" src="/images/icons/cta/hand-white.png">
             <h2>Pick a Mix</h2>
@@ -237,43 +231,37 @@
 
         <div class="mix-body-text">
             <p>We offer three standard mixes, and a custom option. Click on an image below to add one to the order form.
-            </p>
-            <p>Please allow up to three weeks for special orders, depending on the status of our current crops.</p>
+                Please allow up to three weeks for special orders, depending on the status of our current crops.</p>
         </div>
 
         <div style="height: 140px;"></div>
 
         <!-- FIRST PRODUCT ROW -->
 
-        <div class="card-pane--tech">
+        <div class="card-pane--wyld">
 
-            <div class="card card--tech-left">
+            <div class="card card--wyld-left">
                 <div class="remove-btn-cover"></div>
                 <button class="farmers-remove" type="button" onclick="farmersCloseBtn()">Close</button>
-                <div class="tech-card-inner-wrap fade">
+                <div class="wyld-card-inner-wrap fade">
 
-                    <div class="tech-card-top-section">
+                    <div class="wyld-card-top-section">
                         <h3>Farmer's Mix</h3>
                         <h4 class="mix-lower-heading">Crop dependent, let the farmers decide</h4>
                     </div>
 
-                    <div class="tech-card-bottom-section">
-                        <div class="">
-                            <img onclick="runLightbox('green4.jpg')" class="card-art" src="/images/greens/green4.jpg">
-                        </div>
-                        <p class="mix-text">Let us pick your greens, we will make sure you get a tasty
-                            combination.</p>
+                    <div class="wyld-card-bottom-section">
+                        <div><img onclick="runLightbox('green4.jpg')" class="card-art" src="/images/greens/green4.jpg"></div>
+
+                        <p class="mix-text">Let us pick your greens, we will make sure you get a tasty combination.</p>
 
                         <div id="farmers-pane" class="mix-btn-pane"></div>
-                        <button id="farmers-order-btn" class="mix-order-btn" type="button" onclick="farmersMix()">Add To
-                            Order</button>
+                        <button id="farmers-order-btn" class="mix-order-btn" type="button" onclick="farmersMix()">Add To Order</button>
                         <div id="farmers-quantity" class="mix-quantity">
                             <img class="farmers-btn-check" src="/images/icons/check.png">
                             <img class="farmers-btn-cross" src="/images/icons/cross.png">
-
                             <p>How<br>Many?</p>
-                            <input oninput="farmersUpdate()" class="mix-num-input" type="number" min="1" max="3"
-                                value="1">
+                            <input oninput="farmersUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
                         </div>
 
                     </div>
@@ -281,34 +269,31 @@
                 </div>
             </div>
 
-            <div class="card card--tech-right">
+            <div class="card card--wyld-right">
                 <div class="remove-btn-cover"></div>
                 <button class="spicy-remove" type="button" onclick="spicyCloseBtn()">Close</button>
-                <div class="tech-card-inner-wrap fade">
+                <div class="wyld-card-inner-wrap fade">
 
-                    <div class="tech-card-top-section">
+                    <div class="wyld-card-top-section">
                         <h3>Spicy Mix</h3>
                         <h4 class="mix-lower-heading">Mustard, Radish Sprouts, and Sunflower</h4>
                     </div>
 
-                    <div class="tech-card-bottom-section">
-                        <div class="">
-                            <img onclick="runLightbox('green2.jpg')" class="card-art" src="/images/greens/green2.jpg">
-                        </div>
+                    <div class="wyld-card-bottom-section">
+                        <div><img onclick="runLightbox('green2.jpg')" class="card-art" src="/images/greens/green2.jpg"></div>
+
                         <p class="mix-text">Our Spicy Mix packs a punch for soups and salads, adding
                             robust flavors and zest.</p>
 
                         <div id="spicy-pane" class="mix-btn-pane"></div>
-                        <button id="spicy-order-btn" class="mix-order-btn" type="button" onclick="spicyMix()">Add To
-                            Order</button>
+                        <button id="spicy-order-btn" class="mix-order-btn" type="button" onclick="spicyMix()">Add To Order</button>
                         <div id="spicy-quantity" class="mix-quantity">
                             <img class="spicy-btn-check" src="/images/icons/check.png">
                             <img class="spicy-btn-cross" src="/images/icons/cross.png">
-
                             <p>How<br>Many?</p>
-                            <input oninput="spicyUpdate()" class="mix-num-input" type="number" min="1" max="3"
-                                value="1">
+                            <input oninput="spicyUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
                         </div>
+
                     </div>
 
                 </div>
@@ -321,162 +306,131 @@
 
         <!-- SECOND PRODUCT ROW -->
 
-        <div class="card-pane--tech">
-            <div class="card card--tech-left">
+        <div class="card-pane--wyld">
+            <div class="card card--wyld-left">
                 <div class="remove-btn-cover"></div>
                 <button class="salad-remove" type="button" onclick="saladCloseBtn()">Close</button>
 
-                <div class="tech-card-inner-wrap fade">
+                <div class="wyld-card-inner-wrap fade">
 
-                    <div class="tech-card-top-section">
+                    <div class="wyld-card-top-section">
                         <h3>Salad Mix</h3>
                         <h4 class="mix-lower-heading">Sunflower, Broccoli, Cabbage, and Rutabaga</h4>
                     </div>
 
-                    <div class="tech-card-bottom-section">
-                        <div>
-                            <img onclick="runLightbox('green1.jpg')" class="card-art" src="/images/greens/green1.jpg">
-                        </div>
-                        <p class="mix-text">The perfect mix for an all around healthy and tasty salad
-                            year-round.</p>
+                    <div class="wyld-card-bottom-section">
+                        <div><img onclick="runLightbox('green1.jpg')" class="card-art" src="/images/greens/green1.jpg"></div>
+
+                        <p class="mix-text">The perfect mix for an all around healthy and tasty salad year-round.</p>
 
                         <div id="salad-pane" class="mix-btn-pane"></div>
-                        <button id="salad-order-btn" class="mix-order-btn" type="button" onclick="saladMix()">Add To
-                            Order</button>
+                        <button id="salad-order-btn" class="mix-order-btn" type="button" onclick="saladMix()">Add To Order</button>
                         <div id="salad-quantity" class="mix-quantity">
                             <img class="salad-btn-check" src="/images/icons/check.png">
                             <img class="salad-btn-cross" src="/images/icons/cross.png">
-
                             <p>How<br>Many?</p>
-                            <input oninput="saladUpdate()" class="mix-num-input" type="number" min="1" max="3"
-                                value="1">
+                            <input oninput="saladUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
                         </div>
+
                     </div>
 
                 </div>
             </div>
 
-            <div class="card card--tech-right">
+            <div class="card card--wyld-right">
                 <div class="remove-btn-cover"></div>
                 <button class="healthy-remove" type="button" onclick="healthyCloseBtn()">Close</button>
-                <div class="tech-card-inner-wrap fade">
+                <div class="wyld-card-inner-wrap fade">
 
-                    <div class="tech-card-top-section">
+                    <div class="wyld-card-top-section">
                         <h3>Healthy Mix</h3>
                         <h4 class="mix-lower-heading">Broccoli, Pea Sprouts,<br>and Radish</h4>
                     </div>
 
-                    <div class="tech-card-bottom-section">
-                        <div>
-                            <img onclick="runLightbox('green2.jpg')" class="card-art" src="/images/greens/green2.jpg">
-                        </div>
+                    <div class="wyld-card-bottom-section">
+                        <div><img onclick="runLightbox('green2.jpg')" class="card-art" src="/images/greens/green2.jpg"></div>
+
                         <p class="mix-text">Our Healthy Mix is a powerhouse of nutrients designed to
                             boost healing and recovery time.</p>
 
                         <div id="healthy-pane" class="mix-btn-pane"></div>
-
-                        <button id="healthy-order-btn" class="mix-order-btn" type="button" onclick="healthyMix()">Add To
-                            Order</button>
+                        <button id="healthy-order-btn" class="mix-order-btn" type="button" onclick="healthyMix()">Add To Order</button>
                         <div id="healthy-quantity" class="mix-quantity">
                             <img class="healthy-btn-check" src="/images/icons/check.png">
                             <img class="healthy-btn-cross" src="/images/icons/cross.png">
-
                             <p>How<br>Many?</p>
-                            <input class="mix-num-input" type="number" min="1" max="3" value="1"
-                                oninput="healthyUpdate()">
+                            <input class="mix-num-input" type="number" min="1" max="3" value="1" oninput="healthyUpdate()">
                         </div>
 
                     </div>
 
                 </div>
-
             </div>
-
         </div>
+
         <div style="height: 260px;"></div>
 
         <!-- CUSTOM PRODUCT ROW -->
 
-        <div class="card-pane--tech">
+        <div class="card-pane--wyld">
 
-            <div class="card card--tech-right custom-order">
+            <div class="card card--wyld-right custom-order">
 
-                <div class="tech-card-inner-wrap fade">
+                <div class="wyld-card-inner-wrap fade">
 
-                    <div class="tech-card-top-section ">
+                    <div class="wyld-card-top-section ">
                         <h3>Custom Order</h3>
-                        <h4 class="mix-lower-heading">Pick one to four greens and build your own mix
-                        </h4>
+                        <h4 class="mix-lower-heading">Pick one to four greens and build your own mix</h4>
                     </div>
 
-                    <div class="tech-card-bottom-section ">
+                    <div class="wyld-card-bottom-section ">
                         <div class="wyld-left-section">
                             <img class="custom-img" src="/images/greens/top-down-transparent.png">
                         </div>
                         <div class="wyld-right-section">
                             <p class="custom-text">
-                                Our premium, freshly grown ingredients are harvested and delivered the same day. Custom
-                                orders may take a few weeks to initially fill.
+                                Our premium, freshly grown ingredients are harvested and delivered the same day. Custom orders may take a few weeks to initially fill.
                             </p>
                             <div class="ingred-wrap">
 
                                 <button class="custom-new" type="button" onclick="customNewOrder()">Keep
                                     Shopping</button>
                                 <button class="custom-close" type="button" onclick="customOrderOff()">Close</button>
-                                <!-- <button class="custom-remove" type="button" onclick="customRemoveOrder()">Remove Order</button> -->
 
                                 <div id="ingred-box" class="ingred-box">
 
                                     <ul class="custom-ingredients">
-                                        <label for=" Broccoli"><input id=" Broccoli" class="custom-check"
-                                                type="checkbox" name=" Broccoli" oninput="ingredCheck()">-
-                                            Broccoli</label><br>
-                                        <label for=" Sunflower"><input id=" Sunflower" class="custom-check"
-                                                type="checkbox" name=" Sunflower" oninput="ingredCheck()">-
-                                            Sunflower</label><br>
-                                        <label for=" Rutabaga"><input id=" Rutabaga" class="custom-check"
-                                                type="checkbox" name=" Rutabaga" oninput="ingredCheck()">-
-                                            Rutabaga</label><br>
-                                        <label for=" Pea"><input id=" Pea" class="custom-check" type="checkbox"
-                                                name=" Pea" oninput="ingredCheck()">- Pea</label><br>
+                                        <label for=" Broccoli"><input id=" Broccoli" class="custom-check" type="checkbox" name=" Broccoli" oninput="ingredCheck()">- Broccoli</label><br>
+                                        <label for=" Sunflower"><input id=" Sunflower" class="custom-check" type="checkbox" name=" Sunflower" oninput="ingredCheck()">- Sunflower</label><br>
+                                        <label for=" Rutabaga"><input id=" Rutabaga" class="custom-check" type="checkbox" name=" Rutabaga" oninput="ingredCheck()">- Rutabaga</label><br>
+                                        <label for=" Pea"><input id=" Pea" class="custom-check" type="checkbox" name=" Pea" oninput="ingredCheck()">- Pea</label>
                                     </ul>
-                                    <ul class="custom-ingredients">
-                                        <label for=" Mustard"><input id=" Mustard" class="custom-check" type="checkbox"
-                                                name=" Mustard" oninput="ingredCheck()">-
-                                            Mustard</label><br>
-                                        <label for=" Radish"><input id=" Radish" class="custom-check" type="checkbox"
-                                                name=" Radish" oninput="ingredCheck()">-
-                                            Radish</label><br>
-                                        <label for=" Cabbage"><input id=" Cabbage" class="custom-check" type="checkbox"
-                                                name=" Cabbage" oninput="ingredCheck()">-
-                                            Cabbage</label><br>
-                                    </ul>
-                                    <div class="custom-btn-slider">
 
-                                        <button class="custom-order-button" type="button"
-                                            onclick="customOrderOn()">Start A New Custom Order</button>
-                                        <button class="custom-order-hidden" type="button"
-                                            onclick="promptQuantity()">Create
-                                            Mix!</button>
+                                    <ul class="custom-ingredients">
+                                        <label for=" Mustard"><input id=" Mustard" class="custom-check" type="checkbox" name=" Mustard" oninput="ingredCheck()">- Mustard</label><br>
+                                        <label for=" Radish"><input id=" Radish" class="custom-check" type="checkbox" name=" Radish" oninput="ingredCheck()">- Radish</label><br>
+                                        <label for=" Cabbage"><input id=" Cabbage" class="custom-check" type="checkbox" name=" Cabbage" oninput="ingredCheck()">- Cabbage</label>
+                                    </ul>
+
+                                    <div class="custom-btn-slider">
+                                        <button class="custom-order-button" type="button" onclick="customOrderOn()">Start A New Custom Order</button>
+                                        <button class="custom-order-hidden" type="button" onclick="promptQuantity()">Create Mix!</button>
                                         <div class="custom-quantity">
                                             <img class="custom-btn-check" src="/images/icons/check.png">
                                             <img class="custom-btn-cross" src="/images/icons/cross.png">
-
                                             <p>How<br>Many?</p>
-                                            <input oninput="customUpdate()" class="custom-num-input" type="number"
-                                                min="1" max="3" value="1">
+                                            <input oninput="customUpdate()" class="custom-num-input" type="number" min="1" max="3" value="1">
                                         </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
+
         <div style="height: 350px;"></div>
 
         <!-- ORDER FORM SECTION -->
@@ -508,12 +462,11 @@
                         <p>Ah bummer!</p>
                         <p>Looks like something went wrong.</p>
                         <p>I'm currently looking into the problem, try back soon!</p>
-                        <button type="button" class="hidden-button" onclick="location.href='/blog'" />Check out the
-                        Blog</button>
+                        <!-- <button type="button" class="hidden-button" onclick="location.href='/blog'" />Check out the Blog</button> -->
                         <% } else { %>
                         <p>Thanks!</p>
                         <p>Your message has been sent</p>
-                        <p>I'm looking forward to talking with you, I will reach out within 2 or 3 business days.</p>
+                        <p>We are looking forward to talking with you, we'll reach out within 2 or 3 business days.</p>
                         <% } %>
                     </div>
                 </div>
@@ -526,21 +479,17 @@
 
                     <div class="contact-card-top-section">
                         <div class="wyld-contact-info">
-
                             <label class="form-title">Your Name:</label>
-                            <input class="form-entry" type="text" name="user_name" placeholder="Jean Luc"
-                                oninput="formFieldCheck()">
+                            <input class="form-entry" type="text" name="user_name" placeholder="Jean Luc" oninput="formFieldCheck()">
                             <label class="form-title">Email:</label>
-                            <input class="form-entry" type="email" name="user_email" placeholder="example@email.com"
-                                oninput="formFieldCheck()">
+                            <input class="form-entry" type="email" name="user_email" placeholder="your@email.com" oninput="formFieldCheck()">
                             <label class="form-title">City/Town</label>
-                            <input class="form-entry" type="text" name="user_city"
-                                placeholder="Boulder, Superior, Louisville, Lafayette">
+                            <input class="form-entry" type="text" name="user_city" placeholder="Boulder, Superior, Louisville, Lafayette">
                             <label class="form-title">Phone Number</label>
-                            <input class="form-entry" type="text" name="user_phone" placeholder="303 - 494 - 1274">
-                            <button id="contact-button" class="contact-submit" type="submit"
-                                onclick="sendingText()">Review<br>Your Order</button>
+                            <input class="form-entry" type="text" name="user_phone" placeholder="303 - 444 - 1234">
+                            <button id="contact-button" class="contact-submit" type="submit" onclick="sendingText()">Review<br>Your Order</button>
                         </div>
+
                         <div class="wyld-options">
                             <div class="wyld-form-plans">
                                 <label for="one_time" class="form-title">One-time Order</label>
@@ -554,7 +503,6 @@
                                 <p class="delivery-text">Deliveries always take place on<br>Thursday afternoons and
                                     evenings.</p>
                             </div>
-
                         </div>
                     </div>
 
@@ -563,41 +511,35 @@
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">
                                 <label class="form-title mix-title">Farmer's Mix</label>
-                                <input class="form-num" type="number" name="farmers-num" placeholder="0" min="1" max="3"
-                                    oninput="farmersInput()">
+                                <input class="form-num" type="number" name="farmers-num" placeholder="0" min="1" max="3" oninput="farmersInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">
                                 <label class="form-title mix-title">Spicy Mix</label>
-                                <input class="form-num" type="number" name="spicy-num" placeholder="0" min="1" max="3"
-                                    oninput="spicyInput()">
+                                <input class="form-num" type="number" name="spicy-num" placeholder="0" min="1" max="3" oninput="spicyInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">
                                 <label class="form-title mix-title">Healthy Mix</label>
-                                <input class="form-num" type="number" name="healthy-num" placeholder="0" min="1" max="3"
-                                    oninput="healthyInput()">
+                                <input class="form-num" type="number" name="healthy-num" placeholder="0" min="1" max="3" oninput="healthyInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_salad" oninput="saladCheckbox()">
                                 <label class="form-title mix-title">Salad Mix</label>
-                                <input class="form-num" type="number" name="salad-num"
-                                    placeholder="0" min="1" max="3" oninput="saladInput()">
+                                <input class="form-num" type="number" name="salad-num" placeholder="0" min="1" max="3" oninput="saladInput()">
                             </div>
 
                             <div class="mix-wrap">
                                 <input type="checkbox" name="mix_custom">
                                 <label class="form-title mix-title">Custom Mix</label>
-                                <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="3"
-                                    onchange="customQuantityVerify()">
+                                <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="3" onchange="customQuantityVerify()">
                             </div>
                         </div>
 
                         <div class="price-total">
-
                             <div class="mix-wrap">
                                 <label class="form-title mix-title">Total</label>
                                 <input class="price-num" type="number" name="total-num" placeholder="0">
@@ -610,9 +552,10 @@
 
                         <div class="form-text-wrap">
                             <p class="form-text-p">
-                                Please leave us information regarding your order. We will be in
-                                touch shortly, but would like to know if you have any special requests.
+                                Use this form to make any additions or changes. We will be in contact shortly to confirm
+                                your order and send a payment link. Thanks!
                             </p>
+
                             <p class="form-text-p">
                                 For Custom Orders, please indicate which greens you would like, and remember
                                 that changes to your order type may take a few weeks to fill.
@@ -620,27 +563,22 @@
                         </div>
 
                         <div class="lower-section">
-
                             <div class="custom-order-details">
                                 <label class="form-title">Custom Mix Details:</label><br>
 
                                 <div class="order num-1">
-                                    <img onclick="removeCustomOrder(1)" class="form-btn-cross"
-                                        src="/images/icons/cross.png">
-
+                                    <img onclick="removeCustomOrder(1)" class="form-btn-cross" src="/images/icons/cross.png">
                                     <input type="number" min="1" max="3" placeholder="0" oninput="order1Input()">
                                     <p onclick="addIngredientForm()">Add ingredients</p>
                                 </div>
                                 <div class="order num-2">
-                                    <img onclick="removeCustomOrder(2)" class="form-btn-cross"
-                                        src="/images/icons/cross.png">
+                                    <img onclick="removeCustomOrder(2)" class="form-btn-cross" src="/images/icons/cross.png">
 
                                     <input type="number" min="1" max="3" placeholder="0" oninput="order2Input()">
                                     <p onclick="addIngredientForm()">Add ingredients</p>
                                 </div>
                                 <div class="order num-3">
-                                    <img onclick="removeCustomOrder(3)" class="form-btn-cross"
-                                        src="/images/icons/cross.png">
+                                    <img onclick="removeCustomOrder(3)" class="form-btn-cross" src="/images/icons/cross.png">
 
                                     <input type="number" min="1" max="3" placeholder="0" oninput="order3Input()">
                                     <p onclick="addIngredientForm()">Add ingredients</p>
@@ -650,13 +588,11 @@
                             <div class="message-details">
 
                                 <label class="form-title message">Message:</label><br>
-                                <textarea id="message-body" class="form-textarea-message" name="message"
-                                    placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
+                                <textarea id="message-body" class="form-textarea-message" name="message" placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
                             </div>
                         </div>
                     </div>
-                    <button id="contact-button-bottom" class="contact-submit-bottom" type="submit"
-                        onclick="sendingText()">Place Your Order</button>
+                    <button id="contact-button-bottom" class="contact-submit-bottom" type="submit" onclick="sendingText()">Place Your Order</button>
 
                 </form>
 

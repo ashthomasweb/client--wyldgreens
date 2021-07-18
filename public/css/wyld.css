@@ -1,3 +1,159 @@
+
+/* Template assigned classes */
+
+/* from module.css */
+
+.greeting-pane--wyld {
+    position: relative;
+    max-width: 1000px;
+    height: 397px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.greeting-pane--wyld h1 {
+    display: inline-block;
+    font-size: 60px;
+}
+
+.greeting-img--wyld {
+    z-index: 50;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.greeting-img--wyld img {
+    width: 1000px;
+}
+
+.greeting-text--wyld {
+    z-index: 51;
+    position: relative;
+    top: 45px;
+    max-width: 500px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.greeting-text--wyld p {
+    margin: 15px auto;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.card-pane--wyld {
+    z-index: 52;
+    position: relative;
+    margin: -100px auto;
+    text-align: center;
+}
+
+.wyld-card-inner-wrap {
+    position: absolute;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wyld-card-top-section {
+    width: 100%;
+    height: 24%;
+    padding: 20px 30px;
+    border-bottom: 1px solid;
+}
+
+.wyld-card-bottom-section {
+    position: relative;
+    width: 100%;
+    height: 76%;
+    padding: 0px 0;
+    overflow: hidden;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.wyld-card-top-section h3 {
+    padding-top: 0px;
+    font-size: 26px;
+}
+
+.card--wyld-innerleft {
+    float: left;
+    width: 118px;
+    margin: 9px 0px 10px 18px;
+    padding: 8px 8px 25px;
+    border: 1px solid;
+}
+
+.card--wyld-innerright {
+    float: right;
+    width: 118px;
+    margin: 9px 18px 10px 0;
+    padding: 8px 0px 25px;
+    border: 1px solid;
+}
+
+.text-pane--wyld {
+    max-width: 673px;
+    padding: 30px 0 30px;
+    margin: 0px auto 0;
+}
+
+.text-pane--wyld h2 {
+    padding: 0 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.text-pane--wyld p {
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* from theme.css */
+
+.card--wyld-left {
+    background-color: var(--secondary-color);
+}
+
+.card--wyld-right {
+    background-color: var(--secondary-color);
+}
+
+.card--wyld-center {
+    background-color: var(--secondary-color);
+}
+
+.card--wyld-sides {
+    background-color: var(--secondary-color);
+}
+
+.wyld-card-inner-wrap {
+    border-radius: 8px;
+    background-color: white;
+    /* background: -moz-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: -webkit-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: -o-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: -ms-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
+    background: linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%); */
+}
+
+.wyld-card-top-section {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-color: var(--secondary-color);
+    background-color: var(--secondary-light);
+}
+
 /* Brand specific CSS for Wyldgreens */
 
 .adjust-up {
@@ -30,7 +186,7 @@
     display: block;
 }
 
-.card--tech-left {
+.card--wyld-left {
     position: relative;
     display: inline-block;
     width: 300px;
@@ -39,7 +195,7 @@
     padding: 4px;
 }
 
-.card--tech-right {
+.card--wyld-right {
     position: relative;
     display: inline-block;
     width: 300px;
@@ -1083,7 +1239,7 @@
     letter-spacing: .5px;
 }
 
-.card--tech-sides {
+.card--wyld-sides {
     position: relative;
     bottom: 0;
     display: inline-block;
@@ -1103,7 +1259,7 @@
     padding-top: 0px;
 }
 
-.card--tech-center {
+.card--wyld-center {
     position: relative;
     display: inline-block;
     width: 320px;
