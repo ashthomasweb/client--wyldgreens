@@ -95,7 +95,12 @@ function changeMixMax() {
     }
 }
 
+
+
 function getPriceTotal(id) {
+    function updateDisplay() {
+        formTotalPrice.value = price.toString();
+    }
 
     customRemoveDisplayHandler();
     
@@ -118,10 +123,16 @@ function getPriceTotal(id) {
     for (let i = 0; i <= checkList.length - 1; i++) {
         totalQuantity += Number(checkList[i].value);
     }
+    console.log(`Called from: ${id} >> ${totalQuantity}`);
     
+    // console.log('test')
     price = totalQuantity * Number(planPrice);
-    formTotalPrice.value = price.toString();
+    // console.log(planPrice)
+    console.log(!isNaN(price));
+    !isNaN(price) && updateDisplay();
     displayBulkDiscount();
     hideBulkDiscount();
+
+  
 }
 

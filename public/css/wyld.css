@@ -391,8 +391,9 @@
     max-width: 550px;
     margin: 0px 0px 10px 0px;
     text-align: left;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 21px;
+    line-height: 1.7;
+    letter-spacing: .5px;
 }
 
 .custom-img {
@@ -924,7 +925,7 @@
     top: 4px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .mix-back {
@@ -1077,8 +1078,9 @@
     max-width: 550px;
     margin: 0px 0px 10px 0px;
     text-align: left;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 21px;
+    line-height: 1.7;
+    letter-spacing: .5px;
 }
 
 .card--tech-sides {
@@ -1416,4 +1418,12 @@
 
 .mix-wrap input[name=mix_custom] {
     pointer-events: none;
+}
+
+.pick-above {
+    text-align: center;
+}
+
+.fade {
+    background-color: whitesmoke;
 }

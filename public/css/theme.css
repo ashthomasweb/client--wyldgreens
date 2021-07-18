@@ -46,7 +46,7 @@ wyld: #70c051
     --primary-background: #ffffff;
     --secondary-background: #f9f9f9;
     --copy-light: #b4b4b4;
-    --copy-mid: #6a6a6a;
+    --copy-mid: #5a5a5a;
     --copy-dark: #3a3b48;
     --shadow: rgba(0, 0, 0, 0.4);
     --darken: rgba(0, 0, 0, 0.1);
@@ -61,10 +61,7 @@ wyld: #70c051
 }
 
 body {
-    /* background-attachment: fixed; */
-    
-    /* background-size: auto; */
-    /* background-color: #e9e6e1; */
+  
     color: var(--copy-mid);
 }
 
@@ -351,7 +348,7 @@ footer a:hover {
 
 .tech-card-inner-wrap {
     border-radius: 8px;
-    background-color: whitesmoke;
+    background-color: white;
     /* background: -moz-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
     background: -webkit-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
     background: -o-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
