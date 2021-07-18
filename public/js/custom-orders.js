@@ -1,4 +1,3 @@
-
 // DOM OBJECT ASSIGMENTS 
 
 let customOrder1Pane = document.querySelector('.num-1');
@@ -63,14 +62,14 @@ function newCustomDisplay() {
     customOrder1Input.value = customOrder1.quantity.toString();
     customOrder2Pane.style.display = 'block';
 
-    if (customOrder2.ingredients !== '' ) {
+    if (customOrder2.ingredients !== '') {
         document.querySelector('.num-2').style.display = 'block';
         customOrder2P.innerHTML = `Custom order with the following:<br>  - ${customOrder2.ingredients}`;
         customOrder2Input.value = customOrder2.quantity.toString();
         customOrder3Pane.style.display = 'block';
     }
 
-    if (customOrder3.ingredients !== '' ) {
+    if (customOrder3.ingredients !== '') {
         customOrder3Pane.style.display = 'block';
         customOrder3P.innerHTML = `Custom order with the following:<br>  - ${customOrder3.ingredients}`;
         customOrder3Input.value = customOrder3.quantity.toString();
@@ -110,12 +109,29 @@ function removeCustomOrder(input) {
     getPriceTotal(26);
 }
 
-function maxOutCustom() {
+function disableIngred() {
+    for (i = 0; i < ingredChecks.length; i++) {
+        customIngredList[i].style.pointerEvents = 'none';
+    }
+}
+
+function enableIngred() {
+    for (i = 0; i < ingredChecks.length; i++) {
+        customIngredList[i].style.pointerEvents = 'auto';
+    }
+}
+
+function maxOutCustomHandler() {
     if (customOrder1.ingredients !== '' && customOrder2.ingredients !== '' && customOrder3.ingredients !== '') {
         customOrderBtn.style.pointerEvents = 'none';
         customOrderBtn.innerHTML = 'Max 3 per week<br>Please Check Quantity On Form';
+        disableIngred();
     }
 }
+
+// else if ( customOrder1.ingredients === '' || customOrder2.ingredients === '' || customOrder3.ingredients === '' ) {
+//     enableIngred();
+// }
 
 function getTotalCustom() {
     let num1Quan = Number(customOrder1Input.value);
@@ -124,15 +140,15 @@ function getTotalCustom() {
 
     let total = num1Quan + num2Quan + num3Quan;
 
-    if ( total === 0 ) {
+    if (total === 0) {
         total = '';
     }
 
     formCustomQuan.value = total;
 
-    maxOutCustom();
+    maxOutCustomHandler();
 
-    if ( customOrder1.quantity === 0 &&  customOrder2.quantity === 0 &&  customOrder3.quantity === 0 ) {
+    if (customOrder1.quantity === 0 && customOrder2.quantity === 0 && customOrder3.quantity === 0) {
         customCheck.checked = false;
     }
 }
@@ -144,7 +160,7 @@ function order1Input() {
     customOrder1.quantity = Number(customOrder1Input.value);
     Number(customOrder1Input.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     customCheck.checked = true;
-    if ( customOrder1Input.value === '0' || customOrder1Input.value === '' ) {
+    if (customOrder1Input.value === '0' || customOrder1Input.value === '') {
         customOrder1Input.value = '';
         removeCustomOrder(1);
     }
@@ -159,7 +175,7 @@ function order2Input() {
     customOrder2.quantity = Number(customOrder2Input.value);
     Number(customOrder2Input.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     customCheck.checked = true;
-    if ( customOrder2Input.value === '0' ) {
+    if (customOrder2Input.value === '0') {
         customOrder2Input.value = '';
     }
     customNewOrder();
@@ -173,7 +189,7 @@ function order3Input() {
     customOrder3.quantity = Number(customOrder3Input.value);
     Number(customOrder3Input.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     customCheck.checked = true;
-    if ( customOrderInput3.value === '0' ) {
+    if (customOrderInput3.value === '0') {
         customOrderInput3.value = '';
     }
     customNewOrder();
@@ -181,27 +197,27 @@ function order3Input() {
 }
 
 function customRemoveDisplayHandler() {
-    if ( customOrder1Input.value === '0' || customOrder1Input.value === '' || Number(customOrder1Input.value) === 0 ) {
+    if (customOrder1Input.value === '0' || customOrder1Input.value === '' || Number(customOrder1Input.value) === 0) {
         customOrder1Img.style.opacity = '0.3';
     } else {
         customOrder1Img.style.opacity = '1';
     }
 
-    if ( customOrder2Input.value === '0' || customOrder2Input.value === '' || Number(customOrder2Input.value) === 0 ) {
+    if (customOrder2Input.value === '0' || customOrder2Input.value === '' || Number(customOrder2Input.value) === 0) {
         customOrder2Img.style.opacity = '0.3';
     } else {
         customOrder2Img.style.opacity = '1';
     }
 
-    if ( customOrder3Input.value === '0' || customOrder3Input.value === '' || Number(customOrder3Input.value) === 0 ) {
+    if (customOrder3Input.value === '0' || customOrder3Input.value === '' || Number(customOrder3Input.value) === 0) {
         customOrder3Img.style.opacity = '0.3';
     } else {
         customOrder3Img.style.opacity = '1';
     }
 }
 
-function customQuantityVerify() { 
-
+function customQuantityVerify() {
+    console.log('test')
     if (bulkMaxBool === true) {
         if (Number(formCustomQuan.value) >= 1) {
             formCustomQuan.value = '1';
@@ -215,6 +231,7 @@ function customQuantityVerify() {
     if (total <= 2) {
         customOrderBtn.style.pointerEvents = 'auto';
         customOrderBtn.innerHTML = 'Start A New Custom Order';
+
     }
     getPriceTotal(18);
 }
@@ -230,4 +247,3 @@ function bulkQuantityAdjust() {
         customOrder3.quantity = 1;
     }
 }
-

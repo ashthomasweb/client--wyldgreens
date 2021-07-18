@@ -28,12 +28,25 @@ function customOrderOn() { // open pane, apply styles
     hiddenBtn.style.pointerEvents = 'none';
     hiddenBtn.style.color = 'grey';
     customClose.classList.add('custom-close-clicked');
+    customIngredOn();
+}
+
+function customIngredOn() {
     for (i = 0; i < ingredChecks.length; i++) {
         ingredChecks[i].style.opacity = '1';
-        // ingredChecks[i].disabled = false;
         ingredChecks[i].style.cursor = 'pointer';
         customIngredList[i].style.cursor = 'pointer';
         customIngredList[i].style.pointerEvents = 'auto';
+    }
+}
+
+function customIngredOff() {
+    for (i = 0; i < ingredChecks.length; i++) {
+        ingredChecks[i].style.opacity = '0.4';
+        ingredChecks[i].checked = false;
+        ingredChecks[i].style.cursor = 'default';
+        customIngredList[i].style.cursor = 'default';
+
     }
 }
 
@@ -54,13 +67,7 @@ function customOrderOff() { // close pane
     customBtnSlider.classList.remove('custom-btn-slider-anim');
     hiddenBtn.innerText = 'Create Mix!'
     customQuanInput.value = 1;
-
-    for (i = 0; i < ingredChecks.length; i++) {
-        ingredChecks[i].style.opacity = '0.4';
-        ingredChecks[i].checked = false;
-        ingredChecks[i].style.cursor = 'default';
-        customIngredList[i].style.cursor = 'default';
-    }
+    customIngredOff();
 }
 
 function customNewOrder() {
@@ -69,8 +76,9 @@ function customNewOrder() {
     currentOrderSubmitted = false;
     customNew.classList.remove('custom-remove-clicked');
     customOrderOff();
+    enableIngred();
     getTotalCustom();
-    maxOutCustom();
+    maxOutCustomHandler();
 }
 
 let currentOrderSubmitted = false;
@@ -146,6 +154,7 @@ function sendCustomData(update) {
     customQuanP.style.opacity = '0';
     customQuanCheck.style.display = 'block';
     formCustomQuan.value = customQuanInput.value;
+    disableIngred();
     addToOrder('mix_custom');
 
     // data gathering and packaging

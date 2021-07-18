@@ -119,10 +119,11 @@ function getPriceTotal(id) {
         
         totalQuantity += Number(checkList[i].value);
     }
-    console.log(`${id}: ${totalQuantity}`);
+    // console.log(`${id}: ${totalQuantity}`);
+    // console.log(typeof(planPrice))
     
-    price = totalQuantity * planPrice;
-
+    price = totalQuantity * Number(planPrice);
+    // console.log(price);
     formTotalPrice.value = price;
     displayBulkDiscount();
     hideBulkDiscount();

@@ -155,23 +155,7 @@ function sendFarmerData() {
     formFarmersQuan.value = farmersQuanInput.value;
     addToOrder('mix_farmers');
     getPriceTotal(22);
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 let spicyBool = false;
 let spicyUpdateBool = false;
@@ -284,10 +268,6 @@ function sendSpicyData() {
     getPriceTotal(23);
 
 }
-
-
-
-
 
 let saladBool = false;
 let saladUpdateBool = false;
