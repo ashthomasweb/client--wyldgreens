@@ -1416,7 +1416,7 @@
 .form-mix-pane {
     position: absolute;
     width: 271px;
-    height: 435px;
+    height: 449px;
     right: 0px;
     top: 0px;
     background-color: #eee;
@@ -1434,8 +1434,8 @@
 
 .custom-order-details {
     padding: 0 10px;
-    position: absolute;
-
+    position: relative;
+    top: -30px;
 }
 
 .form-title h4 {
@@ -1515,18 +1515,28 @@
     user-select: none;
 }
 
-.bulk-discount-pane {
+.price-total {
     position: relative;
-    top: -43px;
-    left: 100px;
-    width: 79px;
+    top: -40px;
+    height: 65px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.bulk-discount-pane {
+    display: inline-block;
+
+    position: relative;
+    top: 7px;
+    left: 10px;
+    width: 85px;
     border: 1px solid lightgrey;
     padding: 7px 7px 7px 11px;
     border-radius: 4px;
-    opacity: 0;
+    opacity: 0.2;
 }
 
 .bulk-discount-pane p {
+    text-align: center;
     font-family: var(--headers);
     color: var(--secondary-color);
     font-weight: 700;
@@ -1534,14 +1544,39 @@
     line-height: 1.2;
 }
 
+.price-per-pane {
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    left: 5px;
+    width: 85px;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.price-per-pane p {
+    text-align: center;
+    font-family: var(--headers);
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.price-pane {
+    position: absolute;
+    right: -5px;
+    top: 10px;
+    display: inline-block;
+    width: 80px;
+
+}
 .price-num {
     user-select: none;
     pointer-events: none;
     cursor: none;
     width: 65px;
-}
-
-.price-total {
 }
 
 /* COPY BOX */
@@ -1558,10 +1593,17 @@
 
 /* CUSTOM ORDERS */
 
-
+.custom-title {
+    /* margin: 0 auto 6px; */
+    width: 200px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 .order {
-    margin: 10px auto;
+    margin: 10px auto 18px;
 }
 
 .order input {
@@ -1573,8 +1615,10 @@
 
 .order p {
     display: inline-block;
-    max-width: 270px;
+    max-width: 160px;
     vertical-align: top;
+    position: relative;
+    top: 0px;
 }
 
 .num-1 {

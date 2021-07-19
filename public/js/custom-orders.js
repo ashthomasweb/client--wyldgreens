@@ -57,23 +57,60 @@ function customObjectHandling(quantity, ingredients) {
     }
 }
 
+function applyIngredOffset() {
+    let order1Length;
+    let order2Length;
+    let order3Length;
+
+    if ( customOrder1.quantity > 0 ) {
+        order1Length = customOrder1.ingredients.join().length;
+    }
+
+    if ( customOrder2.quantity > 0 ) {
+        order2Length = customOrder2.ingredients.join().length;
+    }
+
+    if ( customOrder3.quantity > 0 ) {
+        order3Length = customOrder3.ingredients.join().length;
+    }
+
+    if (order1Length >= 22 ) {
+        customOrder1P.style.top = '-7px';
+    } else if ( order1Length <= 21 ) {
+        customOrder1P.style.top = '0px';
+    }
+
+    if ( order2Length >= 22 ) {
+        customOrder2P.style.top = '-7px';
+    } else if ( order2Length <= 21 ) {
+        customOrder2P.style.top = '0px';
+    }
+
+    if ( order3Length >= 22 ) {
+        customOrder3P.style.top = '-7px';
+    } else if ( order3Length <= 21 ) {
+        customOrder3P.style.top = '0px';
+    }
+}
+
 function newCustomDisplay() {
-    customOrder1P.innerHTML = `Custom order with the following:<br>  - ${customOrder1.ingredients}`;
+
+    customOrder1P.innerHTML = `${customOrder1.ingredients}`;
     customOrder1Input.value = customOrder1.quantity.toString();
     customOrder2Pane.style.display = 'block';
-
     if (customOrder2.ingredients !== '') {
         document.querySelector('.num-2').style.display = 'block';
-        customOrder2P.innerHTML = `Custom order with the following:<br>  - ${customOrder2.ingredients}`;
+        customOrder2P.innerHTML = `${customOrder2.ingredients}`;
         customOrder2Input.value = customOrder2.quantity.toString();
         customOrder3Pane.style.display = 'block';
     }
 
     if (customOrder3.ingredients !== '') {
         customOrder3Pane.style.display = 'block';
-        customOrder3P.innerHTML = `Custom order with the following:<br>  - ${customOrder3.ingredients}`;
+        customOrder3P.innerHTML = `${customOrder3.ingredients}`;
         customOrder3Input.value = customOrder3.quantity.toString();
     }
+    applyIngredOffset();
 }
 
 function addIngredientForm() {
@@ -106,6 +143,7 @@ function removeCustomOrder(input) {
         customNewOrder();
 
     }
+    applyIngredOffset();
     getPriceTotal(26);
 }
 

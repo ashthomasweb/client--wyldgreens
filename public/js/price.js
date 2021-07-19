@@ -3,6 +3,7 @@ let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[ty
 let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
 let bulkDiscount = document.querySelector('.bulk-discount-pane');
+let pricePerP = document.querySelector('.price-per-pane p');
 
 let bulkMaxBool = false;
 
@@ -76,7 +77,7 @@ function hideBulkDiscount() {
         discountBool = true;
     }
     if (discountBool === false) {
-        bulkDiscount.style.opacity = '0';
+        bulkDiscount.style.opacity = '0.2';
     }
 }
 
@@ -102,6 +103,8 @@ function getPriceTotal(id) {
         formTotalPrice.value = price.toString();
     }
 
+
+
     customRemoveDisplayHandler();
     
     let planPrice;
@@ -123,13 +126,22 @@ function getPriceTotal(id) {
     for (let i = 0; i <= checkList.length - 1; i++) {
         totalQuantity += Number(checkList[i].value);
     }
-    console.log(`Called from: ${id} >> ${totalQuantity}`);
+
+    if ( planPrice === undefined ) {
+        pricePerP.innerHTML = `Price Each<br>0$`
+    } else if ( planPrice !== undefined ) {
+        pricePerP.innerHTML = `Price Each<br>${planPrice}$`
+
+    }
+    // console.log(`Called from: ${id} >> ${totalQuantity}`);
     
     // console.log('test')
     price = totalQuantity * Number(planPrice);
     // console.log(planPrice)
-    console.log(!isNaN(price));
+    // console.log(!isNaN(price));
     !isNaN(price) && updateDisplay();
+
+
     displayBulkDiscount();
     hideBulkDiscount();
 
