@@ -59,7 +59,7 @@ function bulkMaxOff() {
 }
 
 function displayBulkDiscount() {
-    bulkDiscount.style.display = 'block';
+    bulkDiscount.style.opacity = '1';
 }
 
 function hideBulkDiscount() {
@@ -76,7 +76,7 @@ function hideBulkDiscount() {
         discountBool = true;
     }
     if (discountBool === false) {
-        bulkDiscount.style.display = 'none';
+        bulkDiscount.style.opacity = '0';
     }
 }
 

@@ -385,7 +385,7 @@
                         </div>
 
                         <div class="wyld-right-section">
-                            <p class="custom-text">Our premium, freshly grown ingredients are harvested and delivered the same day. 
+                            <p class="custom-text">Our premium, freshly grown ingredients are harvested and delivered the same day.
                                 Custom orders may take a few weeks to initially fill.</p>
 
                             <div class="ingred-wrap">
@@ -482,10 +482,10 @@
                             <input class="form-entry" type="text" name="user_city" placeholder="Boulder, Superior, Louisville, Lafayette">
                             <label class="form-title">Phone Number</label>
                             <input class="form-entry" type="text" name="user_phone" placeholder="303 - 444 - 1234">
-                            <button id="contact-button" class="contact-submit" type="submit" onclick="sendingText()">Review<br>Your Order</button>
                         </div>
-
+                        
                         <div class="wyld-options">
+                            <button id="contact-button" class="contact-submit" type="submit" onclick="sendingText()">Review<br>Your Order</button>
                             <div class="wyld-form-plans">
                                 <label for="one_time" class="form-title">One-time Order</label>
                                 <input id="one_time" type="checkbox" name="one_time" oninput="oneTimeDel()">
@@ -501,64 +501,79 @@
                     </div>
 
                     <div class="contact-card-bottom-section">
-                        <div class="wyld-form-mix">
-                            <div class="mix-wrap">
-                                <input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">
-                                <label class="form-title mix-title">Farmer's Mix</label>
-                                <input class="form-num" type="number" name="farmers-num" placeholder="0" min="1" max="3" oninput="farmersInput()">
-                            </div>
 
-                            <div class="mix-wrap">
-                                <input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">
-                                <label class="form-title mix-title">Spicy Mix</label>
-                                <input class="form-num" type="number" name="spicy-num" placeholder="0" min="1" max="3" oninput="spicyInput()">
-                            </div>
-
-                            <div class="mix-wrap">
-                                <input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">
-                                <label class="form-title mix-title">Healthy Mix</label>
-                                <input class="form-num" type="number" name="healthy-num" placeholder="0" min="1" max="3" oninput="healthyInput()">
-                            </div>
-
-                            <div class="mix-wrap">
-                                <input type="checkbox" name="mix_salad" oninput="saladCheckbox()">
-                                <label class="form-title mix-title">Salad Mix</label>
-                                <input class="form-num" type="number" name="salad-num" placeholder="0" min="1" max="3" oninput="saladInput()">
-                            </div>
-
-                            <div class="mix-wrap">
-                                <input type="checkbox" name="mix_custom">
-                                <label class="form-title mix-title">Custom Mix</label>
-                                <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="3" onchange="customQuantityVerify()">
-                            </div>
-                        </div>
-
-                        <div class="price-total">
-                            <div class="mix-wrap">
-                                <label class="form-title mix-title">Total</label>
-                                <input class="price-num" type="number" name="total-num" placeholder="0">
-                            </div>
-
-                            <div class="bulk-discount-pane">
-                                <p>Discount<br>Applied!</p>
-                            </div>
-                        </div>
-
-                        <div class="form-text-wrap">
-                            <p class="form-text-p">
-                                Use this form to make any additions or changes. We will be in contact shortly to confirm
-                                your order and send a payment link. Thanks!
+                        <div class="form-text-pane">
+                            <p style="margin-top: 0; " class="form-text-p">
+                                Use this form to make any additions or changes. We will be in contact shortly via email to confirm
+                                your order and send a payment link. Thanks so much!
                             </p>
 
                             <p class="form-text-p">
-                                For Custom Orders, please indicate which greens you would like, and remember
+                                For Custom Orders, please indicate how much of each ingredient, and remember
                                 that changes to your order type may take a few weeks to fill.
                             </p>
                         </div>
 
-                        <div class="lower-section">
+                        <div class="textarea-section">
+                            <div class="message-details">
+                                <label class="form-title message">Message:</label><br>
+                                <textarea id="message-body" class="form-textarea-message" name="message" placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-mix-pane">
+                            <div class="wyld-form-mix">
+                                <div class="mix-wrap">
+                                    <input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">
+                                    <label class="form-title mix-title">Farmer's Mix</label>
+                                    <input class="form-num" type="number" name="farmers-num" placeholder="0" min="1" max="3" oninput="farmersInput()">
+                                </div>
+
+                                <div class="mix-wrap">
+                                    <input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">
+                                    <label class="form-title mix-title">Spicy Mix</label>
+                                    <input class="form-num" type="number" name="spicy-num" placeholder="0" min="1" max="3" oninput="spicyInput()">
+                                </div>
+
+                                <div class="mix-wrap">
+                                    <input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">
+                                    <label class="form-title mix-title">Healthy Mix</label>
+                                    <input class="form-num" type="number" name="healthy-num" placeholder="0" min="1" max="3" oninput="healthyInput()">
+                                </div>
+
+                                <div class="mix-wrap">
+                                    <input type="checkbox" name="mix_salad" oninput="saladCheckbox()">
+                                    <label class="form-title mix-title">Salad Mix</label>
+                                    <input class="form-num" type="number" name="salad-num" placeholder="0" min="1" max="3" oninput="saladInput()">
+                                </div>
+
+                                <div class="mix-wrap">
+                                    <input type="checkbox" name="mix_custom">
+                                    <label class="form-title mix-title">Custom Mix</label>
+                                    <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="3" onchange="customQuantityVerify()">
+                                </div>
+                            </div>
+
+                            <div class="quantity-total">
+                                <label class="form-title mix-title">Total Boxes</label>
+                                <input class="form-num" type="number" name="total-quan" placeholder="0">
+                            </div>
+
+                            <div class="price-total">
+                                <div class="mix-wrap">
+                                    <label style="top: -42px; right: 21px; " class="form-title mix-title price-right">Price</label>
+                                    <input style="top: -17px; left: 34px;" class="price-num price-right" type="number" name="total-num" placeholder="0">
+                                </div>
+    
+                                <div class="bulk-discount-pane">
+                                    <p>Discount<br>Applied!</p>
+                                </div>
+                            </div>
+
                             <div class="custom-order-details">
-                                <label class="form-title">Custom Mix Details:</label><br>
+                                <label class="form-title"><h4>Custom Mix Details:</h4></label><br>
 
                                 <div class="order num-1">
                                     <img onclick="removeCustomOrder(1)" class="form-btn-cross" src="/images/icons/cross.png">
@@ -579,13 +594,12 @@
                                 </div>
                             </div>
 
-                            <div class="message-details">
-                                <label class="form-title message">Message:</label><br>
-                                <textarea id="message-body" class="form-textarea-message" name="message" placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
-                            </div>
-
                         </div>
 
+
+
+
+                        
                     </div>
 
                     <button id="contact-button-bottom" class="contact-submit-bottom" type="submit" onclick="sendingText()">Place Your Order</button>
@@ -596,7 +610,7 @@
 
             </div>
         </div>
-        
+
         <%- include("../views/partials/footer.ejs") -%>
 
         <!-- END of document -->

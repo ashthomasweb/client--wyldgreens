@@ -769,7 +769,7 @@
     position: relative;
     display: block;
     width: 800px;
-    height: 900px;
+    height: 893px;
     padding: 4px;
     margin: 0 auto 30px;
 }
@@ -789,7 +789,7 @@
 
 .contact-card-top-section {
     width: 100%;
-    height: 291px;
+    height: 288px;
     padding: 20px 30px;
     border-bottom: 1px solid;
 }
@@ -798,18 +798,17 @@
 
 .contact-card-bottom-section {
     position: relative;
-    width: 100%;
     height: 492px;
-    padding: 20px 30px;
+    margin: 31px 31px 0px 31px;
 }
 
 .contact-submit {
-    position: absolute;
+    /* position: relative; */
     z-index: 20;
     top: -4px;
     right: -4px;
-    width: 375px;
-    height: 124px;
+    width: 302px;
+    height: 118px;
     border: 4px solid;
     margin: 0 auto;
     font-family: var(--headers);
@@ -826,7 +825,7 @@
 
 
 .form-entry {
-    width: 315px;
+    width: 400px;
     border: 1px solid;
     margin-bottom: 10px;
     font-family: var(--copy);
@@ -847,10 +846,9 @@
     border: 1px solid;
     margin-bottom: 5px;
     resize: none;
-    width: 45%;
+    width: 100%;
     display: inline-block;
     position: absolute;
-    right: 30px;
 
 }
 
