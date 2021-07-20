@@ -64,14 +64,20 @@ function applyIngredOffset() {
 
     if ( customOrder1.quantity > 0 ) {
         order1Length = customOrder1.ingredients.join().length;
+    } else {
+        order1Length = 1;
     }
 
     if ( customOrder2.quantity > 0 ) {
         order2Length = customOrder2.ingredients.join().length;
+    } else {
+        order2Length = 1;
     }
 
     if ( customOrder3.quantity > 0 ) {
         order3Length = customOrder3.ingredients.join().length;
+    } else {
+        order3Length = 1;
     }
 
     if (order1Length >= 22 ) {
