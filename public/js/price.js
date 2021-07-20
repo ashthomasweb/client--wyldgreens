@@ -4,6 +4,7 @@ let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
 let bulkDiscount = document.querySelector('.bulk-discount-pane');
 let pricePerP = document.querySelector('.price-per-pane p');
+let priceTotal = document.querySelector('[name=total-quan]');
 
 let bulkMaxBool = false;
 
@@ -127,11 +128,12 @@ function getPriceTotal(id) {
         totalQuantity += Number(checkList[i].value);
     }
 
-    if ( planPrice === undefined ) {
-        pricePerP.innerHTML = `Price Each<br>0$`
-    } else if ( planPrice !== undefined ) {
-        pricePerP.innerHTML = `Price Each<br>${planPrice}$`
+    priceTotal.value = totalQuantity;
 
+    if ( planPrice === undefined ) {
+        pricePerP.innerHTML = `Each Box<br>0 $`;
+    } else if ( planPrice !== undefined ) {
+        pricePerP.innerHTML = `Each Box<br>${planPrice} $`;
     }
     // console.log(`Called from: ${id} >> ${totalQuantity}`);
     
