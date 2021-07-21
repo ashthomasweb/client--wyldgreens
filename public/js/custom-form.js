@@ -1,4 +1,3 @@
-
 // CUSTOM MIX FORM
 
 // DOM OBJECT ASSIGNMENTS
@@ -46,14 +45,12 @@ function customIngredOff() {
         ingredChecks[i].checked = false;
         ingredChecks[i].style.cursor = 'default';
         customIngredList[i].style.cursor = 'default';
-
     }
 }
 
 function customOrderOff() { // close pane
     customQuanBool = false;
     currentOrderSubmitted = false;
-
     customOrderBtn.classList.remove('custom-order-btn-clicked');
     hiddenBtn.classList.remove('custom-order-hidden-clicked');
     orderWrap.classList.remove('custom-order-shadow');
@@ -61,7 +58,6 @@ function customOrderOff() { // close pane
     customNew.classList.remove('custom-close-clicked');
     customQuanCheck.style.display = 'none';
     customQuanP.style.opacity = '1';
-
     customOrderBtn.innerText = 'Start A New Custom Order';
     customOrderBtn.style.pointerEvents = 'auto';
     customBtnSlider.classList.remove('custom-btn-slider-anim');
@@ -90,12 +86,10 @@ function customUpdate() { // apply styles if data already sent to form
         customQuanP.innerHTML = 'Max 3<br>per week';
         customQuanP.style.left = '23px';
         hiddenBtn.style.pointerEvents = 'none';
-
     } else if (Number(customQuanInput.value) >= 1 || Number(customQuanInput.value) <= 3) {
         customQuanP.innerHTML = 'How<br>Many?';
         customQuanP.style.left = '31px';
         hiddenBtn.style.pointerEvents = 'auto';
-
         if (currentOrderSubmitted === true) {
             customUpdateBool = true;
             customQuanP.style.opacity = '1';
@@ -104,7 +98,6 @@ function customUpdate() { // apply styles if data already sent to form
             hiddenBtn.style.pointerEvents = 'auto';
         }
     }
-
 }
 
 function ingredCheck() {
@@ -127,7 +120,6 @@ function ingredCheck() {
         customQuanP.innerText = 'Too Many Items!';
         customQuanP.style.top = '15px';
         customQuanInput.style.display = 'none';
-
     } else if (count > 0 && count <= 4) {
         customOrderBtn.innerText = 'Pick up to 4';
         customOrderBtn.style.pointerEvents = 'none';
@@ -137,7 +129,6 @@ function ingredCheck() {
         customQuanP.style.left = '31px';
         customQuanP.style.top = '7px';
         customQuanInput.style.display = 'inline-block';
-
     } else if (count === 0) {
         hiddenBtn.style.pointerEvents = 'none';
     }

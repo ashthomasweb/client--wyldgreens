@@ -114,7 +114,6 @@ function healthyCheckbox() {
     getPriceTotal(13);
 }
 
-
 function farmersClearDeleteAnim() {
     clearTimeout(farmersAnimA);
     clearTimeout(farmersAnimB);
@@ -165,8 +164,6 @@ function farmersInput() {
     getPriceTotal(12);
 }
 
-
-
 function spicyClearDeleteAnim() {
     clearTimeout(spicyAnimA);
     clearTimeout(spicyAnimB);
@@ -210,8 +207,6 @@ function spicyInput() {
     getPriceTotal(11);
 }
 
-
-
 function saladClearDeleteAnim() {
     clearTimeout(saladAnimA);
     clearTimeout(saladAnimB);
@@ -224,7 +219,6 @@ function saladClearDeleteAnim() {
     saladClose.style.pointerEvents = 'auto';
     formSaladQuan.style.pointerEvents = 'auto';
 }
-
 
 function saladInput() {
     saladClearDeleteAnim();
@@ -256,7 +250,6 @@ function saladInput() {
     Number(formSaladQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal(10);
 }
-
 
 function healthyClearDeleteAnim() {
     clearTimeout(healthyAnimA);
@@ -302,3 +295,4 @@ function healthyInput() {
     Number(formHealthyQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal(9);
 }
+

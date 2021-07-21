@@ -38,13 +38,6 @@ let healthyQuanInput = document.querySelector('#healthy-quantity input');
 
 // MIX SELECTION BUTTONS
 
-
-
-
-
-
-
-
 let farmersBool = false;
 let farmersUpdateBool = false;
 
@@ -93,9 +86,7 @@ function farmersUpdate() { // apply styles if data already sent to form
             farmersOrderBtn.style.pointerEvents = 'auto';
         }
     }
-
 }
-
 
 let farmersAnimA;
 let farmersAnimB;
@@ -120,7 +111,6 @@ function farmersCloseBtn() { // hidden tab close button
             farmersOrderBtn.style.pointerEvents = 'auto';
             farmersPanelClose();
         }, 2000);
-
         farmersAnimB = setTimeout(() => {
             farmersQuanCross.style.display = 'none';
             farmersQuanP.style.opacity = '1';
@@ -141,7 +131,6 @@ function farmersCloseBtn() { // hidden tab close button
         farmersClose.style.pointerEvents = 'none';
         getPriceTotal(27);
         delayedDelete();
-
     } else { // if no product added
         farmersPanelClose();
     }
@@ -191,12 +180,10 @@ function spicyUpdate() { // apply styles if data already sent to form
         spicyQuanP.innerHTML = 'Max 3<br>per week';
         spicyQuanP.style.left = '18px';
         spicyOrderBtn.style.pointerEvents = 'none';
-
     } else if (Number(spicyQuanInput.value) >= 1 || Number(spicyQuanInput.value) <= 3) {
         spicyQuanP.innerHTML = 'How<br>Many?';
         spicyQuanP.style.left = '23px';
         spicyOrderBtn.style.pointerEvents = 'auto';
-
         if (spicyCheck.checked === true) {
             spicyUpdateBool = true;
             spicyQuanP.style.opacity = '1';
@@ -205,7 +192,6 @@ function spicyUpdate() { // apply styles if data already sent to form
             spicyOrderBtn.style.pointerEvents = 'auto';
         }
     }
-
 }
 
 let spicyAnimA;
@@ -252,7 +238,6 @@ function spicyCloseBtn() { // hidden tab close button
         spicyClose.style.pointerEvents = 'none';
         getPriceTotal(28);
         delayedDelete();
-
     } else { // if no product added
         spicyPanelClose();
     }
@@ -266,7 +251,6 @@ function sendSpicyData() {
     formSpicyQuan.value = spicyQuanInput.value;
     addToOrder('mix_spicy');
     getPriceTotal(23);
-
 }
 
 let saladBool = false;
@@ -275,7 +259,6 @@ let saladUpdateBool = false;
 function saladMix() { // primary button
     if (saladUpdateBool === true) { // if updating quantity - data already sent to form
         sendSaladData();
-
     } else if (saladUpdateBool === false) { // if first data submission
 
         if (saladBool === false) { // open slider
@@ -380,11 +363,6 @@ function sendSaladData() {
     getPriceTotal(24);
 }
 
-
-
-
-
-
 let healthyBool = false;
 let healthyUpdateBool = false;
 
@@ -433,7 +411,6 @@ function healthyUpdate() { // apply styles if data already sent to form
             healthyOrderBtn.style.pointerEvents = 'auto';
         }
     }
-
 }
 
 let healthyAnimA;

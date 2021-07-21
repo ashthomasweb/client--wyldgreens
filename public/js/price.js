@@ -97,14 +97,10 @@ function changeMixMax() {
     }
 }
 
-
-
 function getPriceTotal(id) {
     function updateDisplay() {
         formTotalPrice.value = price.toString();
     }
-
-
 
     customRemoveDisplayHandler();
     
@@ -136,17 +132,9 @@ function getPriceTotal(id) {
         pricePerP.innerHTML = `Each Box<br>${planPrice} $`;
     }
     // console.log(`Called from: ${id} >> ${totalQuantity}`);
-    
-    // console.log('test')
     price = totalQuantity * Number(planPrice);
-    // console.log(planPrice)
-    // console.log(!isNaN(price));
     !isNaN(price) && updateDisplay();
-
-
     displayBulkDiscount();
     hideBulkDiscount();
-
-  
 }
 

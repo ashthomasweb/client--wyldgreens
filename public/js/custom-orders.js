@@ -173,10 +173,6 @@ function maxOutCustomHandler() {
     }
 }
 
-// else if ( customOrder1.ingredients === '' || customOrder2.ingredients === '' || customOrder3.ingredients === '' ) {
-//     enableIngred();
-// }
-
 function getTotalCustom() {
     let num1Quan = Number(customOrder1Input.value);
     let num2Quan = Number(customOrder2Input.value);

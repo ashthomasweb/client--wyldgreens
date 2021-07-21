@@ -38,7 +38,6 @@ document.addEventListener('scroll', () => {
 
 // LIGHTBOX
 
-
 let lightboxBool = false;
 
 function lightbox() {
