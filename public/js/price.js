@@ -86,19 +86,14 @@ function changeMixMax() {
     if ( bulkDelBool === true ) {
         farmersQuanInput.max = '1';
         farmersQuanInput.value = '1';
-        
         healthyQuanInput.max = '1';
         healthyQuanInput.value = '1';
-
         saladQuanInput.max = '1';
         saladQuanInput.value = '1';
-
         spicyQuanInput.max = '1';
         spicyQuanInput.value = '1';
-
         customQuanInput.max = '1';
         customQuanInput.value = '1';
-
 
     } else if ( bulkDelBool === false ) {
         farmersQuanInput.max = '3';
@@ -106,7 +101,6 @@ function changeMixMax() {
         saladQuanInput.max = '3';
         spicyQuanInput.max = '3';
         customQuanInput.max = '3';
-
     }
 }
 
