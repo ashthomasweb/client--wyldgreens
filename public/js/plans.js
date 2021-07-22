@@ -74,6 +74,8 @@ function weeklyDel() {
         bulkCheck.style.display = 'none';
         hideBulkDiscount();
         bulkMaxOff();
+        changeMixMax();
+
         clearPlansForm();
         addToOrder('weekly');
         getPriceTotal(8);
@@ -129,6 +131,8 @@ function oneTimeDel() {
         bulkCheck.style.display = 'none';
         hideBulkDiscount();
         bulkMaxOff();
+        changeMixMax();
+
         clearPlansForm();
         addToOrder('one_time');
         getPriceTotal(4);
