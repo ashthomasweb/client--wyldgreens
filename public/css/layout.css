@@ -91,6 +91,7 @@
 .l-body-wrapper--contact {
     min-height: calc(100vh - 186px);
     margin: 0px auto 0px auto;
+    overflow: hidden;
 }
 
 .l-content-wrapper--contact {

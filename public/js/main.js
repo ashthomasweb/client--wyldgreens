@@ -61,3 +61,11 @@ function runLightbox(input) {
 function lightboxOff() {
     lightbox();
 }
+
+// PLANE ANIMATION 
+
+let plane = document.querySelector('#wyld-plane');
+
+function fromRight() {
+    plane.classList.add('plane-go-right');
+}
