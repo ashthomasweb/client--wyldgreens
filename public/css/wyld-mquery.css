@@ -5,4 +5,76 @@
         height: 906px;
     }
 
+    .form-entry {
+        width: 342px;
+    }
+
+    .textarea-section {
+        width: 342px;
+    }
+
+    .form-text-pane {
+        left: -31px;
+    }
+
+    @media screen and (max-width: 735px) {
+
+        .card--contact-form {
+            height: 1630px;
+            width: 412px;
+        }
+
+        .contact-card-top-section {
+            height: 543px;
+        }
+
+        .contact-card-bottom-section {
+            height: 961px;
+        }
+
+        .wyld-options {
+            position: relative;
+            top: 15px;
+        }
+
+        .wyld-contact-info {
+            top: 85px;
+        }
+
+        .contact-submit {
+            top: -283px;
+            left: -31px;
+            width: 406px;
+            height: 90px;
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            
+        }
+
+        .form-mix-pane {
+             right: 0px;
+             top: 230px;
+             width: 342px;
+        }
+
+        .wyld-form-plans {
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px;
+            width: 342px;
+        }
+
+        .bulk-discount-pane {
+            left: 54px;
+        }
+
+
+
+
+
+
+    }
+
+
+
+
 }

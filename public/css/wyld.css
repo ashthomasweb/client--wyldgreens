@@ -969,7 +969,7 @@
     font-family: var(--copy);
     cursor: default;
 }
-
+ 
 .custom-order-shadow {
     box-shadow: 1px 1px 15px -5px #222;
 }
@@ -1345,6 +1345,7 @@
 
 /* CUSTOMER INFO */
 .wyld-contact-info {
+    position: relative;
     display: inline-block !important;
     width: 55%;
 }
@@ -1352,10 +1353,11 @@
 /* REVIEW/PLANS */
 
 .wyld-options {
-    display: inline-block !important;
+    display: inline-block;
     position: absolute;
     right: 0px;
     top: 0px;
+    transition: top .2s ease-in-out;
 }
 
 .wyld-form-plans {
@@ -1410,6 +1412,7 @@
     top: -3px;
     left: 0px;
     padding: 0 32px;
+    transition: left .2s ease-in-out;
 }
 
 .form-mix-pane {
@@ -1420,14 +1423,16 @@
     top: 0px;
     background-color: whitesmoke;
     border-radius: 4px;
+    transition: right .2s ease-in-out, top .2s ease-in-out, width .2s ease-in-out;
 }
 
 .textarea-section {
     position: absolute;
     width: 400px;
     height: 218px;
-    left: 0px;
+    left: -1px;
     bottom: 45px;
+    transition: width .2s ease-in-out;
 }
 
 /* MIX BOX */
@@ -1537,6 +1542,7 @@
     padding: 5px;
     border-radius: 4px;
     opacity: 0.2;
+    transition: left .2s ease-in-out;
 }
 
 .bulk-discount-pane p {
