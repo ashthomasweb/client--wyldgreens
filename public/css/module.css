@@ -772,6 +772,7 @@
     height: 906px;
     padding: 4px;
     margin: 0 auto 30px;
+    transition: width .2s ease-in-out;
 }
 
 .card--contact-form ::placeholder {
