@@ -1,4 +1,3 @@
-
 // DOM OBJECT ASSIGNMENTS
 
 let ctaBtnPlan = document.querySelector('#plan-button');
@@ -31,7 +30,7 @@ ctaBtnOrder.addEventListener('click', () => {
 
 document.addEventListener('scroll', () => {
     let imageOffsetRatio = 470;
-    let amount = ( window.scrollY / imageOffsetRatio ) * 100;
+    let amount = (window.scrollY / imageOffsetRatio) * 100;
     let string = `-${amount}px`;
     pxBack.style.backgroundPositionY = string;
 });
@@ -40,26 +39,34 @@ document.addEventListener('scroll', () => {
 
 let lightboxBool = false;
 
-function lightbox() {
+function closeLightbox() {
+    console.log(lightboxBool)
+    window.removeEventListener('click', closeLightbox, false)
+    
     if (lightboxBool === true) {
         lightboxPane.style.opacity = '0';
         lightboxPane.pointerEvents = 'none';
+        lightboxBool = false;
 
-    } else if (lightboxBool === false) {
+
+    }
+}
+
+function openLightbox() {
+    if (lightboxBool === false) {
         lightboxPane.pointerEvents = 'auto';
         lightboxPane.style.opacity = '1';
+        lightboxBool = true;
+        setTimeout(() => {
+            window.addEventListener('click', closeLightbox, false)
+        }, 10);
     }
-    lightboxBool = !lightboxBool;
 }
 
 function runLightbox(input) {
     lightboxPane.pointerEvents = 'auto';
     lightboxImg.attributes.src.value = `/images/greens/${input}`;
-    lightbox();
-}
-
-function lightboxOff() {
-    lightbox();
+    openLightbox();
 }
 
 // PLANE ANIMATION 
