@@ -105,12 +105,15 @@ function healthyCheckbox() {
 
     if (healthyCheck.checked === false) {
         healthyCloseBtn();
+        healthyQuanCheck.style.display = 'none';
         formHealthyQuan.value = '';
     } else if (healthyCheck.checked === true) {
         healthyMix();
         healthyMix();
         formHealthyQuan.value = '1';
     }
+    console.log(`test`)
+
     getPriceTotal(13);
 }
 
@@ -127,7 +130,7 @@ function farmersClearDeleteAnim() {
 }
 
 function farmersInput() {
-    farmersClearDeleteAnim();
+    farmersUpdateBool === false && farmersClearDeleteAnim();
 
     if (bulkMaxBool === true) {
         if (Number(formFarmersQuan.value) >= 1) {
@@ -137,19 +140,14 @@ function farmersInput() {
 
     farmersCheck.checked = true;
 
-    if (farmersCheck.checked === false) {
-        farmersMix();
-        farmersMix();
-
-    } else
-
     if (farmersCheck.checked === true) {
         farmersQuanInput.value = formFarmersQuan.value;
         if (Number(formFarmersQuan.value) >= 4) {
             formFarmersQuan.value = '3';
         }
         if (Number(formFarmersQuan.value) < 1 || formFarmersQuan.value === '') {
-            formFarmersQuan.value === ''
+            formFarmersQuan.value = '';
+            farmersQuanInput.value = '1';
             farmersCheck.checked = false;
             farmersCloseBtn();
         }
@@ -157,6 +155,7 @@ function farmersInput() {
             farmersMix();
             farmersQuanInput.value = formFarmersQuan.value;
             farmersMix();
+            farmersOrderBtn.innerText = 'Added to Order!';
         }
     }
 
@@ -177,7 +176,7 @@ function spicyClearDeleteAnim() {
 }
 
 function spicyInput() {
-    spicyClearDeleteAnim();
+    spicyUpdateBool === false && spicyClearDeleteAnim();
 
     if (bulkMaxBool === true) {
         if (Number(formSpicyQuan.value) >= 1) {
@@ -193,6 +192,8 @@ function spicyInput() {
             formSpicyQuan.value = '3';
         }
         if (Number(formSpicyQuan.value) < 1 || formSpicyQuan.value === '') {
+            formSpicyQuan.value = '';
+            spicyQuanInput.value = '1';
             spicyCheck.checked = false;
             spicyCloseBtn();
         }
@@ -200,6 +201,7 @@ function spicyInput() {
             spicyMix();
             spicyQuanInput.value = formSpicyQuan.value;
             spicyMix();
+            spicyOrderBtn.innerText = "Added to Order!";
         }
     }
 
@@ -221,7 +223,7 @@ function saladClearDeleteAnim() {
 }
 
 function saladInput() {
-    saladClearDeleteAnim();
+    saladUpdateBool === false && saladClearDeleteAnim();
 
     if (bulkMaxBool === true) {
         if (Number(formSaladQuan.value) >= 1) {
@@ -237,6 +239,8 @@ function saladInput() {
             formSaladQuan.value = '3';
         }
         if (Number(formSaladQuan.value) < 1 || formSaladQuan.value === '') {
+            formSaladQuan.value = '';
+            saladQuanInput.value = '1';
             saladCheck.checked = false;
             saladCloseBtn();
         }
@@ -244,6 +248,7 @@ function saladInput() {
             saladMix();
             saladQuanInput.value = formSaladQuan.value;
             saladMix();
+            saladOrderBtn.innerText = "Added to Order!";
         }
     }
 
@@ -265,14 +270,13 @@ function healthyClearDeleteAnim() {
 }
 
 function healthyInput() {
-    healthyClearDeleteAnim();
+    healthyUpdateBool === false && healthyClearDeleteAnim();
 
     if (bulkMaxBool === true) {
         if (Number(formHealthyQuan.value) >= 1) {
             formHealthyQuan.value = '1';
         }
     }
-
     healthyCheck.checked = true;
 
     if (healthyCheck.checked === true) {
@@ -281,7 +285,8 @@ function healthyInput() {
             formHealthyQuan.value = '3';
         }
         if (Number(formHealthyQuan.value) < 1 || formHealthyQuan.value === '') {
-            formHealthyQuan.value === '';
+            formHealthyQuan.value = '';
+            healthyQuanInput.value = '1';
             healthyCheck.checked = false;
             healthyCloseBtn();
         }
@@ -289,6 +294,7 @@ function healthyInput() {
             healthyMix();
             healthyQuanInput.value = formHealthyQuan.value;
             healthyMix();
+            healthyOrderBtn.innerText = "Added to Order!";
         }
     }
 

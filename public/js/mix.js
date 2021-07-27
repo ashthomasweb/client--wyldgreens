@@ -44,9 +44,9 @@ let farmersUpdateBool = false;
 function farmersMix() { // primary button
     if (farmersUpdateBool === true) { // if updating quantity - data already sent to form
         sendFarmerData();
-
+        
     } else if (farmersUpdateBool === false) { // if first data submission
-
+        
         if (farmersBool === false) { // open slider
             farmersBool = !farmersBool;
             farmersOrderBtn.innerText = 'Add to Order Form';
@@ -120,11 +120,12 @@ function farmersCloseBtn() { // hidden tab close button
         }, 2300);
     }
 
+    farmersQuanCheck.style.display = 'none';
+
     if (farmersClose.innerText === 'Remove') { // if product already added
         formFarmersQuan.value = '';
         farmersCheck.checked = false;
-        farmersQuanCheck.style.display = 'none';
-        farmersQuanInput.value = '';
+        farmersQuanInput.value = '0';
         farmersOrderBtn.innerText = 'Deleted from Order';
         farmersQuanP.style.opacity = '0';
         farmersQuanCross.style.display = 'block';
@@ -227,11 +228,12 @@ function spicyCloseBtn() { // hidden tab close button
         }, 2300);
     }
 
+    spicyQuanCheck.style.display = 'none';
+
     if (spicyClose.innerText === 'Remove') { // if product already added
         formSpicyQuan.value = '';
         spicyCheck.checked = false;
-        spicyQuanCheck.style.display = 'none';
-        spicyQuanInput.value = '';
+        spicyQuanInput.value = '0';
         spicyOrderBtn.innerText = 'Deleted from Order';
         spicyQuanP.style.opacity = '0';
         spicyQuanCross.style.display = 'block';
@@ -336,11 +338,12 @@ function saladCloseBtn() { // hidden tab close button
         }, 2300);
     }
 
+    saladQuanCheck.style.display = 'none';
+
     if (saladClose.innerText === 'Remove') { // if product already added
         formSaladQuan.value = '';
         saladCheck.checked = false;
-        saladQuanCheck.style.display = 'none';
-        saladQuanInput.value = '';
+        saladQuanInput.value = '0';
         saladOrderBtn.innerText = 'Deleted from Order';
         saladQuanP.style.opacity = '0';
         saladQuanCross.style.display = 'block';
@@ -446,16 +449,16 @@ function healthyCloseBtn() { // hidden tab close button
         }, 2300);
     }
 
+    healthyQuanCheck.style.display = 'none';
+    
     if (healthyClose.innerText === 'Remove') { // if product already added
         formHealthyQuan.value = '';
         healthyCheck.checked = false;
-        healthyQuanCheck.style.display = 'none';
-        healthyQuanInput.value = '';
+        healthyQuanInput.value = '0';
         healthyOrderBtn.innerText = 'Deleted from Order';
         healthyQuanP.style.opacity = '0';
         healthyQuanCross.style.display = 'block';
         healthyClose.style.pointerEvents = 'none';
-        formHealthyQuan.style.pointerEvents = 'none';
         getPriceTotal(30);
         delayedDelete();
 

@@ -47,8 +47,6 @@ function closeLightbox() {
         lightboxPane.style.opacity = '0';
         lightboxPane.pointerEvents = 'none';
         lightboxBool = false;
-
-
     }
 }
 
