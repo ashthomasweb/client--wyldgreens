@@ -1709,7 +1709,7 @@
 .plane-pane {
     display: fixed;
     position: absolute;
-    top: 750px;
+    top: 740px;
     right: -600px;
     z-index: 4;
     height: 40px;
