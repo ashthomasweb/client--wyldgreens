@@ -1744,3 +1744,97 @@
     margin: 18px auto 87px;
     width: 65vw;
 }
+
+.plane-skew {
+    transform: skewY(20deg);
+    transform-origin: 0% 50% 0;
+}
+
+.plane-comp {
+    display: inline-block;
+    margin-left: -4px;
+}
+
+.plane-pane-anim {
+    display: fixed;
+    position: absolute;
+    top: 550px;
+    right: 100px;
+    z-index: 4;
+    height: 40px;
+    width: 700px;
+    transition: right 40s linear, top 8s ease-in-out;
+}
+
+.prop {
+    position: relative;
+    top: 20px;
+    animation: prop .3s linear;
+    animation-iteration-count: infinite;
+    transform: rotateX(0deg);
+}
+
+@keyframes prop {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(359.9deg); }   
+}
+
+.plane {
+
+}
+
+.banner {
+    position: relative;
+    right: 4px;
+    transform-origin: left;
+    transform: skewY(1deg);
+    animation: flap infinite 7s;
+    animation-direction: alternate;
+}
+
+@keyframes flap {
+    0% { transform: skewY(0.4deg); }
+    20% { transform: skewY(-0.5deg); }
+    40% { transform: skewY(.4deg); }
+    60% { transform: skewY(-0.6deg); }
+    80% { transform: skewY(0.3deg); }
+    100% { transform: skewY(-0.6deg); }   
+}
+
+.plane-wrap {
+    display: inline-block;
+   
+    margin-left: -2px;
+    transform-origin: 100% 60% 0;
+    transform: rotate(0deg);
+    transition: transform 3s ease-in-out;
+}
+
+.plane-wrap-up {
+    transform: rotate(6deg);
+
+}
+
+.plane-wrap-down {
+    transform: rotate(-6deg);
+
+}
+
+.banner-wrap {
+    display: inline-block;
+    margin-left: -4px;
+    transform-origin: left;
+    transform: skewY(0deg);
+    transition: transform 4s ease-in-out;
+
+}
+
+.banner-wrap-up {
+    transform: skewY(5deg);
+
+}
+
+.banner-wrap-down {
+    transform: skewY(-5deg);
+    
+}
