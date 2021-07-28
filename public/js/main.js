@@ -42,7 +42,7 @@ let lightboxBool = false;
 function closeLightbox() {
     console.log(lightboxBool)
     window.removeEventListener('click', closeLightbox, false)
-    
+
     if (lightboxBool === true) {
         lightboxPane.style.opacity = '0';
         lightboxPane.pointerEvents = 'none';
@@ -69,7 +69,7 @@ function runLightbox(input) {
 
 // PLANE ANIMATION 
 
-let plane = document.querySelector('#wyld-plane');
+let plane = document.querySelector('.plane-pane-anim');
 
 function fromRight() {
     plane.classList.add('plane-go-right');
@@ -78,27 +78,44 @@ function fromRight() {
 let planeWrap = document.querySelector('.plane-wrap');
 let bannerWrap = document.querySelector('.banner-wrap');
 
+let planeMotionBool = false;
+
 function planeUp() {
-    planeWrap.classList.add('plane-wrap-up');
-    bannerWrap.classList.add('banner-wrap-up');
-    setTimeout( () => {
-        plane.style.top = '450px';
-    }, 300 )
-    setTimeout( () => {
-        planeLevel();
-    }, 8300)
+    if (planeMotionBool === false) {
+
+        planeWrap.classList.add('plane-wrap-up');
+        bannerWrap.classList.add('banner-wrap-up');
+        planeMotionBool = true;
+
+        setTimeout(() => {
+            plane.style.top = '450px';
+        }, 300)
+        setTimeout(() => {
+            planeLevel();
+        }, 8000)
+    } else if (planeMotionBool === true) {
+        planeLevel()
+        planeMotionBool = false;
+    }
 
 }
 
 function planeDown() {
-    planeWrap.classList.add('plane-wrap-down');
-    bannerWrap.classList.add('banner-wrap-down');
-    setTimeout( () => {
-        plane.style.top = '550px';
-    }, 300)
-    setTimeout( () => {
-        planeLevel();
-    }, 8300)
+    if (planeMotionBool === false) {
+        planeWrap.classList.add('plane-wrap-down');
+        bannerWrap.classList.add('banner-wrap-down');
+        planeMotionBool = true;
+        setTimeout(() => {
+            plane.style.top = '550px';
+        }, 300)
+        setTimeout(() => {
+            planeLevel();
+        }, 8000)
+    } else if (planeMotionBool === true) {
+        planeLevel()
+        planeMotionBool = false;
+
+    }
 }
 
 function planeLevel() {
@@ -107,4 +124,15 @@ function planeLevel() {
     planeWrap.classList.remove('plane-wrap-down');
     bannerWrap.classList.remove('banner-wrap-down');
 
+}
+
+function movePlane() {
+    console.log('hooray');
+    if (planeMotionBool === true ) {
+        planeUp();
+    } else if (plane.style.top === '450px') {
+        planeDown();
+    } else {
+        planeLevel();
+    }
 }
