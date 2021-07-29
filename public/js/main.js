@@ -70,52 +70,41 @@ function runLightbox(input) {
 // PLANE ANIMATION 
 
 let plane = document.querySelector('.plane-pane-anim');
+let planeWrap = document.querySelector('.plane-wrap');
+let bannerWrap = document.querySelector('.banner-whole');
+// let planeInMotionBool = false;
 
-function fromRight() {
-    plane.classList.add('plane-go-right');
+function planeToLeft() {
+    plane.classList.add('plane-go-left');
 }
 
-let planeWrap = document.querySelector('.plane-wrap');
-let bannerWrap = document.querySelector('.banner-wrap');
-
-let planeMotionBool = false;
 
 function planeUp() {
-    if (planeMotionBool === false) {
+    let currentAltitude = parseInt(getComputedStyle(plane).getPropertyValue('top'));
 
-        planeWrap.classList.add('plane-wrap-up');
-        bannerWrap.classList.add('banner-wrap-up');
-        planeMotionBool = true;
+    planeWrap.classList.add('plane-wrap-up');
+    bannerWrap.classList.add('banner-wrap-up');
 
-        setTimeout(() => {
-            plane.style.top = '450px';
-        }, 300)
-        setTimeout(() => {
-            planeLevel();
-        }, 8000)
-    } else if (planeMotionBool === true) {
-        planeLevel()
-        planeMotionBool = false;
-    }
-
+    setTimeout(() => {
+        plane.style.top = `${currentAltitude - 150}px`;
+    }, 350)
+    setTimeout(() => {
+        planeLevel();
+    }, 4700)
 }
 
 function planeDown() {
-    if (planeMotionBool === false) {
-        planeWrap.classList.add('plane-wrap-down');
-        bannerWrap.classList.add('banner-wrap-down');
-        planeMotionBool = true;
-        setTimeout(() => {
-            plane.style.top = '550px';
-        }, 300)
-        setTimeout(() => {
-            planeLevel();
-        }, 8000)
-    } else if (planeMotionBool === true) {
-        planeLevel()
-        planeMotionBool = false;
+    let currentAltitude = parseInt(getComputedStyle(plane).getPropertyValue('top'));
 
-    }
+    planeWrap.classList.add('plane-wrap-down');
+    bannerWrap.classList.add('banner-wrap-down');
+
+    setTimeout(() => {
+        plane.style.top = `${currentAltitude + 150}px`;
+    }, 350)
+    setTimeout(() => {
+        planeLevel();
+    }, 4700)
 }
 
 function planeLevel() {
@@ -123,16 +112,54 @@ function planeLevel() {
     bannerWrap.classList.remove('banner-wrap-up');
     planeWrap.classList.remove('plane-wrap-down');
     bannerWrap.classList.remove('banner-wrap-down');
-
 }
 
-function movePlane() {
-    console.log('hooray');
-    if (planeMotionBool === true ) {
-        planeUp();
-    } else if (plane.style.top === '450px') {
-        planeDown();
-    } else {
-        planeLevel();
-    }
+
+
+
+// PLANE TO RIGHT
+
+let planeRight = document.querySelector('.plane-pane-anim-right');
+let planeWrapRight = document.querySelector('.plane-wrap-right');
+let bannerWrapRight = document.querySelector('.banner-whole-right');
+// let planeInMotionBool = false;
+
+function planeToRight() {
+    planeRight.classList.add('plane-go-right');
+}
+
+
+function planeUpRight() {
+    let currentAltitude = parseInt(getComputedStyle(planeRight).getPropertyValue('top'));
+
+    planeWrapRight.classList.add('plane-wrap-up-right');
+    bannerWrapRight.classList.add('banner-wrap-up-right');
+
+    setTimeout(() => {
+        planeRight.style.top = `${currentAltitude - 150}px`;
+    }, 350)
+    setTimeout(() => {
+        planeLevelRight();
+    }, 4700)
+}
+
+function planeDownRight() {
+    let currentAltitude = parseInt(getComputedStyle(planeRight).getPropertyValue('top'));
+
+    planeWrapRight.classList.add('plane-wrap-down-right');
+    bannerWrapRight.classList.add('banner-wrap-down-right');
+    
+    setTimeout(() => {
+        planeRight.style.top = `${currentAltitude + 150}px`;
+    }, 350)
+    setTimeout(() => {
+        planeLevelRight();
+    }, 4700)
+}
+
+function planeLevelRight() {
+    planeWrapRight.classList.remove('plane-wrap-up-right');
+    bannerWrapRight.classList.remove('banner-wrap-up-right');
+    planeWrapRight.classList.remove('plane-wrap-down-right');
+    bannerWrapRight.classList.remove('banner-wrap-down-right');
 }
