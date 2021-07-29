@@ -5,6 +5,7 @@ let ctaBtnMix = document.querySelector('#mix-button');
 let ctaBtnOrder = document.querySelector('#order-button');
 
 let pxBack = document.querySelector('.l-body-wrapper--contact');
+let lowPlane = document.querySelector('.plane-px');
 
 let lightboxPane = document.querySelector('.lightbox');
 let lightboxImg = document.querySelector('.lightbox img');
@@ -33,6 +34,7 @@ document.addEventListener('scroll', () => {
     let amount = (window.scrollY / imageOffsetRatio) * 100;
     let string = `-${amount}px`;
     pxBack.style.backgroundPositionY = string;
+    // lowPlane.style.bottom = `${string}`;
 });
 
 // LIGHTBOX
@@ -114,6 +116,29 @@ function planeLevel() {
     bannerWrap.classList.remove('banner-wrap-down');
 }
 
+function planeOnLoad() {
+
+
+    planeToLeft();
+    setInterval(() => {
+        if ( Math.random() * .5 >= .5 ) {
+            planeUp();
+        } else {
+            planeDown();
+        }
+    }, 11000);
+
+    setTimeout(() => {
+        planeToRight();
+        setInterval(() => {
+            if ( Math.random() * .5 >= .5 ) {
+                planeUpRight();
+            } else {
+                planeDownRight();
+            }
+        }, 11000);
+    }, 20000);
+}
 
 
 

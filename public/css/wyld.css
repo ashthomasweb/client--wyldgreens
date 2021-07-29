@@ -1750,13 +1750,32 @@
 
 .plane-pane-anim-right {
     position: absolute;
-    top: 700px;
+    top: 2700px;
     left: -500px;
-    z-index: 4;
+    z-index: 0;
     height: 60px;
     width: 400px;
     transform: scale(0.75);
     transition: left 40s linear, top 6.5s ease-in-out;
+}
+
+.plane-px {
+    position: absolute;
+
+    top: 5000px;
+    left: 300px;
+    transition: left 40s linear, top 6.5s ease-in-out;
+
+}
+
+.plane-pane-anim-right-low {
+    position: absolute;
+    
+    z-index: 4;
+    height: 60px;
+    width: 400px;
+    transform: scale(0.4);
+    /* transition: left 40s linear, top 6.5s ease-in-out; */
 }
 
 .plane-go-right {
@@ -1875,6 +1894,18 @@
 
 
 .plane-pane-anim {
+    position: absolute;
+    top: 700px;
+    right: -500px;
+    z-index: 0;
+    height: 60px;
+    width: 400px;
+    transform: scale(0.75);
+    transition: right 40s linear, top 6.5s ease-in-out;
+}
+
+
+.plane-pane-anim-low {
     position: absolute;
     top: 700px;
     right: -500px;
