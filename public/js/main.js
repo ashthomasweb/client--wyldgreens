@@ -69,6 +69,15 @@ function runLightbox(input) {
     openLightbox();
 }
 
+
+
+
+
+
+
+
+
+
 // PLANE ANIMATION 
 
 let plane = document.querySelector('.plane-pane-anim');
@@ -117,30 +126,30 @@ function planeLevel() {
 }
 
 function planeOnLoad() {
-
-
+    let startingAltitude = document.documentElement.clientHeight - 100;
+    let startingGutter = (document.documentElement.clientWidth - 1000) / 2;
+    let offset = startingGutter + 450;
+    plane.style.right = `-${offset}px`;
+    plane.style.top = `${startingAltitude}px`;
+    // plane.style.right = `-${startingHorizontal}px`;
     planeToLeft();
+    planeDown();
+    // planeDown();
     setInterval(() => {
-        if ( Math.random() * .5 >= .5 ) {
-            planeUp();
-        } else {
             planeDown();
-        }
     }, 11000);
 
-    setTimeout(() => {
-        planeToRight();
-        setInterval(() => {
-            if ( Math.random() * .5 >= .5 ) {
-                planeUpRight();
-            } else {
-                planeDownRight();
-            }
-        }, 11000);
-    }, 20000);
+    // setTimeout(() => {
+    //     planeToRight();
+    //     setInterval(() => {
+    //         if ( Math.random() * .5 >= .5 ) {
+    //             planeUpRight();
+    //         } else {
+    //             planeDownRight();
+    //         }
+    //     }, 11000);
+    // }, 20000);
 }
-
-
 
 // PLANE TO RIGHT
 
