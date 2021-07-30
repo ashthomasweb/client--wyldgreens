@@ -199,3 +199,102 @@
     }
 
 }
+
+
+/* TEXT PARA  */
+@media screen and (max-width: 624px) {
+
+    .mix-body-text p {
+        max-width: 500px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .plan-text p {
+        max-width: 500px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+}
+
+
+
+/* HEALTHY PLANET PANE  */
+@media screen and (max-width: 650px) {
+
+    .wyld-why {
+        max-width: 535px;
+
+    }
+
+    .why-list {
+        padding: 19px 10px 10px;
+    }
+
+    @media screen and (max-width: 575px) {
+
+        .why-section {
+            height: 1400px;
+        }
+        
+        .wyld-why {
+            max-width: 340px;
+
+        }
+
+        .why-list {
+            padding: 19px 10px 10px;
+        }
+
+        .wyld-why li {
+            padding: 5px 0;
+        }
+
+        .list-item {
+            margin: 0 auto 10px;
+        }
+
+        .hills {
+            left: 0px;
+            top: 0px;
+        }
+
+        .mountains {
+            width: 100%;
+        }
+
+        .packages {
+            left: 0px;
+        }
+
+        .custom {
+            width: 100%;
+        }
+
+        .checkmark {
+            left: 0px;
+        }
+
+        .certified {
+            width: 100%;
+        }
+
+        .delivery {
+            left: 0px;
+            top: 6px;
+        }
+
+        .truck {
+            width: 100%;
+        }
+
+
+
+    }
+
+
+}

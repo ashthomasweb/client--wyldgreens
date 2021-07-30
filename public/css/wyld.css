@@ -1,4 +1,3 @@
-
 /* Template assigned classes */
 
 /* from module.css */
@@ -455,11 +454,12 @@
 .make-smaller h3 {
     font-size: 22px;
 }
-    
+
 /* WHY  */
 
 .committed {
     max-width: 550px;
+    padding: 0 15px;
     text-align: center;
     margin: 0 auto;
     font-size: 22px;
@@ -478,7 +478,7 @@
     font-size: 18px;
     line-height: 1.35;
     text-align: center;
-    position: relative;
+
 }
 
 .wyld-why p {
@@ -946,7 +946,7 @@
     width: 500px;
     position: absolute;
     transition: transform .3s ease-out;
-    background-color: white;    
+    background-color: white;
     z-index: 4;
     bottom: 0;
 }
@@ -1004,7 +1004,7 @@
     font-family: var(--copy);
     cursor: default;
 }
- 
+
 .custom-order-shadow {
     box-shadow: 1px 1px 15px -5px #222;
 }
@@ -1141,7 +1141,7 @@
     width: 180px;
     height: 45px;
     position: absolute;
-    bottom: 51px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     border-top-right-radius: 4px;
@@ -1553,7 +1553,7 @@
     top: -50px;
 }
 
-.quantity-total input{
+.quantity-total input {
     float: right;
     pointer-events: none;
     user-select: none;
@@ -1619,6 +1619,7 @@
     width: 80px;
 
 }
+
 .price-num {
     user-select: none;
     pointer-events: none;
@@ -1744,4 +1745,20 @@
 }
 
 
+.hills {
+    width: 105px;
+    top: 16px;
+    left: -3px;
+}
 
+.packages {
+    top: 4px;
+}
+
+.checkmark {
+    top: 2px;
+}
+
+.delivery {
+    top: 20px;
+}
