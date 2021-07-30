@@ -1,3 +1,4 @@
+/* ORDER FORM  */
 @media screen and (max-width: 830px) {
 
     .card--contact-form {
@@ -71,6 +72,7 @@
 
 }
 
+/* CUSTOM ORDER FORM  */
 @media screen and (max-width: 724px) {
 
     .custom-order {
@@ -112,7 +114,88 @@
 
     }
 
+
+}
+
+@media screen and (max-width: 741px) {
+
     .card--wyld-left {
         margin-bottom: 63px;
     }
+
+}
+
+/* PLAN CARDS  */
+@media screen and (max-width: 915px) {
+
+    .card--wyld-sides {
+        margin: 0 -24px;
+    }
+
+    @media screen and (max-width: 840px) {
+
+        .card--wyld-sides {
+            margin: 10px 120px;
+        }
+
+        .card--wyld-center {
+            top: 0;
+        }
+
+
+
+
+    }
+
+}
+
+
+/* CTA BUTTONS  */
+
+@media screen and (max-width: 999px) {
+
+    .green-arrow {
+        display: none;
+    }
+
+    @media screen and (max-width: 821px) {
+
+        #order-button {
+            right: -150px;
+            top: 20px;
+        }
+
+        .cta-back {
+            left: 49%;
+            transform: translateX(-50%);
+            width: 550px;
+            margin-bottom: 160px;
+        }
+
+        .l-box-third {
+            width: 265.31px;
+        }
+
+    }
+
+}
+
+
+
+/* LOGO  */
+
+@media screen and (max-width: 820px) {
+
+    .logo {
+        width: 632px;
+    }
+
+    @media screen and (max-width: 666px) {
+
+        .logo {
+            width: 482px;
+        }
+
+    }
+
 }
