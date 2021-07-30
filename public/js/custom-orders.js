@@ -122,8 +122,8 @@ function newCustomDisplay() {
 function addIngredientForm() {
     customNewOrder();
     customOrderOn();
-    window.location.href = '#ingred-box';
-    window.scrollBy(0, -180);
+    window.location.href = '#custom-box';
+    // window.scrollBy(0, -80);
 }
 
 function removeCustomOrder(input) {

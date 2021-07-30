@@ -78,6 +78,7 @@
     .custom-order {
         width: 328px;
         height: 600px;
+        margin: 0 auto;
     }
 
 
@@ -114,13 +115,33 @@
 
     }
 
+    .custom-close-clicked {
+        bottom: 138px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+
+    }
+
+    .custom-remove-clicked {
+        bottom: 138px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
 
 }
 
 @media screen and (max-width: 741px) {
 
     .card--wyld-left {
-        margin-bottom: 63px;
+        margin-bottom: 30px;
+    }
+
+    .card-pane--wyld {
+        margin: -100px auto -130px;
     }
 
 }
@@ -178,6 +199,7 @@
 
         .why-section {
             margin-top: 235px;
+            /* height: 980px; */
         }
 
     }
@@ -218,6 +240,7 @@
     .plan-text p {
         max-width: 500px;
         position: relative;
+        margin-left: 0px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -242,9 +265,9 @@
     @media screen and (max-width: 575px) {
 
         .why-section {
-            height: 1400px;
+            /* height: 1400px; */
         }
-        
+
         .wyld-why {
             max-width: 340px;
 
@@ -340,7 +363,7 @@
     }
 
     .card--wyld-sides {
-        margin: 15px -24px;
+        margin: 30px -24px;
     }
 
 
@@ -351,7 +374,277 @@
     }
 
     .adjust-order {
-        top: -55px;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .avatar-pane--home h2 {
+        padding: 0 15px;
+    }
+}
+
+
+@media screen and (max-width: 442px) {
+
+    .logo {
+        width: 340px;
+    }
+
+    .how-it-works-wrapper {
+        width: 334px;
+    }
+
+    .plan-spacer {
+        height: 130px;
+    }
+
+    .why-header {
+        max-width: 410px;
+    }
+
+    .plan-text p {
+        max-width: 310px;
+    }
+
+    .plan-text {
+        margin-bottom: 30px;
+    }
+
+    .mix-body-text p {
+        max-width: 310px;
+    }
+
+    .card--wyld-right {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .card--wyld-left {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card--contact-form {
+        width: 348px;
+    }
+
+    .contact-submit {
+        width: 342px;
+        font-size: 35px;
+        padding-bottom: 8px;
+    }
+
+    .form-entry {
+        width: 280px;
+    }
+
+    .wyld-form-plans {
+        width: 280px;
+    }
+
+    .form-text-pane {
+        left: -35px;
+        width: 347px;
+        top: 0px;
+    }
+
+    .form-mix-pane {
+        width: 280px;
+    }
+
+    .bulk-discount-pane {
+        left: 24px;
+    }
+
+    .textarea-section {
+        width: 280px;
+    }
+
+}
+
+
+@media screen and (max-width: 359px) {
+
+    .logo {
+        width: 264px;
+    }
+
+    .how-it-works-wrapper {
+        width: 250px;
+    }
+
+    .wyld-why li {
+        font-size: 16px;
+    }
+
+    .plan-text {
+        margin-top: 46px;
+        padding: 0px 29px 20px;
+    }
+
+    .card--wyld-center {
+        width: 270px;
+    }
+
+    .mix-body-text {
+        margin-top: 70px;
+        padding: 0px 14px 0px;
+    }
+
+    .mix-body-text p {
+        max-width: 270px;
+        margin-left: 0px;
+    }
+
+    #pick-mix h2 {
+        padding: 0 45px;
+    }
+
+    .card--wyld-left {
+        width: 270px;
+    }
+
+    .card--wyld-right {
+        width: 270px;
+    }
+
+    .card-art {
+        height: 173px;
+
+    }
+
+    .mix-text {
+        margin: 8px;
+        padding: 0;
+    }
+
+    .mix-quantity {
+        right: 56px;
+    }
+
+    .custom-btn-slider {
+        right: -72px;
+        width: 394px;
+    }
+
+    .custom-close {
+        left: 103px;
+    }
+
+    .custom-ingredients {
+        width: 40%;
+        left: -22px;
+    }
+
+    .custom-order {
+        height: 577px;
+    }
+
+    .custom-order-button {
+        width: 262px;
+    }
+
+    .custom-order-btn-clicked {
+        width: 132px;
+    }
+
+    .custom-order-hidden-clicked {
+        width: 133px;
+        right: 2px !important;
+    }
+
+    .custom-quantity {
+        width: 131px;
+        right: 0px;
+    }
+
+    .custom-btn-slider-anim {
+        transform: translateX(-131px);
+    }
+
+    .custom-quantity p {
+        left: 13px!important;
+    }
+
+    .custom-quantity input {
+        left: 68px;
+    }
+
+
+    .custom-quantity img {
+        left: 13px!important;
+    }
+
+
+    .card--contact-form {
+        width: 270px;
+    }
+
+    .contact-submit {
+        width: 262px;
+        font-size: 32px;
+        padding-bottom: 8px;
+        top: -304px;
+        left: -30px;
+    }
+
+    .form-entry {
+        width: 202px;
+    }
+
+    .wyld-form-plans {
+        width: 202px;
+    }
+
+    .form-text-pane {
+        left: -25px;
+        width: 250px;
+        top: 0px;
+        padding: 0;
+    }
+
+    .form-text-pane p {
+        font-size: 16px;
+    }
+
+    .form-mix-pane {
+        right: -20px;
+        width: 241px;
+    }
+
+    .price-per-pane {
+        padding: 5px 1px;
+        width: 74px;
+        left: 7px;
+    }
+  
+    .bulk-discount-pane {
+        left: 10px;
+        width: 74px;
+    }
+
+    .price-pane {
+        width: 75px;
+    }
+
+    .textarea-section {
+        width: 202px;
+    }
+
+    .wyld-form-plans label {
+        font-size: 17px;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    .wyld-form-plans input {
+        height: 20px;
+        padding-bottom: 4px;
+    }
+
+    #contact-button-bottom {
+        font-size: 37px;
     }
 
 }

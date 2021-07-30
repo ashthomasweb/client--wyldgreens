@@ -531,7 +531,7 @@
 
 .why-section {
     position: relative;
-    height: 1102px;
+    /* height: 1102px; */
     margin-top: 70px;
 }
 
@@ -587,11 +587,12 @@
 .mix-body-text p {
     display: inline-block;
     max-width: 600px;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 10px 15px;
     text-align: left;
     font-size: 20.5px;
     line-height: 1.75;
     letter-spacing: .5px;
+
 }
 
 .custom-img {
@@ -947,7 +948,7 @@
     height: 45px;
     width: 500px;
     position: absolute;
-    transition: transform .3s ease-out;
+    /* transition: transform .2s ease-out; */
     background-color: white;
     z-index: 4;
     bottom: 0;
@@ -1262,6 +1263,9 @@
 }
 
 .plan-text p {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     display: inline-block;
     max-width: 600px;
     margin: 0px 0px 10px 0px;
@@ -1763,4 +1767,8 @@
 
 .delivery {
     top: 20px;
+}
+
+.plan-spacer {
+    height: 130px;
 }
