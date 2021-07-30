@@ -176,6 +176,10 @@
             width: 265.31px;
         }
 
+        .why-section {
+            margin-top: 235px;
+        }
+
     }
 
 }
@@ -296,5 +300,58 @@
 
     }
 
+
+}
+
+
+@media screen and (max-width: 529px) {
+
+    .logo {
+        width: 420px;
+    }
+
+    .cta-back {
+        height: 700px;
+        margin-bottom: 0;
+    }
+
+    .l-box-third {
+        display: block;
+    }
+
+    #plan-button {
+        left: 0;
+        margin-bottom: 15px;
+    }
+
+    #order-button {
+        top: 15px;
+        right: 0;
+    }
+
+    .why-section {
+        margin-top: 30px;
+    }
+
+    .plan-text p {
+        font-size: 19px;
+        line-height: 1.5;
+        max-width: 336px;
+    }
+
+    .card--wyld-sides {
+        margin: 15px -24px;
+    }
+
+
+    .mix-body-text p {
+        font-size: 19px;
+        line-height: 1.5;
+        max-width: 325px;
+    }
+
+    .adjust-order {
+        top: -55px;
+    }
 
 }
