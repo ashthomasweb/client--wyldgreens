@@ -4,7 +4,7 @@
 
 .plane-pane-anim-right {
     position: absolute;
-    top: 2700px;
+    top: 2000px;
     left: -500px;
     z-index: 0;
     height: 60px;
@@ -21,7 +21,7 @@
     transition: left 40s linear, top 6.5s ease-in-out;
 
 }
-
+/* 
 .plane-pane-anim-right-low {
     position: absolute;
     
@@ -29,8 +29,7 @@
     height: 60px;
     width: 400px;
     transform: scale(0.4);
-    /* transition: left 40s linear, top 6.5s ease-in-out; */
-}
+} */
 
 .plane-go-right {
     left: 1500px !important;

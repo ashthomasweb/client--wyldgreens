@@ -4,7 +4,7 @@ let ctaBtnPlan = document.querySelector('#plan-button');
 let ctaBtnMix = document.querySelector('#mix-button');
 let ctaBtnOrder = document.querySelector('#order-button');
 
-let pxBack = document.querySelector('.l-body-wrapper--contact');
+let pxBack = document.querySelector('.background-scene');
 let lowPlane = document.querySelector('.plane-px');
 
 let lightboxPane = document.querySelector('.lightbox');
@@ -30,10 +30,10 @@ ctaBtnOrder.addEventListener('click', () => {
 // PARALLAX
 
 document.addEventListener('scroll', () => {
-    let imageOffsetRatio = 470;
+    let imageOffsetRatio = 580;
     let amount = (window.scrollY / imageOffsetRatio) * 100;
-    let string = `-${amount}px`;
-    pxBack.style.backgroundPositionY = string;
+    let string = `-${amount*2}px`;
+    pxBack.style.transform = `translateY(${string})`;
     // lowPlane.style.bottom = `${string}`;
 });
 
@@ -139,16 +139,16 @@ function planeOnLoad() {
             planeDown();
     }, 11000);
 
-    // setTimeout(() => {
-    //     planeToRight();
-    //     setInterval(() => {
-    //         if ( Math.random() * .5 >= .5 ) {
-    //             planeUpRight();
-    //         } else {
-    //             planeDownRight();
-    //         }
-    //     }, 11000);
-    // }, 20000);
+    planeToRight();
+    setTimeout(() => {
+        setInterval(() => {
+            if ( Math.random() * .5 >= .5 ) {
+                planeUpRight();
+            } else {
+                planeDownRight();
+            }
+        }, 11000);
+    }, 20000);
 }
 
 // PLANE TO RIGHT

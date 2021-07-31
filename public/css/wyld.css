@@ -271,9 +271,6 @@
     width: 790px;
 }
 
-
-
-
 .grey-drop {
     position: absolute !important;
     width: 100% !important;
@@ -1773,8 +1770,10 @@
     height: 130px;
 }
 
-/* .background-scene {
-    position: absolute;
+.background-scene {
+    position: fixed;
     width: 100vw;
-    height: auto;
-} */
+    /* height: 3500px; */
+    /* transform: translateY(-50%); */
+}
+

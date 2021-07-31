@@ -164,10 +164,10 @@ footer a:hover {
 }
 
 .l-body-wrapper--contact {
-    background-image: url(/images/horse-farm-large.png);
-    background-size: 100vw 2000px;
-    background-position-y: 0%;
-    background-attachment: fixed;
+    /* background-image: url(/images/horse-farm-large.png); */
+    /* background-size: 100vw 2000px; */
+    /* background-position-y: 0%; */
+    /* background-attachment: fixed; */
     /* transition: background-position-y 1s ease-in-out; */
 }
 
