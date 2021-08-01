@@ -252,17 +252,6 @@
 
 /* HEADER  */
 
-
-
-/* .logo-banner {
-    position: absolute;
-    z-index: 5;
-    width: 81vw;
-    height: 322px;
-    top: 32px;
-    right: -111px;
-} */
-
 .logo {
     position: relative;
     z-index: 6;
@@ -1720,7 +1709,6 @@
 }
 
 .message {
-    /* left: 176px; */
     position: relative;
 }
 
@@ -1747,7 +1735,6 @@
     pointer-events: none;
 }
 
-
 .hills {
     width: 105px;
     top: 16px;
@@ -1773,7 +1760,5 @@
 .background-scene {
     position: fixed;
     width: 100vw;
-    /* height: 3500px; */
-    /* transform: translateY(-50%); */
 }
 
