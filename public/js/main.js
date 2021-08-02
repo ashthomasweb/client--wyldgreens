@@ -27,15 +27,82 @@ ctaBtnOrder.addEventListener('click', () => {
     window.scrollBy(0, -50);
 });
 
+
+
+
+
+
+
+
+
+// let pxBack = document.querySelector('.background-scene');
+// let lowPlane = document.querySelector('.plane-px');
+
 // PARALLAX
 
 document.addEventListener('scroll', () => {
-    let imageOffsetRatio = 580;
+    let imageOffsetRatio = 410;
     let amount = (window.scrollY / imageOffsetRatio) * 100;
     let string = `-${amount*2}px`;
     pxBack.style.transform = `translateY(${string})`;
     // lowPlane.style.bottom = `${string}`;
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // LIGHTBOX
 

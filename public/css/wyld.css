@@ -1760,5 +1760,16 @@
 .background-scene {
     position: fixed;
     width: 100vw;
+    height: 3500px;
+    text-align: center;
 }
 
+.scene-back {
+    background-image: url(/images/farm/horse-farm-large-test1.png);
+    background-position: center;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 100%;
+    height: 3500px;
+}
