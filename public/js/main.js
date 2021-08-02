@@ -40,19 +40,41 @@ ctaBtnOrder.addEventListener('click', () => {
 
 // PARALLAX
 
-document.addEventListener('scroll', () => {
-    let imageOffsetRatio = 410;
-    let amount = (window.scrollY / imageOffsetRatio) * 100;
+
+let parallaxOn = () => {
+    let imageOffsetRatio = 4.1;
+    let amount = (window.scrollY / imageOffsetRatio);
     let string = `-${amount*2}px`;
     pxBack.style.transform = `translateY(${string})`;
-    // lowPlane.style.bottom = `${string}`;
-});
+}
+
+
+document.addEventListener('scroll', parallaxOn, false);
 
 
 
 
 
 
+
+let scrollStop = () => {
+    let clientHeight = document.documentElement.clientHeight;
+    let pxBackPos = pxBack.style.top
+
+    if (window.scrollY / 4.1 + clientHeight >= 2100) {
+        console.log('test')
+        // parallaxOn();
+        document.removeEventListener('scroll', parallaxOn, false);
+
+    } else if (window.scrollY / 4.1 + clientHeight < 2100) {
+        document.addEventListener('scroll', parallaxOn, false);
+    }
+
+}
+
+
+
+document.addEventListener('scroll', scrollStop, false);
 
 
 
@@ -203,13 +225,13 @@ function planeOnLoad() {
     planeDown();
     // planeDown();
     setInterval(() => {
-            planeDown();
+        planeDown();
     }, 11000);
 
     planeToRight();
     setTimeout(() => {
         setInterval(() => {
-            if ( Math.random() * .5 >= .5 ) {
+            if (Math.random() * .5 >= .5) {
                 planeUpRight();
             } else {
                 planeDownRight();
@@ -249,7 +271,7 @@ function planeDownRight() {
 
     planeWrapRight.classList.add('plane-wrap-down-right');
     bannerWrapRight.classList.add('banner-wrap-down-right');
-    
+
     setTimeout(() => {
         planeRight.style.top = `${currentAltitude + 150}px`;
     }, 350)
