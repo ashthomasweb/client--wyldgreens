@@ -59,7 +59,7 @@ document.addEventListener('scroll', parallaxOn, false);
 
 let scrollStop = () => {
     let clientHeight = document.documentElement.clientHeight;
-    let pxBackPos = pxBack.style.top
+    let pxBackPos = pxBack.style.top;
 
     if (window.scrollY / 4.1 + clientHeight >= 2100) {
         console.log('test')

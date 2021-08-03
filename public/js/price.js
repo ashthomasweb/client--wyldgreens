@@ -1,4 +1,3 @@
-
 let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
 let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
@@ -74,7 +73,7 @@ function hideBulkDiscount() {
             discountBool = true;
         }
     });
-    if ( bulkDelBool === true ) {
+    if (bulkDelBool === true) {
         discountBool = true;
     }
     if (discountBool === false) {
@@ -83,7 +82,7 @@ function hideBulkDiscount() {
 }
 
 function changeMixMax() {
-    if ( bulkDelBool === true ) {
+    if (bulkDelBool === true) {
         farmersQuanInput.max = '1';
         farmersQuanInput.value = '1';
         healthyQuanInput.max = '1';
@@ -95,7 +94,7 @@ function changeMixMax() {
         customQuanInput.max = '1';
         customQuanInput.value = '1';
 
-    } else if ( bulkDelBool === false ) {
+    } else if (bulkDelBool === false) {
         farmersQuanInput.max = '3';
         healthyQuanInput.max = '3';
         saladQuanInput.max = '3';
@@ -108,40 +107,73 @@ function getPriceTotal(id) {
     function updateDisplay() {
         formTotalPrice.value = price.toString();
     }
+    
+    function applyDiscount() {
+        price = price - getBulkDiscount();
+    }
 
     customRemoveDisplayHandler();
-    
+
     let planPrice;
     let price;
-    
+
     function getPlanPrice(input) {
         planPrice = input;
     }
-    
+
     getTotalCustom();
 
     formCheckWeekly.checked === true && getPlanPrice(10);
     formCheckOnetime.checked === true && getPlanPrice(12);
     formCheckBulk.checked === true && getPlanPrice(30);
-    
-    let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
+
+    // let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
+    let discountList = [...formQuanList];
+    discountList.pop();
+    let comboList = discountList.concat(formCustomQuanList)
+
+    // console.log(comboList);
+
+    function getBulkDiscount() {
+        let quantity = 0;
+        let discount;
+        comboList.forEach((item) => {
+            if (item.value == 3) {
+                quantity++;
+            }
+        });
+
+        if (formCheckWeekly.checked === true) {
+            discount = 2;
+        } else if (formCheckOnetime.checked === true) {
+            discount = 6;
+        }
+
+        console.log(quantity * discount);
+        return quantity * discount;
+    }
+
+    // getBulkDiscount();
+
     let totalQuantity = 0;
-    
-    for (let i = 0; i <= checkList.length - 1; i++) {
-        totalQuantity += Number(checkList[i].value);
+
+    for (let i = 0; i <= formQuanList.length - 1; i++) {
+        totalQuantity += Number(formQuanList[i].value);
     }
 
     priceTotal.value = totalQuantity;
 
-    if ( planPrice === undefined ) {
-        pricePerP.innerHTML = `Each Box<br>0 $`;
-    } else if ( planPrice !== undefined ) {
-        pricePerP.innerHTML = `Each Box<br>${planPrice} $`;
+    if (planPrice === undefined) {
+        pricePerP.innerHTML = `Each Box<br>$ 0`;
+    } else if (planPrice !== undefined) {
+        pricePerP.innerHTML = `Each Box<br>$ ${planPrice}`;
     }
-    // console.log(`Called from: ${id} >> ${totalQuantity}`);
+   
     price = totalQuantity * Number(planPrice);
+
+
+    !isNaN(getBulkDiscount()) && applyDiscount();
     !isNaN(price) && updateDisplay();
     displayBulkDiscount();
     hideBulkDiscount();
 }
-

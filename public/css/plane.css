@@ -97,7 +97,7 @@
     display: inline-block;
     margin-left: -4px;
     position: absolute;
-    left: -8px;
+    left: 2px;
     bottom: 5px;
     animation: flap infinite 1s;
     animation-direction: alternate-reverse;
