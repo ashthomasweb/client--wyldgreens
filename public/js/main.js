@@ -81,6 +81,16 @@ document.addEventListener('scroll', scrollStop, false);
 
 
 
+let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+if (isMobile){
+    document.removeEventListener('scroll', parallaxOn, false);
+
+ // bypass parallax effect
+}
+
+
+
+
 
 
 
