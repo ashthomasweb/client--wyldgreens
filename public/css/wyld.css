@@ -1652,15 +1652,22 @@
 
 }
 
+.form-mix-pane input::placeholder {
+    font-family: var(--headers);
+}
+
+
 .price-input::placeholder {
     font-style: normal;
+    font-family: var(--headers);
+
     color: var(--secondary-color);
     opacity: 1;
 }
 
 
 ::placeholder {
-    font-family: var(--headers);
+    font-family: var(--copy);
     font-size: 22px;
 
 }

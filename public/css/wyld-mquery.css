@@ -1,3 +1,38 @@
+/* BACKGROUND SCENE  */
+
+@media screen and (min-width: 2000px) {
+
+    .scene-back {
+        background-image: url(/images/farm/horse-farm-large-test1.png);
+    }
+}
+
+
+@media screen and (max-width: 1999px) {
+    .scene-back {
+
+        background-image: url(/images/farm/horse-farm-mid.png);
+    }
+
+}
+
+
+
+@media screen and (max-width: 999px) {
+    .scene-back {
+
+        background-image: url(/images/farm/horse-farm-sm.png);
+    }
+
+}
+
+
+
+
+
+
+
+
 /* ORDER FORM  */
 @media screen and (max-width: 830px) {
 
@@ -564,7 +599,7 @@
     }
 
     .custom-quantity p {
-        left: 13px!important;
+        left: 13px !important;
     }
 
     .custom-quantity input {
@@ -573,7 +608,7 @@
 
 
     .custom-quantity img {
-        left: 13px!important;
+        left: 13px !important;
     }
 
 
@@ -618,7 +653,7 @@
         width: 74px;
         left: 7px;
     }
-  
+
     .bulk-discount-pane {
         left: 10px;
         width: 74px;
