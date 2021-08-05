@@ -41,6 +41,10 @@ ctaBtnOrder.addEventListener('click', () => {
 // PARALLAX
 
 
+let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+
+
+
 let parallaxOn = () => {
     let imageOffsetRatio = 4.1;
     let amount = (window.scrollY / imageOffsetRatio);
@@ -48,45 +52,31 @@ let parallaxOn = () => {
     pxBack.style.transform = `translateY(${string})`;
 }
 
-
-document.addEventListener('scroll', parallaxOn, false);
-
-
-
-
-
-
-
 let scrollStop = () => {
     let clientHeight = document.documentElement.clientHeight;
     let pxBackPos = pxBack.style.top;
 
     if (window.scrollY / 4.1 + clientHeight >= 2100) {
-        console.log('test')
         // parallaxOn();
         document.removeEventListener('scroll', parallaxOn, false);
 
     } else if (window.scrollY / 4.1 + clientHeight < 2100) {
         document.addEventListener('scroll', parallaxOn, false);
     }
-
 }
 
+if ( !isMobile ) {
+    document.addEventListener('scroll', parallaxOn, false);
+    document.addEventListener('scroll', scrollStop, false);
+} 
 
 
-document.addEventListener('scroll', scrollStop, false);
 
 
 
 
 
 
-let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-if (isMobile){
-    document.removeEventListener('scroll', parallaxOn, false);
-
- // bypass parallax effect
-}
 
 
 

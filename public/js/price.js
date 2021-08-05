@@ -153,8 +153,6 @@ function getPriceTotal(id) {
         return quantity * discount;
     }
 
-    // getBulkDiscount();
-
     let totalQuantity = 0;
 
     for (let i = 0; i <= formQuanList.length - 1; i++) {
