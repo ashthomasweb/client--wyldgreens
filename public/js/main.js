@@ -125,29 +125,31 @@ if ( !isMobile ) {
 
 
 
-
 // LIGHTBOX
 
+let bodyWrap = document.querySelector('.l-body-wrapper--contact');
 let lightboxBool = false;
 
 function closeLightbox() {
     console.log(lightboxBool)
-    window.removeEventListener('click', closeLightbox, false)
+    window.removeEventListener('click', closeLightbox, true)
 
     if (lightboxBool === true) {
         lightboxPane.style.opacity = '0';
-        lightboxPane.pointerEvents = 'none';
+        lightboxPane.style.pointerEvents = 'none';
         lightboxBool = false;
+        bodyWrap.style.pointerEvents = 'auto';
     }
 }
 
 function openLightbox() {
     if (lightboxBool === false) {
-        lightboxPane.pointerEvents = 'auto';
+        lightboxPane.style.pointerEvents = 'auto';
         lightboxPane.style.opacity = '1';
         lightboxBool = true;
+        bodyWrap.style.pointerEvents = 'none';
         setTimeout(() => {
-            window.addEventListener('click', closeLightbox, false)
+            window.addEventListener('click', closeLightbox, true)
         }, 10);
     }
 }
