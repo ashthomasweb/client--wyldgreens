@@ -1,5 +1,5 @@
 // JavaScript file for 'Wyld'
-
+let fullForm = document.getElementById('contact-form');
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
 let formCheckBulk = document.querySelector('[name=bulk]');
@@ -31,19 +31,21 @@ function clearPlansForm() {
 }
 
 // FIELD CHECK AND STYLE CHANGE ON STATE
-const allUnchecked = (currentItem) => currentItem.checked === false;
 
+// ** my first usage of Array.every()! I'm so happy! Checking the total value of the form 
+// invalidates the necessesity of this function, but I wanted to yell it from a mountain 
+// but all I had was this keyboard, and you.
+const allUnchecked = (currentItem) => currentItem.checked === false;
+let planCheckArray = [formCheckBulk, formCheckOnetime, formCheckWeekly];
 function planCheckReady() {
-  if ( planCheckArray.every(allUnchecked) === true ) {
-    return false;
-  } else {
-    return true;
-  }
+    if (planCheckArray.every(allUnchecked) === true) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
-
-let planCheckArray = [formCheckBulk, formCheckOnetime, formCheckWeekly];
-
+document.querySelector('#contact-form').addEventListener('input', formFieldCheck);
 
 function formFieldCheck() {
     let name = document.forms['contact']['user_name'].value;
@@ -51,8 +53,7 @@ function formFieldCheck() {
     let message = document.forms['contact']['message'].value;
     let elem = document.getElementById('contact-button');
 
-
-    if (name == '' || email == '' || message == '' || planCheckReady() === false ) { // not ready, upon typing
+    if (name == '' || email == '' || message == '' || planCheckReady() === false || formTotalPrice.value === '' || formTotalPrice.value === 0) { // not ready, upon typing
         elem.style.backgroundColor = 'pink';
         elem.style.pointerEvents = 'none';
         elem.style.color = 'var(--copy-dark)';

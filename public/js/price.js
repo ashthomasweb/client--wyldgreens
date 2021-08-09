@@ -169,7 +169,7 @@ function getPriceTotal(id) {
    
     price = totalQuantity * Number(planPrice);
 
-
+    formFieldCheckTest();
     !isNaN(getBulkDiscount()) && applyDiscount();
     !isNaN(price) && updateDisplay();
     displayBulkDiscount();

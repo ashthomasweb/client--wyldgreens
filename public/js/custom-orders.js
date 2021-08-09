@@ -127,6 +127,8 @@ function addIngredientForm() {
 }
 
 function removeCustomOrder(input) {
+    // formFieldCheckTest();
+
     if (input === 1) {
         customOrder1.quantity = 0;
         customOrder1.ingredients = '';
@@ -215,8 +217,9 @@ function order2Input() {
     customOrder2.quantity = Number(customOrder2Input.value);
     Number(customOrder2Input.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     customCheck.checked = true;
-    if (customOrder2Input.value === '0') {
+    if (customOrder2Input.value === '0'  || customOrder2Input.value === '') {
         customOrder2Input.value = '';
+        removeCustomOrder(2);
     }
     customNewOrder();
     getPriceTotal(20);
@@ -229,8 +232,9 @@ function order3Input() {
     customOrder3.quantity = Number(customOrder3Input.value);
     Number(customOrder3Input.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     customCheck.checked = true;
-    if (customOrderInput3.value === '0') {
-        customOrderInput3.value = '';
+    if (customOrder3Input.value === '0' || customOrder3Input.value === '') {
+        customOrder3Input.value = '';
+        removeCustomOrder(3);
     }
     customNewOrder();
     getPriceTotal(19);
