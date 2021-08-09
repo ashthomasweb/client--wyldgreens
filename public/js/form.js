@@ -31,6 +31,19 @@ function clearPlansForm() {
 }
 
 // FIELD CHECK AND STYLE CHANGE ON STATE
+const allUnchecked = (currentItem) => currentItem.checked === false;
+
+function planCheckReady() {
+  if ( planCheckArray.every(allUnchecked) === true ) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
+let planCheckArray = [formCheckBulk, formCheckOnetime, formCheckWeekly];
+
 
 function formFieldCheck() {
     let name = document.forms['contact']['user_name'].value;
@@ -38,16 +51,17 @@ function formFieldCheck() {
     let message = document.forms['contact']['message'].value;
     let elem = document.getElementById('contact-button');
 
-    if (name == '' || email == '' || message == '') { // on ready
-        elem.style.backgroundColor = 'var(--primary-light)';
+
+    if (name == '' || email == '' || message == '' || planCheckReady() === false ) { // not ready, upon typing
+        elem.style.backgroundColor = 'pink';
         elem.style.pointerEvents = 'none';
         elem.style.color = 'var(--copy-dark)';
 
-    } else { // upon typing
-        elem.style.backgroundColor = 'var(--primary-color)';
+    } else { // on ready
+        elem.style.backgroundColor = 'lightblue';
         elem.style.pointerEvents = 'auto';
         elem.style.color = 'var(--highlight)';
-        elem.innerHTML = 'Place<br>Your Order'
+        elem.innerHTML = 'Place<br>Your Order!'
     }
 }
 
@@ -301,4 +315,3 @@ function healthyInput() {
     Number(formHealthyQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal(9);
 }
-
