@@ -1,17 +1,17 @@
 // DOM OBJECT ASSIGMENTS 
 
 let customOrder1Pane = document.querySelector('.num-1');
-let customOrder1P = document.querySelector('.num-1 p');
+let customOrder1P = document.querySelector('.num-1 textarea');
 let customOrder1Input = document.querySelector('.num-1 input');
 let customOrder1Img = document.querySelector('.num-1 img');
 
 let customOrder2Pane = document.querySelector('.num-2')
-let customOrder2P = document.querySelector('.num-2 p')
+let customOrder2P = document.querySelector('.num-2 textarea')
 let customOrder2Input = document.querySelector('.num-2 input')
 let customOrder2Img = document.querySelector('.num-2 img')
 
 let customOrder3Pane = document.querySelector('.num-3')
-let customOrder3P = document.querySelector('.num-3 p')
+let customOrder3P = document.querySelector('.num-3 textarea')
 let customOrder3Input = document.querySelector('.num-3 input')
 let customOrder3Img = document.querySelector('.num-3 img')
 
@@ -81,32 +81,34 @@ function applyIngredOffset() {
     }
 
     if (order1Length >= 22 ) {
-        customOrder1P.style.top = '-7px';
+        customOrder1P.style.top = '-10px';
     } else if ( order1Length <= 21 ) {
-        customOrder1P.style.top = '0px';
+        customOrder1P.style.top = '-3px';
     }
 
     if ( order2Length >= 22 ) {
-        customOrder2P.style.top = '-7px';
+        customOrder2P.style.top = '-10px';
     } else if ( order2Length <= 21 ) {
-        customOrder2P.style.top = '0px';
+        customOrder2P.style.top = '-3px';
     }
 
     if ( order3Length >= 22 ) {
-        customOrder3P.style.top = '-7px';
+        customOrder3P.style.top = '-10px';
     } else if ( order3Length <= 21 ) {
-        customOrder3P.style.top = '0px';
+        customOrder3P.style.top = '-3px';
     }
 }
 
 function newCustomDisplay() {
 
     customOrder1P.innerHTML = `${customOrder1.ingredients}`;
+    customOrder1P.innerHTML = customOrder1P.value.slice(1);
     customOrder1Input.value = customOrder1.quantity.toString();
     customOrder2Pane.style.display = 'block';
     if (customOrder2.ingredients !== '') {
         document.querySelector('.num-2').style.display = 'block';
         customOrder2P.innerHTML = `${customOrder2.ingredients}`;
+        customOrder2P.innerHTML = customOrder2P.value.slice(1);
         customOrder2Input.value = customOrder2.quantity.toString();
         customOrder3Pane.style.display = 'block';
     }
@@ -114,8 +116,13 @@ function newCustomDisplay() {
     if (customOrder3.ingredients !== '') {
         customOrder3Pane.style.display = 'block';
         customOrder3P.innerHTML = `${customOrder3.ingredients}`;
+        customOrder3P.innerHTML = customOrder3P.value.slice(1);
         customOrder3Input.value = customOrder3.quantity.toString();
     }
+
+
+
+
     applyIngredOffset();
 }
 
@@ -123,7 +130,6 @@ function addIngredientForm() {
     customNewOrder();
     customOrderOn();
     window.location.href = '#custom-box';
-    // window.scrollBy(0, -80);
 }
 
 function removeCustomOrder(input) {
@@ -132,21 +138,21 @@ function removeCustomOrder(input) {
     if (input === 1) {
         customOrder1.quantity = 0;
         customOrder1.ingredients = '';
-        customOrder1P.innerHTML = 'Add Ingredients';
+        customOrder1P.textContent = 'Add Ingredients';
         customOrder1Input.value = '';
         customNewOrder();
 
     } else if (input === 2) {
         customOrder2.quantity = 0;
         customOrder2.ingredients = '';
-        customOrder2P.innerHTML = 'Add Ingredients';
+        customOrder2P.textContent = 'Add Ingredients';
         customOrder2Input.value = '';
         customNewOrder();
 
     } else if (input === 3) {
         customOrder3.quantity = 0;
         customOrder3.ingredients = '';
-        customOrder3P.innerHTML = 'Add Ingredients';
+        customOrder3P.textContent = 'Add Ingredients';
         customOrder3Input.value = '';
         customNewOrder();
 

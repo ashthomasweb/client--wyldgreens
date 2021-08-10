@@ -436,7 +436,7 @@
                                             <img class="custom-btn-check" src="/images/icons/check.png">
                                             <img class="custom-btn-cross" src="/images/icons/cross.png">
                                             <p>How<br>Many?</p>
-                                            <input oninput="customUpdate()" class="custom-num-input" type="number" min="1" max="3" value="1">
+                                            <input oninput="customUpdate()" class="custom_num-input" type="number" min="1" max="3" value="1">
                                         </div>
                                     </div>
 
@@ -490,17 +490,17 @@
                     <div class="contact-card-top-section">
                         <div class="wyld-contact-info">
                             <label class="form-title">Your Name:</label>
-                            <input class="form-entry" type="text" name="user_name" placeholder="Jean Luc" oninput="formFieldCheck()">
+                            <input class="form-entry" type="text" name="user_name" placeholder="Jean Luc" onkeydown="return (event.keyCode!=13);" >
                             <label class="form-title">Email:</label>
-                            <input class="form-entry" type="email" name="user_email" placeholder="your@email.com" oninput="formFieldCheck()">
+                            <input class="form-entry" type="email" name="user_email" placeholder="your@email.com" onkeydown="return (event.keyCode!=13);">
                             <label class="form-title">City/Town</label>
-                            <input class="form-entry" type="text" name="user_city" placeholder="Boulder, Superior, Louisville, Lafayette">
+                            <input class="form-entry" type="text" name="user_city" placeholder="Boulder, Superior, Louisville, Lafayette" onkeydown="return (event.keyCode!=13);">
                             <label style="width: 140px;" class="form-title">Phone Number</label>
-                            <input class="form-entry" type="text" name="user_phone" placeholder="303 - 444 - 1234">
+                            <input class="form-entry" type="text" name="user_phone" placeholder="303 - 444 - 1234" onkeydown="return (event.keyCode!=13);">
                         </div>
 
                         <div class="wyld-options">
-                            <button id="contact-button" class="contact-submit" type="submit" onclick="sendingText()">Review Your Order</button>
+                            <button id="contact-button" class="contact-submit">Your Order Form</button>
                             <div class="wyld-form-plans">
                                 <label for="one_time" class="form-title">One-time Order</label>
                                 <input id="one_time" type="checkbox" name="one_time" oninput="oneTimeDel()">
@@ -530,7 +530,7 @@
                         <div class="textarea-section">
                             <div class="message-details">
                                 <label class="form-title message">Special Instructions:</label><br>
-                                <textarea id="message-body" class="form-textarea-message" name="message" placeholder="Anything else to add?" oninput="formFieldCheck()"></textarea>
+                                <textarea id="message-body" class="form-textarea-message" name="message" placeholder="Anything else to add?" ></textarea>
                             </div>
                         </div>
 
@@ -539,31 +539,31 @@
                                 <div class="mix-wrap">
                                     <input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">
                                     <label class="form-title mix-title">Farmer's Mix</label>
-                                    <input class="form-num" type="number" name="farmers-num" placeholder="0" min="1" max="3" oninput="farmersInput()">
+                                    <input class="form-num" type="number" name="farmers_num" placeholder="0" min="1" max="3" oninput="farmersInput()">
                                 </div>
 
                                 <div class="mix-wrap">
                                     <input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">
                                     <label class="form-title mix-title">Spicy Mix</label>
-                                    <input class="form-num" type="number" name="spicy-num" placeholder="0" min="1" max="3" oninput="spicyInput()">
+                                    <input class="form-num" type="number" name="spicy_num" placeholder="0" min="1" max="3" oninput="spicyInput()">
                                 </div>
 
                                 <div class="mix-wrap">
                                     <input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">
                                     <label class="form-title mix-title">Healthy Mix</label>
-                                    <input class="form-num" type="number" name="healthy-num" placeholder="0" min="1" max="3" oninput="healthyInput()">
+                                    <input class="form-num" type="number" name="healthy_num" placeholder="0" min="1" max="3" oninput="healthyInput()">
                                 </div>
 
                                 <div class="mix-wrap">
                                     <input type="checkbox" name="mix_salad" oninput="saladCheckbox()">
                                     <label class="form-title mix-title">Salad Mix</label>
-                                    <input class="form-num" type="number" name="salad-num" placeholder="0" min="1" max="3" oninput="saladInput()">
+                                    <input class="form-num" type="number" name="salad_num" placeholder="0" min="1" max="3" oninput="saladInput()">
                                 </div>
 
                                 <div class="mix-wrap">
                                     <input type="checkbox" name="mix_custom">
                                     <label class="form-title mix-title">Custom Mix</label>
-                                    <input class="form-num" type="number" name="custom-num" placeholder="0" min="0" max="3" onchange="customQuantityVerify()">
+                                    <input class="form-num" type="number" name="custom_num" placeholder="0" min="0" max="3" onchange="customQuantityVerify()">
                                 </div>
                             </div>
 
@@ -616,7 +616,7 @@
 
                     </div>
 
-                    <button id="contact-button-bottom" class="contact-submit-bottom" type="submit" onclick="sendingText()">Place Your Order</button>
+                    <button id="contact-button-bottom" class="contact-submit-bottom" onclick="sendOrder()">Place Your Order</button>
 
                 </form>
 

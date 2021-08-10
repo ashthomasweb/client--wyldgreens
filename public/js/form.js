@@ -3,11 +3,11 @@ let fullForm = document.getElementById('contact-form');
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
 let formCheckBulk = document.querySelector('[name=bulk]');
-let formFarmersQuan = document.querySelector('[name=farmers-num]');
-let formHealthyQuan = document.querySelector('[name=healthy-num]');
-let formSaladQuan = document.querySelector('[name=salad-num]');
-let formSpicyQuan = document.querySelector('[name=spicy-num]');
-let formCustomQuan = document.querySelector('[name=custom-num]');
+let formFarmersQuan = document.querySelector('[name=farmers_num]');
+let formHealthyQuan = document.querySelector('[name=healthy_num]');
+let formSaladQuan = document.querySelector('[name=salad_num]');
+let formSpicyQuan = document.querySelector('[name=spicy_num]');
+let formCustomQuan = document.querySelector('[name=custom_num]');
 let formTotalPrice = document.querySelector('[name=total-num]');
 
 let farmersCheck = document.querySelector('[name=mix_farmers]');
@@ -30,6 +30,23 @@ function clearPlansForm() {
     formCheckOnetime.checked = false;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // FIELD CHECK AND STYLE CHANGE ON STATE
 
 // ** my first usage of Array.every()! I'm so happy! Checking the total value of the form 
@@ -45,20 +62,24 @@ function planCheckReady() {
     }
 }
 
-document.querySelector('#contact-form').addEventListener('input', formFieldCheck);
+!document.querySelector('#contact-form') ?? document.querySelector('#contact-form').addEventListener('input', formFieldCheck);
+
+let formReadyBool = false;
 
 function formFieldCheck() {
     let name = document.forms['contact']['user_name'].value;
     let email = document.forms['contact']['user_email'].value;
     let message = document.forms['contact']['message'].value;
-    let elem = document.getElementById('contact-button');
+    let elem = document.getElementById('contact-button-bottom');
 
-    if (name == '' || email == '' || message == '' || planCheckReady() === false || formTotalPrice.value === '' || formTotalPrice.value === 0) { // not ready, upon typing
-        elem.style.backgroundColor = 'pink';
-        elem.style.pointerEvents = 'none';
+    if (name == '' || email == '' || message == '' || planCheckReady() === false || formTotalPrice.value === '' || formTotalPrice.value === 0 || formTotalPrice.value === "0" ) { // not ready
+        formReadyBool = false;
         elem.style.color = 'var(--copy-dark)';
 
+
     } else { // on ready
+        formReadyBool = true;
+
         elem.style.backgroundColor = 'lightblue';
         elem.style.pointerEvents = 'auto';
         elem.style.color = 'var(--highlight)';
@@ -66,10 +87,68 @@ function formFieldCheck() {
     }
 }
 
-function sendingText() {
-    let elem = document.getElementById('contact-button');
-    elem.innerText = 'Sending';
+
+function sendOrder() {
+
+
+    let elem = document.getElementById('contact-button-bottom');
+
+    if ( formReadyBool === true ) {
+        fullForm.submit();
+        elem.innerText = 'Sending';
+    } else {
+        console.log('test')
+    }
+    
 }
+
+
+function preventEnterSubmit(event) {
+    if ( event.keyCode === 13 ) {
+        event.preventDefault();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // MIX CHECKBOX AND INPUT HANDLING
 
@@ -316,3 +395,52 @@ function healthyInput() {
     Number(formHealthyQuan.value) === 3 ? displayBulkDiscount() : hideBulkDiscount();
     getPriceTotal(9);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FUTURE PLANS
+
+// let nameField = document.querySelector('[name=user_name]');
+// let prefixArray = ['Dr.', 'Prof.', 'Mr.', 'Mrs.', 'Dr', 'Prof', 'Mr', 'Mrs', 'Ms.', 'Ms', 'dr.']
+
+// nameField.addEventListener('change', nameChange, false);
+
+// function nameChange() {
+
+//     // if ( nameField.value.includes(' ') ) {
+//     //     nameField.value.
+//     // }
+
+//     document.querySelector('#contact-button').innerText = nameField.value + "'s Order";
+// }
+
+
+
+
+
+

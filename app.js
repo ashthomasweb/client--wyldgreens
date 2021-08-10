@@ -130,10 +130,13 @@ app.post('/', function (req, res) {
     let ifError = false;
 
     // Data recieved from the contact form
-    const { user_name, user_email, user_city, user_phone, message, one_time, weekly, mix_farmers, mix_custom, mix_healthy, mix_salad, mix_spicy  } = req.body;
+    const { user_name, user_email, user_city, user_phone, message, one_time, weekly, bulk, farmers_num, order1_num, order1_ing, order2_num, order2_ing, order3_num, order3_ing, healthy_num, salad_num, spicy_num  } = req.body;
+
+    
+    console.log(req.body);
 
     // Send form data to NodeMailer module
-    module.exports = { user_email, user_name, user_city, user_phone, message, one_time, weekly, mix_farmers, mix_custom, mix_healthy, mix_salad, mix_spicy };
+    module.exports = { user_email, user_name, user_city, user_phone, message, one_time, weekly, bulk, farmers_num, order1_num, order1_ing, order2_num, order2_ing, order3_num, order3_ing, healthy_num, salad_num, spicy_num };
 
     // ** LumberJack-Setup for NodeMailer - Adding additional templates **
 
@@ -141,12 +144,12 @@ app.post('/', function (req, res) {
     // and uncomment transporter object for newEmail Template.
 
     // Imports from NodeMailer module
-    const { transporter, inquiry, finalConfirm, newEmailTemplate } = require('./nodemailer.js');
+    const { transporter, inquiry, finalConfirm } = require('./nodemailer.js');
 
     // Transporter objects
     var userInquiry = transporter.sendMail(inquiry);
     var userConfirm = transporter.sendMail(finalConfirm);
-    var testEmail = transporter.sendMail(newEmailTemplate);
+    // var testEmail = transporter.sendMail(newEmailTemplate);
 
     // Populate the new variable into the Promise below, and add results to the 
     // console.log. Example below:
@@ -158,9 +161,9 @@ app.post('/', function (req, res) {
     */
 
     // Upon completion, sends response to page indicating success or failure.
-    Promise.all([userInquiry, userConfirm, testEmail])
-        .then(([resultInq, resultConf, resultTest]) => {
-            console.log("Emails sent", resultInq, resultConf, resultTest);
+    Promise.all([userInquiry, userConfirm])
+        .then(([resultInq, resultConf]) => {
+            console.log("Emails sent", resultInq, resultConf);
         })
         .catch((err) => {
             console.log(err);
@@ -183,33 +186,33 @@ app.get('/mock1', function (req, res) {
     });
 });
 
-app.get('/mock2', function (req, res) {
-    res.render('mock2', {
-        pageTitle: "Contact",
-        responseBool: false,
-    });
-});
+// app.get('/mock2', function (req, res) {
+//     res.render('mock2', {
+//         pageTitle: "Contact",
+//         responseBool: false,
+//     });
+// });
 
-app.get('/mock3', function (req, res) {
-    res.render('mock3', {
-        pageTitle: "Contact",
-        responseBool: false,
-    });
-});
+// app.get('/mock3', function (req, res) {
+//     res.render('mock3', {
+//         pageTitle: "Contact",
+//         responseBool: false,
+//     });
+// });
 
-app.get('/mock4', function (req, res) {
-    res.render('mock4', {
-        pageTitle: "Contact",
-        responseBool: false,
-    });
-});
+// app.get('/mock4', function (req, res) {
+//     res.render('mock4', {
+//         pageTitle: "Contact",
+//         responseBool: false,
+//     });
+// });
 
-app.get('/mock5', function (req, res) {
-    res.render('mock5', {
-        pageTitle: "Contact",
-        responseBool: false,
-    });
-});
+// app.get('/mock5', function (req, res) {
+//     res.render('mock5', {
+//         pageTitle: "Contact",
+//         responseBool: false,
+//     });
+// });
 
 // || Listener 
 
