@@ -3,7 +3,7 @@ let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
 let bulkDiscount = document.querySelector('.bulk-discount-pane');
 let pricePerP = document.querySelector('.price-per-pane p');
-let priceTotal = document.querySelector('[name=total-quan]');
+let priceTotal = document.querySelector('[name=total_quan]');
 
 let bulkMaxBool = false;
 

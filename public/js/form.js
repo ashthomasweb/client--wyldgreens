@@ -8,7 +8,7 @@ let formHealthyQuan = document.querySelector('[name=healthy_num]');
 let formSaladQuan = document.querySelector('[name=salad_num]');
 let formSpicyQuan = document.querySelector('[name=spicy_num]');
 let formCustomQuan = document.querySelector('[name=custom_num]');
-let formTotalPrice = document.querySelector('[name=total-num]');
+let formTotalPrice = document.querySelector('[name=total_price]');
 
 let farmersCheck = document.querySelector('[name=mix_farmers]');
 let healthyCheck = document.querySelector('[name=mix_healthy]');

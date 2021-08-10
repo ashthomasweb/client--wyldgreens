@@ -130,13 +130,13 @@ app.post('/', function (req, res) {
     let ifError = false;
 
     // Data recieved from the contact form
-    const { user_name, user_email, user_city, user_phone, message, one_time, weekly, bulk, farmers_num, order1_num, order1_ing, order2_num, order2_ing, order3_num, order3_ing, healthy_num, salad_num, spicy_num  } = req.body;
+    const { user_name, user_email, user_city, user_phone, message, one_time, weekly, bulk, farmers_num, order1_num, order1_ing, order2_num, order2_ing, order3_num, order3_ing, healthy_num, salad_num, spicy_num, total_price  } = req.body;
 
     
     console.log(req.body);
 
     // Send form data to NodeMailer module
-    module.exports = { user_email, user_name, user_city, user_phone, message, one_time, weekly, bulk, farmers_num, order1_num, order1_ing, order2_num, order2_ing, order3_num, order3_ing, healthy_num, salad_num, spicy_num };
+    module.exports = { user_email, user_name, user_city, user_phone, message, one_time, weekly, bulk, farmers_num, order1_num, order1_ing, order2_num, order2_ing, order3_num, order3_ing, healthy_num, salad_num, spicy_num, total_price };
 
     // ** LumberJack-Setup for NodeMailer - Adding additional templates **
 
