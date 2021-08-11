@@ -43,7 +43,9 @@ ctaBtnOrder.addEventListener('click', () => {
 
 let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 let sceneBack = document.querySelector('.scene-back');
-let mobilePara = document.querySelector('.mobile-p-pane');
+let mobileMix = document.querySelector('#mobile-p-mix');
+let mobilePlan = document.querySelector('#mobile-p-plan');
+
 
 
 let parallaxOn = () => {
@@ -78,7 +80,11 @@ function mobileStyling() {
     sceneBack.style.backgroundSize = 'cover';
     sceneBack.style.backgroundPosition = 'bottom';
     sceneBack.style.height = '100vh';
-    mobilePara.style.backgroundColor = 'white';
+
+    mobileMix.style.color = 'var(--copy-dark)';
+    mobilePlan.style.color = 'var(--copy-dark)';
+    mobileMix.style.fontWeight = '600';
+    mobilePlan.style.fontWeight = '600';
 }
 
 
