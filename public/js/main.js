@@ -42,7 +42,8 @@ ctaBtnOrder.addEventListener('click', () => {
 
 
 let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-
+let sceneBack = document.querySelector('.scene-back');
+let mobilePara = document.querySelector('.mobile-p-pane');
 
 
 let parallaxOn = () => {
@@ -65,10 +66,33 @@ let scrollStop = () => {
     }
 }
 
-if ( !isMobile ) {
+
+if (!isMobile) {
     document.addEventListener('scroll', parallaxOn, false);
     document.addEventListener('scroll', scrollStop, false);
-} 
+} else if ( isMobile ) {
+    mobileStyling();
+}
+
+function mobileStyling() {
+    sceneBack.style.backgroundSize = 'cover';
+    sceneBack.style.backgroundPosition = 'bottom';
+    sceneBack.style.height = '100vh';
+    mobilePara.style.backgroundColor = 'white';
+}
+
+
+
+// development/testing functions
+function forceParallaxOff() {
+    document.removeEventListener('scroll', parallaxOn, false);
+    document.removeEventListener('scroll', scrollStop, false);
+}
+
+function forceParallaxOn() {
+    document.addEventListener('scroll', parallaxOn, false);
+    document.addEventListener('scroll', scrollStop, false);
+}
 
 
 

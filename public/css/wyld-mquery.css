@@ -17,14 +17,19 @@
 }
 
 
-
-@media screen and (max-width: 999px) {
+/*  classes need to be assigned for mobile non-parallax scene only. On desktop, parallax needs to persist. */
+/* @media screen and (max-width: 840px) {
     .scene-back {
-
-        background-image: url(/images/farm/horse-farm-sm.png);
+        background-size: cover;
+        background-position: bottom;
+        height: 100vh;
     }
 
-}
+    .mobile-p-pane {
+
+    }
+
+} */
 
 
 
