@@ -1815,7 +1815,8 @@
 
 .scene-back {
     background-image: url(/images/farm/horse-farm-large-test1.png);
-    background-position: center;
+    background-position: bottom;
+    background-size: cover;
     position: absolute;
     overflow-x: hidden;
     overflow-y: visible;

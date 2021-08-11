@@ -28,16 +28,6 @@ ctaBtnOrder.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
-
-
-// let pxBack = document.querySelector('.background-scene');
-// let lowPlane = document.querySelector('.plane-px');
-
 // PARALLAX
 
 
@@ -45,8 +35,6 @@ let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(n
 let sceneBack = document.querySelector('.scene-back');
 let mobileMix = document.querySelector('#mobile-p-mix');
 let mobilePlan = document.querySelector('#mobile-p-plan');
-
-
 
 let parallaxOn = () => {
     let imageOffsetRatio = 4.1;
@@ -57,102 +45,25 @@ let parallaxOn = () => {
 
 let scrollStop = () => {
     let clientHeight = document.documentElement.clientHeight;
-    let pxBackPos = pxBack.style.top;
-
-    if (window.scrollY / 4.1 + clientHeight >= 2100) {
-        // parallaxOn();
-        document.removeEventListener('scroll', parallaxOn, false);
-
-    } else if (window.scrollY / 4.1 + clientHeight < 2100) {
-        document.addEventListener('scroll', parallaxOn, false);
+    if (pxBack.getBoundingClientRect().bottom < clientHeight) {
+        pxBack.style.transform = `translateY(-${3500 - clientHeight}px)`
     }
 }
-
 
 if (!isMobile) {
     document.addEventListener('scroll', parallaxOn, false);
     document.addEventListener('scroll', scrollStop, false);
-} else if ( isMobile ) {
+} else if (isMobile) {
     mobileStyling();
 }
 
 function mobileStyling() {
-    sceneBack.style.backgroundSize = 'cover';
-    sceneBack.style.backgroundPosition = 'bottom';
     sceneBack.style.height = '100vh';
-
     mobileMix.style.color = 'var(--copy-dark)';
     mobilePlan.style.color = 'var(--copy-dark)';
     mobileMix.style.fontWeight = '600';
     mobilePlan.style.fontWeight = '600';
 }
-
-
-
-// development/testing functions
-function forceParallaxOff() {
-    document.removeEventListener('scroll', parallaxOn, false);
-    document.removeEventListener('scroll', scrollStop, false);
-}
-
-function forceParallaxOn() {
-    document.addEventListener('scroll', parallaxOn, false);
-    document.addEventListener('scroll', scrollStop, false);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // LIGHTBOX
@@ -318,3 +229,28 @@ function planeLevelRight() {
     planeWrapRight.classList.remove('plane-wrap-down-right');
     bannerWrapRight.classList.remove('banner-wrap-down-right');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// // development/testing functions
+// function forceParallaxOff() {
+//     document.removeEventListener('scroll', parallaxOn, false);
+//     document.removeEventListener('scroll', scrollStop, false);
+// }
+
+// function forceParallaxOn() {
+//     document.addEventListener('scroll', parallaxOn, false);
+//     document.addEventListener('scroll', scrollStop, false);
+// }
+
+
+
