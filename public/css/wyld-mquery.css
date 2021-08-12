@@ -3,7 +3,7 @@
 @media screen and (min-width: 2000px) {
 
     .scene-back {
-        background-image: url(/images/farm/horse-farm-large-test1.png);
+        background-image: url(/images/farm/horse-farm-large-final-full.png);
     }
     
 }
@@ -12,7 +12,7 @@
 @media screen and (max-width: 1999px) {
 
     .scene-back {
-        background-image: url(/images/farm/horse-farm-mid.png);
+        background-image: url(/images/farm/horse-farm-mid-final.png);
     }
 
 }
