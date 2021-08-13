@@ -13,23 +13,7 @@
     transition: left 40s linear, top 6.5s ease-in-out;
 }
 
-.plane-px {
-    position: absolute;
 
-    top: 5000px;
-    left: 300px;
-    transition: left 40s linear, top 6.5s ease-in-out;
-
-}
-/* 
-.plane-pane-anim-right-low {
-    position: absolute;
-    
-    z-index: 4;
-    height: 60px;
-    width: 400px;
-    transform: scale(0.4);
-} */
 
 .plane-go-right {
     left: 1500px !important;
@@ -82,14 +66,14 @@
     right: 4px;
 }
 
-@keyframes flap {
+/* @keyframes flap {
     0% { transform: skewY(0deg); }
     23% { transform: skewY(-0.6deg); }
     38% { transform: skewY(.5deg); }
     60% { transform: skewY(-0.5deg); }
     85% { transform: skewY(0.4deg); }
     100% { transform: skewY(-0.3deg); }   
-}
+} */
 
 .tail-right {
     width: 50px;
@@ -97,7 +81,7 @@
     display: inline-block;
     margin-left: -4px;
     position: absolute;
-    left: 2px;
+    left: -9px;
     bottom: 5px;
     animation: flap infinite 1s;
     animation-direction: alternate-reverse;
@@ -202,11 +186,6 @@
 }
 
 
-@keyframes prop {
-    0% { transform: rotateX(0deg); }
-    100% { transform: rotateX(359.9deg); }   
-}
-
 .plane {
     width: 104px;
     height: auto;
@@ -219,13 +198,14 @@
     right: 4px;
 }
 
+
 @keyframes flap {
     0% { transform: skewY(0deg); }
-    23% { transform: skewY(-0.6deg); }
-    38% { transform: skewY(.5deg); }
-    60% { transform: skewY(-0.5deg); }
+    23% { transform: skewY(-0.8deg); }
+    38% { transform: skewY(.6deg); }
+    60% { transform: skewY(-0.6deg); }
     85% { transform: skewY(0.4deg); }
-    100% { transform: skewY(-0.3deg); }   
+    100% { transform: skewY(-0.8deg); }   
 }
 
 .tail {
@@ -272,25 +252,6 @@
 .banner-wrap-down {
     transform: skewY(-6deg);
 }
-
-
-/* 
-.plane-pane {
-    display: fixed;
-    position: absolute;
-    top: 740px;
-    right: -600px;
-    z-index: 4;
-    height: 40px;
-    width: 300px;
-    transition: right 40s linear;
-}
-
-.plane-pane img {
-    height: 35px;
-    width: auto;
-}
- */
 
 
 
