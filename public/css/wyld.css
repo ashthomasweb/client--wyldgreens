@@ -1847,8 +1847,7 @@
     cursor: pointer;
     background-color: var(--clear);
     font-family: var(--headers);
-    color: Var(--copy-dark);
-    display: inlineblock;
+    color: var(--copy-dark);
     display: inline-block;
     max-width: 155px;
     vertical-align: top;

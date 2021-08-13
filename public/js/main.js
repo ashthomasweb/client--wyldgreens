@@ -158,7 +158,7 @@ function planeLevel() {
 }
 
 function planeOnLoad() {
-    let startingAltitude = document.documentElement.clientHeight - 100;
+    let startingAltitude = document.documentElement.clientHeight - 300;
     let startingGutter = (document.documentElement.clientWidth - 1000) / 2;
     let offset = startingGutter + 450;
     plane.style.right = `-${offset}px`;
