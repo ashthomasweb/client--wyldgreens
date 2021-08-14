@@ -22,8 +22,8 @@
     100% { transform: rotateX(359.9deg); }   
 }
 
-/* parent class */
-.plane-pane-anim-left {
+/* parent class - going left - starts from right */
+.plane-pane-top-left {
     position: absolute;
     right: -800px;
     z-index: 0;
@@ -129,14 +129,16 @@
 
 
 
-/* parent class */
-.plane-bottom-anim-left {
+/* parent class - going left - starts right */
+.plane-pane-bottom-left {
     position: absolute;
+    top: 2900px;
+
     right: -800px;
     z-index: 0;
     height: 60px;
     width: 400px;
-    transform: scale(0.75);
+    transform: scale(0.65);
     transition: right 40s linear, top 6.5s ease-in-out;
 }
 
@@ -178,7 +180,7 @@
 }
 
 /* wrappers */
-.plane-wrap-left {
+.plane-wrap-bottom-left {
     display: inline-block;
     position: relative;
     z-index: 5;
@@ -187,7 +189,7 @@
     transition: transform 3s ease-in-out;
 }
 
-.banner-outerwrap-left {
+.banner-outerwrap-bottom-left {
     height: 38px;
     width: 267px;
     display: inline-block;
@@ -198,7 +200,7 @@
     transition-delay: .2s;
 }
 
-.banner-wrap-left {
+.banner-wrap-bottom-left {
     position: relative;
     z-index: 4;
     height: 38px;
@@ -235,22 +237,22 @@
 
 
 
-/* parent class */
-.plane-bottom-anim-right {
+/* parent class - going right - starts left */
+.plane-pane-bottom-right {
     position: absolute;
     top: 2800px;
     left: -500px;
     z-index: 0;
     height: 60px;
     width: 400px;
-    transform: scale(0.75);
+    transform: scale(0.65);
     transition: left 40s linear, top 6.5s ease-in-out;
 }
 
 
 
 /* wrappers */
-.plane-wrap-right {
+.plane-wrap-bottom-right {
     display: inline-block;
     position: relative;
     width: 120px;
@@ -260,7 +262,7 @@
     transition: transform 3s ease-in-out;
 }
 
-.banner-outerwrap-right {
+.banner-outerwrap-bottom-right {
     height: 38px;
     width: 240px;
     display: inline-block;
@@ -271,7 +273,7 @@
     transition-delay: .2s;
 }
 
-.banner-wrap-right {
+.banner-wrap-bottom-right {
     position: relative;
     z-index: 4;
     height: 38px;
@@ -313,7 +315,7 @@
     display: inline-block;
     margin-left: -4px;
     position: absolute;
-    left: -9px;
+    left: 2px;
     bottom: 5px;
     animation: flap infinite 1s;
     animation-direction: alternate-reverse;
