@@ -2,7 +2,241 @@
 
 /* PLANE */
 
-.plane-pane-anim-right {
+/* universal to planes */
+.plane-component {
+    display: inline-block;
+    margin-left: -4px;
+}
+
+@keyframes flap {
+    0% { transform: skewY(0deg); }
+    23% { transform: skewY(-0.8deg); }
+    38% { transform: skewY(.6deg); }
+    60% { transform: skewY(-0.6deg); }
+    85% { transform: skewY(0.4deg); }
+    100% { transform: skewY(-0.8deg); }   
+}
+
+@keyframes prop {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(359.9deg); }   
+}
+
+/* parent class */
+.plane-pane-anim-left {
+    position: absolute;
+    right: -800px;
+    z-index: 0;
+    height: 60px;
+    width: 400px;
+    transform: scale(0.75);
+    transition: right 40s linear, top 6.5s ease-in-out;
+}
+
+/* animation classes */
+.plane-go-left {
+    right: 1500px !important;
+}
+
+.plane-wrap-up-left {
+    transform: rotate(7deg);
+}
+
+.plane-wrap-down-left {
+    transform: rotate(-7deg);
+}
+
+.banner-wrap-up-left {
+    transform: skewY(6deg);
+}
+
+.banner-wrap-down-left {
+    transform: skewY(-6deg);
+}
+
+/* image classes */
+.plane-left {
+    width: 104px;
+    height: auto;
+}
+
+.banner-left {
+    width: 251px;
+    height: auto;
+    position: relative;
+    right: 4px;
+}
+
+.tail-left {
+    width: 50px;
+    height: auto;
+    display: inline-block;
+    margin-left: -4px;
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    animation: flap infinite 1s;
+    animation-direction: alternate-reverse;
+    transform-origin: 0 0 0;
+}
+
+.prop-left {
+    height: 46px;
+    width: auto;
+    position: relative;
+    top: 10px;
+    animation: prop .3s linear;
+    animation-iteration-count: infinite;
+    transform: rotateX(0deg);
+}
+
+/* wrappers */
+.plane-wrap-left {
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+    transform-origin: 100% 60% 0;
+    transform: rotate(0deg);
+    transition: transform 3s ease-in-out;
+}
+
+.banner-outerwrap-left {
+    height: 38px;
+    width: 267px;
+    display: inline-block;
+    margin-left: -4px;
+    transform-origin: left;
+    transform: skewY(0);
+    transition: transform 2.8s ease-in-out;
+    transition-delay: .2s;
+}
+
+.banner-wrap-left {
+    position: relative;
+    z-index: 4;
+    height: 38px;
+    width: 267px;
+    display: inline-block;
+    animation: flap infinite 7s;
+    animation-direction: alternate;
+    transform-origin: left;
+    transform: skewY(0);
+}
+
+
+
+
+
+
+
+/* parent class */
+.plane-bottom-anim-left {
+    position: absolute;
+    right: -800px;
+    z-index: 0;
+    height: 60px;
+    width: 400px;
+    transform: scale(0.75);
+    transition: right 40s linear, top 6.5s ease-in-out;
+}
+
+
+/* image classes */
+.plane-left {
+    width: 104px;
+    height: auto;
+}
+
+.banner-left {
+    width: 251px;
+    height: auto;
+    position: relative;
+    right: 4px;
+}
+
+.tail-left {
+    width: 50px;
+    height: auto;
+    display: inline-block;
+    margin-left: -4px;
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    animation: flap infinite 1s;
+    animation-direction: alternate-reverse;
+    transform-origin: 0 0 0;
+}
+
+.prop-left {
+    height: 46px;
+    width: auto;
+    position: relative;
+    top: 10px;
+    animation: prop .3s linear;
+    animation-iteration-count: infinite;
+    transform: rotateX(0deg);
+}
+
+/* wrappers */
+.plane-wrap-left {
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+    transform-origin: 100% 60% 0;
+    transform: rotate(0deg);
+    transition: transform 3s ease-in-out;
+}
+
+.banner-outerwrap-left {
+    height: 38px;
+    width: 267px;
+    display: inline-block;
+    margin-left: -4px;
+    transform-origin: left;
+    transform: skewY(0);
+    transition: transform 2.8s ease-in-out;
+    transition-delay: .2s;
+}
+
+.banner-wrap-left {
+    position: relative;
+    z-index: 4;
+    height: 38px;
+    width: 267px;
+    display: inline-block;
+    animation: flap infinite 7s;
+    animation-direction: alternate;
+    transform-origin: left;
+    transform: skewY(0);
+}
+
+/* animation classes */
+.plane-go-left {
+    right: 1500px !important;
+}
+
+.plane-wrap-up-left {
+    transform: rotate(7deg);
+}
+
+.plane-wrap-down-left {
+    transform: rotate(-7deg);
+}
+
+.banner-wrap-up-left {
+    transform: skewY(6deg);
+}
+
+.banner-wrap-down-left {
+    transform: skewY(-6deg);
+}
+
+
+
+
+
+/* parent class */
+.plane-bottom-anim-right {
     position: absolute;
     top: 2800px;
     left: -500px;
@@ -15,11 +249,7 @@
 
 
 
-.plane-go-right {
-    left: 1500px !important;
-}
-
-
+/* wrappers */
 .plane-wrap-right {
     display: inline-block;
     position: relative;
@@ -30,14 +260,30 @@
     transition: transform 3s ease-in-out;
 }
 
-.plane-wrap-up-right {
-    transform: rotate(-7deg);
+.banner-outerwrap-right {
+    height: 38px;
+    width: 240px;
+    display: inline-block;
+    margin-left: -4px;
+    transform-origin: right;
+    transform: skewY(0);
+    transition: transform 2.8s ease-in-out;
+    transition-delay: .2s;
 }
 
-.plane-wrap-down-right {
-    transform: rotate(7deg);
+.banner-wrap-right {
+    position: relative;
+    z-index: 4;
+    height: 38px;
+    width: 267px;
+    display: inline-block;
+    animation: flap infinite 7s;
+    animation-direction: alternate;
+    transform-origin: right;
+    transform: skewY(0);
 }
 
+/* image classes */
 .prop-right {
     height: 46px;
     display: inline-block;
@@ -54,26 +300,12 @@
     height: auto;
 }
 
-@keyframes prop {
-    0% { transform: rotateX(0deg); }
-    100% { transform: rotateX(359.9deg); }   
-}
-
 .banner-right {
     width: 251px;
     height: auto;
     position: relative;
     right: 4px;
 }
-
-/* @keyframes flap {
-    0% { transform: skewY(0deg); }
-    23% { transform: skewY(-0.6deg); }
-    38% { transform: skewY(.5deg); }
-    60% { transform: skewY(-0.5deg); }
-    85% { transform: skewY(0.4deg); }
-    100% { transform: skewY(-0.3deg); }   
-} */
 
 .tail-right {
     width: 50px;
@@ -88,28 +320,17 @@
     transform-origin: 100% 0 0;
 }
 
-
-.banner-wrap-right {
-    position: relative;
-    z-index: 4;
-    height: 38px;
-    width: 267px;
-    display: inline-block;
-    animation: flap infinite 7s;
-    animation-direction: alternate;
-    transform-origin: right;
-    transform: skewY(0);
+/* animation classes */
+.plane-go-right {
+    left: 1500px !important;
 }
 
-.banner-whole-right {
-    height: 38px;
-    width: 240px;
-    display: inline-block;
-    margin-left: -4px;
-    transform-origin: right;
-    transform: skewY(0);
-    transition: transform 2.8s ease-in-out;
-    transition-delay: .2s;
+.plane-wrap-up-right {
+    transform: rotate(-7deg);
+}
+
+.plane-wrap-down-right {
+    transform: rotate(7deg);
 }
 
 .banner-wrap-up-right {
@@ -119,140 +340,4 @@
 .banner-wrap-down-right {
     transform: skewY(6deg);
 }
-
-
-
-
-
-
-
-.plane-pane-anim {
-    position: absolute;
-    /* top: 850px; */
-    right: -800px;
-    z-index: 0;
-    height: 60px;
-    width: 400px;
-    transform: scale(0.75);
-    transition: right 40s linear, top 6.5s ease-in-out;
-}
-
-
-.plane-pane-anim-low {
-    position: absolute;
-    top: 700px;
-    right: -500px;
-    z-index: 4;
-    height: 60px;
-    width: 400px;
-    transform: scale(0.75);
-    transition: right 40s linear, top 6.5s ease-in-out;
-}
-
-.plane-go-left {
-    right: 1500px !important;
-}
-
-.plane-component {
-    display: inline-block;
-    margin-left: -4px;
-}
-
-.plane-wrap {
-    display: inline-block;
-    position: relative;
-    z-index: 5;
-    transform-origin: 100% 60% 0;
-    transform: rotate(0deg);
-    transition: transform 3s ease-in-out;
-}
-
-.plane-wrap-up {
-    transform: rotate(7deg);
-}
-
-.plane-wrap-down {
-    transform: rotate(-7deg);
-}
-
-.prop {
-    height: 46px;
-    width: auto;
-    position: relative;
-    top: 10px;
-    animation: prop .3s linear;
-    animation-iteration-count: infinite;
-    transform: rotateX(0deg);
-}
-
-
-.plane {
-    width: 104px;
-    height: auto;
-}
-
-.banner {
-    width: 251px;
-    height: auto;
-    position: relative;
-    right: 4px;
-}
-
-
-@keyframes flap {
-    0% { transform: skewY(0deg); }
-    23% { transform: skewY(-0.8deg); }
-    38% { transform: skewY(.6deg); }
-    60% { transform: skewY(-0.6deg); }
-    85% { transform: skewY(0.4deg); }
-    100% { transform: skewY(-0.8deg); }   
-}
-
-.tail {
-    width: 50px;
-    height: auto;
-    display: inline-block;
-    margin-left: -4px;
-    position: absolute;
-    right: 20px;
-    bottom: 5px;
-    animation: flap infinite 1s;
-    animation-direction: alternate-reverse;
-    transform-origin: 0 0 0;
-}
-
-
-.banner-wrap {
-    position: relative;
-    z-index: 4;
-    height: 38px;
-    width: 267px;
-    display: inline-block;
-    animation: flap infinite 7s;
-    animation-direction: alternate;
-    transform-origin: left;
-    transform: skewY(0);
-}
-
-.banner-whole {
-    height: 38px;
-    width: 267px;
-    display: inline-block;
-    margin-left: -4px;
-    transform-origin: left;
-    transform: skewY(0);
-    transition: transform 2.8s ease-in-out;
-    transition-delay: .2s;
-}
-
-.banner-wrap-up {
-    transform: skewY(6deg);
-}
-
-.banner-wrap-down {
-    transform: skewY(-6deg);
-}
-
-
-
 

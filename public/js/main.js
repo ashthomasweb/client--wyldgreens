@@ -110,109 +110,76 @@ function runLightbox(input) {
 
 
 
-// TOP PLANES ANIMATIONS
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TOP PLANE ANIMATIONS
 
 let planeLeft = document.querySelector('#wyld-plane-top-goleft');
-let planeWrap = document.querySelector('.plane-wrap');
-let bannerWrap = document.querySelector('.banner-whole');
+let planeWrapLeft = document.querySelector('.plane-wrap-left');
+let bannerWrapLeft = document.querySelector('.banner-outerwrap-left');
 
-let planeRight = document.querySelector('#wyld-plane-top-goright');
-let planeWrapRight = document.querySelector('.plane-wrap-right');
-let bannerWrapRight = document.querySelector('.banner-whole-right');
-
-
-// for either top/bottom set
 function planeToLeft() {
     planeLeft.classList.add('plane-go-left');
 }
 
-// for either left or right, top or bottom
-function planeUp() {
+function planeUpLeft() {
     let currentAltitude = parseInt(getComputedStyle(planeLeft).getPropertyValue('top'));
 
-    planeWrap.classList.add('plane-wrap-up');
-    bannerWrap.classList.add('banner-wrap-up');
+    planeWrapLeft.classList.add('plane-wrap-up-left');
+    bannerWrapLeft.classList.add('banner-wrap-up-left');
 
     setTimeout(() => {
         planeLeft.style.top = `${currentAltitude - 150}px`;
     }, 350)
     setTimeout(() => {
-        planeLevel();
+        planeLevelLeft();
     }, 4700)
 }
 
-// for either left or right, top or bottom
-function planeDown() {
+function planeDownLeft() {
     let currentAltitude = parseInt(getComputedStyle(planeLeft).getPropertyValue('top'));
 
-    planeWrap.classList.add('plane-wrap-down');
-    bannerWrap.classList.add('banner-wrap-down');
+    planeWrapLeft.classList.add('plane-wrap-down-left');
+    bannerWrapLeft.classList.add('banner-wrap-down-left');
 
     setTimeout(() => {
         planeLeft.style.top = `${currentAltitude + 150}px`;
     }, 350)
     setTimeout(() => {
-        planeLevel();
+        planeLevelLeft();
     }, 4700)
 }
 
-
-// for either left or right, top or bottom
-function planeLevel() {
-    planeWrap.classList.remove('plane-wrap-up');
-    bannerWrap.classList.remove('banner-wrap-up');
-    planeWrap.classList.remove('plane-wrap-down');
-    bannerWrap.classList.remove('banner-wrap-down');
+function planeLevelLeft() {
+    planeWrapLeft.classList.remove('plane-wrap-up-left');
+    bannerWrapLeft.classList.remove('banner-wrap-up-left');
+    planeWrapLeft.classList.remove('plane-wrap-down-left');
+    bannerWrapLeft.classList.remove('banner-wrap-down-left');
 }
 
 
 
 
-// onload, and promise chain, display handling should be extracted
-function planeOnLoad() {
-    // set planes starting position
-    let startingAltitude = document.documentElement.clientHeight - 300;
-    let startingGutter = (document.documentElement.clientWidth - 1000) / 2;
-    let offset = startingGutter + 450;
-    planeLeft.style.right = `-${offset}px`;
-    planeLeft.style.top = `${startingAltitude}px`;
+// BOTTOM PLANES
 
-
-
-    // initialize top plane
-    planeToLeft();
-    planeDown();
-
-
-    // lower altitude after 11 sec
-    setInterval(() => {
-        planeDown();
-    }, 11000);
-
-
-    // initialize bottom plane
-    planeToRight();
-
-    // broken random up/down animation
-    setTimeout(() => {
-        setInterval(() => {
-            if (Math.random() * .5 >= .5) {
-                planeUpRight();
-            } else {
-                planeDownRight();
-            }
-        }, 11000);
-    }, 20000);
-}
-
-// PLANE TO RIGHT
-
-
+let planeRight = document.querySelector('#wyld-plane-bottom-goright');
+let planeWrapRight = document.querySelector('.plane-wrap-right');
+let bannerWrapRight = document.querySelector('.banner-outerwrap-right');
 
 function planeToRight() {
     planeRight.classList.add('plane-go-right');
 }
-
 
 function planeUpRight() {
     let currentAltitude = parseInt(getComputedStyle(planeRight).getPropertyValue('top'));
@@ -247,6 +214,50 @@ function planeLevelRight() {
     bannerWrapRight.classList.remove('banner-wrap-up-right');
     planeWrapRight.classList.remove('plane-wrap-down-right');
     bannerWrapRight.classList.remove('banner-wrap-down-right');
+}
+
+
+
+
+
+
+
+
+// onload, and promise chain, display handling should be extracted
+function planeOnLoad() {
+    // set planes starting position
+    let startingAltitude = document.documentElement.clientHeight - 300;
+    let startingGutter = (document.documentElement.clientWidth - 1000) / 2;
+    let offset = startingGutter + 450;
+    planeLeft.style.right = `-${offset}px`;
+    planeLeft.style.top = `${startingAltitude}px`;
+
+
+
+    // initialize top plane
+    planeToLeft();
+    planeDownLeft();
+
+
+    // lower altitude after 11 sec
+    setInterval(() => {
+        planeDownLeft();
+    }, 11000);
+
+
+    // initialize bottom plane
+    planeToRight();
+
+    // broken random up/down animation
+    setTimeout(() => {
+        setInterval(() => {
+            if (Math.random() * .5 >= .5) {
+                planeUpRight();
+            } else {
+                planeDownRight();
+            }
+        }, 11000);
+    }, 20000);
 }
 
 
