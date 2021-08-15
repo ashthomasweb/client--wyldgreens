@@ -25,7 +25,7 @@
 /* parent class - going left - starts from right */
 .plane-pane-top-left {
     position: absolute;
-    right: -800px;
+    /* right: -787px; */
     z-index: 0;
     height: 60px;
     width: 400px;
@@ -33,9 +33,10 @@
     transition: right 40s linear, top 6.5s ease-in-out;
 }
 
+
 /* animation classes */
 .plane-go-left {
-    right: 1500px !important;
+    right: calc(100vw + 10px) !important;
 }
 
 .plane-wrap-up-left {
@@ -129,12 +130,15 @@
 
 
 
+
+
+
 /* parent class - going left - starts right */
 .plane-pane-bottom-left {
     position: absolute;
     top: 2900px;
 
-    right: -800px;
+    right: -400px;
     z-index: 0;
     height: 60px;
     width: 400px;
@@ -214,7 +218,7 @@
 
 /* animation classes */
 .plane-go-left {
-    right: 1500px !important;
+    right: calc(100vw + 10px);
 }
 
 .plane-wrap-up-left {
@@ -237,11 +241,14 @@
 
 
 
+
+
+
 /* parent class - going right - starts left */
 .plane-pane-bottom-right {
     position: absolute;
     top: 2800px;
-    left: -500px;
+    left: -400px;
     z-index: 0;
     height: 60px;
     width: 400px;
@@ -324,7 +331,7 @@
 
 /* animation classes */
 .plane-go-right {
-    left: 1500px !important;
+    left: calc(100vw + 10px) !important;
 }
 
 .plane-wrap-up-right {

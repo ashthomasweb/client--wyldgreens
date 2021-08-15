@@ -277,6 +277,23 @@ function planeLevelBottomLeft() {
 
 
 
+function topPlaneOffset() {
+    let windowWidth = window.innerWidth;
+    let contentBody = document.querySelector('.l-content-wrapper--contact');
+    let contentWidth;
+
+    contentWidth = parseInt(window.getComputedStyle(contentBody).getPropertyValue('width'));
+
+    let gutter = windowWidth - contentWidth;
+    let offset = gutter / 2;
+
+    console.log(windowWidth);
+    console.log(contentWidth);
+    console.log(offset)
+    let string = `-${offset + 450}px`;
+    planeLeft.style.right = string;
+}
+
 
 
 
@@ -286,16 +303,14 @@ function planeLevelBottomLeft() {
 function planeOnLoad() {
     // set planes starting position
     let startingAltitude = document.documentElement.clientHeight - 300;
-    let startingGutter = (document.documentElement.clientWidth - 1000) / 2;
-    let offset = startingGutter + 450;
-    planeLeft.style.right = `-${offset}px`;
     planeLeft.style.top = `${startingAltitude}px`;
-
-
+    topPlaneOffset();
 
     // initialize top plane
-    planeToLeft();
-    planeDownLeft();
+    setTimeout(() => {
+        planeToLeft();
+        planeDownLeft();
+    }, 300)
 
 
     // lower altitude after 11 sec
