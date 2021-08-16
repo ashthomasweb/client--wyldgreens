@@ -169,7 +169,9 @@ function planeLevelLeft() {
 }
 
 
-
+planeLeft.ontransitionend = () => {
+    console.log('Transition ended');
+  };
 
 
 
