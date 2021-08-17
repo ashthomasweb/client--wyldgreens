@@ -169,10 +169,6 @@ function planeLevelLeft() {
 }
 
 
-planeLeft.ontransitionend = () => {
-    console.log('Transition ended');
-  };
-
 
 
 
@@ -279,8 +275,9 @@ function planeLevelBottomLeft() {
 
 
 
+let windowWidth = window.innerWidth;
+
 function topPlaneOffset() {
-    let windowWidth = window.innerWidth;
     let contentBody = document.querySelector('.l-content-wrapper--contact');
     let contentWidth;
 
@@ -289,9 +286,9 @@ function topPlaneOffset() {
     let gutter = windowWidth - contentWidth;
     let offset = gutter / 2;
 
-    console.log(windowWidth);
-    console.log(contentWidth);
-    console.log(offset)
+    // console.log(windowWidth);
+    // console.log(contentWidth);
+    // console.log(offset)
     let string = `-${offset + 450}px`;
     planeLeft.style.right = string;
 }
@@ -299,6 +296,71 @@ function topPlaneOffset() {
 
 
 
+function toLeftPromise() {
+
+    setTimeout(() => {
+        if (parseInt(window.getComputedStyle(planeBottomLeft).getPropertyValue('right')) > window.innerWidth) {
+            console.log('hooray');
+
+            // reset plane
+            planeBottomLeft.classList.remove('plane-go-left');
+            planeBottomLeft.style.transition = 'top 6.5s ease-in-out';
+            planeBottomLeft.style.right = '-400px';
+
+            // reset transition for next plane and call
+            planeBottomRight.style.transition = 'left 10s linear, top 6.5s ease-in-out';
+            planeBottomToRight();
+            toRightPromise();
+        }
+
+        console.log('Its time for the next plane...')
+    }, 13000)
+
+}
+
+
+function toRightPromise() {
+
+    setTimeout(() => {
+        if (parseInt(window.getComputedStyle(planeBottomRight).getPropertyValue('left')) > window.innerWidth) {
+            console.log('hooray');
+
+            // reset plane
+            planeBottomRight.classList.remove('plane-go-right');
+            planeBottomRight.style.transition = 'top 6.5s ease-in-out';
+            planeBottomRight.style.left = '-400px';
+
+            // reset transition for next plane and call
+            planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
+            planeBottomToLeft();
+            toLeftPromise();
+        }
+
+        console.log('Its time for the next plane...')
+    }, 13000)
+
+}
+
+
+function resetPlanePositions() {
+    planeBottomLeft.classList.remove('plane-go-left');
+    planeBottomLeft.style.transition = 'top 6.5s ease-in-out';
+    planeBottomLeft.style.right = '-400px';
+    planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
+
+
+    planeBottomRight.classList.remove('plane-go-right');
+    planeBottomRight.style.transition = 'top 6.5s ease-in-out';
+    planeBottomRight.style.left = '-400px';
+    planeBottomRight.style.transition = 'left 10s linear, top 6.5s ease-in-out';
+
+}
+
+
+
+function startPromise() {
+    toLeftPromise();
+}
 
 
 // onload, and promise chain, display handling should be extracted
@@ -307,6 +369,8 @@ function planeOnLoad() {
     let startingAltitude = document.documentElement.clientHeight - 300;
     planeLeft.style.top = `${startingAltitude}px`;
     topPlaneOffset();
+
+    startPromise();
 
     // initialize top plane
     setTimeout(() => {
@@ -323,9 +387,9 @@ function planeOnLoad() {
 
     // initialize bottom planes
     // lowerPlanePromise();
-    planeBottomToRight();
+    // planeBottomToRight();
     planeBottomToLeft();
-   
+
 }
 
 
@@ -349,6 +413,3 @@ function planeOnLoad() {
 //     document.addEventListener('scroll', parallaxOn, false);
 //     document.addEventListener('scroll', scrollStop, false);
 // }
-
-
-
