@@ -1,3 +1,7 @@
+// Price total JavaScript for "Wyldgreens"
+
+// DOM OBJECT ASSIGNMENTS
+
 let formQuanList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
 let formCustomQuanList = Array.from(document.querySelectorAll('.order input'));
 let formCheckList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=checkbox]'));
@@ -127,12 +131,10 @@ function getPriceTotal(id) {
     formCheckOnetime.checked === true && getPlanPrice(12);
     formCheckBulk.checked === true && getPlanPrice(30);
 
-    // let checkList = Array.from(document.querySelectorAll('.wyld-form-mix input[type=number]'));
     let discountList = [...formQuanList];
     discountList.pop();
     let comboList = discountList.concat(formCustomQuanList)
 
-    // console.log(comboList);
 
     function getBulkDiscount() {
         let quantity = 0;
@@ -175,3 +177,5 @@ function getPriceTotal(id) {
     displayBulkDiscount();
     hideBulkDiscount();
 }
+
+// END of document

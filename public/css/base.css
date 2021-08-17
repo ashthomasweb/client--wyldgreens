@@ -1,4 +1,4 @@
-/* || Base CSS file for "LumberJack" */
+/* || Base CSS file for "Wyldgreens" */
 
 * {
     box-sizing: border-box;
@@ -9,7 +9,6 @@ body {
     font-family: var(--copy);
     font-weight: 300;
     font-style: normal;
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,11 +29,5 @@ button:focus {
 .sharethis-inline-share-buttons {
     margin-bottom: 10px;
 }
-
-
-/* 
-html {
-    scroll-behavior: smooth;
-} */
 
 /* || END of document  */

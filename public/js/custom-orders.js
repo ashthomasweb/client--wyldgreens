@@ -1,3 +1,5 @@
+// Custom Order Form JavaScript for "Wyldgreens"
+
 // DOM OBJECT ASSIGMENTS 
 
 let customOrder1Pane = document.querySelector('.num-1');
@@ -105,6 +107,7 @@ function newCustomDisplay() {
     customOrder1P.innerHTML = customOrder1P.value.slice(1);
     customOrder1Input.value = customOrder1.quantity.toString();
     customOrder2Pane.style.display = 'block';
+
     if (customOrder2.ingredients !== '') {
         document.querySelector('.num-2').style.display = 'block';
         customOrder2P.innerHTML = `${customOrder2.ingredients}`;
@@ -120,9 +123,6 @@ function newCustomDisplay() {
         customOrder3Input.value = customOrder3.quantity.toString();
     }
 
-
-
-
     applyIngredOffset();
 }
 
@@ -133,7 +133,6 @@ function addIngredientForm() {
 }
 
 function removeCustomOrder(input) {
-    // formFieldCheckTest();
 
     if (input === 1) {
         customOrder1.quantity = 0;
@@ -155,8 +154,8 @@ function removeCustomOrder(input) {
         customOrder3P.textContent = 'Add Ingredients';
         customOrder3Input.value = '';
         customNewOrder();
-
     }
+
     applyIngredOffset();
     getPriceTotal(26);
 }
@@ -297,3 +296,5 @@ function bulkQuantityAdjust() {
         customOrder3.quantity = 1;
     }
 }
+
+// END of document

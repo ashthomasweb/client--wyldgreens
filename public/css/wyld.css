@@ -1,6 +1,6 @@
-/* Template assigned classes */
+/* Primary CSS for "Wyldgreens" */
 
-/* from module.css */
+/* Template assigned classes from module.css */
 
 .greeting-pane--wyld {
     position: relative;
@@ -146,23 +146,15 @@
 
 .card--wyld-center {
     background-color: var(--secondary-color);
-    /* transition: top .2s ease-in-out; */
-
 }
 
 .card--wyld-sides {
     background-color: var(--secondary-color);
-    /* transition: margin .2s ease-in-out; */
 }
 
 .wyld-card-inner-wrap {
     border-radius: 8px;
     background-color: white;
-    /* background: -moz-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
-    background: -webkit-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
-    background: -o-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
-    background: -ms-linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%);
-    background: linear-gradient(to bottom, var(--secondary-light), var(--secondary-very-light) 4%); */
 }
 
 .wyld-card-top-section {
@@ -525,7 +517,6 @@
 
 .why-section {
     position: relative;
-    /* height: 1102px; */
     margin-top: 70px;
 }
 
@@ -628,16 +619,16 @@
     font-weight: 700;
     font-size: 15px;
     z-index: 10;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: pointer;
     transition: transform .2s ease-out, border-top-left-radius .2s ease-out, border-top-right-radius .2s ease-out;
-    bottom: -12px;
-
+    bottom: 0px;
 }
 
 .mix-quantity {
     height: 45px;
-    /* border: 1px solid var(--secondary-color); */
     width: 150px;
     background-color: white;
     position: absolute;
@@ -646,7 +637,6 @@
     z-index: 2;
     border-radius: 4px;
     transition: transform .2s ease-out, border-top-left-radius .2s ease-out, border-top-right-radius .2s ease-out;
-
 }
 
 .mix-quantity p {
@@ -1349,26 +1339,6 @@
 
 /* ORDER */
 
-
-
-/* 
-.order-text {
-    max-width: 550px;
-    padding: 0px 0 20px;
-    margin: 0 auto;
-}
-
-.order-text p {
-    display: inline-block;
-    max-width: 550px;
-    margin: 0px 0px 10px 0px;
-    text-align: left;
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-*/
-
 .form-title {
     margin-bottom: 6px;
     font-family: var(--copy);
@@ -1376,7 +1346,6 @@
     font-weight: 400;
     display: inline-block;
 }
-
 
 /* TOP SECTION */
 
@@ -1862,3 +1831,5 @@
 .order-textarea:focus {
     outline: none;
 }
+
+/* END of document */

@@ -1,4 +1,4 @@
-
+/* || Plane animation CSS file for "Wyldgreens" */
 
 /* PLANE */
 
@@ -32,7 +32,6 @@
     transform: scale(0.75);
     transition: right 40s linear, top 6.5s ease-in-out;
 }
-
 
 /* animation classes */
 .plane-go-left {
@@ -123,15 +122,6 @@
     transform-origin: left;
     transform: skewY(0);
 }
-
-
-
-
-
-
-
-
-
 
 /* parent class - going left - starts right */
 .plane-pane-bottom-left {
@@ -238,12 +228,6 @@
 }
 
 
-
-
-
-
-
-
 /* parent class - going right - starts left */
 .plane-pane-bottom-right {
     position: absolute;
@@ -255,8 +239,6 @@
     transform: scale(0.65);
     transition: left 10s linear, top 6.5s ease-in-out;
 }
-
-
 
 /* wrappers */
 .plane-wrap-bottom-right {
@@ -350,3 +332,4 @@
     transform: skewY(6deg);
 }
 
+/* END of document */

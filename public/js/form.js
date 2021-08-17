@@ -1,4 +1,5 @@
-// JavaScript file for 'Wyld'
+// JavaScript order form for 'Wyldgreens'
+
 let fullForm = document.getElementById('contact-form');
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
@@ -29,23 +30,6 @@ function clearPlansForm() {
     formCheckBulk.checked = false;
     formCheckOnetime.checked = false;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // FIELD CHECK AND STYLE CHANGE ON STATE
 
@@ -87,9 +71,7 @@ function formFieldCheck() {
     }
 }
 
-
 function sendOrder() {
-
 
     let elem = document.getElementById('contact-button-bottom');
 
@@ -99,7 +81,6 @@ function sendOrder() {
     } else {
         console.log('test')
     }
-    
 }
 
 
@@ -108,47 +89,6 @@ function preventEnterSubmit(event) {
         event.preventDefault();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // MIX CHECKBOX AND INPUT HANDLING
 
@@ -396,51 +336,4 @@ function healthyInput() {
     getPriceTotal(9);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// FUTURE PLANS
-
-// let nameField = document.querySelector('[name=user_name]');
-// let prefixArray = ['Dr.', 'Prof.', 'Mr.', 'Mrs.', 'Dr', 'Prof', 'Mr', 'Mrs', 'Ms.', 'Ms', 'dr.']
-
-// nameField.addEventListener('change', nameChange, false);
-
-// function nameChange() {
-
-//     // if ( nameField.value.includes(' ') ) {
-//     //     nameField.value.
-//     // }
-
-//     document.querySelector('#contact-button').innerText = nameField.value + "'s Order";
-// }
-
-
-
-
-
-
+// END of document

@@ -1,3 +1,6 @@
+// Main JavaScript for "Wyldgreens"
+
+
 // DOM OBJECT ASSIGNMENTS
 
 let ctaBtnPlan = document.querySelector('#plan-button');
@@ -27,9 +30,7 @@ ctaBtnOrder.addEventListener('click', () => {
     window.scrollBy(0, -50);
 });
 
-
 // PARALLAX
-
 
 let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 let sceneBack = document.querySelector('.scene-back');
@@ -65,7 +66,6 @@ function mobileStyling() {
     mobilePlan.style.fontWeight = '600';
 }
 
-
 // LIGHTBOX
 
 let bodyWrap = document.querySelector('.l-body-wrapper--contact');
@@ -100,28 +100,6 @@ function runLightbox(input) {
     lightboxImg.attributes.src.value = `/images/greens/${input}`;
     openLightbox();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // TOP PLANE ANIMATIONS
 
@@ -168,11 +146,6 @@ function planeLevelLeft() {
     bannerWrapLeft.classList.remove('banner-wrap-down-left');
 }
 
-
-
-
-
-
 // BOTTOM PLANES
 
 let planeBottomRight = document.querySelector('#wyld-plane-bottom-goright');
@@ -218,10 +191,6 @@ function planeLevelBottomRight() {
     bannerWrapRight.classList.remove('banner-wrap-down-right');
 }
 
-
-
-
-
 let planeBottomLeft = document.querySelector('#wyld-plane-bottom-goleft');
 let planeWrapBottomLeft = document.querySelector('.plane-wrap-bottom-left');
 let bannerWrapBottomLeft = document.querySelector('.banner-outerwrap-bottom-left');
@@ -266,14 +235,7 @@ function planeLevelBottomLeft() {
 }
 
 
-
-
-
-
-
-
-
-
+// POSITION FINDER AND PSUEDO-PROMISES
 
 let windowWidth = window.innerWidth;
 
@@ -292,9 +254,6 @@ function topPlaneOffset() {
     let string = `-${offset + 450}px`;
     planeLeft.style.right = string;
 }
-
-
-
 
 function toLeftPromise() {
 
@@ -318,7 +277,6 @@ function toLeftPromise() {
 
 }
 
-
 function toRightPromise() {
 
     setTimeout(() => {
@@ -341,13 +299,11 @@ function toRightPromise() {
 
 }
 
-
 function resetPlanePositions() {
     planeBottomLeft.classList.remove('plane-go-left');
     planeBottomLeft.style.transition = 'top 6.5s ease-in-out';
     planeBottomLeft.style.right = '-400px';
     planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
-
 
     planeBottomRight.classList.remove('plane-go-right');
     planeBottomRight.style.transition = 'top 6.5s ease-in-out';
@@ -356,12 +312,9 @@ function resetPlanePositions() {
 
 }
 
-
-
 function startPromise() {
     toLeftPromise();
 }
-
 
 // onload, and promise chain, display handling should be extracted
 function planeOnLoad() {
@@ -378,29 +331,14 @@ function planeOnLoad() {
         planeDownLeft();
     }, 300)
 
-
     // lower altitude after 11 sec
     setInterval(() => {
         planeDownLeft();
     }, 11000);
 
-
     // initialize bottom planes
-    // lowerPlanePromise();
-    // planeBottomToRight();
     planeBottomToLeft();
-
 }
-
-
-
-
-
-
-
-
-
-
 
 
 // // development/testing functions
@@ -413,3 +351,5 @@ function planeOnLoad() {
 //     document.addEventListener('scroll', parallaxOn, false);
 //     document.addEventListener('scroll', scrollStop, false);
 // }
+
+// END of document

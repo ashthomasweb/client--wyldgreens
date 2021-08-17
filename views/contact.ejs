@@ -2,19 +2,9 @@
 
 <%- include("../views/partials/header.ejs") -%>
 
-<!-- HEADER -->
-
-<!-- <div class="greeting-pane--home">
-    <div class="fullwidth-wrapper">
-
-    </div>
-</div> -->
-
 <div class="lightbox">
     <img src="/images/greens/alek-cut.png">
 </div>
-
-
 
 <div class="background-scene">
     <div class="scene-back">
@@ -56,11 +46,9 @@
 
     <div class="scene-layer2">
     </div>
-
 </div>
 
 <div class="l-body-wrapper--contact">
-
     <div class="l-content-wrapper--contact">
 
         <div class="fullwidth-right-cont">
@@ -72,9 +60,6 @@
             <h3>Delicious Microgreens Delivered<br>Right to Your Door</h3>
             <img class="light-thumb" src="/images/greens/how2.jpg">
         </div>
-
-
-
 
         <div id="wyld-plane-top-goleft" class="plane-pane-top-left">
             <div class="plane-wrap-left">
@@ -90,7 +75,6 @@
             </div>
 
         </div>
-
 
         <!-- CTA BUTTONS -->
 
@@ -131,7 +115,6 @@
             <!-- WHY BULLET POINTS -->
 
             <div class="wyld-why">
-
                 <ul class="why-list">
                     <h3 class="why-subheader">A Healthier Planet - A Healthier You</h3>
                     <img class="list-item hills" src="/images/icons/why/mountains.png">
@@ -149,7 +132,6 @@
                     </li>
                 </ul>
             </div>
-
 
         </div>
 
@@ -180,7 +162,6 @@
                     <div class="wyld-card-top-section side-plans">
                         <h3 class="plan-title">$12</h3>
                         <h3>One-time<br>Order</h3>
-
                     </div>
 
                     <div class="wyld-card-bottom-section">
@@ -314,6 +295,7 @@
             <div class="card card--wyld-right">
                 <div class="remove-btn-cover"></div>
                 <button class="spicy-remove" type="button" onclick="spicyCloseBtn()">Close</button>
+
                 <div class="wyld-card-inner-wrap mix-bg">
 
                     <div class="wyld-card-top-section">
@@ -323,9 +305,7 @@
 
                     <div class="wyld-card-bottom-section">
                         <div><img onclick="runLightbox('green2.jpg')" class="card-art" src="/images/greens/green2.jpg"></div>
-
                         <p class="mix-text">Our Spicy Mix packs a punch for soups and salads, adding robust flavors and zest.</p>
-
                         <div id="spicy-pane" class="mix-btn-pane"></div>
                         <button id="spicy-order-btn" class="mix-order-btn" type="button" onclick="spicyMix()">Add To Order</button>
                         <div id="spicy-quantity" class="mix-quantity">
@@ -336,11 +316,9 @@
                         </div>
 
                     </div>
-
                 </div>
 
             </div>
-
         </div>
 
         <div style="height: 260px;"></div>
@@ -361,9 +339,7 @@
 
                     <div class="wyld-card-bottom-section">
                         <div><img onclick="runLightbox('green1.jpg')" class="card-art" src="/images/greens/green1.jpg"></div>
-
                         <p class="mix-text">The perfect mix for an all around healthy and tasty salad year-round.</p>
-
                         <div id="salad-pane" class="mix-btn-pane"></div>
                         <button id="salad-order-btn" class="mix-order-btn" type="button" onclick="saladMix()">Add To Order</button>
                         <div id="salad-quantity" class="mix-quantity">
@@ -372,7 +348,6 @@
                             <p>How<br>Many?</p>
                             <input oninput="saladUpdate()" class="mix-num-input" type="number" min="1" max="3" value="1">
                         </div>
-
                     </div>
 
                 </div>
@@ -494,7 +469,6 @@
                         <p>Ah bummer!</p>
                         <p>Looks like something went wrong.</p>
                         <p>I'm currently looking into the problem, try back soon!</p>
-                        <!-- <button type="button" class="hidden-button" onclick="location.href='/blog'" />Check out the Blog</button> -->
                         <% } else { %>
                         <p>Thanks!</p>
                         <p>Your message has been sent</p>
@@ -643,14 +617,12 @@
 
                 <button id="contact-button-bottom" class="contact-submit-bottom" onclick="sendOrder()">Place Your Order</button>
 
-
                 <% } %>
 
             </div>
         </div>
 
         <div style="height: 1000px;"></div>
-
 
         <%- include("../views/partials/footer.ejs") -%>
 

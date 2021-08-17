@@ -1,3 +1,5 @@
+/* MQuery CSS for "Wyldgreens" */
+
 /* BACKGROUND SCENE  */
 
 @media screen and (min-width: 2000px) {
@@ -8,7 +10,6 @@
     
 }
 
-
 @media screen and (max-width: 1999px) {
 
     .scene-back {
@@ -16,8 +17,6 @@
     }
 
 }
-
-
 
 /* ORDER FORM  */
 @media screen and (max-width: 830px) {
@@ -184,13 +183,9 @@
             top: 0;
         }
 
-
-
-
     }
 
 }
-
 
 /* CTA BUTTONS  */
 
@@ -220,14 +215,11 @@
 
         .why-section {
             margin-top: 235px;
-            /* height: 980px; */
         }
 
     }
 
 }
-
-
 
 /* LOGO  */
 
@@ -247,7 +239,6 @@
 
 }
 
-
 /* TEXT PARA  */
 @media screen and (max-width: 624px) {
 
@@ -266,10 +257,7 @@
         transform: translateX(-50%);
     }
 
-
 }
-
-
 
 /* HEALTHY PLANET PANE  */
 @media screen and (max-width: 650px) {
@@ -285,13 +273,9 @@
 
     @media screen and (max-width: 575px) {
 
-        .why-section {
-            /* height: 1400px; */
-        }
 
         .wyld-why {
             max-width: 340px;
-
         }
 
         .why-list {
@@ -340,13 +324,9 @@
             width: 100%;
         }
 
-
-
     }
 
-
 }
-
 
 @media screen and (max-width: 529px) {
 
@@ -386,7 +366,6 @@
     .card--wyld-sides {
         margin: 30px -24px;
     }
-
 
     .mix-body-text p {
         font-size: 19px;
@@ -439,7 +418,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
 
     .card--wyld-left {
         margin-left: auto;
@@ -592,11 +570,9 @@
         left: 68px;
     }
 
-
     .custom-quantity img {
         left: 13px !important;
     }
-
 
     .card--contact-form {
         width: 270px;
@@ -669,3 +645,5 @@
     }
 
 }
+
+/* END of document */

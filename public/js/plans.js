@@ -1,3 +1,5 @@
+// Order Plans JavaScript for "Wyldgreens"
+
 // DOM OBJECT ASSIGNMENTS
 
 let weeklyPane = document.querySelector('#weekly-pane');
@@ -18,7 +20,6 @@ let bulkCheck = document.querySelector('.bulk-btn-check');
 let oneTimeDelBool = false;
 let weeklyDelBool = false;
 let bulkDelBool = false;
-
 
 // PLAN SELECTION STYLES
 
@@ -147,3 +148,4 @@ function oneTimeDel() {
     }
 }
 
+// END of document
