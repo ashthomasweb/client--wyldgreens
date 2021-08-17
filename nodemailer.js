@@ -1,9 +1,4 @@
-// Nodemailer functions and templates for "Looseleashdog" 
-
-// ** LumberJack-Setup **
-// This is your nodemailer module. 
-// You will need to edit this file. Look for the setup instructions below.
-
+// Nodemailer functions and templates for "Wyldgreens" 
 
 // Dependencies
 const nodemailer = require("nodemailer");
@@ -101,17 +96,8 @@ function subjectLineDate() {
 }
 
 
-
-
-
-
-// ** LumberJack-Setup - Editing supplied HTML email templates **
-
 // Templates
 function inquiryTemplate() {
-
-    // Do not remove backtick. Only edit HTML markup below. Be mindful of the objects with ${this} syntax, they are data values 
-    // coming from the form and must not be changed. Stick to single quotes, only use inline CSS styles.
 
     let inqTemplate = `
     
@@ -137,16 +123,13 @@ function inquiryTemplate() {
             <p style='padding: 0 30px;'>$${total_price}</p>    
     </div>
    
-    `; // Do not remove backtick
+    `; 
 
     let output = inqTemplate.replace(/\n/g, "").replace(/\r/g, "<br>");
     return output;
 };
 
 function confirmTemplate() {
-
-    // Do not remove backtick. Only edit HTML markup below. Be mindful of the objects with ${this} syntax, they are data values coming 
-    // from the form and must not be changed. Stick to single quotes, only use inline CSS styles.
 
     let confTemplate = `
     
@@ -175,25 +158,14 @@ function confirmTemplate() {
             <p style='padding: 0 30px;'>$${total_price}</p>  
     </div>
 
-    `; // Do not remove backtick
+    `; 
 
     let output = confTemplate.replace(/\n/g, "").replace(/\r/g, "<br>");
     return output;
 };
 
-// ** LumberJack-Setup - New Email Template **
-
-
 
 // function newTemplate() {
-
-//     // This is a new email template for you to use. Simply uncomment the template, email object, and parsing lines of code associated 
-//     // with "newTemplate", as well as the parsed object in the exports at the bottom. Head over to your "/app.js" and look for the setup 
-//     // comments in the /post request.
-
-
-//     // Do not remove backtick. Only edit HTML markup below. Be mindful of the objects with ${this} syntax, they are data values coming 
-//     // from the form and must not be changed. Stick to single quotes, only use inline CSS styles.
 
 //     let newTemplate = `
 
@@ -208,7 +180,7 @@ function confirmTemplate() {
 //             <p style='padding: 0 30px;'>${message}</p>
 //     </div>
 
-//     `; // Do not remove backtick
+//     `;
 
 //     let output = newTemplate.replace(/\n/g, "").replace(/\r/g, "<br>");
 //     return output;

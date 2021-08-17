@@ -1,5 +1,5 @@
 
-
+// JavaScript from Lumberjack template
 
 // || Hamburger Menu for "LumberJack"
 
