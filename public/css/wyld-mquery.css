@@ -101,19 +101,16 @@
         margin: 0 auto;
     }
 
-
     .custom-top {
         height: 108px;
     }
 
     .custom-img {
-        width: 85%;
-
+        width: 273px;
     }
 
     .wyld-right-section {
         width: 94%;
-
     }
 
     .custom-bottom {
@@ -132,7 +129,6 @@
     .ingred-box {
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
-
     }
 
     .custom-close-clicked {
@@ -141,7 +137,6 @@
         border-top-right-radius: 3px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
-
     }
 
     .custom-remove-clicked {

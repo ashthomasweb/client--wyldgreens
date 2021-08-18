@@ -97,11 +97,14 @@ function openLightbox() {
 
 function runLightbox(input) {
     lightboxPane.pointerEvents = 'auto';
-    lightboxImg.attributes.src.value = `/images/greens/${input}`;
+    lightboxImg.attributes.src.value = `/images/greens/mix/${input}`;
     openLightbox();
 }
 
 // TOP PLANE ANIMATIONS
+
+
+
 
 let planeLeft = document.querySelector('#wyld-plane-top-goleft');
 let planeWrapLeft = document.querySelector('.plane-wrap-left');
@@ -240,6 +243,9 @@ function planeLevelBottomLeft() {
 let windowWidth = window.innerWidth;
 
 function topPlaneOffset() {
+
+    let startingAltitude = document.documentElement.clientHeight - 300;
+
     let contentBody = document.querySelector('.l-content-wrapper--contact');
     let contentWidth;
 
@@ -248,18 +254,23 @@ function topPlaneOffset() {
     let gutter = windowWidth - contentWidth;
     let offset = gutter / 2;
 
-    // console.log(windowWidth);
-    // console.log(contentWidth);
-    // console.log(offset)
     let string = `-${offset + 450}px`;
     planeLeft.style.right = string;
+    planeLeft.style.top = `${startingAltitude}px`;
 }
 
-function toLeftPromise() {
+
+
+
+
+
+
+
+
+function toLeftChain() {
 
     setTimeout(() => {
         if (parseInt(window.getComputedStyle(planeBottomLeft).getPropertyValue('right')) > window.innerWidth) {
-            console.log('hooray');
 
             // reset plane
             planeBottomLeft.classList.remove('plane-go-left');
@@ -269,19 +280,17 @@ function toLeftPromise() {
             // reset transition for next plane and call
             planeBottomRight.style.transition = 'left 10s linear, top 6.5s ease-in-out';
             planeBottomToRight();
-            toRightPromise();
+            toRightChain();
         }
 
-        console.log('Its time for the next plane...')
     }, 13000)
 
 }
 
-function toRightPromise() {
+function toRightChain() {
 
     setTimeout(() => {
         if (parseInt(window.getComputedStyle(planeBottomRight).getPropertyValue('left')) > window.innerWidth) {
-            console.log('hooray');
 
             // reset plane
             planeBottomRight.classList.remove('plane-go-right');
@@ -291,39 +300,65 @@ function toRightPromise() {
             // reset transition for next plane and call
             planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
             planeBottomToLeft();
-            toLeftPromise();
+            toLeftChain();
         }
-
-        console.log('Its time for the next plane...')
     }, 13000)
 
 }
 
-function resetPlanePositions() {
+
+
+
+function resetAnimations() {
+    // reset toLeft plane
     planeBottomLeft.classList.remove('plane-go-left');
     planeBottomLeft.style.transition = 'top 6.5s ease-in-out';
     planeBottomLeft.style.right = '-400px';
-    planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
 
+    // reset toRight plane
     planeBottomRight.classList.remove('plane-go-right');
     planeBottomRight.style.transition = 'top 6.5s ease-in-out';
     planeBottomRight.style.left = '-400px';
+
+    // reset top plane 
+    planeLeft.classList.remove('plane-go-left');
+    planeLeft.style.transition = 'top 6.5s ease-in-out';
+    planeLeft.style.right = '-400px';
+}
+
+function applyTransitions() {
+    // reset transition for top plane
+    planeLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
+
+    // reset transition for next plane
+    planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
+
+    // reset transition for next plane
     planeBottomRight.style.transition = 'left 10s linear, top 6.5s ease-in-out';
-
 }
 
-function startPromise() {
-    toLeftPromise();
-}
 
-// onload, and promise chain, display handling should be extracted
+
+
+
+
+
+
+
+
+
+
+
 function planeOnLoad() {
-    // set planes starting position
-    let startingAltitude = document.documentElement.clientHeight - 300;
-    planeLeft.style.top = `${startingAltitude}px`;
-    topPlaneOffset();
+    startTopPlane();
 
-    startPromise();
+    // initialize bottom planes
+    startChain();
+}
+
+function startTopPlane() {
+    // set top plane's starting position
+    topPlaneOffset();
 
     // initialize top plane
     setTimeout(() => {
@@ -335,10 +370,37 @@ function planeOnLoad() {
     setInterval(() => {
         planeDownLeft();
     }, 11000);
-
-    // initialize bottom planes
-    planeBottomToLeft();
 }
+
+function startChain() {
+    planeBottomToLeft();
+    toLeftChain();
+}
+
+let resizeCheck;
+
+function resizeEvent(){
+    resetAnimations();
+    setTimeout( () => {
+        applyTransitions();
+        startChain();
+    }, 50);
+}
+
+window.onresize = () => {
+  clearTimeout(resizeCheck);
+  resizeCheck = setTimeout(resizeEvent, 200);
+};
+
+
+
+
+
+
+
+
+
+
 
 
 // // development/testing functions
