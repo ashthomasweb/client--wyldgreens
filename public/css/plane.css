@@ -126,14 +126,14 @@
 /* parent class - going left - starts right */
 .plane-pane-bottom-left {
     position: absolute;
-    top: 2900px;
+    top: 3000px;
 
     right: -400px;
     z-index: 0;
     height: 60px;
     width: 400px;
     transform: scale(0.65);
-    transition: right 10s linear, top 6.5s ease-in-out;
+    transition: right 40s linear, top 6.5s ease-in-out;
 }
 
 
@@ -227,7 +227,6 @@
     transform: skewY(-6deg);
 }
 
-
 /* parent class - going right - starts left */
 .plane-pane-bottom-right {
     position: absolute;
@@ -237,7 +236,7 @@
     height: 60px;
     width: 400px;
     transform: scale(0.65);
-    transition: left 10s linear, top 6.5s ease-in-out;
+    transition: left 40s linear, top 6.5s ease-in-out;
 }
 
 /* wrappers */

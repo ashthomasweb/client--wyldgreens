@@ -101,19 +101,19 @@ function runLightbox(input) {
     openLightbox();
 }
 
+
 // TOP PLANE ANIMATIONS
-
-
-
 
 let planeLeft = document.querySelector('#wyld-plane-top-goleft');
 let planeWrapLeft = document.querySelector('.plane-wrap-left');
 let bannerWrapLeft = document.querySelector('.banner-outerwrap-left');
 
+// parent animation
 function planeToLeft() {
     planeLeft.classList.add('plane-go-left');
 }
 
+// fly higher
 function planeUpLeft() {
     let currentAltitude = parseInt(getComputedStyle(planeLeft).getPropertyValue('top'));
 
@@ -128,6 +128,7 @@ function planeUpLeft() {
     }, 4700)
 }
 
+// fly lower
 function planeDownLeft() {
     let currentAltitude = parseInt(getComputedStyle(planeLeft).getPropertyValue('top'));
 
@@ -142,6 +143,7 @@ function planeDownLeft() {
     }, 4700)
 }
 
+// level out
 function planeLevelLeft() {
     planeWrapLeft.classList.remove('plane-wrap-up-left');
     bannerWrapLeft.classList.remove('banner-wrap-up-left');
@@ -149,94 +151,157 @@ function planeLevelLeft() {
     bannerWrapLeft.classList.remove('banner-wrap-down-left');
 }
 
+
 // BOTTOM PLANES
 
 let planeBottomRight = document.querySelector('#wyld-plane-bottom-goright');
 let planeWrapBottomRight = document.querySelector('.plane-wrap-bottom-right');
 let bannerWrapBottomRight = document.querySelector('.banner-outerwrap-bottom-right');
 
+// parent animation
 function planeBottomToRight() {
     planeBottomRight.classList.add('plane-go-right');
+
+    let random = () => Math.random();
+    let num = random;
+
+    setTimeout(() => {
+        if (num < 0.5) {
+            planeUpBottomRight();
+        } else {
+            altitudeRight() && planeDownBottomRight();
+            !altitudeRight() && planeUpBottomRight();
+        }
+    }, 9000);
 }
 
+// fly higher
 function planeUpBottomRight() {
     let currentAltitude = parseInt(getComputedStyle(planeBottomRight).getPropertyValue('top'));
 
     planeWrapBottomRight.classList.add('plane-wrap-up-right');
-    bannerWrapRight.classList.add('banner-wrap-up-right');
+    bannerWrapBottomRight.classList.add('banner-wrap-up-right');
 
     setTimeout(() => {
         planeBottomRight.style.top = `${currentAltitude - 150}px`;
+
+
     }, 350)
     setTimeout(() => {
         planeLevelBottomRight();
+
     }, 4700)
 }
 
+// fly lower
 function planeDownBottomRight() {
     let currentAltitude = parseInt(getComputedStyle(planeBottomRight).getPropertyValue('top'));
 
     planeWrapBottomRight.classList.add('plane-wrap-down-right');
-    bannerWrapRight.classList.add('banner-wrap-down-right');
+    bannerWrapBottomRight.classList.add('banner-wrap-down-right');
 
     setTimeout(() => {
         planeBottomRight.style.top = `${currentAltitude + 150}px`;
+
     }, 350)
     setTimeout(() => {
         planeLevelBottomRight();
+
     }, 4700)
 }
 
+// level out
 function planeLevelBottomRight() {
     planeWrapBottomRight.classList.remove('plane-wrap-up-right');
-    bannerWrapRight.classList.remove('banner-wrap-up-right');
+    bannerWrapBottomRight.classList.remove('banner-wrap-up-right');
     planeWrapBottomRight.classList.remove('plane-wrap-down-right');
-    bannerWrapRight.classList.remove('banner-wrap-down-right');
+    bannerWrapBottomRight.classList.remove('banner-wrap-down-right');
 }
+
 
 let planeBottomLeft = document.querySelector('#wyld-plane-bottom-goleft');
 let planeWrapBottomLeft = document.querySelector('.plane-wrap-bottom-left');
 let bannerWrapBottomLeft = document.querySelector('.banner-outerwrap-bottom-left');
 
+// parent animation
 function planeBottomToLeft() {
     planeBottomLeft.classList.add('plane-go-left');
+
+    let random = () => Math.random();
+    let num = random;
+
+    setTimeout(() => {
+        if (num < 0.5) {
+            planeUpBottomLeft();
+        } else {
+            altitudeLeft() && planeDownBottomLeft();
+            !altitudeLeft() && planeUpBottomLeft();
+        }
+    }, 9000);
 }
 
+// fly higher
 function planeUpBottomLeft() {
     let currentAltitude = parseInt(getComputedStyle(planeBottomLeft).getPropertyValue('top'));
 
     planeWrapBottomLeft.classList.add('plane-wrap-up-left');
-    bannerWrapLeft.classList.add('banner-wrap-up-left');
+    bannerWrapBottomLeft.classList.add('banner-wrap-up-left');
 
     setTimeout(() => {
         planeBottomLeft.style.top = `${currentAltitude - 150}px`;
+
     }, 350)
     setTimeout(() => {
         planeLevelBottomLeft();
+
     }, 4700)
 }
 
+// fly lower
 function planeDownBottomLeft() {
     let currentAltitude = parseInt(getComputedStyle(planeBottomLeft).getPropertyValue('top'));
 
     planeWrapBottomLeft.classList.add('plane-wrap-down-left');
-    bannerWrapLeft.classList.add('banner-wrap-down-left');
+    bannerWrapBottomLeft.classList.add('banner-wrap-down-left');
 
     setTimeout(() => {
         planeBottomLeft.style.top = `${currentAltitude + 150}px`;
+
     }, 350)
     setTimeout(() => {
         planeLevelBottomLeft();
+
     }, 4700)
 }
 
+// level out
 function planeLevelBottomLeft() {
     planeWrapBottomLeft.classList.remove('plane-wrap-up-left');
-    bannerWrapLeft.classList.remove('banner-wrap-up-left');
+    bannerWrapBottomLeft.classList.remove('banner-wrap-up-left');
     planeWrapBottomLeft.classList.remove('plane-wrap-down-left');
-    bannerWrapLeft.classList.remove('banner-wrap-down-left');
+    bannerWrapBottomLeft.classList.remove('banner-wrap-down-left');
+    console.log('finished')
 }
 
+// BOTTOM PLANES MIN ALTITUDE 
+
+function altitudeLeft() {
+    currentAltitude = parseInt(window.getComputedStyle(planeBottomLeft).getPropertyValue('top'));
+    if (currentAltitude >= 2800) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function altitudeRight() {
+    currentAltitude = parseInt(window.getComputedStyle(planeBottomRight).getPropertyValue('top'));
+    if (currentAltitude >= 2800) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 // POSITION FINDER AND PSUEDO-PROMISES
 
@@ -259,14 +324,6 @@ function topPlaneOffset() {
     planeLeft.style.top = `${startingAltitude}px`;
 }
 
-
-
-
-
-
-
-
-
 function toLeftChain() {
 
     setTimeout(() => {
@@ -278,12 +335,12 @@ function toLeftChain() {
             planeBottomLeft.style.right = '-400px';
 
             // reset transition for next plane and call
-            planeBottomRight.style.transition = 'left 10s linear, top 6.5s ease-in-out';
+            planeBottomRight.style.transition = 'left 40s linear, top 6.5s ease-in-out';
             planeBottomToRight();
             toRightChain();
         }
 
-    }, 13000)
+    }, 45000)
 
 }
 
@@ -298,16 +355,13 @@ function toRightChain() {
             planeBottomRight.style.left = '-400px';
 
             // reset transition for next plane and call
-            planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
+            planeBottomLeft.style.transition = 'right 40s linear, top 6.5s ease-in-out';
             planeBottomToLeft();
             toLeftChain();
         }
-    }, 13000)
+    }, 90000)
 
 }
-
-
-
 
 function resetAnimations() {
     // reset toLeft plane
@@ -328,26 +382,14 @@ function resetAnimations() {
 
 function applyTransitions() {
     // reset transition for top plane
-    planeLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
+    planeLeft.style.transition = 'right 40s linear, top 6.5s ease-in-out';
 
     // reset transition for next plane
-    planeBottomLeft.style.transition = 'right 10s linear, top 6.5s ease-in-out';
+    planeBottomLeft.style.transition = 'right 40s linear, top 6.5s ease-in-out';
 
     // reset transition for next plane
-    planeBottomRight.style.transition = 'left 10s linear, top 6.5s ease-in-out';
+    planeBottomRight.style.transition = 'left 40s linear, top 6.5s ease-in-out';
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 function planeOnLoad() {
     startTopPlane();
@@ -379,29 +421,19 @@ function startChain() {
 
 let resizeCheck;
 
-function resizeEvent(){
+function resizeEvent() {
     resetAnimations();
     setTimeout( () => {
         applyTransitions();
         startChain();
-    }, 50);
+        startTopPlane();
+    }, 10000);
 }
 
 window.onresize = () => {
-  clearTimeout(resizeCheck);
-  resizeCheck = setTimeout(resizeEvent, 200);
+    clearTimeout(resizeCheck);
+    resizeCheck = setTimeout(resizeEvent, 200);
 };
-
-
-
-
-
-
-
-
-
-
-
 
 // // development/testing functions
 // function forceParallaxOff() {

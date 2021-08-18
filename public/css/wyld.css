@@ -232,10 +232,10 @@
 }
 
 .lightbox img {
-    width: 80vw;    
+    width: 80vw;
     max-width: 650px;
     height: auto;
-    top: 50%;   
+    top: 50%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1825,11 +1825,15 @@
     position: relative;
     top: -3px;
     font-size: 15px;
-    
+
 }
 
 .order-textarea:focus {
     outline: none;
+}
+
+.scene-spacer {
+    height: 1000px;
 }
 
 /* END of document */

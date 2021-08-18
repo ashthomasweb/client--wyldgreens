@@ -192,7 +192,7 @@ function confirmTemplate() {
 // Nodemailer email objects
 function mailNewInquiry(user_name, user_email, message) {
     return `{"from": "order@wyldgreens.com",
-    "to": "ashleythomasweb@gmail.com",
+    "to": "alek@alekhess.com",
     "subject": "New Wyld order! From: ${user_name} on ${subjectLineDate()}",
     "html": "${inquiryTemplate()}"}`;
 };
