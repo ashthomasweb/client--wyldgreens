@@ -164,7 +164,6 @@ function confirmTemplate() {
     return output;
 };
 
-
 // function newTemplate() {
 
 //     let newTemplate = `
@@ -185,9 +184,6 @@ function confirmTemplate() {
 //     let output = newTemplate.replace(/\n/g, "").replace(/\r/g, "<br>");
 //     return output;
 // };
-
-
-
 
 // Nodemailer email objects
 function mailNewInquiry(user_name, user_email, message) {
@@ -212,13 +208,10 @@ function mailConfirmation(user_name, user_email, message) {
 //     "html": "${inquiryTemplate()}"}`;
 // };
 
-
-
 // Object parsing
 let inquiry = JSON.parse(mailNewInquiry(user_name, user_email, message));
 let finalConfirm = JSON.parse(mailConfirmation(user_name, user_email, message));
 // let newEmailTemplate = JSON.parse(newEmailTemp(user_name, user_email, message));
-
 
 // Exports
 module.exports = {

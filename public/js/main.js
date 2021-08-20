@@ -1,6 +1,5 @@
 // Main JavaScript for "Wyldgreens"
 
-
 // DOM OBJECT ASSIGNMENTS
 
 let ctaBtnPlan = document.querySelector('#plan-button');
@@ -217,7 +216,6 @@ function planeLevelBottomRight() {
     planeWrapBottomRight.classList.remove('plane-wrap-down-right');
     bannerWrapBottomRight.classList.remove('banner-wrap-down-right');
 }
-
 
 let planeBottomLeft = document.querySelector('#wyld-plane-bottom-goleft');
 let planeWrapBottomLeft = document.querySelector('.plane-wrap-bottom-left');
