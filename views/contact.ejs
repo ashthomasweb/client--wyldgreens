@@ -515,11 +515,11 @@
 
                         <div class="form-text-pane">
                             <p style="margin-top: 0; " class="form-text-p">
-                                Use this form to make any additions or changes. We will send a confirmation email with payment&nbsp;link shortly.
+                                Use this form to make any additions or changes. We will send&nbsp;a confirmation email with payment&nbsp;link shortly.
                             </p>
 
                             <p class="form-text-p">
-                                Deliveries always take place on<br>Wednesday afternoons and evenings.<br>Please remember to leave your used container at your door.
+                                Deliveries always take place<br>on Wednesday afternoons&nbsp;and evenings.&nbsp;Please remember to leave your&nbsp;used container at&nbsp;your&nbsp;door.
                             </p>
                         </div>
 
@@ -533,26 +533,26 @@
                         <div class="form-mix-pane">
                             <div class="wyld-form-mix">
                                 <div class="mix-wrap">
-                                    <input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">
-                                    <label class="form-title mix-title">Farmer's Mix</label>
+                                    
+                                    <label class="form-title mix-title"><input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">Farmer's Mix</label>
                                     <input class="form-num" type="number" name="farmers_num" placeholder="0" min="1" max="3" oninput="farmersInput()">
                                 </div>
 
                                 <div class="mix-wrap">
-                                    <input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">
-                                    <label class="form-title mix-title">Spicy Mix</label>
+                                    
+                                    <label class="form-title mix-title"><input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">Spicy Mix</label>
                                     <input class="form-num" type="number" name="spicy_num" placeholder="0" min="1" max="3" oninput="spicyInput()">
                                 </div>
 
                                 <div class="mix-wrap">
-                                    <input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">
-                                    <label class="form-title mix-title">Healthy Mix</label>
+                                    
+                                    <label class="form-title mix-title"><input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">Healthy Mix</label>
                                     <input class="form-num" type="number" name="healthy_num" placeholder="0" min="1" max="3" oninput="healthyInput()">
                                 </div>
 
                                 <div class="mix-wrap">
-                                    <input type="checkbox" name="mix_salad" oninput="saladCheckbox()">
-                                    <label class="form-title mix-title">Salad Mix</label>
+                                    
+                                    <label class="form-title mix-title"><input type="checkbox" name="mix_salad" oninput="saladCheckbox()">Salad Mix</label>
                                     <input class="form-num" type="number" name="salad_num" placeholder="0" min="1" max="3" oninput="saladInput()">
                                 </div>
 
@@ -594,19 +594,19 @@
                                 <div class="order num-1">
                                     <img onclick="removeCustomOrder(1)" class="form-btn-cross" src="/images/icons/cross.png">
                                     <input name="order1_num" type="number" min="1" max="3" placeholder="0" oninput="order1Input()">
-                                    <textarea name="order1_ing" class="order-textarea" onclick="addIngredientForm()">Add ingredients</textarea>
+                                    <textarea name="order1_ing" class="order-textarea" onclick="addIngredientForm(event)">Add Ingredients</textarea>
                                 </div>
 
                                 <div class="order num-2">
                                     <img onclick="removeCustomOrder(2)" class="form-btn-cross" src="/images/icons/cross.png">
                                     <input name="order2_num" type="number" min="1" max="3" placeholder="0" oninput="order2Input()">
-                                    <textarea name="order2_ing" class="order-textarea" onclick="addIngredientForm()">Add ingredients</textarea>
+                                    <textarea name="order2_ing" class="order-textarea" onclick="addIngredientForm(event)">Add Ingredients</textarea>
                                 </div>
 
                                 <div class="order num-3">
                                     <img onclick="removeCustomOrder(3)" class="form-btn-cross" src="/images/icons/cross.png">
                                     <input name="order3_num" type="number" min="1" max="3" placeholder="0" oninput="order3Input()">
-                                    <textarea name="order3_ing" class="order-textarea" onclick="addIngredientForm()">Add ingredients</textarea>
+                                    <textarea name="order3_ing" class="order-textarea" onclick="addIngredientForm(event)">Add Ingredients</textarea>
                                 </div>
                             </div>
 

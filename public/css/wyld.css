@@ -915,13 +915,13 @@
     background-color: white;
     border: 1px solid var(--secondary-color);
     width: 328px;
-    height: 139px;
+    height: 143px;
     margin-top: 20px;
     border-radius: 6px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0;
+    /* font-size: 0; */
     overflow: hidden;
     transition: box-shadow .2s ease-out;
     z-index: 5;
@@ -1403,8 +1403,8 @@
 }
 
 .wyld-form-plans input {
-    width: 28px;
-    height: 23px;
+    width: 25px;
+    height: 25px;
     margin-bottom: 0px;
 }
 
@@ -1415,7 +1415,7 @@
 .form-text-pane {
     width: 400px;
     position: absolute;
-    top: -3px;
+    top: 11px;
     left: 0px;
     padding: 0 32px;
     transition: left .2s ease-in-out;
@@ -1459,7 +1459,7 @@
     border-top-right-radius: 4px;
     display: inline-block;
     width: 100%;
-    height: 190px;
+    height: 192px;
     padding: 10px;
     margin: 0 30px 20px 0;
     background-color: #c5e2c8;
@@ -1485,6 +1485,7 @@
 
 .wyld-form-mix input[type=number] {
     float: right;
+    height: 24px;
 }
 
 .form-num {
@@ -1499,12 +1500,28 @@
 
 .mix-wrap input[name=mix_custom] {
     pointer-events: none;
+    opacity: 0.4;
 }
 
 .mix-wrap input[name=custom_num] {
     user-select: none;
     cursor: none;
     pointer-events: none;
+}
+
+.quantity-total input[name=total_quan] {
+    -moz-appearance: textfield;
+}
+
+input[name=total_price] {
+    -moz-appearance: textfield;
+
+}
+
+input[name=total_price]::-webkit-outer-spin-button,
+input[name=total_price]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* PRICE BOX */
@@ -1526,6 +1543,7 @@
     float: right;
     pointer-events: none;
     user-select: none;
+    /* height: 24px; */
 }
 
 .price-total {
@@ -1584,10 +1602,10 @@
 
 .price-pane {
     position: absolute;
-    right: -5px;
-    top: 10px;
+    right: -15px;
+    top: 15px;
     display: inline-block;
-    width: 80px;
+    width: 90px;
 }
 
 .price-num {
@@ -1623,7 +1641,7 @@
     /* /* padding-top: 2px; */
     /* padding-bottom: 12px; */
     border: none;
-    width: 60px;
+    width: 50px;
     text-align: left;
     font-size: 18px;
 
@@ -1646,7 +1664,17 @@
 ::placeholder {
     font-family: var(--copy);
     font-size: 22px;
+}
 
+input[type=number] {
+    font-style: normal;
+    padding-left: 5px;
+
+}
+
+
+input[type=number]::placeholder {
+    font-style: normal;
 }
 
 .price-sign {
@@ -1674,7 +1702,7 @@
 
 .custom-title {
     margin: 0 auto 8px;
-    width: 200px;
+    width: 207px;
     text-align: center;
     position: relative;
     left: 50%;
@@ -1686,11 +1714,25 @@
 }
 
 .order input {
-    width: 40px;
-    margin: -2px 7px 14px 0;
+    width: 45px;
+    margin: -2px 4px 14px 0;
     display: inline-block;
     vertical-align: top;
+
 }
+
+/* Chrome, Safari, Edge, Opera */
+.order input::-webkit-outer-spin-button,
+.order input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.order input[type=number] {
+  -moz-appearance: textfield;
+} 
+
 
 .order p {
     display: inline-block;
@@ -1817,7 +1859,7 @@
     resize: none;
     cursor: pointer;
     background-color: var(--clear);
-    font-family: var(--headers);
+    font-family: var(--copy);
     color: var(--copy-dark);
     display: inline-block;
     max-width: 155px;
@@ -1825,7 +1867,6 @@
     position: relative;
     top: -3px;
     font-size: 15px;
-
 }
 
 .order-textarea:focus {

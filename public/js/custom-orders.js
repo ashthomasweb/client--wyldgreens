@@ -126,10 +126,12 @@ function newCustomDisplay() {
     applyIngredOffset();
 }
 
-function addIngredientForm() {
-    customNewOrder();
-    customOrderOn();
-    window.location.href = '#custom-box';
+function addIngredientForm(event) {
+    if ( event.target.innerHTML.includes('Ingredients') ) {
+        customNewOrder();
+        customOrderOn();
+        window.location.href = '#custom-box';
+    }
 }
 
 function removeCustomOrder(input) {

@@ -58,16 +58,16 @@ function formFieldCheck() {
 
     if (name == '' || email == '' || message == '' || planCheckReady() === false || formTotalPrice.value === '' || formTotalPrice.value === 0 || formTotalPrice.value === "0" ) { // not ready
         formReadyBool = false;
-        elem.style.color = 'var(--copy-dark)';
+        // elem.style.color = 'var(--copy-dark)';
 
 
     } else { // on ready
         formReadyBool = true;
 
-        elem.style.backgroundColor = 'lightblue';
+        // elem.style.backgroundColor = 'lightblue';
         elem.style.pointerEvents = 'auto';
-        elem.style.color = 'var(--highlight)';
-        elem.innerHTML = 'Place<br>Your Order!'
+        // elem.style.color = 'var(--highlight)';
+        elem.innerHTML = 'Place Your Order!'
     }
 }
 
