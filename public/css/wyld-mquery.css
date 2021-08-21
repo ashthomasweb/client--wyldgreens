@@ -111,29 +111,33 @@
 
     .wyld-right-section {
         width: 94%;
+        position: absolute;
+        bottom: 0;
+        transform: none;
+        padding-top: 0;
+        height: 246px;
     }
 
     .custom-bottom {
-        height: 515px;
+        height: 491px;
     }
 
     .ingred-wrap {
-        left: -8px;
-        bottom: -13px;
-    }
-
-    .wyld-right-section {
-        top: 45%;
+        width: 322px;
+        left: -18px;
+        bottom: -1px;
+        
     }
 
     .ingred-box {
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
-        bottom: 1px;
+        margin-top: 0px;
+        width: 322px;
     }
 
     .custom-close-clicked {
-        bottom: 142px;
+        bottom: 144px;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         border-bottom-left-radius: 0px;
@@ -141,7 +145,7 @@
     }
 
     .custom-remove-clicked {
-        bottom: 142px;
+        bottom: 144px;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         border-bottom-left-radius: 0px;
@@ -522,9 +526,20 @@
         right: 56px;
     }
 
+    .custom-bottom {
+        height: 468px;
+    }
+
+    .wyld-right-section {
+        height: 262px;
+        top: unset;
+        bottom: 0px;
+    }
+
     .custom-btn-slider {
-        right: -72px;
+        right: -77px;
         width: 394px;
+        bottom: 0px;
     }
 
     .custom-close {
@@ -542,7 +557,7 @@
     }
 
     .custom-order-button {
-        width: 262px;
+        width: 264px;
     }
 
     .custom-order-btn-clicked {
@@ -620,10 +635,6 @@
     .bulk-discount-pane {
         left: 10px;
         width: 74px;
-    }
-
-    .price-pane {
-        width: 75px;
     }
 
     .textarea-section {

@@ -54,10 +54,10 @@ if (!isMobile) {
     document.addEventListener('scroll', parallaxOn, false);
     document.addEventListener('scroll', scrollStop, false);
 } else if (isMobile) {
-    mobileStyling();
+    mobileParallaxStyling();
 }
 
-function mobileStyling() {
+function mobileParallaxStyling() {
     sceneBack.style.height = '100vh';
     mobileMix.style.color = 'var(--copy-dark)';
     mobilePlan.style.color = 'var(--copy-dark)';
