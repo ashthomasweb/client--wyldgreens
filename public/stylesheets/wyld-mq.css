@@ -330,6 +330,10 @@
 
 @media screen and (max-width: 529px) {
 
+    .how-it-works-wrapper {
+        width: 334px;
+    }
+
     .logo {
         width: 420px;
     }
