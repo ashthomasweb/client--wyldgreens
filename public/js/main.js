@@ -29,42 +29,6 @@ ctaBtnOrder.addEventListener('click', () => {
     window.scrollBy(0, -50);
 });
 
-// PARALLAX
-
-let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-let sceneBack = document.querySelector('.scene-back');
-let mobileMix = document.querySelector('#mobile-p-mix');
-let mobilePlan = document.querySelector('#mobile-p-plan');
-
-let parallaxOn = () => {
-    let imageOffsetRatio = 4.1;
-    let amount = (window.scrollY / imageOffsetRatio);
-    let string = `-${amount*2}px`;
-    pxBack.style.transform = `translateY(${string})`;
-}
-
-let scrollStop = () => {
-    let clientHeight = document.documentElement.clientHeight;
-    if (pxBack.getBoundingClientRect().bottom < clientHeight) {
-        pxBack.style.transform = `translateY(-${3500 - clientHeight}px)`
-    }
-}
-
-if (!isMobile) {
-    document.addEventListener('scroll', parallaxOn, false);
-    document.addEventListener('scroll', scrollStop, false);
-} else if (isMobile) {
-    mobileParallaxStyling();
-}
-
-function mobileParallaxStyling() {
-    sceneBack.style.height = '100vh';
-    mobileMix.style.color = 'var(--copy-dark)';
-    mobilePlan.style.color = 'var(--copy-dark)';
-    mobileMix.style.fontWeight = '600';
-    mobilePlan.style.fontWeight = '600';
-}
-
 // LIGHTBOX
 
 let bodyWrap = document.querySelector('.l-body-wrapper--contact');
@@ -307,7 +271,7 @@ let windowWidth = window.innerWidth;
 
 function topPlaneOffset() {
 
-    let startingAltitude = document.documentElement.clientHeight - 300;
+    // let startingAltitude = document.documentElement.clientHeight - 300;
 
     let contentBody = document.querySelector('.l-content-wrapper--contact');
     let contentWidth;
@@ -319,7 +283,7 @@ function topPlaneOffset() {
 
     let string = `-${offset + 450}px`;
     planeLeft.style.right = string;
-    planeLeft.style.top = `${startingAltitude}px`;
+    planeLeft.style.top = '140px';
 }
 
 function toLeftChain() {
@@ -366,16 +330,23 @@ function resetAnimations() {
     planeBottomLeft.classList.remove('plane-go-left');
     planeBottomLeft.style.transition = 'top 6.5s ease-in-out';
     planeBottomLeft.style.right = '-400px';
-
+    
     // reset toRight plane
     planeBottomRight.classList.remove('plane-go-right');
     planeBottomRight.style.transition = 'top 6.5s ease-in-out';
     planeBottomRight.style.left = '-400px';
-
+    
     // reset top plane 
     planeLeft.classList.remove('plane-go-left');
     planeLeft.style.transition = 'top 6.5s ease-in-out';
     planeLeft.style.right = '-400px';
+
+    // remove rotation animation classes
+    setTimeout( () => {
+        planeLevelBottomRight();
+        planeLevelBottomLeft();
+        planeLevelLeft();
+    }, 0);
 }
 
 function applyTransitions() {
@@ -432,6 +403,50 @@ window.onresize = () => {
     clearTimeout(resizeCheck);
     resizeCheck = setTimeout(resizeEvent, 200);
 };
+
+
+// PARALLAX
+
+let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+let sceneBack = document.querySelector('.scene-back');
+let mobileMix = document.querySelector('#mobile-p-mix');
+let mobilePlan = document.querySelector('#mobile-p-plan');
+
+let parallaxOn = () => {
+    let imageOffsetRatio = 4.1;
+    let amount = (window.scrollY / imageOffsetRatio);
+    let string = `-${amount*2}px`;
+    pxBack.style.transform = `translateY(${string})`;
+}
+
+let scrollStop = () => {
+    let clientHeight = document.documentElement.clientHeight;
+    if (pxBack.getBoundingClientRect().bottom < clientHeight) {
+        pxBack.style.transform = `translateY(-${3500 - clientHeight}px)`
+    }
+}
+
+if (!isMobile) {
+    document.addEventListener('scroll', parallaxOn, false);
+    document.addEventListener('scroll', scrollStop, false);
+    setTimeout( () => {
+        planeLeft.style.display = 'block';
+    }, 100 );
+
+} else if (isMobile) {
+    mobileParallaxStyling();
+    planeLeft.style.display = 'none';
+}
+
+function mobileParallaxStyling() {
+    sceneBack.style.height = '100vh';
+    mobileMix.style.color = 'var(--copy-dark)';
+    mobilePlan.style.color = 'var(--copy-dark)';
+    mobileMix.style.fontWeight = '600';
+    mobilePlan.style.fontWeight = '600';
+}
+
+
 
 // // development/testing functions
 // function forceParallaxOff() {

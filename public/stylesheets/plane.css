@@ -25,8 +25,8 @@
 /* parent class - going left - starts from right */
 .plane-pane-top-left {
     position: absolute;
-    /* right: -787px; */
     z-index: 0;
+    display: none;
     height: 60px;
     width: 400px;
     transform: scale(0.75);

@@ -302,8 +302,6 @@
     top: -62px;
     border-radius: 52px;
     z-index: 10;
-    /* box-shadow: 0 0 6px -2px #222; */
-    cursor: pointer;
 }
 
 .how-it-works-wrapper h3 {
@@ -419,9 +417,9 @@
     width: 100%;
     height: 270px;
     padding-top: 48px;
-    top: -48px;
+    top: -63px;
     left: 0;
-    margin-bottom: -55px;
+    margin-bottom: -70px;
     transition: left .2s ease-in-out, margin-bottom .2s ease-in-out;
 }
 
@@ -1855,6 +1853,8 @@ input[type=number]::placeholder {
     left: 50%;
     transform: translateX(-50%);
     top: -77px;
+    z-index: 95;
+    cursor: pointer;
 }
 
 .hand-click {
@@ -1887,7 +1887,7 @@ input[type=number]::placeholder {
 }
 
 .scene-spacer {
-    height: 1000px;
+    height: calc(100vh - 180px);
 }
 
 /* END of document */

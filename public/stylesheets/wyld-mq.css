@@ -7,7 +7,7 @@
     .scene-back {
         background-image: url(/images/horse-farm-large-final.png);
     }
-    
+
 }
 
 @media screen and (max-width: 1999px) {
@@ -126,7 +126,7 @@
         width: 322px;
         left: -18px;
         bottom: -1px;
-        
+
     }
 
     .ingred-box {
@@ -197,21 +197,156 @@
 
     @media screen and (max-width: 821px) {
 
-        #order-button {
-            right: -150px;
-            top: 20px;
+        .green-arrow {
+            display: block;
+            width: 50px;
+            transform: rotate(-135deg) scaleX(-1);
+            top: 157px;
+            left: 259px;
         }
 
+        .second-arrow {
+            top: 312px;
+
+        }
+
+        .how-it-works-wrapper {
+            max-width: 640px;
+        }
+
+
+        .how-it-works-wrapper h3 {
+            max-width: 640px;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 666px) {
+
+
+            .how-it-works-wrapper {
+                max-width: 500px;
+            }
+
+
+            .how-it-works-wrapper h3 {
+                max-width: 500px;
+                margin: 0 auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .cta-back {
-            left: 49%;
+            left: 50%;
             transform: translateX(-50%);
             width: 550px;
             margin-bottom: 160px;
+            top: -57px;
         }
 
         .l-box-third {
-            width: 265.31px;
+            width: 275px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 30px;
         }
+
+        .make-smaller {
+            width: 275px;
+            height: 125px;
+        }
+
+        .make-smaller h3 {
+            font-size: 24px;
+            letter-spacing: 1px;
+            float: right;
+            transform: none;
+            position: relative;
+            max-width: 105px;
+            line-height: 1.3;
+        }
+
+        .make-smaller img {
+            transform: none;
+            height: 80px !important;
+            left: 10px;
+        }
+
+        #plan-button {
+            left: 0px;
+        }
+
+        #mix-button {
+            left: 0px;
+        }
+
+        #order-button {
+            left: 0px;
+        }
+
+
+        #plan-button h3 {
+            top: 50%;
+            transform: translateY(-50%);
+            bottom: 0;
+        }
+
+        #plan-button img {
+            top: 2px !important;
+            left: 14px !important;
+        }
+
+        #mix-button h3 {
+            top: 50%;
+            transform: translateY(-50%);
+            bottom: 0;
+
+        }
+
+        #mix-button img {
+            left: 18px !important;
+            top: 5px !important;
+        }
+
+        #order-button h3 {
+            top: 50%;
+            transform: translateY(-50%);
+            bottom: 0;
+            left: 0px !important;
+
+        }
+
+        #order-button img {
+            height: 70px !important;
+            top: 8px !important;
+        }
+
 
         .why-section {
             margin-top: 235px;
@@ -330,8 +465,12 @@
 
 @media screen and (max-width: 529px) {
 
+    .cloud {
+        display: none;
+    }
+
     .how-it-works-wrapper {
-        width: 334px;
+        width: 390px;
     }
 
     .logo {
@@ -339,21 +478,17 @@
     }
 
     .cta-back {
-        height: 700px;
+        height: 496px;
         margin-bottom: 0;
-    }
-
-    .l-box-third {
-        display: block;
     }
 
     #plan-button {
         left: 0;
-        margin-bottom: 15px;
+        /* margin-bottom: 15px; */
     }
 
     #order-button {
-        top: 15px;
+        /* top: 15px; */
         right: 0;
     }
 
@@ -385,13 +520,17 @@
     .avatar-pane--home h2 {
         padding: 0 15px;
     }
-}
 
+}
 
 @media screen and (max-width: 442px) {
 
     .logo {
         width: 340px;
+    }
+
+    .light-mid {
+        width: 300px;
     }
 
     .how-it-works-wrapper {
@@ -477,8 +616,16 @@
         width: 264px;
     }
 
+    .light-mid {
+        width: 265px;
+    }
+
     .how-it-works-wrapper {
         width: 250px;
+    }
+
+    .how-it-works-wrapper h3 {
+        font-size: 28px;
     }
 
     .wyld-why li {
