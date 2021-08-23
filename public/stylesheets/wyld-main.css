@@ -176,6 +176,7 @@
 
 .adjust-order {
     top: -15px;
+    margin-bottom: 9px;
 }
 
 .section-img {
@@ -291,14 +292,14 @@
 }
 
 .how-it-works-wrapper {
-    font-size: 22px;
+    font-size: 40px;
     text-align: center;
-    width: 323px;
+    width: 800px;
     margin: 0 auto;
     border: none;
     position: relative;
-    background-color: #202024;
-    top: -122px;
+    background-color: #20202400;
+    top: -62px;
     border-radius: 52px;
     z-index: 10;
     /* box-shadow: 0 0 6px -2px #222; */
@@ -306,13 +307,15 @@
 }
 
 .how-it-works-wrapper h3 {
+    letter-spacing: 1px;
     padding: 10px 20px;
     line-height: 1.3;
     display: inline-block;
     position: relative;
     bottom: 0px;
     margin: 0 -2px;
-    color: whitesmoke;
+    color: var(--copy-dark);
+
 }
 
 .how-subtitle {
@@ -518,7 +521,7 @@
 
 .why-section {
     position: relative;
-    margin-top: 70px;
+    margin-top: 58px;
 }
 
 .cloud {
@@ -1248,7 +1251,7 @@
 .plan-text {
     max-width: 600px;
     padding: 0px 0 20px;
-    margin: 0 auto 60px;
+    margin: 0 auto 70px;
 }
 
 .plan-text p {
@@ -1816,7 +1819,7 @@ input[type=number]::placeholder {
 }
 
 .plan-spacer {
-    height: 130px;
+    height: 100px;
 }
 
 .background-scene {
@@ -1846,12 +1849,12 @@ input[type=number]::placeholder {
 
 
 .light-mid {
-    width: 610px;
+    width: 425px;
     display: inline-block;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    top: -70px;
+    top: -77px;
 }
 
 .hand-click {
