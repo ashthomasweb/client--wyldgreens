@@ -19,8 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', function (req, res) {
-    res.render('contact', {
-        pageTitle: "Contact",
+    res.render('home', {
+        pageTitle: "Wyldgreens",
         responseBool: false,
     });
 });
@@ -56,8 +56,8 @@ app.post('/', function (req, res) {
             ifError = true;
         })
         .finally(() => {
-            res.render('contact', {
-                pageTitle: "Contact",
+            res.render('home', {
+                pageTitle: "Wyldgreens",
                 responseBool: true,
                 isError: ifError,
             });

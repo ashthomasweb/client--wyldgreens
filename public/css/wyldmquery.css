@@ -380,6 +380,8 @@
     .mix-body-text p {
         max-width: 500px;
         position: relative;
+        margin-left: 0px;
+
         left: 50%;
         transform: translateX(-50%);
     }
