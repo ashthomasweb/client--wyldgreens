@@ -73,7 +73,9 @@ let bannerWrapLeft = document.querySelector('.banner-outerwrap-left');
 
 // parent animation
 function planeToLeft() {
+    planeLeft.style.opacity = '1';
     planeLeft.classList.add('plane-go-left');
+
 }
 
 // fly higher
@@ -429,13 +431,12 @@ let scrollStop = () => {
 if (!isMobile) {
     document.addEventListener('scroll', parallaxOn, false);
     document.addEventListener('scroll', scrollStop, false);
-    setTimeout( () => {
-        planeLeft.style.display = 'block';
-    }, 100 );
 
 } else if (isMobile) {
     mobileParallaxStyling();
+
     planeLeft.style.display = 'none';
+
 }
 
 function mobileParallaxStyling() {

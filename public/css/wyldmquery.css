@@ -161,7 +161,7 @@
     }
 
     .card-pane--wyld {
-        margin: -100px auto -130px;
+        margin: -100px auto;
     }
 
 }
@@ -495,7 +495,7 @@
     }
 
     .why-section {
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     .plan-text p {
@@ -507,6 +507,16 @@
     .card--wyld-sides {
         margin: 30px -24px;
     }
+
+    .mix-spacer {
+        height: 87px;
+    }
+
+    .plan-spacer {
+        height: 92px;
+    }
+
+   
 
     .mix-body-text p {
         font-size: 19px;
@@ -529,18 +539,17 @@
 
     .logo {
         width: 340px;
+        margin-bottom: 97px;
     }
 
     .light-mid {
-        width: 300px;
+        width: 240px;
+        top: -68px;
     }
 
     .how-it-works-wrapper {
         width: 334px;
-    }
-
-    .plan-spacer {
-        height: 130px;
+        font-size: 25px;
     }
 
     .why-header {
@@ -617,17 +626,18 @@
     .logo {
         width: 264px;
     }
-
+/* 
     .light-mid {
         width: 265px;
-    }
+    } */
 
     .how-it-works-wrapper {
-        width: 250px;
+        width: 280px;
     }
 
     .how-it-works-wrapper h3 {
-        font-size: 28px;
+        font-size: 24px;
+        padding: 10px 0;
     }
 
     .wyld-why li {
