@@ -1892,11 +1892,19 @@ input[type=number]::placeholder {
 }
 
 .mix-spacer {
-    height: 107px;
+    height: 87px;
 }
 
 .order-spacer {
-    height: 242px;
+    height: 244px;
+}
+
+.mix-spacer-1 {
+    height: 260px;
+}
+
+.mix-spacer-2 {
+    height: 260px;
 }
 
 /* END of document */

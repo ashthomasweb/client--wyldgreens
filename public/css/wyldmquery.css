@@ -63,7 +63,7 @@
         }
 
         .contact-submit {
-            top: -283px;
+            top: -284px;
             left: -31px;
             width: 406px;
             height: 90px;
@@ -163,6 +163,16 @@
     .card-pane--wyld {
         margin: -100px auto;
     }
+
+
+    .mix-spacer-1 {
+        height: 229px;
+    }
+
+    .mix-spacer-2 {
+        height: 229px;
+    }
+
 
 }
 
@@ -501,27 +511,34 @@
     .plan-text p {
         font-size: 19px;
         line-height: 1.5;
-        max-width: 336px;
+        max-width: 390px;
+    }
+
+    .plan-text {
+        margin-bottom: 51px;
     }
 
     .card--wyld-sides {
         margin: 30px -24px;
     }
 
-    .mix-spacer {
-        height: 87px;
-    }
-
     .plan-spacer {
         height: 92px;
     }
 
-   
+    .mix-spacer {
+        height: 58px;
+    }
+
+    .order-spacer {
+        height: 234px;
+    }
+
 
     .mix-body-text p {
         font-size: 19px;
         line-height: 1.5;
-        max-width: 325px;
+        max-width: 390px;
     }
 
     .adjust-order {
@@ -561,7 +578,7 @@
     }
 
     .plan-text {
-        margin-bottom: 30px;
+        margin-bottom: 52px;
     }
 
     .mix-body-text p {
@@ -620,16 +637,15 @@
 
 }
 
-
 @media screen and (max-width: 359px) {
 
     .logo {
         width: 264px;
     }
-/* 
+
     .light-mid {
-        width: 265px;
-    } */
+        width: 211px;
+    }
 
     .how-it-works-wrapper {
         width: 280px;
@@ -645,7 +661,6 @@
     }
 
     .plan-text {
-        margin-top: 46px;
         padding: 0px 29px 20px;
     }
 
@@ -654,17 +669,14 @@
     }
 
     .mix-body-text {
-        margin-top: 70px;
-        padding: 0px 14px 0px;
+        padding: 0px 29px 20px;
+        top: 21px;
+        position: relative;
     }
 
     .mix-body-text p {
         max-width: 270px;
         margin-left: 0px;
-    }
-
-    #pick-mix h2 {
-        padding: 0 45px;
     }
 
     .card--wyld-left {
@@ -677,7 +689,6 @@
 
     .card-art {
         height: 173px;
-
     }
 
     .mix-text {
@@ -824,6 +835,26 @@
         font-size: 14px;
         position: relative;
         right: 4px;
+    }
+
+}
+
+@media screen and (max-width: 335px) {
+
+    #pick-mix h2 {
+        padding: 0 45px;
+    }
+
+    #pick-plan h2 {
+        padding: 0 45px;
+    }
+
+    .mix-body-text {
+        margin-top: 54px;
+    }
+
+    .plan-text {
+        margin-top: 54px;
     }
 
 }
