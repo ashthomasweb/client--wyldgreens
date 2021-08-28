@@ -476,3 +476,5 @@ function sendHealthyData() {
     addToOrder('mix_healthy');
     getPriceTotal(25);
 }
+
+// END of document

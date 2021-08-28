@@ -11,7 +11,7 @@
     </div>
 
     <div class="scene-layer1">
-       
+
         <div id="wyld-plane-bottom-goleft" class="plane-pane-bottom-left">
             <div class="plane-wrap-bottom-left">
                 <img class="plane-component prop-left" src="/images/plane/prop.png">
@@ -248,7 +248,7 @@
 
         <!-- PICK A MIX SECTION -->
 
-        <div class="mix-spacer" ></div>
+        <div class="mix-spacer"></div>
 
         <div id="pick-mix" style="top: -15px;" class="avatar-pane--home">
             <img class="section-img" src="/images/icons/cta/hand-white.png">
@@ -324,7 +324,7 @@
             </div>
         </div>
 
-        <div class="mix-spacer-1" ></div>
+        <div class="mix-spacer-1"></div>
 
         <!-- SECOND PRODUCT ROW -->
 
@@ -386,7 +386,7 @@
             </div>
         </div>
 
-        <div class="mix-spacer-2" ></div>
+        <div class="mix-spacer-2"></div>
 
         <!-- CUSTOM PRODUCT ROW -->
 
@@ -411,10 +411,8 @@
                                 Custom orders may take a few weeks to initially fill.</p>
 
                             <div class="ingred-wrap">
-
                                 <button class="custom-new" type="button" onclick="customNewOrder()">Keep Shopping</button>
                                 <button class="custom-close" type="button" onclick="customOrderOff()">Close</button>
-
                                 <div class="ingred-box">
                                     <ul class="custom-ingredients">
                                         <label for=" Broccoli"><input id=" Broccoli" class="custom-check" type="checkbox" name=" Broccoli" oninput="ingredCheck()">- Broccoli</label><br>
@@ -536,25 +534,21 @@
                         <div class="form-mix-pane">
                             <div class="wyld-form-mix">
                                 <div class="mix-wrap">
-                                    
                                     <label class="form-title mix-title"><input type="checkbox" name="mix_farmers" oninput="farmersCheckbox()">Farmer's Mix</label>
                                     <input class="form-num" type="number" name="farmers_num" placeholder="0" min="1" max="3" oninput="farmersInput()">
                                 </div>
 
                                 <div class="mix-wrap">
-                                    
                                     <label class="form-title mix-title"><input type="checkbox" name="mix_spicy" oninput="spicyCheckbox()">Spicy Mix</label>
                                     <input class="form-num" type="number" name="spicy_num" placeholder="0" min="1" max="3" oninput="spicyInput()">
                                 </div>
 
                                 <div class="mix-wrap">
-                                    
                                     <label class="form-title mix-title"><input type="checkbox" name="mix_healthy" oninput="healthyCheckbox()">Healthy Mix</label>
                                     <input class="form-num" type="number" name="healthy_num" placeholder="0" min="1" max="3" oninput="healthyInput()">
                                 </div>
 
                                 <div class="mix-wrap">
-                                    
                                     <label class="form-title mix-title"><input type="checkbox" name="mix_salad" oninput="saladCheckbox()">Salad Mix</label>
                                     <input class="form-num" type="number" name="salad_num" placeholder="0" min="1" max="3" oninput="saladInput()">
                                 </div>
@@ -609,7 +603,7 @@
                                 <div class="order num-3">
                                     <img onclick="removeCustomOrder(3)" class="form-btn-cross" src="/images/icons/cross.png">
                                     <input name="order3_num" type="number" min="1" max="3" placeholder="0" oninput="order3Input()">
-                                    <textarea name="order3_ing" class="order-textarea" onclick="addIngredientForm(event)" readonly >Add Ingredients</textarea>
+                                    <textarea name="order3_ing" class="order-textarea" onclick="addIngredientForm(event)" readonly>Add Ingredients</textarea>
                                 </div>
                             </div>
 
@@ -625,8 +619,9 @@
             </div>
         </div>
 
-        <div class="scene-spacer" ></div>
+        <div class="scene-spacer"></div>
 
         <%- include("../views/partials/footer.ejs") -%>
 
         <!-- END of document -->
+        
