@@ -12,8 +12,8 @@
 A Colorado local business website. Features a single page presentation at client request for landing, about, product, and order completion. Final product allows for a quick and seamless delivery of all necessary information and functionality.
 
 ## Screenshots
-![Example screenshot](/images/readme/Capture1.png)
-![Example screenshot](/images/readme/Capture2.png)
+![Example screenshot](/public/images/readme/Capture1.png)
+![Example screenshot](/public/images/readme/Capture2.png)
 
 ## Technologies
 * Node.js v12.18.3
