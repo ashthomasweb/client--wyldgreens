@@ -1,6 +1,5 @@
 // Node.js/Express Server "app.js" for "Wyldgreens" 
 
-
 // Dependencies 
 require('dotenv').config();
 
@@ -9,8 +8,11 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const favicon = require('express-favicon');
 const nodemailer = require("nodemailer");
+const secure = require("ssl-express-www");
+
 
 const app = express();
+app.use(secure)
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.set('view engine', 'ejs');
@@ -19,7 +21,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
 
 app.get('/', function (req, res) {
     res.render('home', {
@@ -196,27 +197,6 @@ app.post('/', function (req, res) {
         return output;
     };
 
-    // function newTemplate() {
-
-    //     let newTemplate = `
-
-    //     <div style='max-width: 80%; padding: 30px; border: 1px solid lightgrey; border-radius: 12px; margin: 15px;'>
-    //         <h2 style='color: #000!important;'>Hello, this is a new template for you to use.</h2>
-    //             <p>Below is a copy of the email.</p> 
-    //         <h2>From:</h2>
-    //             <p style='padding: 0 30px;'><strong>${user_name}</strong></p>
-    //         <h2>Email:</h2>
-    //             <p style='padding: 0 30px;'>${user_email}</p>
-    //         <h2>Message:</h2>
-    //             <p style='padding: 0 30px;'>${message}</p>
-    //     </div>
-
-    //     `;
-
-    //     let output = newTemplate.replace(/\n/g, "").replace(/\r/g, "<br>");
-    //     return output;
-    // };
-
     // Nodemailer email objects
     function mailNewInquiry(user_name, user_email, message) {
         return `{"from": "order@wyldgreens.com",
@@ -232,24 +212,13 @@ app.post('/', function (req, res) {
     "html": "${confirmTemplate()}"}`;
     };
 
-
-    // function newEmailTemp(user_name, user_email, message) {
-    //     return `{"from": "info@ashthomasweb.com",
-    //     "to": "ashthomasweb@gmail.com",
-    //     "subject": "New Wyld order! From: ${user_name} on ${subjectLineDate()}",
-    //     "html": "${inquiryTemplate()}"}`;
-    // };
-
     // Object parsing
     let inquiry = JSON.parse(mailNewInquiry(user_name, user_email, message));
     let finalConfirm = JSON.parse(mailConfirmation(user_name, user_email, message));
-    // let newEmailTemplate = JSON.parse(newEmailTemp(user_name, user_email, message));
-
 
     // Transporter objects
     var userInquiry = transporter.sendMail(inquiry);
     var userConfirm = transporter.sendMail(finalConfirm);
-    // var testEmail = transporter.sendMail(newEmailTemplate);
 
     // Upon completion, sends response to page indicating success or failure.
     Promise.all([userInquiry, userConfirm])
@@ -275,12 +244,5 @@ app.post('/', function (req, res) {
 const server = app.listen(0, () => {
     console.log('Server running at port:', server.address().port);
 });
-
-// let port = process.env.PORT;
-// // if (port == null || port == "") { 
-// //     port = 3000; 
-// // }
-// app.listen(port, () => console.log(`Server started at port ${port}.`));
-
 
 // || END of document
