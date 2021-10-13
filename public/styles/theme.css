@@ -622,7 +622,7 @@ textarea:focus {
 .share-menu-pane {
     transition: margin-top 1s;
 }
-
+/* 
 .footer-social button {
     cursor: pointer;
     border-radius: 17px;
@@ -631,7 +631,7 @@ textarea:focus {
     background-color: var(--secondary-light);
     background-size: contain;
     transition: background-color .3s;
-}
+} */
 
 .footer-attributions {
     color: var(--copy-dark);

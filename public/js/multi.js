@@ -244,7 +244,6 @@ function planeLevelBottomLeft() {
     bannerWrapBottomLeft.classList.remove('banner-wrap-up-left');
     planeWrapBottomLeft.classList.remove('plane-wrap-down-left');
     bannerWrapBottomLeft.classList.remove('banner-wrap-down-left');
-    console.log('finished')
 }
 
 // BOTTOM PLANES MIN ALTITUDE 

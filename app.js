@@ -128,7 +128,6 @@ app.post('/', function (req, res) {
         return new Date().toString().slice(0, 16);
     }
 
-
     // Templates
     function inquiryTemplate() {
 

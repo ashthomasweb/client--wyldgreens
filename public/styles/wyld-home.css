@@ -1829,7 +1829,7 @@ input[type=number]::placeholder {
 }
 
 .scene-back {
-    background-image: url(/images/farm/horse-farm-mid-final.png);
+    background-image: url(/images/horse-farm-mid-final.png);
     background-position: bottom;
     background-size: cover;
     position: absolute;

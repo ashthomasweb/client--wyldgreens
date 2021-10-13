@@ -1,6 +1,7 @@
 // JavaScript order form for 'Wyldgreens'
 
 let fullForm = document.getElementById('contact-form');
+let hiddenResponse = document.getElementById('hidden-response');
 let formCheckWeekly = document.querySelector('[name=weekly]');
 let formCheckOnetime = document.querySelector('[name=one_time]');
 let formCheckBulk = document.querySelector('[name=bulk]');
@@ -58,15 +59,10 @@ function formFieldCheck() {
 
     if (name == '' || email == '' || message == '' || planCheckReady() === false || formTotalPrice.value === '' || formTotalPrice.value === 0 || formTotalPrice.value === "0" ) { // not ready
         formReadyBool = false;
-        // elem.style.color = 'var(--copy-dark)';
-
 
     } else { // on ready
         formReadyBool = true;
-
-        // elem.style.backgroundColor = 'lightblue';
         elem.style.pointerEvents = 'auto';
-        // elem.style.color = 'var(--highlight)';
         elem.innerHTML = 'Place Your Order!'
     }
 }
@@ -79,10 +75,10 @@ function sendOrder() {
         fullForm.submit();
         elem.innerText = 'Sending';
     } else {
+        // needs ui handling - 
         console.log('test')
     }
 }
-
 
 function preventEnterSubmit(event) {
     if ( event.keyCode === 13 ) {
@@ -90,6 +86,15 @@ function preventEnterSubmit(event) {
     }
 }
 
+// CHECK FOR HIDDEN RESPONSE AND SCROLL TO FORM
+
+setTimeout( () => {
+    if (hiddenResponse) {
+        hiddenResponse.scrollIntoView(true);
+    }
+}, 0)
+
+    
 // MIX CHECKBOX AND INPUT HANDLING
 
 function farmersCheckbox() {

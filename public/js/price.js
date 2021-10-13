@@ -151,7 +151,6 @@ function getPriceTotal(id) {
             discount = 6;
         }
 
-        console.log(quantity * discount);
         return quantity * discount;
     }
 
