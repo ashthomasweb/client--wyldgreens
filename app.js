@@ -10,7 +10,6 @@ const favicon = require('express-favicon');
 const nodemailer = require("nodemailer");
 const secure = require("ssl-express-www");
 
-
 const app = express();
 app.use(secure)
 
@@ -234,6 +233,7 @@ app.post('/', function (req, res) {
                 responseBool: true,
                 isError: ifError,
             });
+            transporter.close();
         });
 
 });
