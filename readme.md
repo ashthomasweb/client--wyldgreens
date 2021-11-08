@@ -36,6 +36,3 @@ A Colorado local business website. Features a single page presentation at client
 
 ## Status
 Project is: _in production_.
-
-## Contact
-Created by Ash Thomas (https://www.ashthomasweb.com/) - feel free to contact me!

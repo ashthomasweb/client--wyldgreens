@@ -1,7 +1,7 @@
 {
   "name": "template--ejs-prismic-curator-emailjs",
   "version": "1.0.0",
-  "description": "A template project",
+  "description": "",
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -23,14 +23,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "Ash Thomas",
+  "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rideoutweb/template--ejs-prismic-curator-emailjs.git"
+    "url": "git+https://github.com/ashthomasweb/template--ejs-prismic-curator-emailjs.git"
   },
   "bugs": {
-    "url": "https://github.com/rideoutweb/template--ejs-prismic-curator-emailjs/issues"
+    "url": "https://github.com/ashthomasweb/template--ejs-prismic-curator-emailjs/issues"
   },
-  "homepage": "https://github.com/rideoutweb/template--ejs-prismic-curator-emailjs#readme"
+  "homepage": "https://github.com/ashthomasweb/template--ejs-prismic-curator-emailjs#readme"
 }

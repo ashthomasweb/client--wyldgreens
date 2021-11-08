@@ -30,6 +30,18 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
 
+    // Issues with current architecture led to nodemailer not functioning correctly in any attempted module setups. 
+    // Leave nodemailer functions and templates in post route for A2 hosting. Small server file allows for this to not be a performance issue at current scale.
+    // Ideally should be re-architected on a host that allows external smtp, authorization performed with OAuth.
+    // Current registrar GoDaddy creates problems with hosting companies that are node friendly.
+    // Potential solution that requires DNS migration and full refactor of nodemailer authorization is heroku, DNSimple, and Google OAuth with a Google for Business email.
+    // Tied usage of email provider and domain registrar limits the technology and infrastructure choices due to proprietary systems.
+    // Usage of Godaddy email requres exteral smtp, however usage of GoDaddy registrar means limited technology choices for external hosting, 
+    // or expensive internal unmanaged hosting, without direct node support. 
+    // No change in host recommended at this time. 
+    // 
+    // Do so with caution and time for email refactorization, dns migration, ssl certification, dns propagation, and functional testing in the new environment.
+
     let ifError = false;
 
     // Data recieved from the contact form
