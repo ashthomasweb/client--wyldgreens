@@ -1,4 +1,5 @@
 /* || Module CSS file for "Wyldgreens" */
+/* Some classes are unused, from original template, left in case of expansion */
 
 /* || Hamburger menu  */
 
@@ -703,7 +704,6 @@
     scroll-behavior: smooth;
 }
 
-/* Adjust inner-frame width to change the number of posts displayed in your instagram feed. Each post is 310px. Must be a multiple of 310. Currently set to display 9 images. */
 .inner-frame {
     width: 2790px;
     height: 310px;

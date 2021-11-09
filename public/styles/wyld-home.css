@@ -1,7 +1,5 @@
 /* Primary CSS for "Wyldgreens" */
 
-/* Template assigned classes from module.css */
-
 .greeting-pane--wyld {
     position: relative;
     max-width: 1000px;
@@ -840,9 +838,7 @@
 
 .custom-btn-slider-anim {
     transform: translateX(-164px);
-
 }
-
 
 .mix-remove-clicked {
     bottom: -18px;
@@ -852,10 +848,8 @@
     bottom: -18px;
 }
 
-
 .custom-remove-clicked {
     bottom: -18px;
-
 }
 
 .mix-text {
@@ -1568,7 +1562,6 @@ input[name=total_price]::-webkit-inner-spin-button {
 
 .bulk-discount-pane {
     display: inline-block;
-
     position: relative;
     top: 10px;
     left: 19px;
@@ -1735,7 +1728,6 @@ input[type=number]::placeholder {
   -moz-appearance: textfield;
 } 
 
-
 .order p {
     display: inline-block;
     max-width: 155px;
@@ -1845,7 +1837,6 @@ input[type=number]::placeholder {
     position: relative;
     top: 2px;
 }
-
 
 .light-mid {
     width: 425px;
