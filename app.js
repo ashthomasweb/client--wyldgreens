@@ -265,8 +265,10 @@ app.post("/", function (req, res) {
 
 // Listener
 
-const server = app.listen(0, () => {
-  console.log("Server running at port:", server.address().port);
-});
+let port = process.env.PORT;
+if (port == null || port == "") { 
+    port = 3000; 
+};
+app.listen(port, () => console.log(`Server started at port ${port}.`));
 
 // END of document
