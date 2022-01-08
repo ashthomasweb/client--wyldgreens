@@ -1,5 +1,5 @@
 {
-  "name": "template--ejs-prismic-curator-emailjs",
+  "name": "wyldgreens",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -24,13 +24,6 @@
     "start": "nodemon app.js"
   },
   "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ashthomasweb/template--ejs-prismic-curator-emailjs.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ashthomasweb/template--ejs-prismic-curator-emailjs/issues"
-  },
-  "homepage": "https://github.com/ashthomasweb/template--ejs-prismic-curator-emailjs#readme"
+  "license": "ISC"
+  
 }
