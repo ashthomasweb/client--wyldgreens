@@ -1,6 +1,6 @@
 # Wyldgreens.com
 > A responsive all-in-one presentation and order form for a Colorado microgreens business.
-> View live at (https://www.wyldgreens.com).
+> View live at (https://wyldgreens.herokuapp.com).
 
 ## Table of contents
 * [General info](#general-info)
@@ -11,7 +11,7 @@
 * [Contact](#contact)
 
 ## General info
-A Colorado local business website. Features a single page presentation at client request for landing, about, product, and order completion. Final product allows for a quick and seamless delivery of all necessary information and functionality.
+A Colorado local business website. The business was severly affected by the recent Colorado fires, and is not currently operating. Features a single page presentation at client request for landing, about, product, and order completion. Final product allows for a quick and seamless delivery of all necessary information and functionality.
 
 ## Screenshots
 * First Fold
@@ -31,8 +31,10 @@ A Colorado local business website. Features a single page presentation at client
 ## Features
 * Fully mobile ready.
 * Efficient presentation of whole business needs on one page.
-* Parallax background.
+* Parallax background, creating a seamless change from a solid color framing to a background scene.
 * Secure automatic email responder.
 
 ## Status
 Project is: _in production_.
+
+<!-- END of document -->
