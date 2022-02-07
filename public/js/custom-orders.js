@@ -1,6 +1,6 @@
 // Custom Order Form JavaScript for "Wyldgreens"
 
-// DOM OBJECT ASSIGMENTS 
+// DOM OBJECT ASSIGNMENTS 
 
 let customOrder1Pane = document.querySelector('.num-1');
 let customOrder1P = document.querySelector('.num-1 textarea');

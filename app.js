@@ -13,11 +13,11 @@
 // configuration - it's all or nothing. 
 
 // GoDaddy usage of both email provider and domain registrar limits the technology and infrastructure choices due to proprietary systems.
-// Usage of Godaddy email requres exteral smtp, however usage of GoDaddy registrar means limited technology choices for external hosting,
+// Usage of Godaddy email requires external smtp, however usage of GoDaddy registrar means limited technology choices for external hosting,
 // or expensive internal unmanaged hosting, without direct node support.
 // No change in host recommended at this time.
 
-// Do so with caution and time for email refactorization, dns migration, ssl certification, dns propagation, and functional testing in the new environment.
+// Do so with caution and time for email refactor, dns migration, ssl certification, dns propagation, and functional testing in the new environment.
 
 // In cPanel, on any host, remember to run 'NPM Install' in the node setup window to automatically install all dependencies AFTER uploading site files, 
 // and to restart the application any time the app.js file is altered.
@@ -58,7 +58,7 @@ app.post("/", function (req, res) {
 
   let ifError = false;
 
-  // Data recieved from the contact form
+  // Data received from the contact form
   let {
     user_name,
     user_email,
@@ -230,7 +230,7 @@ app.post("/", function (req, res) {
   function mailConfirmation(user_name, user_email, message) {
     return `{"from": "order@wyldgreens.com",
     "to": "${user_email}",
-    "subject": "Wyld order succesfully placed on ${subjectLineDate()}",
+    "subject": "Wyld order successfully placed on ${subjectLineDate()}",
     "html": "${confirmTemplate()}"}`;
   }
 

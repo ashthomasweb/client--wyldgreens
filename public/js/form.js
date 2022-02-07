@@ -35,7 +35,7 @@ function clearPlansForm() {
 // FIELD CHECK AND STYLE CHANGE ON STATE
 
 // ** my first usage of Array.every()! I'm so happy! Checking the total value of the form 
-// invalidates the necessesity of this function, but I wanted to yell it from a mountain 
+// invalidates the necessity of this function, but I wanted to yell it from a mountain 
 // but all I had was this keyboard, and you.
 const allUnchecked = (currentItem) => currentItem.checked === false;
 let planCheckArray = [formCheckBulk, formCheckOnetime, formCheckWeekly];

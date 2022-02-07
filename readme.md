@@ -11,7 +11,7 @@
 * [Contact](#contact)
 
 ## General info
-A Colorado local business website. The business was severly affected by the recent Colorado fires, and is not currently operating. Features a single page presentation at client request for landing, about, product, and order completion. Final product allows for a quick and seamless delivery of all necessary information and functionality.
+A Colorado local business website. The business was severely affected by the recent Colorado fires, and is not currently operating. Features a single page presentation at client request for landing, about, product, and order completion. Final product allows for a quick and seamless delivery of all necessary information and functionality.
 
 ## Screenshots
 * First Fold
